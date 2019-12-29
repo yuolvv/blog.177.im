@@ -2,12 +2,12 @@
 layout: page
 title: 关于
 slug: about
-date: 2017/06/28 17:26:00
+date: 2020/01/01 00:00:00
 status: publish
-author: AlanDecode
+author: 177
 categories: 
-  - Maverick
-  - Dev
+  - 177
+  - 177.im
 tags: 
   - theme
 ---
@@ -17,6 +17,6 @@ tags:
 
 ## Contact
 
-Email: hi#imalan.cn (replace # with @)
+Email: 0#177.im (replace # with @)
 
-Telegram：[AlanDecode](https://t.me/alandecode)
+Telegram：[iot](https://t.me/yuolvv)

@@ -1,6 +1,6 @@
 ;;;
 
-console.log(" %c Maverick & Galileo By AlanDecode %c https://www.imalan.cn/ ", "color: #fadfa3; background: #23b7e5; padding:5px;", "padding:5px;");
+console.log(" %c 177博客 By 177 %c https://blog.177.im/ ", "color: #fadfa3; background: #23b7e5; padding:5px;", "padding:5px;");
 
 document.addEventListener('DOMContentLoaded', function(){
     (function () {
@@ -220,11 +220,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 contextmenu = JSON.parse(el.dataset.contextmenu)
             }
             contextmenu.push({
-                text: 'Maverick',
-                link: 'https://github.com/AlanDecode/Maverick',
+                text: '177博客',
+                link: 'https://blog.177.im',
             }, {
-                text: 'AlanDecode',
-                link: 'https://www.imalan.cn',
+                text: '177',
+                link: 'https://177.im',
             });
             options.contextmenu = contextmenu;
     
