@@ -20,4 +20,11 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <priority>0.5</priority>
     </url>
 
+    <url>
+        <loc>/archives/my-first-awesome-post/</loc>
+        <lastmod>2019-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
 </urlset>
