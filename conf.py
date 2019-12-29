@@ -76,6 +76,6 @@ head_addon = r'''
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 '''
 
-footer_addon = ''
+footer_addon = '123'
 
 body_addon = ''
