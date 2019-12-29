@@ -32,7 +32,7 @@ external_links = [
     {
         "name": "听风行官网",
         "url": "https://www.iyu.pub",
-        "brief": "听风行的主页。"
+        "brief": "听风行的主页"
     }
 ]
 nav = [
@@ -76,6 +76,6 @@ head_addon = r'''
 <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
 '''
 
-footer_addon = '123'
+footer_addon = 'Whatever will be, Will be.'
 
-body_addon = '456'
+body_addon = ''
