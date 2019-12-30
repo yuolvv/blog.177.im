@@ -28,13 +28,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     </url>
 
     <url>
-        <loc>/archives/my-first-awesome-post/</loc>
-        <lastmod>2020-01-01</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
         <loc>/archives/helloworld/</loc>
         <lastmod>2020-01-01</lastmod>
         <changefreq>always</changefreq>
