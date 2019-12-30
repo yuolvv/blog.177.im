@@ -8,7 +8,7 @@ author: 177
 categories: 
   - 零碎
 tags:
-excerpt: The first : Hello World !
+excerpt: The first -> Hello World !
 ---
 
 [notice] 2020 Start [/notice]
