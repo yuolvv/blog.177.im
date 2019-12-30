@@ -6,7 +6,7 @@ echo %nowtime%
 git pull
 
 git add .
-git commit -m "Update my site"%nowtime%
+git commit -m "Update my site %nowtime%"
 git push
 
 pause
