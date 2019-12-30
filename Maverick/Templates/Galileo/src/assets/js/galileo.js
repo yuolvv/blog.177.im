@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function(){
             var minutes = Math.floor(times / 60); //separate minutes
             times %= 60; //subtract entire minutes
             var seconds = Math.floor(times / 1); // remainder is seconds
+            // document.getElementById('ga-uptime').innerHTML = days + ' D ' + hours + ' H ' + minutes + ' M ' + seconds + ' S '
             document.getElementById('ga-uptime').innerHTML = days + ' 天 ' + hours + ' 时 ' + minutes + ' 分 ' + seconds + ' 秒 '
         }, 1000);
     })();
