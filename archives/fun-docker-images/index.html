@@ -21,21 +21,20 @@
         }
     </script>
     
-<title>
-    标签: GitHub - 177博客
-</title>
+<title>有趣的Docker镜像 - 177博客</title>
 <meta name="author" content="177" />
-<meta name="description" content="天青色等烟雨" />
-<meta property="og:title" content="" />
-<meta property="og:description" content="天青色等烟雨" />
+<meta name="description" content="收集的一些实用有趣的 Docker 镜像" />
+<meta property="og:title" content="有趣的Docker镜像 - 177博客" />
+<meta property="og:description" content="收集的一些实用有趣的 Docker 镜像" />
 <meta property="og:site_name" content="177博客" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
-<meta property="og:image" content="177博客" />
-<meta name="twitter:title" content="" />
-<meta name="twitter:description" content="天青色等烟雨" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/fun-docker-images/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-01-01T18:00:00-00.00" />
+<meta name="twitter:title" content="有趣的Docker镜像 - 177博客" />
+<meta name="twitter:description" content="收集的一些实用有趣的 Docker 镜像" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" />
+<meta name="twitter:image" content="" />
 
 
     
@@ -88,27 +87,99 @@
             <div class="wrapper">
                 
 <main>    
-    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">有趣的Docker镜像</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>177</span>
+                <time>
+                    2020-01-01
+                </time>
+                
+                in <a no-style class="category" href="/category/极客/">
+                    极客
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <div class="notice"> docker一键安装脚本 ：wget -qO- get.docker.com | sh </div><h2>rastasheep/ubuntu-sshd （带ssh的ubuntu）</h2>
+<p>地址：<a href="https://hub.docker.com/r/rastasheep/ubuntu-sshd/">https://hub.docker.com/r/rastasheep/ubuntu-sshd/</a></p>
+<p>sudo docker run -d -p 22:22 rastasheep/ubuntu-sshd:16.04</p>
+<p>用户名、密码为root</p>
+<h2>itscaro/debian-ssh （带ssh的debian）</h2>
+<p>地址：<a href="https://hub.docker.com/r/itscaro/debian-ssh/">https://hub.docker.com/r/itscaro/debian-ssh/</a></p>
+<p>sudo docker run -d -p 22:22  itscaro/debian-ssh</p>
+<p>用户名、密码为root</p>
+<h2>tutum/centos （带ssh的centos）</h2>
+<p>地址：<a href="https://hub.docker.com/r/tutum/centos/">https://hub.docker.com/r/tutum/centos/</a></p>
+<p>sudo docker run -d -p 22:22  tutum/centos</p>
+<p>（centos7：tutum/centos:centos7 ）</p>
+<p>用户名root，密码随机，请执行 docker logs <CONTAINER_ID> 查看</p>
+<h2>alexwhen/docker-2048（游戏2048）</h2>
+<p>地址：<a href="https://hub.docker.com/r/alexwhen/docker-2048/">https://hub.docker.com/r/alexwhen/docker-2048/</a></p>
+<p>sudo docker run -d -p 80:80 alexwhen/docker-2048</p>
+<h2>dorowu/ubuntu-desktop-lxde-vnc（noVNC、Firefox51）</h2>
+<p>地址：<a href="https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/">https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/</a></p>
+<p>docker run -it -p 80:80 dorowu/ubuntu-desktop-lxde-vnc</p>
+<p>Browse <a href="http://localhost/">http://localhost/</a></p>
+<h2>consol/centos-xfce-vnc （VNC、noVNC、密码、chrome、Firefox45）</h2>
+<p>地址：<a href="https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/">https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/</a></p>
+<p>run -it -p 5901:5901 -p 6901:6901 -e "VNC_PW=my-new-password" -e VNC_RESOLUTION=800x600 consol/centos-xfce-vnc</p>
+<p>默认VNC密码：vncpassword</p>
+<p>VNC-Server (default VNC port 5901)</p>
+<p>noVNC - HTML5 VNC client (default http port 6901)</p>
+<p>其他相关</p>
+<p>consol/centos-xfce-vnc: Centos7 with Xfce4 UI session</p>
+<p>consol/ubuntu-xfce-vnc: Ubuntu with Xfce4 UI session</p>
+<p>consol/centos-icewm-vnc: dev     Centos7 with IceWM UI session</p>
+<p>consol/ubuntu-icewm-vnc: dev      Ubuntu with IceWM UI session</p>
+<h2>fish/peerflix-server （支持磁力，种子）</h2>
+<p>地址：<a href="https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/">https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/</a></p>
+<p>docker run -it  -p 9000:9000 fish/peerflix-server</p>
+<p>Browse <a href="http://localhost:9000/">http://localhost:9000/</a></p>
+<h2>jpillora/cloud-torrent（种子下载，搜索）</h2>
+<p>地址：<a href="https://hub.docker.com/r/jpillora/cloud-torrent/">https://hub.docker.com/r/jpillora/cloud-torrent/</a></p>
+<p>docker run -d -p 3000:3000 -v /path/to/my/downloads:/downloads jpillora/cloud-torrent</p>
+<p>Browse <a href="http://localhost:3000/">http://localhost:3000/</a></p>
+<h2>forsaken-mail（临时邮箱）</h2>
+<p>地址：<a href="https://hub.docker.com/r/rockmaity/forsaken-mail/">https://hub.docker.com/r/rockmaity/forsaken-mail/</a></p>
+<p>docker run --name forsaken-mail -itd -p 25:25 -p 3000:3000 rockmaity/forsaken-mail</p>
+<p>Browse <a href="http://localhost:3000/">http://localhost:3000/</a></p>
 
-<section id="ga-archive_list" class="ga-section" data-title="#GitHub">
-    <ul>
-        
-        <li>
-            <h1><a target="_self" class="ga-highlight" href="/archives/my-first-awesome-post/">我的第一篇文章</a></h1>
-            <time class="ga-mono" datetime="2020-01-01T12:00:00-00.00">
-                2020-01-01
-            </time>
-        </li>
-        
-    </ul>
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Docker/">#Docker</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/IT/">#IT</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/my-first-awesome-post/">我的第一篇文章</a>
+        <p class="yue">Hello World!</p>
+    </div>
+
 </section>
 
-<section class="ga-section ga-mono" id="ga-pager">
-    
-    <span>Page 1 of 1</span>
-    
-</section>
 
+    
 
 </main>
 

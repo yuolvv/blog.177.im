@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>177博客</title><link>/</link><description>天青色等烟雨</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>${static_prefix}favicon.ico</url><title>177博客</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 30 Dec 2019 02:38:32 +0806</lastBuildDate><pubDate>Mon, 30 Dec 2019 02:38:32 +0806</pubDate><item><title>Hello World!</title><link>/archives/helloworld/</link><description>&lt;div class="notice"&gt; 2020 Start !&lt;/div&gt;&lt;h3&gt;The Next is New&lt;/h3&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>177博客</title><link>/</link><description>天青色等烟雨</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>${static_prefix}favicon.ico</url><title>177博客</title><link>/</link></image><language>zh-CN</language><lastBuildDate>Mon, 30 Dec 2019 06:31:38 +0806</lastBuildDate><pubDate>Mon, 30 Dec 2019 06:31:38 +0806</pubDate><item><title>Hello World!</title><link>/archives/helloworld/</link><description>&lt;div class="notice"&gt; 2020 Start !&lt;/div&gt;&lt;h3&gt;The Next is New&lt;/h3&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.SkyIslands_ZH-CN6229467399_1920x1080.jpg" alt="图森附近索诺兰沙漠中的巨柱仙人掌，亚利桑那州 (© Jack Dykinga/Minden Pictures)" /&gt;&lt;figcaption&gt;图森附近索诺兰沙漠中的巨柱仙人掌，亚利桑那州 (© Jack Dykinga/Minden Pictures)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h3&gt;Photoset&lt;/h3&gt;
 &lt;div class="photos"&gt;
@@ -9,4 +9,47 @@
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.SloveniaAlps_ZH-CN6052706424_1920x1080.jpg" alt="位于Praprotno村之上的圣托马斯教堂 (© Guy Edwardes/Minden Pictures)" /&gt;&lt;figcaption&gt;位于Praprotno村之上的圣托马斯教堂 (© Guy Edwardes/Minden Pictures)&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.WarsawXmas_ZH-CN5981724395_1920x1080.jpg" alt="华沙的圣诞节日装饰，波兰 (© David Milsen/Alamy)" /&gt;&lt;figcaption&gt;华沙的圣诞节日装饰，波兰 (© David Milsen/Alamy)&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.ReindeerNorway_ZH-CN5913190372_1920x1080.jpg" alt="挪威的一群驯鹿 (© Lena Granefelt/plainpicture)" /&gt;&lt;figcaption&gt;挪威的一群驯鹿 (© Lena Granefelt/plainpicture)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;</description><author>0@177.im (177)</author><guid isPermaLink="true">/archives/helloworld/</guid><pubDate>Wed, 01 Jan 2020 00:00:00 +0806</pubDate></item><item><title>我的第一篇文章</title><link>/archives/my-first-awesome-post/</link><description>&lt;p&gt;这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！&lt;/p&gt;
-</description><author>0@177.im (177)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Wed, 01 Jan 2020 12:00:00 +0806</pubDate></item></channel></rss>
+</description><author>0@177.im (177)</author><guid isPermaLink="true">/archives/my-first-awesome-post/</guid><pubDate>Wed, 01 Jan 2020 12:00:00 +0806</pubDate></item><item><title>有趣的Docker镜像</title><link>/archives/fun-docker-images/</link><description>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;rastasheep/ubuntu-sshd （带ssh的ubuntu）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/rastasheep/ubuntu-sshd/"&gt;https://hub.docker.com/r/rastasheep/ubuntu-sshd/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sudo docker run -d -p 22:22 rastasheep/ubuntu-sshd:16.04&lt;/p&gt;
+&lt;p&gt;用户名、密码为root&lt;/p&gt;
+&lt;h2&gt;itscaro/debian-ssh （带ssh的debian）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/itscaro/debian-ssh/"&gt;https://hub.docker.com/r/itscaro/debian-ssh/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sudo docker run -d -p 22:22  itscaro/debian-ssh&lt;/p&gt;
+&lt;p&gt;用户名、密码为root&lt;/p&gt;
+&lt;h2&gt;tutum/centos （带ssh的centos）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/tutum/centos/"&gt;https://hub.docker.com/r/tutum/centos/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sudo docker run -d -p 22:22  tutum/centos&lt;/p&gt;
+&lt;p&gt;（centos7：tutum/centos:centos7 ）&lt;/p&gt;
+&lt;p&gt;用户名root，密码随机，请执行 docker logs &lt;CONTAINER_ID&gt; 查看&lt;/p&gt;
+&lt;h2&gt;alexwhen/docker-2048（游戏2048）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/alexwhen/docker-2048/"&gt;https://hub.docker.com/r/alexwhen/docker-2048/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;sudo docker run -d -p 80:80 alexwhen/docker-2048&lt;/p&gt;
+&lt;h2&gt;dorowu/ubuntu-desktop-lxde-vnc（noVNC、Firefox51）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/"&gt;https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;docker run -it -p 80:80 dorowu/ubuntu-desktop-lxde-vnc&lt;/p&gt;
+&lt;p&gt;Browse &lt;a href="http://localhost/"&gt;http://localhost/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;consol/centos-xfce-vnc （VNC、noVNC、密码、chrome、Firefox45）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/"&gt;https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;run -it -p 5901:5901 -p 6901:6901 -e "VNC_PW=my-new-password" -e VNC_RESOLUTION=800x600 consol/centos-xfce-vnc&lt;/p&gt;
+&lt;p&gt;默认VNC密码：vncpassword&lt;/p&gt;
+&lt;p&gt;VNC-Server (default VNC port 5901)&lt;/p&gt;
+&lt;p&gt;noVNC - HTML5 VNC client (default http port 6901)&lt;/p&gt;
+&lt;p&gt;其他相关&lt;/p&gt;
+&lt;p&gt;consol/centos-xfce-vnc: Centos7 with Xfce4 UI session&lt;/p&gt;
+&lt;p&gt;consol/ubuntu-xfce-vnc: Ubuntu with Xfce4 UI session&lt;/p&gt;
+&lt;p&gt;consol/centos-icewm-vnc: dev     Centos7 with IceWM UI session&lt;/p&gt;
+&lt;p&gt;consol/ubuntu-icewm-vnc: dev      Ubuntu with IceWM UI session&lt;/p&gt;
+&lt;h2&gt;fish/peerflix-server （支持磁力，种子）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/"&gt;https://hub.docker.com/r/dorowu/ubuntu-desktop-lxde-vnc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;docker run -it  -p 9000:9000 fish/peerflix-server&lt;/p&gt;
+&lt;p&gt;Browse &lt;a href="http://localhost:9000/"&gt;http://localhost:9000/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;jpillora/cloud-torrent（种子下载，搜索）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/jpillora/cloud-torrent/"&gt;https://hub.docker.com/r/jpillora/cloud-torrent/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;docker run -d -p 3000:3000 -v /path/to/my/downloads:/downloads jpillora/cloud-torrent&lt;/p&gt;
+&lt;p&gt;Browse &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;forsaken-mail（临时邮箱）&lt;/h2&gt;
+&lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/rockmaity/forsaken-mail/"&gt;https://hub.docker.com/r/rockmaity/forsaken-mail/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;docker run --name forsaken-mail -itd -p 25:25 -p 3000:3000 rockmaity/forsaken-mail&lt;/p&gt;
+&lt;p&gt;Browse &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;
+</description><author>0@177.im (177)</author><guid isPermaLink="true">/archives/fun-docker-images/</guid><pubDate>Wed, 01 Jan 2020 18:00:00 +0806</pubDate></item></channel></rss>
