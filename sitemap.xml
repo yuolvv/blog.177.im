@@ -21,6 +21,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
     <url>
+        <loc>/archives/docker-image-speedup/</loc>
+        <lastmod>2020-01-02</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>/archives/fun-docker-images/</loc>
         <lastmod>2020-01-01</lastmod>
         <changefreq>always</changefreq>
