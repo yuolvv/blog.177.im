@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-01-04T02:27:45.894773+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="http://lkiesow.github.io/python-feedgen" version="0.8.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/helloworld/</id><title>Hello World!</title><updated>2020-01-04T02:27:45.894976+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; 2020 Start !&lt;/div&gt;&lt;h3&gt;The Next is New&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-01-04T02:54:31.267475+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="http://lkiesow.github.io/python-feedgen" version="0.8.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/helloworld/</id><title>Hello World!</title><updated>2020-01-04T02:54:31.267783+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; 2020 Start !&lt;/div&gt;&lt;h3&gt;The Next is New&lt;/h3&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.SkyIslands_ZH-CN6229467399_1920x1080.jpg" alt="图森附近索诺兰沙漠中的巨柱仙人掌，亚利桑那州 (© Jack Dykinga/Minden Pictures)" /&gt;&lt;figcaption&gt;图森附近索诺兰沙漠中的巨柱仙人掌，亚利桑那州 (© Jack Dykinga/Minden Pictures)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h3&gt;Photoset&lt;/h3&gt;
 &lt;div class="photos"&gt;
@@ -8,7 +8,7 @@
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.FrozenTree_ZH-CN9591258534_1920x1080.jpg" alt="池塘边结了冰的树 (© Philippe Sainte-Laudy Photography/Getty Images)" /&gt;&lt;figcaption&gt;池塘边结了冰的树 (© Philippe Sainte-Laudy Photography/Getty Images)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;&lt;div class="photos"&gt;
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.SloveniaAlps_ZH-CN6052706424_1920x1080.jpg" alt="位于Praprotno村之上的圣托马斯教堂 (© Guy Edwardes/Minden Pictures)" /&gt;&lt;figcaption&gt;位于Praprotno村之上的圣托马斯教堂 (© Guy Edwardes/Minden Pictures)&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.WarsawXmas_ZH-CN5981724395_1920x1080.jpg" alt="华沙的圣诞节日装饰，波兰 (© David Milsen/Alamy)" /&gt;&lt;figcaption&gt;华沙的圣诞节日装饰，波兰 (© David Milsen/Alamy)&lt;/figcaption&gt;&lt;/figure&gt;
-&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.ReindeerNorway_ZH-CN5913190372_1920x1080.jpg" alt="挪威的一群驯鹿 (© Lena Granefelt/plainpicture)" /&gt;&lt;figcaption&gt;挪威的一群驯鹿 (© Lena Granefelt/plainpicture)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;</content><link href="/archives/helloworld/" rel="alternate"/><published>2020-01-01T00:00:00+08:06</published></entry><entry><id>/archives/fun-docker-images/</id><title>有趣的Docker镜像</title><updated>2020-01-04T02:27:45.894958+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;rastasheep/ubuntu-sshd （带ssh的ubuntu）&lt;/h2&gt;
+&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.ReindeerNorway_ZH-CN5913190372_1920x1080.jpg" alt="挪威的一群驯鹿 (© Lena Granefelt/plainpicture)" /&gt;&lt;figcaption&gt;挪威的一群驯鹿 (© Lena Granefelt/plainpicture)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;</content><link href="/archives/helloworld/" rel="alternate"/><published>2020-01-01T00:00:00+08:06</published></entry><entry><id>/archives/fun-docker-images/</id><title>有趣的Docker镜像</title><updated>2020-01-04T02:54:31.267761+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;rastasheep/ubuntu-sshd （带ssh的ubuntu）&lt;/h2&gt;
 &lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/rastasheep/ubuntu-sshd/"&gt;https://hub.docker.com/r/rastasheep/ubuntu-sshd/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;sudo docker run -d -p 22:22 rastasheep/ubuntu-sshd:16.04&lt;/p&gt;
 &lt;p&gt;用户名、密码为root&lt;/p&gt;
@@ -51,7 +51,7 @@
 &lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/rockmaity/forsaken-mail/"&gt;https://hub.docker.com/r/rockmaity/forsaken-mail/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;docker run --name forsaken-mail -itd -p 25:25 -p 3000:3000 rockmaity/forsaken-mail&lt;/p&gt;
 &lt;p&gt;Browse &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/fun-docker-images/" rel="alternate"/><published>2020-01-01T18:00:00+08:06</published></entry><entry><id>/archives/docker-image-speedup/</id><title>Docker镜像加速</title><updated>2020-01-04T02:27:45.894941+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;收集的常见的Docker镜像加速地址&lt;/h2&gt;
+</content><link href="/archives/fun-docker-images/" rel="alternate"/><published>2020-01-01T18:00:00+08:06</published></entry><entry><id>/archives/docker-image-speedup/</id><title>Docker镜像加速</title><updated>2020-01-04T02:54:31.267738+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;收集的常见的Docker镜像加速地址&lt;/h2&gt;
 &lt;p&gt;"&lt;a href="https://hub-mirror.c.163.com"&gt;https://hub-mirror.c.163.com&lt;/a&gt;"&lt;/p&gt;
 &lt;p&gt;"&lt;a href="https://mirror.ccs.tencentyun.com"&gt;https://mirror.ccs.tencentyun.com&lt;/a&gt;"&lt;/p&gt;
 &lt;p&gt;"&lt;a href="https://reg-mirror.qiniu.co"&gt;https://reg-mirror.qiniu.co&lt;/a&gt;"&lt;/p&gt;
@@ -66,7 +66,7 @@
       "http://hub-mirror.c.163.com"
     ]
 }&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/docker-image-speedup/" rel="alternate"/><published>2020-01-02T08:00:00+08:06</published></entry><entry><id>/archives/locate-java-oom/</id><title>快速定位Java线上内存OOM问题</title><updated>2020-01-04T02:27:45.894922+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的OOM问题，各式各样。&lt;/div&gt;&lt;h2&gt;1、使用top查看PID&lt;/h2&gt;
+</content><link href="/archives/docker-image-speedup/" rel="alternate"/><published>2020-01-02T08:00:00+08:06</published></entry><entry><id>/archives/locate-java-oom/</id><title>快速定位Java线上内存OOM问题</title><updated>2020-01-04T02:54:31.267716+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的OOM问题，各式各样。&lt;/div&gt;&lt;h2&gt;1、使用top查看PID&lt;/h2&gt;
 &lt;h2&gt;2、使用jmap -heap PID 查询JVM内存信息，确认是否是内存本身就分配的不够&lt;/h2&gt;
 &lt;h2&gt;3、使用jmap -histo:live PID | more 查找实例列表中最耗内存的对象&lt;/h2&gt;
 &lt;p&gt;其中按照所占内存排序，分别是实例数，所在内存大小，类名。通过列表可以直观的&lt;/p&gt;
@@ -81,12 +81,12 @@
 &lt;p&gt;ll /proc/${PID}/fd | wc -l&lt;/p&gt;
 &lt;p&gt;ll /proc/${PID}/task | wc -l&lt;/p&gt;
 &lt;p&gt;pstree -p |wc -l&lt;/p&gt;
-</content><link href="/archives/locate-java-oom/" rel="alternate"/><published>2020-01-02T18:00:00+08:06</published></entry><entry><id>/archives/jetbrains-licenses/</id><title>Jetbrains 自用注册码</title><updated>2020-01-04T02:27:45.894904+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;注册码一般都是有期限的，如果失效，请联系博主（发邮件：注明Jetbrains注册码即可）&lt;/div&gt;&lt;h2&gt;2020年01月03日更新&lt;/h2&gt;
+</content><link href="/archives/locate-java-oom/" rel="alternate"/><published>2020-01-02T18:00:00+08:06</published></entry><entry><id>/archives/jetbrains-licenses/</id><title>Jetbrains 自用注册码</title><updated>2020-01-04T02:54:31.267693+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;注册码一般都是有期限的，如果失效，请联系博主（发邮件：注明Jetbrains注册码即可）&lt;/div&gt;&lt;h2&gt;2020年01月03日更新&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;
 T3ACKYHDVF-eyJsaWNlbnNlSWQiOiJUM0FDS1lIRFZGIiwibGljZW5zZWVOYW1lIjoi5bCP6bifIOeoi+W6j+WRmCIsImFzc2lnbmVlTmFtZSI6IiIsImFzc2lnbmVlRW1haWwiOiIiLCJsaWNlbnNlUmVzdHJpY3Rpb24iOiIiLCJjaGVja0NvbmN1cnJlbnRVc2UiOmZhbHNlLCJwcm9kdWN0cyI6W3siY29kZSI6IklJIiwiZmFsbGJhY2tEYXRlIjoiMjAxOS0wNi0xMyIsInBhaWRVcFRvIjoiMjAyMC0wNi0xMiJ9LHsiY29kZSI6IkFDIiwiZmFsbGJhY2tEYXRlIjoiMjAxOS0wNi0xMyIsInBhaWRVcFRvIjoiMjAyMC0wNi0xMiJ9LHsiY29kZSI6IkRQTiIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMTMiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMTIifSx7ImNvZGUiOiJQUyIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMTMiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMTIifSx7ImNvZGUiOiJHTyIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMTMiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMTIifSx7ImNvZGUiOiJETSIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMTMiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMTIifSx7ImNvZGUiOiJDTCIsImZhbGxiYWNrRGF0ZSI6IjIwMTktMDYtMTMiLCJwYWlkVXBUbyI6IjIwMjAtMDYtMTIifSx7ImNvZGUiOiJSUzAiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiUkMiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiUkQiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiUEMiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiUk0iLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiV1MiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiREIiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiREMiLCJmYWxsYmFja0RhdGUiOiIyMDE5LTA2LTEzIiwicGFpZFVwVG8iOiIyMDIwLTA2LTEyIn0seyJjb2RlIjoiUlNVIiwiZmFsbGJhY2tEYXRlIjoiMjAxOS0wNi0xMyIsInBhaWRVcFRvIjoiMjAyMC0wNi0xMiJ9XSwiaGFzaCI6IjEzMzgwMDA0LzAiLCJncmFjZVBlcmlvZERheXMiOjcsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-nTBuZDiAOuM4IHXNkS7GbCvZVZFo4EcHf9hHzfhaPYsaCGQjuCVJFEboopbPuEHn16yT9Zvf7yRuM5WGlGmpcOJnWLpCmGm65S6wHtZdX0kfSNIqnqdS1MhIHpftsAGxSswuQksrm09tltbO4nATeavGs1BIMafsCJVen+BvDFvYL7+3crkRI7AwdyMb2miLLYJcEVPhiVKZnzJUzT9uA8/4Q02BqsvX5oSJg8cLw3w7Cd0ISrn1i8uENe/1z3T/Ede0STM7eOekFaVEdO9cgzYME3iIFzi2TZXMSqIuBpJqF4NFb6M0039tEGy6EHqcksMyDTdCAASquqcDcHrUUA==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/jetbrains-licenses/" rel="alternate"/><published>2020-01-03T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-1/</id><title>Java面试题1</title><updated>2020-01-04T02:27:45.894885+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、面向对象的特征有哪些方面？&lt;/h2&gt;
-&lt;p&gt;答：面向对象的特征主要有以下几个方面：&lt;/p&gt;
+</content><link href="/archives/jetbrains-licenses/" rel="alternate"/><published>2020-01-03T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-1/</id><title>Java面试题1</title><updated>2020-01-04T02:54:31.267668+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、面向对象的特征有哪些方面？&lt;/h2&gt;
+&lt;p&gt;面向对象的特征主要有以下几个方面：&lt;/p&gt;
 &lt;h3&gt;（1）抽象：&lt;/h3&gt;
 &lt;p&gt;抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。&lt;/p&gt;
 &lt;p&gt;抽象只关注对象有哪些属性和行为，并不关注这些行为的细节是什么。&lt;/p&gt;
@@ -104,24 +104,70 @@ T3ACKYHDVF-eyJsaWNlbnNlSWQiOiJUM0FDS1lIRFZGIiwibGljZW5zZWVOYW1lIjoi5bCP6bifIOeoi
 &lt;p&gt;如果将对象的方法视为对象向外界提供的服务，那么运行时的多态性可以解释为：当A系统访问B系统提供的服务时，B系统有多种提供服务的方式，但一切对A系统来说都是透明的（就像电动剃须刀是A系统，它的供电系统是B系统，B系统可以使用电池供电或者用交流电，甚至还有可能是太阳能，A系统只会通过B类对象调用供电的方法，但并不知道供电系统的底层实现是什么，究竟通过何种方式获得了动力）。&lt;/p&gt;
 &lt;p&gt;方法重载（overload）实现的是编译时的多态性（也称为前绑定），而方法重写（override）实现的是运行时的多态性（也称为后绑定）。&lt;/p&gt;
 &lt;p&gt;运行时的多态是面向对象最精髓的东西，要实现多态需要做两件事：1). 方法重写（子类继承父类并重写父类中已有的或抽象的方法）；2). 对象造型（用父类型引用引用子类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）。&lt;/p&gt;
-&lt;p&gt;2、访问修饰符public,private,protected,以及不写（默认）时的区别？
-答：
-修饰符     当前类     同包  子类  其他包
-public  √   √   √   √
-protected   √   √   √   ×
-default     √   √   ×   ×
-private     √   ×   ×   ×&lt;/p&gt;
-&lt;p&gt;类的成员不写访问修饰时默认为default。默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。Java中，外部类的修饰符只能是public或默认，类的成员（包括内部类）的修饰符可以是以上四种。
-3、String 是最基本的数据类型吗？
-答：不是。Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean；除了基本类型（primitive type），剩下的都是引用类型（reference type），Java 5以后引入的枚举类型也算是一种比较特殊的引用类型。
-4、float f=3.4;是否正确？
-答:不正确。3.4是双精度数，将双精度型（double）赋值给浮点型（float）属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换float f =(float)3.4; 或者写成float f =3.4F;。
-5、short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？
-答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。而short s1 = 1; s1 += 1;可以正确编译，因为s1+= 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。
-6、Java有没有goto？
-答：goto 是Java中的保留字，在目前版本的Java中没有使用。（根据James Gosling（Java之父）编写的《The Java Programming Language》一书的附录中给出了一个Java关键字列表，其中有goto和const，但是这两个是目前无法使用的关键字，因此有些地方将其称之为保留字，其实保留字这个词应该有更广泛的意义，因为熟悉C语言的程序员都知道，在系统类库中使用过的有特殊意义的单词或单词的组合都被视为保留字）
-7、int和Integer有什么区别？
-答：Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。Java 为每个原始类型提供了包装类型：- 原始类型: boolean，char，byte，short，int，long，float，double- 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double&lt;/p&gt;
+&lt;h2&gt;2、访问修饰符public,private,protected,以及不写（默认）时的区别？&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:left"&gt;修饰符&lt;/th&gt;
+&lt;th style="text-align:center"&gt;当前类&lt;/th&gt;
+&lt;th style="text-align:center"&gt;同包&lt;/th&gt;
+&lt;th style="text-align:center"&gt;子类&lt;/th&gt;
+&lt;th style="text-align:center"&gt;其他包&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;public&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;protected&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;default&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;×&lt;/td&gt;
+&lt;td style="text-align:center"&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:left"&gt;private&lt;/td&gt;
+&lt;td style="text-align:center"&gt;√&lt;/td&gt;
+&lt;td style="text-align:center"&gt;×&lt;/td&gt;
+&lt;td style="text-align:center"&gt;×&lt;/td&gt;
+&lt;td style="text-align:center"&gt;×&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;类的成员不写访问修饰时默认为default。&lt;/p&gt;
+&lt;p&gt;默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。&lt;/p&gt;
+&lt;p&gt;受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。&lt;/p&gt;
+&lt;p&gt;Java中，外部类的修饰符只能是public或默认，类的成员（包括内部类）的修饰符可以是以上四种。&lt;/p&gt;
+&lt;h2&gt;3、String 是最基本的数据类型吗？&lt;/h2&gt;
+&lt;p&gt;答：不是。&lt;/p&gt;
+&lt;p&gt;Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean；&lt;/p&gt;
+&lt;p&gt;除了基本类型（primitive type），剩下的都是引用类型（reference type），Java 5以后引入的枚举类型也算是一种比较特殊的引用类型。&lt;/p&gt;
+&lt;h2&gt;4、float f=3.4;是否正确？&lt;/h2&gt;
+&lt;p&gt;答:不正确。&lt;/p&gt;
+&lt;p&gt;3.4是双精度数，将双精度型（double,8个字节）赋值给浮点型（float,4个字节）属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换float f =(float)3.4; 或者写成float f =3.4F;。&lt;/p&gt;
+&lt;h2&gt;5、short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？&lt;/h2&gt;
+&lt;p&gt;答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。&lt;/p&gt;
+&lt;p&gt;而short s1 = 1; s1 += 1;可以正确编译，因为s1 += 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。&lt;/p&gt;
+&lt;h2&gt;6、Java有没有goto？&lt;/h2&gt;
+&lt;p&gt;答：goto 是Java中的保留字，在目前版本的Java中没有使用。（根据James Gosling（Java之父）编写的《The Java Programming Language》一书的附录中给出了一个Java关键字列表，其中有goto和const，但是这两个是目前无法使用的关键字，因此有些地方将其称之为保留字，其实保留字这个词应该有更广泛的意义，因为熟悉C语言的程序员都知道，在系统类库中使用过的有特殊意义的单词或单词的组合都被视为保留字）&lt;/p&gt;
+&lt;h3&gt;7、int和Integer有什么区别？&lt;/h3&gt;
+&lt;p&gt;答：Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。&lt;/p&gt;
+&lt;p&gt;Java 为每个原始类型提供了包装类型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原始类型: boolean，char，byte，short，int，long，float，double&lt;/li&gt;
+&lt;li&gt;包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;class AutoUnboxingTest { 
     public static void main(String[] args) { 
@@ -129,80 +175,73 @@ private     √   ×   ×   ×&lt;/p&gt;
         int c = 3; 
         System.out.println(a == b); // false 两个引用没有引用同一对象 
         System.out.println(a == c); // true a自动拆箱成int类型再和c比较 
-     }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;最近还遇到一个面试题，也是和自动装箱和拆箱有点关系的，代码如下所示：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;public class Test03 { 
-  public static void main(String[] args) { 
-    Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150; 
-    System.out.println(f1 == f2); 
-    System.out.println(f3 == f4); 
-  }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果不明就里很容易认为两个输出要么都是true要么都是false。首先需要注意的是f1、f2、f3、f4四个变量都是Integer对象引用，所以下面的==运算比较的不是值而是引用。装箱的本质是什么呢？当我们给一个Integer对象赋一个int值的时候，会调用Integer类的静态方法valueOf，如果看看valueOf的源代码就知道发生了什么。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    public static Integer valueOf(int i) {
-        if (i &amp;gt;= IntegerCache.low &amp;amp;&amp;amp; i &amp;lt;= IntegerCache.high)
-            return IntegerCache.cache[i + (-IntegerCache.low)];
-        return new Integer(i);
+    public static void main(String[] args) { 
+        Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150; 
+        System.out.println(f1 == f2); 
+        System.out.println(f3 == f4); 
     }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果不明就里很容易认为两个输出要么都是true要么都是false。首先需要注意的是f1、f2、f3、f4四个变量都是Integer对象引用，所以下面的==运算比较的不是值而是引用。&lt;/p&gt;
+&lt;p&gt;装箱的本质是什么呢？当我们给一个Integer对象赋一个int值的时候，会调用Integer类的静态方法valueOf，如果看看valueOf的源代码就知道发生了什么。&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;public static Integer valueOf(int i) {
+    if (i &amp;gt;= IntegerCache.low &amp;amp;&amp;amp; i &amp;lt;= IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;IntegerCache是Integer的内部类，其代码如下所示：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;/**
-     * Cache to support the object identity semantics of autoboxing for values between
-     * -128 and 127 (inclusive) as required by JLS.
-     *
-     * The cache is initialized on first usage.  The size of the cache
-     * may be controlled by the {@code -XX:AutoBoxCacheMax=&amp;lt;size&amp;gt;} option.
-     * During VM initialization, java.lang.Integer.IntegerCache.high property
-     * may be set and saved in the private system properties in the
-     * sun.misc.VM class.
-     */
+* Cache to support the object identity semantics of autoboxing for values between
+* -128 and 127 (inclusive) as required by JLS.
+*
+* The cache is initialized on first usage.  The size of the cache
+* may be controlled by the {@code -XX:AutoBoxCacheMax=&amp;lt;size&amp;gt;} option.
+* During VM initialization, java.lang.Integer.IntegerCache.high property
+* may be set and saved in the private system properties in the
+* sun.misc.VM class.
+*/
 
-    private static class IntegerCache {
-        static final int low = -128;
-        static final int high;
-        static final Integer cache[];
+private static class IntegerCache {
+    static final int low = -128;
+    static final int high;
+    static final Integer cache[];
 
-        static {
-            // high value may be configured by property
-            int h = 127;
-            String integerCacheHighPropValue =
-                sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
-            if (integerCacheHighPropValue != null) {
-                try {
-                    int i = parseInt(integerCacheHighPropValue);
-                    i = Math.max(i, 127);
-                    // Maximum array size is Integer.MAX_VALUE
-                    h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
-                } catch( NumberFormatException nfe) {
-                    // If the property cannot be parsed into an int, ignore it.
-                }
+    static {
+        // high value may be configured by property
+        int h = 127;
+        String integerCacheHighPropValue =
+            sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
+        if (integerCacheHighPropValue != null) {
+            try {
+                int i = parseInt(integerCacheHighPropValue);
+                i = Math.max(i, 127);
+                // Maximum array size is Integer.MAX_VALUE
+                h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
+            } catch( NumberFormatException nfe) {
+                // If the property cannot be parsed into an int, ignore it.
             }
-            high = h;
-
-            cache = new Integer[(high - low) + 1];
-            int j = low;
-            for(int k = 0; k &amp;lt; cache.length; k++)
-                cache[k] = new Integer(j++);
-
-            // range [-128, 127] must be interned (JLS7 5.1.7)
-            assert IntegerCache.high &amp;gt;= 127;
         }
+        high = h;
 
-        private IntegerCache() {}
+        cache = new Integer[(high - low) + 1];
+        int j = low;
+        for(int k = 0; k &amp;lt; cache.length; k++)
+            cache[k] = new Integer(j++);
+
+        // range [-128, 127] must be interned (JLS7 5.1.7)
+        assert IntegerCache.high &amp;gt;= 127;
     }
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;简单的说，如果整型字面量的值在-128到127之间，那么不会new新的Integer对象，而是直接引用常量池中的Integer对象，所以上面的面试题中f1==f2的结果是true，而f3==f4的结果是false。
-提醒：越是貌似简单的面试题其中的玄机就越多，需要面试者有相当深厚的功力。&lt;/p&gt;
+    private IntegerCache() {}
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;简单的说，如果整型字面量的值在-128到127之间，那么不会new新的Integer对象，而是直接引用常量池中的Integer对象，所以上面的面试题中f1==f2的结果是true，而f3==f4的结果是false。&lt;/p&gt;
+&lt;p&gt;提醒：越是貌似简单的面试题其中的玄机就越多，需要面试者有相当深厚的功力。&lt;/p&gt;
 &lt;p&gt;8、&amp;amp;和&amp;amp;&amp;amp;的区别？
 答：&amp;amp;运算符有两种用法：(1)按位与；(2)逻辑与。&amp;amp;&amp;amp;运算符是短路与运算。逻辑与跟短路与的差别是非常巨大的，虽然二者都要求运算符左右两端的布尔值都是true整个表达式的值才是true。&amp;amp;&amp;amp;之所以称为短路运算是因为，如果&amp;amp;&amp;amp;左边的表达式的值是false，右边的表达式会被直接短路掉，不会进行运算。很多时候我们可能都需要用&amp;amp;&amp;amp;而不是&amp;amp;，例如在验证用户登录时判定用户名不是null而且不是空字符串，应当写为：username != null &amp;amp;&amp;amp;!username.equals("")，二者的顺序不能交换，更不能用&amp;amp;运算符，因为第一个条件如果不成立，根本不能进行字符串的equals比较，否则会产生NullPointerException异常。注意：逻辑或运算符（|）和短路或运算符（||）的差别也是如此。
 补充：如果你熟悉JavaScript，那你可能更能感受到短路运算的强大，想成为javascript的高手就先从玩转短路运算开始吧。&lt;/p&gt;
@@ -2165,6 +2204,6 @@ public class MyUtil {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;说明：上面的代码中给出了折半查找的两个版本，一个用递归实现，一个用循环实现。需要注意的是计算中间位置时不应该使用(high+ low) / 2的方式，因为加法运算可能导致整数越界，这里应该使用以下三种方式之一：low + (high - low) / 2或low + (high – low) &amp;gt;&amp;gt; 1或(low + high) &amp;gt;&amp;gt;&amp;gt; 1（&amp;gt;&amp;gt;&amp;gt;是逻辑右移，是不带符号位的右移）&lt;/p&gt;
 &lt;p&gt;来源：&lt;a href="https://www.jianshu.com/p/e3cd3095beb2"&gt;https://www.jianshu.com/p/e3cd3095beb2&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/java-interview-1/" rel="alternate"/><published>2020-01-04T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-2/</id><title>Java面试题2</title><updated>2020-01-04T02:27:45.894863+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
-</content><link href="/archives/java-interview-2/" rel="alternate"/><published>2020-01-05T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-3/</id><title>Java面试题3</title><updated>2020-01-04T02:27:45.894821+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+</content><link href="/archives/java-interview-1/" rel="alternate"/><published>2020-01-04T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-2/</id><title>Java面试题2</title><updated>2020-01-04T02:54:31.267590+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
+</content><link href="/archives/java-interview-2/" rel="alternate"/><published>2020-01-05T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-3/</id><title>Java面试题3</title><updated>2020-01-04T02:54:31.267542+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;L2 Heading&lt;/h2&gt;
 </content><link href="/archives/java-interview-3/" rel="alternate"/><published>2020-01-06T12:00:00+08:06</published></entry></feed>
