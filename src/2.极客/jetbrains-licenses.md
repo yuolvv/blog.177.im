@@ -6,10 +6,11 @@ date: 2020-01-03 12:00
 status: publish
 author: 177
 categories: 
-  - IDE
+  - 极客
 tags:
   - Jetbrains
   - IT
+  - IDE
 excerpt: 自己用的jetbrain注册码分享
 ---
 
