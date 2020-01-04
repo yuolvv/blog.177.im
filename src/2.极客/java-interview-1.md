@@ -18,7 +18,7 @@ excerpt: Java面试题收集整理
 
 ## 1、面向对象的特征有哪些方面？
 
-答：面向对象的特征主要有以下几个方面：
+面向对象的特征主要有以下几个方面：
 
 ### （1）抽象：
 
@@ -54,101 +54,142 @@ excerpt: Java面试题收集整理
 
 运行时的多态是面向对象最精髓的东西，要实现多态需要做两件事：1). 方法重写（子类继承父类并重写父类中已有的或抽象的方法）；2). 对象造型（用父类型引用引用子类型对象，这样同样的引用调用同样的方法就会根据子类对象的不同而表现出不同的行为）。
 
-2、访问修饰符public,private,protected,以及不写（默认）时的区别？
-答：
-修饰符 	当前类 	同包 	子类 	其他包
-public 	√ 	√ 	√ 	√
-protected 	√ 	√ 	√ 	×
-default 	√ 	√ 	× 	×
-private 	√ 	× 	× 	×
+## 2、访问修饰符public,private,protected,以及不写（默认）时的区别？
 
-类的成员不写访问修饰时默认为default。默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。Java中，外部类的修饰符只能是public或默认，类的成员（包括内部类）的修饰符可以是以上四种。
-3、String 是最基本的数据类型吗？
-答：不是。Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean；除了基本类型（primitive type），剩下的都是引用类型（reference type），Java 5以后引入的枚举类型也算是一种比较特殊的引用类型。
-4、float f=3.4;是否正确？
-答:不正确。3.4是双精度数，将双精度型（double）赋值给浮点型（float）属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换float f =(float)3.4; 或者写成float f =3.4F;。
-5、short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？
-答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。而short s1 = 1; s1 += 1;可以正确编译，因为s1+= 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。
-6、Java有没有goto？
+| 修饰符 | 当前类 | 同包 | 子类 | 其他包 |
+| :------ | :------: | :------: | :------: | :------: |
+| public | √ | √ | √ | √ |
+| protected | √ | √ | √ | × |
+| default | √ | √ | × | × |
+| private | √ | × | × | × |
+
+类的成员不写访问修饰时默认为default。
+
+默认对于同一个包中的其他类相当于公开（public），对于不是同一个包中的其他类相当于私有（private）。
+
+受保护（protected）对子类相当于公开，对不是同一包中的没有父子关系的类相当于私有。
+
+Java中，外部类的修饰符只能是public或默认，类的成员（包括内部类）的修饰符可以是以上四种。
+
+## 3、String 是最基本的数据类型吗？
+
+答：不是。
+
+Java中的基本数据类型只有8个：byte、short、int、long、float、double、char、boolean；
+
+除了基本类型（primitive type），剩下的都是引用类型（reference type），Java 5以后引入的枚举类型也算是一种比较特殊的引用类型。
+
+## 4、float f=3.4;是否正确？
+
+答:不正确。
+
+3.4是双精度数，将双精度型（double,8个字节）赋值给浮点型（float,4个字节）属于下转型（down-casting，也称为窄化）会造成精度损失，因此需要强制类型转换float f =(float)3.4; 或者写成float f =3.4F;。
+
+## 5、short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？
+
+答：对于short s1 = 1; s1 = s1 + 1;由于1是int类型，因此s1+1运算结果也是int 型，需要强制转换类型才能赋值给short型。
+
+而short s1 = 1; s1 += 1;可以正确编译，因为s1 += 1;相当于s1 = (short)(s1 + 1);其中有隐含的强制类型转换。
+
+## 6、Java有没有goto？
+
 答：goto 是Java中的保留字，在目前版本的Java中没有使用。（根据James Gosling（Java之父）编写的《The Java Programming Language》一书的附录中给出了一个Java关键字列表，其中有goto和const，但是这两个是目前无法使用的关键字，因此有些地方将其称之为保留字，其实保留字这个词应该有更广泛的意义，因为熟悉C语言的程序员都知道，在系统类库中使用过的有特殊意义的单词或单词的组合都被视为保留字）
-7、int和Integer有什么区别？
-答：Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。Java 为每个原始类型提供了包装类型：- 原始类型: boolean，char，byte，short，int，long，float，double- 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double
 
-    class AutoUnboxingTest { 
-        public static void main(String[] args) { 
-            Integer a = new Integer(3); Integer b = 3; // 将3自动装箱成Integer类型 
-            int c = 3; 
-            System.out.println(a == b); // false 两个引用没有引用同一对象 
-            System.out.println(a == c); // true a自动拆箱成int类型再和c比较 
-         }
+### 7、int和Integer有什么区别？
+
+答：Java是一个近乎纯洁的面向对象编程语言，但是为了编程的方便还是引入了基本数据类型，但是为了能够将这些基本数据类型当成对象操作，Java为每一个基本数据类型都引入了对应的包装类型（wrapper class），int的包装类就是Integer，从Java 5开始引入了自动装箱/拆箱机制，使得二者可以相互转换。
+
+Java 为每个原始类型提供了包装类型：
+
+- 原始类型: boolean，char，byte，short，int，long，float，double
+- 包装类型：Boolean，Character，Byte，Short，Integer，Long，Float，Double
+
+```
+class AutoUnboxingTest { 
+    public static void main(String[] args) { 
+        Integer a = new Integer(3); Integer b = 3; // 将3自动装箱成Integer类型 
+        int c = 3; 
+        System.out.println(a == b); // false 两个引用没有引用同一对象 
+        System.out.println(a == c); // true a自动拆箱成int类型再和c比较 
     }
+}
+```
 
 最近还遇到一个面试题，也是和自动装箱和拆箱有点关系的，代码如下所示：
 
-    public class Test03 { 
-      public static void main(String[] args) { 
+```
+public class Test03 { 
+    public static void main(String[] args) { 
         Integer f1 = 100, f2 = 100, f3 = 150, f4 = 150; 
         System.out.println(f1 == f2); 
         System.out.println(f3 == f4); 
-      }
     }
+}
+```
 
-如果不明就里很容易认为两个输出要么都是true要么都是false。首先需要注意的是f1、f2、f3、f4四个变量都是Integer对象引用，所以下面的==运算比较的不是值而是引用。装箱的本质是什么呢？当我们给一个Integer对象赋一个int值的时候，会调用Integer类的静态方法valueOf，如果看看valueOf的源代码就知道发生了什么。
+如果不明就里很容易认为两个输出要么都是true要么都是false。首先需要注意的是f1、f2、f3、f4四个变量都是Integer对象引用，所以下面的==运算比较的不是值而是引用。
 
-        public static Integer valueOf(int i) {
-            if (i >= IntegerCache.low && i <= IntegerCache.high)
-                return IntegerCache.cache[i + (-IntegerCache.low)];
-            return new Integer(i);
-        }
+装箱的本质是什么呢？当我们给一个Integer对象赋一个int值的时候，会调用Integer类的静态方法valueOf，如果看看valueOf的源代码就知道发生了什么。
+
+```
+public static Integer valueOf(int i) {
+    if (i >= IntegerCache.low && i <= IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+}
+```
 
 IntegerCache是Integer的内部类，其代码如下所示：
 
-    /**
-         * Cache to support the object identity semantics of autoboxing for values between
-         * -128 and 127 (inclusive) as required by JLS.
-         *
-         * The cache is initialized on first usage.  The size of the cache
-         * may be controlled by the {@code -XX:AutoBoxCacheMax=<size>} option.
-         * During VM initialization, java.lang.Integer.IntegerCache.high property
-         * may be set and saved in the private system properties in the
-         * sun.misc.VM class.
-         */
+```
+/**
+* Cache to support the object identity semantics of autoboxing for values between
+* -128 and 127 (inclusive) as required by JLS.
+*
+* The cache is initialized on first usage.  The size of the cache
+* may be controlled by the {@code -XX:AutoBoxCacheMax=<size>} option.
+* During VM initialization, java.lang.Integer.IntegerCache.high property
+* may be set and saved in the private system properties in the
+* sun.misc.VM class.
+*/
 
-        private static class IntegerCache {
-            static final int low = -128;
-            static final int high;
-            static final Integer cache[];
+private static class IntegerCache {
+    static final int low = -128;
+    static final int high;
+    static final Integer cache[];
 
-            static {
-                // high value may be configured by property
-                int h = 127;
-                String integerCacheHighPropValue =
-                    sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
-                if (integerCacheHighPropValue != null) {
-                    try {
-                        int i = parseInt(integerCacheHighPropValue);
-                        i = Math.max(i, 127);
-                        // Maximum array size is Integer.MAX_VALUE
-                        h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
-                    } catch( NumberFormatException nfe) {
-                        // If the property cannot be parsed into an int, ignore it.
-                    }
-                }
-                high = h;
-
-                cache = new Integer[(high - low) + 1];
-                int j = low;
-                for(int k = 0; k < cache.length; k++)
-                    cache[k] = new Integer(j++);
-
-                // range [-128, 127] must be interned (JLS7 5.1.7)
-                assert IntegerCache.high >= 127;
+    static {
+        // high value may be configured by property
+        int h = 127;
+        String integerCacheHighPropValue =
+            sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high");
+        if (integerCacheHighPropValue != null) {
+            try {
+                int i = parseInt(integerCacheHighPropValue);
+                i = Math.max(i, 127);
+                // Maximum array size is Integer.MAX_VALUE
+                h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
+            } catch( NumberFormatException nfe) {
+                // If the property cannot be parsed into an int, ignore it.
             }
-
-            private IntegerCache() {}
         }
+        high = h;
+
+        cache = new Integer[(high - low) + 1];
+        int j = low;
+        for(int k = 0; k < cache.length; k++)
+            cache[k] = new Integer(j++);
+
+        // range [-128, 127] must be interned (JLS7 5.1.7)
+        assert IntegerCache.high >= 127;
+    }
+
+    private IntegerCache() {}
+}
+```
 
 简单的说，如果整型字面量的值在-128到127之间，那么不会new新的Integer对象，而是直接引用常量池中的Integer对象，所以上面的面试题中f1==f2的结果是true，而f3==f4的结果是false。
+
 提醒：越是貌似简单的面试题其中的玄机就越多，需要面试者有相当深厚的功力。
 
 8、&和&&的区别？
