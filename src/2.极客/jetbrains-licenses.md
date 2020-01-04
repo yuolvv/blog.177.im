@@ -14,7 +14,7 @@ tags:
 excerpt: 自己用的jetbrain注册码分享
 ---
 
-[notice]注册码一般都是有期限的，如果失效，请联系博主[/notice]
+[notice]注册码一般都是有期限的，如果失效，请联系博主（发邮件：注明Jetbrains注册码即可）[/notice]
 
 ## 2020年01月03日更新
 
