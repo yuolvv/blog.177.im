@@ -21,6 +21,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
     <url>
+        <loc>/archives/jetbrains-licenses/</loc>
+        <lastmod>2020-01-03</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>/archives/locate-java-oom/</loc>
         <lastmod>2020-01-02</lastmod>
         <changefreq>always</changefreq>
