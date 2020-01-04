@@ -2,11 +2,11 @@
 layout: post
 title: Hello World!
 slug: typography
-date: 2019-12-18 16:50
+date: 2020-01-01 12:00
 status: publish
-author: AlanDecode
+author: 177
 categories: 
-  - Maverick
+  - 极客
 tags:
   - Design
   - Typography
