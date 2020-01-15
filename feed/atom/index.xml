@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-01-10T06:27:28.825408+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="http://lkiesow.github.io/python-feedgen" version="0.8.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/helloworld/</id><title>Hello World!</title><updated>2020-01-10T06:27:28.825615+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; 2020 Start !&lt;/div&gt;&lt;h3&gt;The Next is New&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-01-15T08:41:48.791817+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="http://lkiesow.github.io/python-feedgen" version="0.8.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/helloworld/</id><title>Hello World!</title><updated>2020-01-15T08:41:48.792113+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; 2020 Start !&lt;/div&gt;&lt;h3&gt;The Next is New&lt;/h3&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.SkyIslands_ZH-CN6229467399_1920x1080.jpg" alt="图森附近索诺兰沙漠中的巨柱仙人掌，亚利桑那州 (© Jack Dykinga/Minden Pictures)" /&gt;&lt;figcaption&gt;图森附近索诺兰沙漠中的巨柱仙人掌，亚利桑那州 (© Jack Dykinga/Minden Pictures)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h3&gt;Photoset&lt;/h3&gt;
 &lt;div class="photos"&gt;
@@ -8,7 +8,7 @@
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.FrozenTree_ZH-CN9591258534_1920x1080.jpg" alt="池塘边结了冰的树 (© Philippe Sainte-Laudy Photography/Getty Images)" /&gt;&lt;figcaption&gt;池塘边结了冰的树 (© Philippe Sainte-Laudy Photography/Getty Images)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;&lt;div class="photos"&gt;
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.SloveniaAlps_ZH-CN6052706424_1920x1080.jpg" alt="位于Praprotno村之上的圣托马斯教堂 (© Guy Edwardes/Minden Pictures)" /&gt;&lt;figcaption&gt;位于Praprotno村之上的圣托马斯教堂 (© Guy Edwardes/Minden Pictures)&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.WarsawXmas_ZH-CN5981724395_1920x1080.jpg" alt="华沙的圣诞节日装饰，波兰 (© David Milsen/Alamy)" /&gt;&lt;figcaption&gt;华沙的圣诞节日装饰，波兰 (© David Milsen/Alamy)&lt;/figcaption&gt;&lt;/figure&gt;
-&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.ReindeerNorway_ZH-CN5913190372_1920x1080.jpg" alt="挪威的一群驯鹿 (© Lena Granefelt/plainpicture)" /&gt;&lt;figcaption&gt;挪威的一群驯鹿 (© Lena Granefelt/plainpicture)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;</content><link href="/archives/helloworld/" rel="alternate"/><published>2020-01-01T00:00:00+08:06</published></entry><entry><id>/archives/fun-docker-images/</id><title>有趣的Docker镜像</title><updated>2020-01-10T06:27:28.825596+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;rastasheep/ubuntu-sshd （带ssh的ubuntu）&lt;/h2&gt;
+&lt;figure class="pswp-item" style="flex: 88.88888888888889" data-width="1920" data-height="1080"&gt;&lt;img src="https://cn.bing.com/th?id=OHR.ReindeerNorway_ZH-CN5913190372_1920x1080.jpg" alt="挪威的一群驯鹿 (© Lena Granefelt/plainpicture)" /&gt;&lt;figcaption&gt;挪威的一群驯鹿 (© Lena Granefelt/plainpicture)&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;</content><link href="/archives/helloworld/" rel="alternate"/><published>2020-01-01T00:00:00+08:06</published></entry><entry><id>/archives/fun-docker-images/</id><title>有趣的Docker镜像</title><updated>2020-01-15T08:41:48.792091+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;rastasheep/ubuntu-sshd （带ssh的ubuntu）&lt;/h2&gt;
 &lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/rastasheep/ubuntu-sshd/"&gt;https://hub.docker.com/r/rastasheep/ubuntu-sshd/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;sudo docker run -d -p 22:22 rastasheep/ubuntu-sshd:16.04&lt;/p&gt;
 &lt;p&gt;用户名、密码为root&lt;/p&gt;
@@ -51,7 +51,7 @@
 &lt;p&gt;地址：&lt;a href="https://hub.docker.com/r/rockmaity/forsaken-mail/"&gt;https://hub.docker.com/r/rockmaity/forsaken-mail/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;docker run --name forsaken-mail -itd -p 25:25 -p 3000:3000 rockmaity/forsaken-mail&lt;/p&gt;
 &lt;p&gt;Browse &lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/fun-docker-images/" rel="alternate"/><published>2020-01-01T18:00:00+08:06</published></entry><entry><id>/archives/docker-image-speedup/</id><title>Docker镜像加速</title><updated>2020-01-10T06:27:28.825578+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;收集的常见的Docker镜像加速地址&lt;/h2&gt;
+</content><link href="/archives/fun-docker-images/" rel="alternate"/><published>2020-01-01T18:00:00+08:06</published></entry><entry><id>/archives/docker-image-speedup/</id><title>Docker镜像加速</title><updated>2020-01-15T08:41:48.792069+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; docker一键安装脚本 ：wget -qO- get.docker.com | sh &lt;/div&gt;&lt;h2&gt;收集的常见的Docker镜像加速地址&lt;/h2&gt;
 &lt;p&gt;"&lt;a href="https://hub-mirror.c.163.com"&gt;https://hub-mirror.c.163.com&lt;/a&gt;"&lt;/p&gt;
 &lt;p&gt;"&lt;a href="https://mirror.ccs.tencentyun.com"&gt;https://mirror.ccs.tencentyun.com&lt;/a&gt;"&lt;/p&gt;
 &lt;p&gt;"&lt;a href="https://reg-mirror.qiniu.co"&gt;https://reg-mirror.qiniu.co&lt;/a&gt;"&lt;/p&gt;
@@ -66,7 +66,7 @@
       "http://hub-mirror.c.163.com"
     ]
 }&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/docker-image-speedup/" rel="alternate"/><published>2020-01-02T08:00:00+08:06</published></entry><entry><id>/archives/locate-java-oom/</id><title>快速定位Java线上内存OOM问题</title><updated>2020-01-10T06:27:28.825559+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的OOM问题，各式各样。&lt;/div&gt;&lt;h2&gt;1、使用top查看PID&lt;/h2&gt;
+</content><link href="/archives/docker-image-speedup/" rel="alternate"/><published>2020-01-02T08:00:00+08:06</published></entry><entry><id>/archives/locate-java-oom/</id><title>快速定位Java线上内存OOM问题</title><updated>2020-01-15T08:41:48.792047+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的OOM问题，各式各样。&lt;/div&gt;&lt;h2&gt;1、使用top查看PID&lt;/h2&gt;
 &lt;h2&gt;2、使用jmap -heap PID 查询JVM内存信息，确认是否是内存本身就分配的不够&lt;/h2&gt;
 &lt;h2&gt;3、使用jmap -histo:live PID | more 查找实例列表中最耗内存的对象&lt;/h2&gt;
 &lt;p&gt;其中按照所占内存排序，分别是实例数，所在内存大小，类名。通过列表可以直观的&lt;/p&gt;
@@ -81,11 +81,11 @@
 &lt;p&gt;ll /proc/${PID}/fd | wc -l&lt;/p&gt;
 &lt;p&gt;ll /proc/${PID}/task | wc -l&lt;/p&gt;
 &lt;p&gt;pstree -p |wc -l&lt;/p&gt;
-</content><link href="/archives/locate-java-oom/" rel="alternate"/><published>2020-01-02T18:00:00+08:06</published></entry><entry><id>/archives/jetbrains-licenses/</id><title>Jetbrains 自用注册码</title><updated>2020-01-10T06:27:28.825541+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;注册码一般都是有期限的，如果失效，请联系博主（发邮件：注明Jetbrains注册码即可）&lt;/div&gt;&lt;h2&gt;2020年01月03日更新&lt;/h2&gt;
+</content><link href="/archives/locate-java-oom/" rel="alternate"/><published>2020-01-02T18:00:00+08:06</published></entry><entry><id>/archives/jetbrains-licenses/</id><title>Jetbrains 自用注册码</title><updated>2020-01-15T08:41:48.792025+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;注册码一般都是有期限的，如果失效，请联系博主（发邮件：注明Jetbrains注册码即可）&lt;/div&gt;&lt;h2&gt;2020年01月03日更新&lt;/h2&gt;
 &lt;p&gt;到期时间  2021-01-04&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;QYYBAC9D3J-eyJsaWNlbnNlSWQiOiJRWVlCQUM5RDNKIiwibGljZW5zZWVOYW1lIjoi6LaF57qnIOeoi+W6j+WRmCIsImFzc2lnbmVlTmFtZSI6IiIsImFzc2lnbmVlRW1haWwiOiIiLCJsaWNlbnNlUmVzdHJpY3Rpb24iOiIiLCJjaGVja0NvbmN1cnJlbnRVc2UiOmZhbHNlLCJwcm9kdWN0cyI6W3siY29kZSI6IklJIiwiZmFsbGJhY2tEYXRlIjoiMjAyMC0wMS0wNCIsInBhaWRVcFRvIjoiMjAyMS0wMS0wMyJ9LHsiY29kZSI6IkFDIiwiZmFsbGJhY2tEYXRlIjoiMjAyMC0wMS0wNCIsInBhaWRVcFRvIjoiMjAyMS0wMS0wMyJ9LHsiY29kZSI6IkRQTiIsImZhbGxiYWNrRGF0ZSI6IjIwMjAtMDEtMDQiLCJwYWlkVXBUbyI6IjIwMjEtMDEtMDMifSx7ImNvZGUiOiJQUyIsImZhbGxiYWNrRGF0ZSI6IjIwMjAtMDEtMDQiLCJwYWlkVXBUbyI6IjIwMjEtMDEtMDMifSx7ImNvZGUiOiJHTyIsImZhbGxiYWNrRGF0ZSI6IjIwMjAtMDEtMDQiLCJwYWlkVXBUbyI6IjIwMjEtMDEtMDMifSx7ImNvZGUiOiJETSIsImZhbGxiYWNrRGF0ZSI6IjIwMjAtMDEtMDQiLCJwYWlkVXBUbyI6IjIwMjEtMDEtMDMifSx7ImNvZGUiOiJDTCIsImZhbGxiYWNrRGF0ZSI6IjIwMjAtMDEtMDQiLCJwYWlkVXBUbyI6IjIwMjEtMDEtMDMifSx7ImNvZGUiOiJSUzAiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiUkMiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiUkQiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiUEMiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiUk0iLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiV1MiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiREIiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiREMiLCJmYWxsYmFja0RhdGUiOiIyMDIwLTAxLTA0IiwicGFpZFVwVG8iOiIyMDIxLTAxLTAzIn0seyJjb2RlIjoiUlNVIiwiZmFsbGJhY2tEYXRlIjoiMjAyMC0wMS0wNCIsInBhaWRVcFRvIjoiMjAyMS0wMS0wMyJ9XSwiaGFzaCI6IjE2MDgwOTA5LzAiLCJncmFjZVBlcmlvZERheXMiOjcsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-I7c5mu4hUCMxcldrwZEJMaT+qkrzrF1bjJi0i5QHcrRxk2LO0jqzUe2fBOUR4L+x+7n6kCwAoBBODm9wXst8dWLXdq179EtjU3rfJENr1wXGgtef//FNow+Id5iRufJ4W+p+3s5959GSFibl35YtbELELuCUH2IbCRly0PUBjitgA0r2y+9jV5YD/dmrd/p4C87MccC74NxtQfRdeUEGx87vnhsqTFH/sP4C2VljSo/F/Ft9JqsSlGfwSKjzU8BreYt1QleosdMnMK7a+fkfxh7n5zg4DskdVlNbfe6jvYgMVE16DMXd6F1Zhwq+lrmewJA2jPToc+H5304rcJfa9w==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/jetbrains-licenses/" rel="alternate"/><published>2020-01-03T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-1/</id><title>Java面试题1</title><updated>2020-01-10T06:27:28.825522+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、面向对象的特征有哪些方面？&lt;/h2&gt;
+</content><link href="/archives/jetbrains-licenses/" rel="alternate"/><published>2020-01-03T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-1/</id><title>Java面试题1</title><updated>2020-01-15T08:41:48.792003+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、面向对象的特征有哪些方面？&lt;/h2&gt;
 &lt;p&gt;面向对象的特征主要有以下几个方面：&lt;/p&gt;
 &lt;h3&gt;（1）抽象：&lt;/h3&gt;
 &lt;p&gt;抽象是将一类对象的共同特征总结出来构造类的过程，包括数据抽象和行为抽象两方面。&lt;/p&gt;
@@ -2512,7 +2512,7 @@ SecurityException （安全异常）
     }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;说明：上面的代码中给出了折半查找的两个版本，一个用递归实现，一个用循环实现。需要注意的是计算中间位置时不应该使用(high+ low) / 2的方式，因为加法运算可能导致整数越界，这里应该使用以下三种方式之一：low + (high - low) / 2或low + (high – low) &amp;gt;&amp;gt; 1或(low + high) &amp;gt;&amp;gt;&amp;gt; 1（&amp;gt;&amp;gt;&amp;gt;是逻辑右移，是不带符号位的右移）&lt;/p&gt;
 &lt;p&gt;来源：&lt;a href="https://blog.csdn.net/jackfrued/article/details/44921941"&gt;https://blog.csdn.net/jackfrued/article/details/44921941&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/java-interview-1/" rel="alternate"/><published>2020-01-04T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-2/</id><title>Java面试题2</title><updated>2020-01-10T06:27:28.825500+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h1&gt;这部分主要是与Java Web和Web Service相关的面试题。&lt;/h1&gt;
+</content><link href="/archives/java-interview-1/" rel="alternate"/><published>2020-01-04T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-2/</id><title>Java面试题2</title><updated>2020-01-15T08:41:48.791980+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h1&gt;这部分主要是与Java Web和Web Service相关的面试题。&lt;/h1&gt;
 &lt;h2&gt;96、阐述Servlet和CGI的区别?&lt;/h2&gt;
 &lt;p&gt;答：Servlet与CGI的区别在于Servlet处于服务器进程中，它通过多线程方式运行其service()方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于Servlet。&lt;/p&gt;
 &lt;p&gt;补充：Sun Microsystems公司在1996年发布Servlet技术就是为了和CGI进行竞争，Servlet是一个特殊的Java程序，一个基于Java的Web应用通常包含一个或多个Servlet类。&lt;/p&gt;
@@ -3361,7 +3361,7 @@ JAX-RS(JSR 311 &amp;amp; JSR 339 &amp;amp; JSR 370)：是Java针对REST（Repres
 &lt;p&gt;答：Java领域的Web Service框架很多，包括Axis2（Axis的升级版本）、Jersey（RESTful的Web Service框架）、CXF（XFire的延续版本）、Hessian、Turmeric、JBoss SOA等，其中绝大多数都是开源框架。&lt;/p&gt;
 &lt;p&gt;提示：面试被问到这类问题的时候一定选择自己用过的最熟悉的作答，如果之前没有了解过就应该在面试前花一些时间了解其中的两个，并比较其优缺点，这样才能在面试时给出一个漂亮的答案。&lt;/p&gt;
 &lt;p&gt;来源：&lt;a href="https://blog.csdn.net/jackfrued/article/details/44931137"&gt;https://blog.csdn.net/jackfrued/article/details/44931137&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/java-interview-2/" rel="alternate"/><published>2020-01-05T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-3/</id><title>Java面试题3</title><updated>2020-01-10T06:27:28.825457+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h1&gt;这部分主要是开源Java EE框架方面的内容，包括hibernate、MyBatis、spring、Spring MVC等&lt;/h1&gt;
+</content><link href="/archives/java-interview-2/" rel="alternate"/><published>2020-01-05T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-3/</id><title>Java面试题3</title><updated>2020-01-15T08:41:48.791957+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h1&gt;这部分主要是开源Java EE框架方面的内容，包括hibernate、MyBatis、spring、Spring MVC等&lt;/h1&gt;
 &lt;p&gt;由于Struts 2已经是明日黄花，在这里就不讨论Struts 2的面试题，如果需要了解相关内容，可以参考我的另一篇文章《Java面试题集（86-115）》。此外，这篇文章还对企业应用架构、大型网站架构和应用服务器优化等内容进行了简单的探讨，这些内容相信对面试会很有帮助。&lt;/p&gt;
 &lt;h2&gt;126、什么是ORM？&lt;/h2&gt;
 &lt;p&gt;答：对象关系映射（Object-Relational Mapping，简称ORM）是一种为了解决程序的面向对象模型与数据库的关系模型互不匹配问题的技术；简单的说，ORM是通过使用描述对象和数据库之间映射的元数据（在Java中可以用XML或者是注解），将程序中的对象自动持久化到关系数据库中或者将关系数据库表中的行转换成Java对象，其本质上就是将数据从一种形式转换到另外一种形式。&lt;/p&gt;
@@ -3526,7 +3526,6 @@ list()方法不会引起N+1查询问题，而iterate()方法可能引起N+1查�
 &lt;h2&gt;142、@OneToMany注解的mappedBy属性有什么作用？&lt;/h2&gt;
 &lt;p&gt;答：@OneToMany用来配置一对多关联映射，但通常情况下，一对多关联映射都由多的一方来维护关联关系，例如学生和班级，应该在学生类中添加班级属性来维持学生和班级的关联关系（在数据库中是由学生表中的外键班级编号来维护学生表和班级表的多对一关系），如果要使用双向关联，在班级类中添加一个容器属性来存放学生，并使用@OneToMany注解进行映射，此时mappedBy属性就非常重要。如果使用XML进行配置，可以用标签的inverse="true"设置来达到同样的效果。&lt;/p&gt;
 &lt;h2&gt;143、MyBatis中使用#和$书写占位符有什么区别？&lt;/h2&gt;
-&lt;p&gt;答：&lt;/p&gt;
 &lt;h1&gt;占位符-将传入的数据都当成一个字符串，会对传入的数据自动加上引号；&lt;/h1&gt;
 &lt;p&gt;$占位符-将传入的数据直接显示生成在SQL中。&lt;/p&gt;
 &lt;p&gt;注意：使用$占位符可能会导致SQL注射攻击，能用#的地方就不要使用$，写order by子句的时候应该用$，而不是#。&lt;/p&gt;
@@ -3803,8 +3802,6 @@ autodetect：如果有默认的构造器，则通过constructor的方式进行�
 &lt;p&gt;答：Spring支持编程式事务管理和声明式事务管理。许多Spring框架的用户选择声明式事务管理，因为这种方式和应用程序的关联较少，因此更加符合轻量级容器的概念。声明式事务管理要优于编程式事务管理，尽管在灵活性方面它弱于编程式事务管理，因为编程式事务允许你通过代码控制业务。&lt;/p&gt;
 &lt;p&gt;事务分为全局事务和局部事务。全局事务由应用服务器管理，需要底层服务器JTA支持（如WebLogic、WildFly等）。局部事务和底层采用的持久化方案有关，例如使用JDBC进行持久化时，需要使用Connetion对象来操作事务；而采用Hibernate进行持久化时，需要使用Session对象来操作事务。&lt;/p&gt;
 &lt;p&gt;Spring提供了如下所示的事务管理器:&lt;/p&gt;
-&lt;p&gt;JtaTransactionManager   使用JTA管理事务
-PersistenceBrokerTransactionManager     管理Apache的OJB事务&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
 &lt;th style="text-align:center"&gt;事务管理器实现类&lt;/th&gt;
@@ -3825,1250 +3822,1273 @@ PersistenceBrokerTransactionManager     管理Apache的OJB事务&lt;/p&gt;
 &lt;td style="text-align:center"&gt;管理JDO事务&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align:center"&gt;HibernateTransactionManager&lt;/td&gt;
-&lt;td style="text-align:center"&gt;注入SessionFactory&lt;/td&gt;
+&lt;td style="text-align:center"&gt;JtaTransactionManager&lt;/td&gt;
+&lt;td style="text-align:center"&gt;使用JTA管理事务&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style="text-align:center"&gt;HibernateTransactionManager&lt;/td&gt;
-&lt;td style="text-align:center"&gt;注入SessionFactory&lt;/td&gt;
+&lt;td style="text-align:center"&gt;PersistenceBrokerTransactionManager&lt;/td&gt;
+&lt;td style="text-align:center"&gt;管理Apache的OJB事务&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;这些事务的父接口都是PlatformTransactionManager。Spring的事务管理机制是一种典型的策略模式，PlatformTransactionManager代表事务管理接口，该接口定义了三个方法，该接口并不知道底层如何管理事务，但是它的实现类必须提供getTransaction()方法（开启事务）、commit()方法（提交事务）、rollback()方法（回滚事务）的多态实现，这样就可以用不同的实现类代表不同的事务管理策略。使用JTA全局事务策略时，需要底层应用服务器支持，而不同的应用服务器所提供的JTA全局事务可能存在细节上的差异，因此实际配置全局事务管理器是可能需要使用JtaTransactionManager的子类，如：WebLogicJtaTransactionManager（Oracle的WebLogic服务器提供）、UowJtaTransactionManager（IBM的WebSphere服务器提供）等。&lt;/p&gt;
+&lt;p&gt;这些事务的父接口都是PlatformTransactionManager。&lt;/p&gt;
+&lt;p&gt;Spring的事务管理机制是一种典型的策略模式，PlatformTransactionManager代表事务管理接口，该接口定义了三个方法，该接口并不知道底层如何管理事务，但是它的实现类必须提供getTransaction()方法（开启事务）、commit()方法（提交事务）、rollback()方法（回滚事务）的多态实现，这样就可以用不同的实现类代表不同的事务管理策略。&lt;/p&gt;
+&lt;p&gt;使用JTA全局事务策略时，需要底层应用服务器支持，而不同的应用服务器所提供的JTA全局事务可能存在细节上的差异，因此实际配置全局事务管理器是可能需要使用JtaTransactionManager的子类，如：WebLogicJtaTransactionManager（Oracle的WebLogic服务器提供）、UowJtaTransactionManager（IBM的WebSphere服务器提供）等。&lt;/p&gt;
 &lt;p&gt;编程式事务管理如下所示。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
- &amp;lt;beans xmlns="http://www.springframework.org/schema/beans"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:p="http://www.springframework.org/schema/context"
-     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"&amp;gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
+     &amp;lt;beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:p="http://www.springframework.org/schema/context"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"&amp;gt;
 
-     &amp;lt;context:component-scan base-package="com.jackfrued"/&amp;gt;
+         &amp;lt;context:component-scan base-package="com.jackfrued"/&amp;gt;
 
-     &amp;lt;bean id="propertyConfig"
-         class="org.springframework.beans.factory.config.
-  PropertyPlaceholderConfigurer"&amp;gt;
-         &amp;lt;property name="location"&amp;gt;
-             &amp;lt;value&amp;gt;jdbc.properties&amp;lt;/value&amp;gt;
-         &amp;lt;/property&amp;gt;
-     &amp;lt;/bean&amp;gt;
+         &amp;lt;bean id="propertyConfig"
+             class="org.springframework.beans.factory.config.
+      PropertyPlaceholderConfigurer"&amp;gt;
+             &amp;lt;property name="location"&amp;gt;
+                 &amp;lt;value&amp;gt;jdbc.properties&amp;lt;/value&amp;gt;
+             &amp;lt;/property&amp;gt;
+         &amp;lt;/bean&amp;gt;
 
-     &amp;lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"&amp;gt;
-         &amp;lt;property name="driverClassName"&amp;gt;
-             &amp;lt;value&amp;gt;${db.driver}&amp;lt;/value&amp;gt;
-         &amp;lt;/property&amp;gt;
-         &amp;lt;property name="url"&amp;gt;
-             &amp;lt;value&amp;gt;${db.url}&amp;lt;/value&amp;gt;
-         &amp;lt;/property&amp;gt;
-         &amp;lt;property name="username"&amp;gt;
-             &amp;lt;value&amp;gt;${db.username}&amp;lt;/value&amp;gt;
-         &amp;lt;/property&amp;gt;
-         &amp;lt;property name="password"&amp;gt;
-             &amp;lt;value&amp;gt;${db.password}&amp;lt;/value&amp;gt;
-         &amp;lt;/property&amp;gt;
-     &amp;lt;/bean&amp;gt;
+         &amp;lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"&amp;gt;
+             &amp;lt;property name="driverClassName"&amp;gt;
+                 &amp;lt;value&amp;gt;${db.driver}&amp;lt;/value&amp;gt;
+             &amp;lt;/property&amp;gt;
+             &amp;lt;property name="url"&amp;gt;
+                 &amp;lt;value&amp;gt;${db.url}&amp;lt;/value&amp;gt;
+             &amp;lt;/property&amp;gt;
+             &amp;lt;property name="username"&amp;gt;
+                 &amp;lt;value&amp;gt;${db.username}&amp;lt;/value&amp;gt;
+             &amp;lt;/property&amp;gt;
+             &amp;lt;property name="password"&amp;gt;
+                 &amp;lt;value&amp;gt;${db.password}&amp;lt;/value&amp;gt;
+             &amp;lt;/property&amp;gt;
+         &amp;lt;/bean&amp;gt;
 
-     &amp;lt;bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"&amp;gt;
-         &amp;lt;property name="dataSource"&amp;gt;
-             &amp;lt;ref bean="dataSource" /&amp;gt;
-         &amp;lt;/property&amp;gt;
-     &amp;lt;/bean&amp;gt;
+         &amp;lt;bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"&amp;gt;
+             &amp;lt;property name="dataSource"&amp;gt;
+                 &amp;lt;ref bean="dataSource" /&amp;gt;
+             &amp;lt;/property&amp;gt;
+         &amp;lt;/bean&amp;gt;
 
-     &amp;lt;!-- JDBC事务管理器 --&amp;gt;
-     &amp;lt;bean id="transactionManager"
-         class="org.springframework.jdbc.datasource.
-       DataSourceTransactionManager"　scope="singleton"&amp;gt;
-         &amp;lt;property name="dataSource"&amp;gt;
-             &amp;lt;ref bean="dataSource" /&amp;gt;
-         &amp;lt;/property&amp;gt;
-     &amp;lt;/bean&amp;gt;
+         &amp;lt;!-- JDBC事务管理器 --&amp;gt;
+         &amp;lt;bean id="transactionManager"
+             class="org.springframework.jdbc.datasource.
+           DataSourceTransactionManager"　scope="singleton"&amp;gt;
+             &amp;lt;property name="dataSource"&amp;gt;
+                 &amp;lt;ref bean="dataSource" /&amp;gt;
+             &amp;lt;/property&amp;gt;
+         &amp;lt;/bean&amp;gt;
 
-     &amp;lt;!-- 声明事务模板 --&amp;gt;
-     &amp;lt;bean id="transactionTemplate"
-         class="org.springframework.transaction.support.
-   TransactionTemplate"&amp;gt;
-         &amp;lt;property name="transactionManager"&amp;gt;
-             &amp;lt;ref bean="transactionManager" /&amp;gt;
-         &amp;lt;/property&amp;gt;
-     &amp;lt;/bean&amp;gt;
+         &amp;lt;!-- 声明事务模板 --&amp;gt;
+         &amp;lt;bean id="transactionTemplate"
+             class="org.springframework.transaction.support.
+       TransactionTemplate"&amp;gt;
+             &amp;lt;property name="transactionManager"&amp;gt;
+                 &amp;lt;ref bean="transactionManager" /&amp;gt;
+             &amp;lt;/property&amp;gt;
+         &amp;lt;/bean&amp;gt;
 
-&amp;lt;/beans&amp;gt;
+    &amp;lt;/beans&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 
-package com.jackfrued.dao.impl;
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.dao.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.jackfrued.dao.EmpDao;
-import com.jackfrued.entity.Emp;
+    import com.jackfrued.dao.EmpDao;
+    import com.jackfrued.entity.Emp;
 
-@Repository
-public class EmpDaoImpl implements EmpDao {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    @Repository
+    public class EmpDaoImpl implements EmpDao {
+        @Autowired
+        private JdbcTemplate jdbcTemplate;
 
-    @Override
-    public boolean save(Emp emp) {
-        String sql = "insert into emp values (?,?,?)";
-        return jdbcTemplate.update(sql, emp.getId(), emp.getName(), emp.getBirthday()) == 1;
-    }
+        @Override
+        public boolean save(Emp emp) {
+            String sql = "insert into emp values (?,?,?)";
+            return jdbcTemplate.update(sql, emp.getId(), emp.getName(), emp.getBirthday()) == 1;
+        }
 
-}
+    }&lt;/code&gt;&lt;/pre&gt;
 
-package com.jackfrued.biz.impl;
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.biz.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.support.TransactionCallbackWithoutResult;
-import org.springframework.transaction.support.TransactionTemplate;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    import org.springframework.transaction.TransactionStatus;
+    import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+    import org.springframework.transaction.support.TransactionTemplate;
 
-import com.jackfrued.biz.EmpService;
-import com.jackfrued.dao.EmpDao;
-import com.jackfrued.entity.Emp;
+    import com.jackfrued.biz.EmpService;
+    import com.jackfrued.dao.EmpDao;
+    import com.jackfrued.entity.Emp;
 
-@Service
-public class EmpServiceImpl implements EmpService {
-    @Autowired
-    private TransactionTemplate txTemplate;
-    @Autowired
-    private EmpDao empDao;
+    @Service
+    public class EmpServiceImpl implements EmpService {
+        @Autowired
+        private TransactionTemplate txTemplate;
+        @Autowired
+        private EmpDao empDao;
 
-    @Override
-    public void addEmp(final Emp emp) {
-        txTemplate.execute(new TransactionCallbackWithoutResult() {
+        @Override
+        public void addEmp(final Emp emp) {
+            txTemplate.execute(new TransactionCallbackWithoutResult() {
 
-            @Override
-            protected void doInTransactionWithoutResult(TransactionStatus txStatus) {
-                empDao.save(emp);
-            }
-        });
-    }
+                @Override
+                protected void doInTransactionWithoutResult(TransactionStatus txStatus) {
+                    empDao.save(emp);
+                }
+            });
+        }
 
-}
-
-&lt;/code&gt;&lt;/pre&gt;
+    }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;声明式事务如下图所示，以Spring整合Hibernate 3为例，包括完整的DAO和业务逻辑代码。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
-&amp;lt;beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:p="http://www.springframework.org/schema/p"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:aop="http://www.springframework.org/schema/aop" 
-    xmlns:tx="http://www.springframework.org/schema/tx"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-           http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-3.2.xsd
-           http://www.springframework.org/schema/aop
-           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
-           http://www.springframework.org/schema/tx
-           http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"&amp;gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
+    &amp;lt;beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop" 
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+               http://www.springframework.org/schema/context
+               http://www.springframework.org/schema/context/spring-context-3.2.xsd
+               http://www.springframework.org/schema/aop
+               http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+               http://www.springframework.org/schema/tx
+               http://www.springframework.org/schema/tx/spring-tx-3.2.xsd"&amp;gt;
 
-    &amp;lt;!-- 配置由Spring IoC容器托管的对象对应的被注解的类所在的包 --&amp;gt;
-    &amp;lt;context:component-scan base-package="com.jackfrued" /&amp;gt;
+        &amp;lt;!-- 配置由Spring IoC容器托管的对象对应的被注解的类所在的包 --&amp;gt;
+        &amp;lt;context:component-scan base-package="com.jackfrued" /&amp;gt;
 
-    &amp;lt;!-- 配置通过自动生成代理实现AOP功能 --&amp;gt;
-    &amp;lt;aop:aspectj-autoproxy /&amp;gt;
+        &amp;lt;!-- 配置通过自动生成代理实现AOP功能 --&amp;gt;
+        &amp;lt;aop:aspectj-autoproxy /&amp;gt;
 
-    &amp;lt;!-- 配置数据库连接池 (DBCP) --&amp;gt;
-    &amp;lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-        destroy-method="close"&amp;gt;
-        &amp;lt;!-- 配置驱动程序类 --&amp;gt;
-        &amp;lt;property name="driverClassName" value="com.mysql.jdbc.Driver" /&amp;gt;
-        &amp;lt;!-- 配置连接数据库的URL --&amp;gt;
-        &amp;lt;property name="url" value="jdbc:mysql://localhost:3306/myweb" /&amp;gt;
-        &amp;lt;!-- 配置访问数据库的用户名 --&amp;gt;
-        &amp;lt;property name="username" value="root" /&amp;gt;
-        &amp;lt;!-- 配置访问数据库的口令 --&amp;gt;
-        &amp;lt;property name="password" value="123456" /&amp;gt;
-        &amp;lt;!-- 配置最大连接数 --&amp;gt;
-        &amp;lt;property name="maxActive" value="150" /&amp;gt;
-        &amp;lt;!-- 配置最小空闲连接数 --&amp;gt;
-        &amp;lt;property name="minIdle" value="5" /&amp;gt;
-        &amp;lt;!-- 配置最大空闲连接数 --&amp;gt;
-        &amp;lt;property name="maxIdle" value="20" /&amp;gt;
-        &amp;lt;!-- 配置初始连接数 --&amp;gt;
-        &amp;lt;property name="initialSize" value="10" /&amp;gt;
-        &amp;lt;!-- 配置连接被泄露时是否生成日志 --&amp;gt;
-        &amp;lt;property name="logAbandoned" value="true" /&amp;gt;
-        &amp;lt;!-- 配置是否删除超时连接 --&amp;gt;
-        &amp;lt;property name="removeAbandoned" value="true" /&amp;gt;
-        &amp;lt;!-- 配置删除超时连接的超时门限值(以秒为单位) --&amp;gt;
-        &amp;lt;property name="removeAbandonedTimeout" value="120" /&amp;gt;
-        &amp;lt;!-- 配置超时等待时间(以毫秒为单位) --&amp;gt;
-        &amp;lt;property name="maxWait" value="5000" /&amp;gt;
-        &amp;lt;!-- 配置空闲连接回收器线程运行的时间间隔(以毫秒为单位) --&amp;gt;
-        &amp;lt;property name="timeBetweenEvictionRunsMillis" value="300000" /&amp;gt;
-        &amp;lt;!-- 配置连接空闲多长时间后(以毫秒为单位)被断开连接 --&amp;gt;
-        &amp;lt;property name="minEvictableIdleTimeMillis" value="60000" /&amp;gt;
-    &amp;lt;/bean&amp;gt;
+        &amp;lt;!-- 配置数据库连接池 (DBCP) --&amp;gt;
+        &amp;lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+            destroy-method="close"&amp;gt;
+            &amp;lt;!-- 配置驱动程序类 --&amp;gt;
+            &amp;lt;property name="driverClassName" value="com.mysql.jdbc.Driver" /&amp;gt;
+            &amp;lt;!-- 配置连接数据库的URL --&amp;gt;
+            &amp;lt;property name="url" value="jdbc:mysql://localhost:3306/myweb" /&amp;gt;
+            &amp;lt;!-- 配置访问数据库的用户名 --&amp;gt;
+            &amp;lt;property name="username" value="root" /&amp;gt;
+            &amp;lt;!-- 配置访问数据库的口令 --&amp;gt;
+            &amp;lt;property name="password" value="123456" /&amp;gt;
+            &amp;lt;!-- 配置最大连接数 --&amp;gt;
+            &amp;lt;property name="maxActive" value="150" /&amp;gt;
+            &amp;lt;!-- 配置最小空闲连接数 --&amp;gt;
+            &amp;lt;property name="minIdle" value="5" /&amp;gt;
+            &amp;lt;!-- 配置最大空闲连接数 --&amp;gt;
+            &amp;lt;property name="maxIdle" value="20" /&amp;gt;
+            &amp;lt;!-- 配置初始连接数 --&amp;gt;
+            &amp;lt;property name="initialSize" value="10" /&amp;gt;
+            &amp;lt;!-- 配置连接被泄露时是否生成日志 --&amp;gt;
+            &amp;lt;property name="logAbandoned" value="true" /&amp;gt;
+            &amp;lt;!-- 配置是否删除超时连接 --&amp;gt;
+            &amp;lt;property name="removeAbandoned" value="true" /&amp;gt;
+            &amp;lt;!-- 配置删除超时连接的超时门限值(以秒为单位) --&amp;gt;
+            &amp;lt;property name="removeAbandonedTimeout" value="120" /&amp;gt;
+            &amp;lt;!-- 配置超时等待时间(以毫秒为单位) --&amp;gt;
+            &amp;lt;property name="maxWait" value="5000" /&amp;gt;
+            &amp;lt;!-- 配置空闲连接回收器线程运行的时间间隔(以毫秒为单位) --&amp;gt;
+            &amp;lt;property name="timeBetweenEvictionRunsMillis" value="300000" /&amp;gt;
+            &amp;lt;!-- 配置连接空闲多长时间后(以毫秒为单位)被断开连接 --&amp;gt;
+            &amp;lt;property name="minEvictableIdleTimeMillis" value="60000" /&amp;gt;
+        &amp;lt;/bean&amp;gt;
 
-    &amp;lt;!-- 配置Spring提供的支持注解ORM映射的Hibernate会话工厂 --&amp;gt;
-    &amp;lt;bean id="sessionFactory"
-        class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"&amp;gt;
-        &amp;lt;!-- 通过setter注入数据源属性 --&amp;gt;
-        &amp;lt;property name="dataSource" ref="dataSource" /&amp;gt;
-        &amp;lt;!-- 配置实体类所在的包 --&amp;gt;
-        &amp;lt;property name="packagesToScan" value="com.jackfrued.entity" /&amp;gt;
-        &amp;lt;!-- 配置Hibernate的相关属性 --&amp;gt;
-        &amp;lt;property name="hibernateProperties"&amp;gt;
-            &amp;lt;!-- 在项目调试完成后要删除show_sql和format_sql属性否则对性能有显著影响 --&amp;gt;
-            &amp;lt;value&amp;gt;
-                hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-            &amp;lt;/value&amp;gt;
-        &amp;lt;/property&amp;gt;
-    &amp;lt;/bean&amp;gt;
+        &amp;lt;!-- 配置Spring提供的支持注解ORM映射的Hibernate会话工厂 --&amp;gt;
+        &amp;lt;bean id="sessionFactory"
+            class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"&amp;gt;
+            &amp;lt;!-- 通过setter注入数据源属性 --&amp;gt;
+            &amp;lt;property name="dataSource" ref="dataSource" /&amp;gt;
+            &amp;lt;!-- 配置实体类所在的包 --&amp;gt;
+            &amp;lt;property name="packagesToScan" value="com.jackfrued.entity" /&amp;gt;
+            &amp;lt;!-- 配置Hibernate的相关属性 --&amp;gt;
+            &amp;lt;property name="hibernateProperties"&amp;gt;
+                &amp;lt;!-- 在项目调试完成后要删除show_sql和format_sql属性否则对性能有显著影响 --&amp;gt;
+                &amp;lt;value&amp;gt;
+                    hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+                &amp;lt;/value&amp;gt;
+            &amp;lt;/property&amp;gt;
+        &amp;lt;/bean&amp;gt;
 
-    &amp;lt;!-- 配置Spring提供的Hibernate事务管理器 --&amp;gt;
-    &amp;lt;bean id="transactionManager"
-        class="org.springframework.orm.hibernate3.HibernateTransactionManager"&amp;gt;
-        &amp;lt;!-- 通过setter注入Hibernate会话工厂 --&amp;gt;
-        &amp;lt;property name="sessionFactory" ref="sessionFactory" /&amp;gt;
-    &amp;lt;/bean&amp;gt;
+        &amp;lt;!-- 配置Spring提供的Hibernate事务管理器 --&amp;gt;
+        &amp;lt;bean id="transactionManager"
+            class="org.springframework.orm.hibernate3.HibernateTransactionManager"&amp;gt;
+            &amp;lt;!-- 通过setter注入Hibernate会话工厂 --&amp;gt;
+            &amp;lt;property name="sessionFactory" ref="sessionFactory" /&amp;gt;
+        &amp;lt;/bean&amp;gt;
 
-    &amp;lt;!-- 配置基于注解配置声明式事务 --&amp;gt;
-    &amp;lt;tx:annotation-driven /&amp;gt;
+        &amp;lt;!-- 配置基于注解配置声明式事务 --&amp;gt;
+        &amp;lt;tx:annotation-driven /&amp;gt;
 
-&amp;lt;/beans&amp;gt;
+    &amp;lt;/beans&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 
-package com.jackfrued.dao;
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.dao;
 
-import java.io.Serializable;
-import java.util.List;
+    import java.io.Serializable;
+    import java.util.List;
 
-import com.jackfrued.comm.QueryBean;
-import com.jackfrued.comm.QueryResult;
-
-/**
- * 数据访问对象接口(以对象为单位封装CRUD操作)
- * @author 骆昊
- *
- * @param &amp;lt;E&amp;gt; 实体类型
- * @param &amp;lt;K&amp;gt; 实体标识字段的类型
- */
-public interface BaseDao &amp;lt;E, K extends Serializable&amp;gt; {
+    import com.jackfrued.comm.QueryBean;
+    import com.jackfrued.comm.QueryResult;
 
     /**
-     * 新增
-     * @param entity 业务实体对象
-     * @return 增加成功返回实体对象的标识
+     * 数据访问对象接口(以对象为单位封装CRUD操作)
+     * @author 骆昊
+     *
+     * @param &amp;lt;E&amp;gt; 实体类型
+     * @param &amp;lt;K&amp;gt; 实体标识字段的类型
      */
-    public K save(E entity);
+    public interface BaseDao &amp;lt;E, K extends Serializable&amp;gt; {
+
+        /**
+         * 新增
+         * @param entity 业务实体对象
+         * @return 增加成功返回实体对象的标识
+         */
+        public K save(E entity);
+
+        /**
+         * 删除
+         * @param entity 业务实体对象
+         */
+        public void delete(E entity);
+
+        /**
+         * 根据ID删除
+         * @param id 业务实体对象的标识
+         * @return 删除成功返回true否则返回false
+         */
+        public boolean deleteById(K id);
+
+        /**
+         * 修改
+         * @param entity 业务实体对象
+         * @return 修改成功返回true否则返回false
+         */
+        public void update(E entity);
+
+        /**
+         * 根据ID查找业务实体对象
+         * @param id 业务实体对象的标识
+         * @return 业务实体对象对象或null
+         */
+        public E findById(K id);
+
+        /**
+         * 根据ID查找业务实体对象
+         * @param id 业务实体对象的标识
+         * @param lazy 是否使用延迟加载
+         * @return 业务实体对象对象
+         */
+        public E findById(K id, boolean lazy);
+
+        /**
+         * 查找所有业务实体对象
+         * @return 装所有业务实体对象的列表容器
+         */
+        public List&amp;lt;E&amp;gt; findAll();
+
+        /**
+         * 分页查找业务实体对象
+         * @param page 页码
+         * @param size 页面大小
+         * @return 查询结果对象
+         */
+        public QueryResult&amp;lt;E&amp;gt; findByPage(int page, int size);
+
+        /**
+         * 分页查找业务实体对象
+         * @param queryBean 查询条件对象
+         * @param page 页码
+         * @param size 页面大小
+         * @return 查询结果对象
+         */
+        public QueryResult&amp;lt;E&amp;gt; findByPage(QueryBean queryBean, int page, int size);
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.dao;
+
+    import java.io.Serializable;
+    import java.util.List;
+
+    import com.jackfrued.comm.QueryBean;
+    import com.jackfrued.comm.QueryResult;
 
     /**
-     * 删除
-     * @param entity 业务实体对象
+     * BaseDao的缺省适配器
+     * @author 骆昊
+     *
+     * @param &amp;lt;E&amp;gt; 实体类型
+     * @param &amp;lt;K&amp;gt; 实体标识字段的类型
      */
-    public void delete(E entity);
+    public abstract class BaseDaoAdapter&amp;lt;E, K extends Serializable&amp;gt; implements
+            BaseDao&amp;lt;E, K&amp;gt; {
 
-    /**
-     * 根据ID删除
-     * @param id 业务实体对象的标识
-     * @return 删除成功返回true否则返回false
-     */
-    public boolean deleteById(K id);
-
-    /**
-     * 修改
-     * @param entity 业务实体对象
-     * @return 修改成功返回true否则返回false
-     */
-    public void update(E entity);
-
-    /**
-     * 根据ID查找业务实体对象
-     * @param id 业务实体对象的标识
-     * @return 业务实体对象对象或null
-     */
-    public E findById(K id);
-
-    /**
-     * 根据ID查找业务实体对象
-     * @param id 业务实体对象的标识
-     * @param lazy 是否使用延迟加载
-     * @return 业务实体对象对象
-     */
-    public E findById(K id, boolean lazy);
-
-    /**
-     * 查找所有业务实体对象
-     * @return 装所有业务实体对象的列表容器
-     */
-    public List&amp;lt;E&amp;gt; findAll();
-
-    /**
-     * 分页查找业务实体对象
-     * @param page 页码
-     * @param size 页面大小
-     * @return 查询结果对象
-     */
-    public QueryResult&amp;lt;E&amp;gt; findByPage(int page, int size);
-
-    /**
-     * 分页查找业务实体对象
-     * @param queryBean 查询条件对象
-     * @param page 页码
-     * @param size 页面大小
-     * @return 查询结果对象
-     */
-    public QueryResult&amp;lt;E&amp;gt; findByPage(QueryBean queryBean, int page, int size);
-
-}
-
-package com.jackfrued.dao;
-
-import java.io.Serializable;
-import java.util.List;
-
-import com.jackfrued.comm.QueryBean;
-import com.jackfrued.comm.QueryResult;
-
-/**
- * BaseDao的缺省适配器
- * @author 骆昊
- *
- * @param &amp;lt;E&amp;gt; 实体类型
- * @param &amp;lt;K&amp;gt; 实体标识字段的类型
- */
-public abstract class BaseDaoAdapter&amp;lt;E, K extends Serializable&amp;gt; implements
-        BaseDao&amp;lt;E, K&amp;gt; {
-
-    @Override
-    public K save(E entity) {
-        return null;
-    }
-
-    @Override
-    public void delete(E entity) {
-    }
-
-    @Override
-    public boolean deleteById(K id) {
-        E entity = findById(id);
-        if(entity != null) {
-            delete(entity);
-            return true;
+        @Override
+        public K save(E entity) {
+            return null;
         }
-        return false;
-    }
 
-    @Override
-    public void update(E entity) {
-    }
+        @Override
+        public void delete(E entity) {
+        }
 
-    @Override
-    public E findById(K id) {
-        return null;
-    }
+        @Override
+        public boolean deleteById(K id) {
+            E entity = findById(id);
+            if(entity != null) {
+                delete(entity);
+                return true;
+            }
+            return false;
+        }
 
-    @Override
-    public E findById(K id, boolean lazy) {
-        return null;
-    }
+        @Override
+        public void update(E entity) {
+        }
 
-    @Override
-    public List&amp;lt;E&amp;gt; findAll() {
-        return null;
-    }
+        @Override
+        public E findById(K id) {
+            return null;
+        }
 
-    @Override
-    public QueryResult&amp;lt;E&amp;gt; findByPage(int page, int size) {
-        return null;
-    }
+        @Override
+        public E findById(K id, boolean lazy) {
+            return null;
+        }
 
-    @Override
-    public QueryResult&amp;lt;E&amp;gt; findByPage(QueryBean queryBean, int page, int size) {
-        return null;
-    }
+        @Override
+        public List&amp;lt;E&amp;gt; findAll() {
+            return null;
+        }
 
-}
+        @Override
+        public QueryResult&amp;lt;E&amp;gt; findByPage(int page, int size) {
+            return null;
+        }
 
-package com.jackfrued.dao;
+        @Override
+        public QueryResult&amp;lt;E&amp;gt; findByPage(QueryBean queryBean, int page, int size) {
+            return null;
+        }
 
-import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+    }&lt;/code&gt;&lt;/pre&gt;
 
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.dao;
 
-import com.jackfrued.comm.HQLQueryBean;
-import com.jackfrued.comm.QueryBean;
-import com.jackfrued.comm.QueryResult;
+    import java.io.Serializable;
+    import java.lang.reflect.ParameterizedType;
+    import java.util.ArrayList;
+    import java.util.Collections;
+    import java.util.List;
 
-/**
- * 基于Hibernate的BaseDao实现类
- * @author 骆昊
- *
- * @param &amp;lt;E&amp;gt; 实体类型
- * @param &amp;lt;K&amp;gt; 主键类型
- */
-@SuppressWarnings(value = {"unchecked"})
-public abstract class BaseDaoHibernateImpl&amp;lt;E, K extends Serializable&amp;gt; extends BaseDaoAdapter&amp;lt;E, K&amp;gt; {
-    @Autowired
-    protected SessionFactory sessionFactory;
+    import org.hibernate.Query;
+    import org.hibernate.Session;
+    import org.hibernate.SessionFactory;
+    import org.springframework.beans.factory.annotation.Autowired;
 
-    private Class&amp;lt;?&amp;gt; entityClass;       // 业务实体的类对象
-    private String entityName;          // 业务实体的名字
+    import com.jackfrued.comm.HQLQueryBean;
+    import com.jackfrued.comm.QueryBean;
+    import com.jackfrued.comm.QueryResult;
 
-    public BaseDaoHibernateImpl() {
-        ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
-        entityClass = (Class&amp;lt;?&amp;gt;) pt.getActualTypeArguments()[0];
-        entityName = entityClass.getSimpleName();
-    }
+    /**
+     * 基于Hibernate的BaseDao实现类
+     * @author 骆昊
+     *
+     * @param &amp;lt;E&amp;gt; 实体类型
+     * @param &amp;lt;K&amp;gt; 主键类型
+     */
+    @SuppressWarnings(value = {"unchecked"})
+    public abstract class BaseDaoHibernateImpl&amp;lt;E, K extends Serializable&amp;gt; extends BaseDaoAdapter&amp;lt;E, K&amp;gt; {
+        @Autowired
+        protected SessionFactory sessionFactory;
 
-    @Override
-    public K save(E entity) {
-        return (K) sessionFactory.getCurrentSession().save(entity);
-    }
+        private Class&amp;lt;?&amp;gt; entityClass;       // 业务实体的类对象
+        private String entityName;          // 业务实体的名字
 
-    @Override
-    public void delete(E entity) {
-        sessionFactory.getCurrentSession().delete(entity);
-    }
+        public BaseDaoHibernateImpl() {
+            ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
+            entityClass = (Class&amp;lt;?&amp;gt;) pt.getActualTypeArguments()[0];
+            entityName = entityClass.getSimpleName();
+        }
 
-    @Override
-    public void update(E entity) {
-        sessionFactory.getCurrentSession().update(entity);
-    }
+        @Override
+        public K save(E entity) {
+            return (K) sessionFactory.getCurrentSession().save(entity);
+        }
 
-    @Override
-    public E findById(K id) {
-        return findById(id, false);
-    }
+        @Override
+        public void delete(E entity) {
+            sessionFactory.getCurrentSession().delete(entity);
+        }
 
-    @Override
-    public E findById(K id, boolean lazy) {
-        Session session = sessionFactory.getCurrentSession();
-        return (E) (lazy? session.load(entityClass, id) : session.get(entityClass, id));
-    }
+        @Override
+        public void update(E entity) {
+            sessionFactory.getCurrentSession().update(entity);
+        }
 
-    @Override
-    public List&amp;lt;E&amp;gt; findAll() {
-        return sessionFactory.getCurrentSession().createCriteria(entityClass).list();
-    }
+        @Override
+        public E findById(K id) {
+            return findById(id, false);
+        }
 
-    @Override
-    public QueryResult&amp;lt;E&amp;gt; findByPage(int page, int size) {
-        return new QueryResult&amp;lt;E&amp;gt;(
-            findByHQLAndPage("from " + entityName , page, size),
-            getCountByHQL("select count(*) from " + entityName)
-        );
-    }
+        @Override
+        public E findById(K id, boolean lazy) {
+            Session session = sessionFactory.getCurrentSession();
+            return (E) (lazy? session.load(entityClass, id) : session.get(entityClass, id));
+        }
 
-    @Override
-    public QueryResult&amp;lt;E&amp;gt; findByPage(QueryBean queryBean, int page, int size) {
-        if(queryBean instanceof HQLQueryBean) {
-            HQLQueryBean hqlQueryBean = (HQLQueryBean) queryBean;
+        @Override
+        public List&amp;lt;E&amp;gt; findAll() {
+            return sessionFactory.getCurrentSession().createCriteria(entityClass).list();
+        }
+
+        @Override
+        public QueryResult&amp;lt;E&amp;gt; findByPage(int page, int size) {
             return new QueryResult&amp;lt;E&amp;gt;(
-                findByHQLAndPage(hqlQueryBean.getQueryString(), page, size, hqlQueryBean.getParameters()),
-                getCountByHQL(hqlQueryBean.getCountString(), hqlQueryBean.getParameters())
+                findByHQLAndPage("from " + entityName , page, size),
+                getCountByHQL("select count(*) from " + entityName)
             );
         }
-        return null;
-    }
 
-    /**
-     * 根据HQL和可变参数列表进行查询
-     * @param hql 基于HQL的查询语句
-     * @param params 可变参数列表
-     * @return 持有查询结果的列表容器或空列表容器
-     */
-    protected List&amp;lt;E&amp;gt; findByHQL(String hql, Object... params) {
-        return this.findByHQL(hql, getParamList(params));
-    }
-
-    /**
-     * 根据HQL和参数列表进行查询
-     * @param hql 基于HQL的查询语句
-     * @param params 查询参数列表
-     * @return 持有查询结果的列表容器或空列表容器
-     */
-    protected List&amp;lt;E&amp;gt; findByHQL(String hql, List&amp;lt;Object&amp;gt; params) {
-        List&amp;lt;E&amp;gt; list = createQuery(hql, params).list();
-        return list != null &amp;amp;&amp;amp; list.size() &amp;gt; 0 ? list : Collections.EMPTY_LIST;
-    }
-
-    /**
-     * 根据HQL和参数列表进行分页查询
-     * @param hql 基于HQL的查询语句
-     * @page 页码
-     * @size 页面大小
-     * @param params 可变参数列表
-     * @return 持有查询结果的列表容器或空列表容器
-     */
-    protected List&amp;lt;E&amp;gt; findByHQLAndPage(String hql, int page, int size, Object... params) {
-        return this.findByHQLAndPage(hql, page, size, getParamList(params));
-    }
-
-    /**
-     * 根据HQL和参数列表进行分页查询
-     * @param hql 基于HQL的查询语句
-     * @page 页码
-     * @size 页面大小
-     * @param params 查询参数列表
-     * @return 持有查询结果的列表容器或空列表容器
-     */
-    protected List&amp;lt;E&amp;gt; findByHQLAndPage(String hql, int page, int size, List&amp;lt;Object&amp;gt; params) {
-        List&amp;lt;E&amp;gt; list = createQuery(hql, params)
-                .setFirstResult((page - 1) * size)
-                .setMaxResults(size)
-                .list();
-        return list != null &amp;amp;&amp;amp; list.size() &amp;gt; 0 ? list : Collections.EMPTY_LIST;
-    }
-
-    /**
-     * 查询满足条件的记录数
-     * @param hql 基于HQL的查询语句
-     * @param params 可变参数列表
-     * @return 满足查询条件的总记录数
-     */
-    protected long getCountByHQL(String hql, Object... params) {
-        return this.getCountByHQL(hql, getParamList(params));
-    }
-
-    /**
-     * 查询满足条件的记录数
-     * @param hql 基于HQL的查询语句
-     * @param params 参数列表容器
-     * @return 满足查询条件的总记录数
-     */
-    protected long getCountByHQL(String hql, List&amp;lt;Object&amp;gt; params) {
-        return (Long) createQuery(hql, params).uniqueResult();
-    }
-
-    // 创建Hibernate查询对象(Query)
-    private Query createQuery(String hql, List&amp;lt;Object&amp;gt; params) {
-        Query query = sessionFactory.getCurrentSession().createQuery(hql);
-        for(int i = 0; i &amp;lt; params.size(); i++) {
-            query.setParameter(i, params.get(i));
+        @Override
+        public QueryResult&amp;lt;E&amp;gt; findByPage(QueryBean queryBean, int page, int size) {
+            if(queryBean instanceof HQLQueryBean) {
+                HQLQueryBean hqlQueryBean = (HQLQueryBean) queryBean;
+                return new QueryResult&amp;lt;E&amp;gt;(
+                    findByHQLAndPage(hqlQueryBean.getQueryString(), page, size, hqlQueryBean.getParameters()),
+                    getCountByHQL(hqlQueryBean.getCountString(), hqlQueryBean.getParameters())
+                );
+            }
+            return null;
         }
-        return query;
-    }
 
-    // 将可变参数列表组装成列表容器
-    private List&amp;lt;Object&amp;gt; getParamList(Object... params) {
-        List&amp;lt;Object&amp;gt; paramList = new ArrayList&amp;lt;&amp;gt;();
-        if(params != null) {
-            for(int i = 0; i &amp;lt; params.length; i++) {
-                paramList.add(params[i]);
+        /**
+         * 根据HQL和可变参数列表进行查询
+         * @param hql 基于HQL的查询语句
+         * @param params 可变参数列表
+         * @return 持有查询结果的列表容器或空列表容器
+         */
+        protected List&amp;lt;E&amp;gt; findByHQL(String hql, Object... params) {
+            return this.findByHQL(hql, getParamList(params));
+        }
+
+        /**
+         * 根据HQL和参数列表进行查询
+         * @param hql 基于HQL的查询语句
+         * @param params 查询参数列表
+         * @return 持有查询结果的列表容器或空列表容器
+         */
+        protected List&amp;lt;E&amp;gt; findByHQL(String hql, List&amp;lt;Object&amp;gt; params) {
+            List&amp;lt;E&amp;gt; list = createQuery(hql, params).list();
+            return list != null &amp;amp;&amp;amp; list.size() &amp;gt; 0 ? list : Collections.EMPTY_LIST;
+        }
+
+        /**
+         * 根据HQL和参数列表进行分页查询
+         * @param hql 基于HQL的查询语句
+         * @page 页码
+         * @size 页面大小
+         * @param params 可变参数列表
+         * @return 持有查询结果的列表容器或空列表容器
+         */
+        protected List&amp;lt;E&amp;gt; findByHQLAndPage(String hql, int page, int size, Object... params) {
+            return this.findByHQLAndPage(hql, page, size, getParamList(params));
+        }
+
+        /**
+         * 根据HQL和参数列表进行分页查询
+         * @param hql 基于HQL的查询语句
+         * @page 页码
+         * @size 页面大小
+         * @param params 查询参数列表
+         * @return 持有查询结果的列表容器或空列表容器
+         */
+        protected List&amp;lt;E&amp;gt; findByHQLAndPage(String hql, int page, int size, List&amp;lt;Object&amp;gt; params) {
+            List&amp;lt;E&amp;gt; list = createQuery(hql, params)
+                    .setFirstResult((page - 1) * size)
+                    .setMaxResults(size)
+                    .list();
+            return list != null &amp;amp;&amp;amp; list.size() &amp;gt; 0 ? list : Collections.EMPTY_LIST;
+        }
+
+        /**
+         * 查询满足条件的记录数
+         * @param hql 基于HQL的查询语句
+         * @param params 可变参数列表
+         * @return 满足查询条件的总记录数
+         */
+        protected long getCountByHQL(String hql, Object... params) {
+            return this.getCountByHQL(hql, getParamList(params));
+        }
+
+        /**
+         * 查询满足条件的记录数
+         * @param hql 基于HQL的查询语句
+         * @param params 参数列表容器
+         * @return 满足查询条件的总记录数
+         */
+        protected long getCountByHQL(String hql, List&amp;lt;Object&amp;gt; params) {
+            return (Long) createQuery(hql, params).uniqueResult();
+        }
+
+        // 创建Hibernate查询对象(Query)
+        private Query createQuery(String hql, List&amp;lt;Object&amp;gt; params) {
+            Query query = sessionFactory.getCurrentSession().createQuery(hql);
+            for(int i = 0; i &amp;lt; params.size(); i++) {
+                query.setParameter(i, params.get(i));
+            }
+            return query;
+        }
+
+        // 将可变参数列表组装成列表容器
+        private List&amp;lt;Object&amp;gt; getParamList(Object... params) {
+            List&amp;lt;Object&amp;gt; paramList = new ArrayList&amp;lt;&amp;gt;();
+            if(params != null) {
+                for(int i = 0; i &amp;lt; params.length; i++) {
+                    paramList.add(params[i]);
+                }
+            }
+            return paramList.size() == 0? Collections.EMPTY_LIST : paramList;
+        }
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.comm;
+
+    import java.util.List;
+
+    /**
+     * 查询条件的接口
+     * @author 骆昊
+     *
+     */
+    public interface QueryBean {
+
+        /**
+         * 添加排序字段
+         * @param fieldName 用于排序的字段
+         * @param asc 升序还是降序
+         * @return 查询条件对象自身(方便级联编程)
+         */
+        public QueryBean addOrder(String fieldName, boolean asc);
+
+        /**
+         * 添加排序字段
+         * @param available 是否添加此排序字段
+         * @param fieldName 用于排序的字段
+         * @param asc 升序还是降序
+         * @return 查询条件对象自身(方便级联编程)
+         */
+        public QueryBean addOrder(boolean available, String fieldName, boolean asc);
+
+        /**
+         * 添加查询条件
+         * @param condition 条件
+         * @param params 替换掉条件中参数占位符的参数
+         * @return 查询条件对象自身(方便级联编程)
+         */
+        public QueryBean addCondition(String condition, Object... params);
+
+        /**
+         * 添加查询条件
+         * @param available 是否需要添加此条件
+         * @param condition 条件
+         * @param params 替换掉条件中参数占位符的参数
+         * @return 查询条件对象自身(方便级联编程)
+         */
+        public QueryBean addCondition(boolean available, String condition, Object... params);
+
+        /**
+         * 获得查询语句
+         * @return 查询语句
+         */
+        public String getQueryString();
+
+        /**
+         * 获取查询记录数的查询语句
+         * @return 查询记录数的查询语句
+         */
+        public String getCountString();
+
+        /**
+         * 获得查询参数
+         * @return 查询参数的列表容器
+         */
+        public List&amp;lt;Object&amp;gt; getParameters();
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.comm;
+
+    import java.util.List;
+
+    /**
+     * 查询结果
+     * @author 骆昊
+     *
+     * @param &amp;lt;T&amp;gt; 泛型参数
+     */
+    public class QueryResult&amp;lt;T&amp;gt; {
+        private List&amp;lt;T&amp;gt; result;     // 持有查询结果的列表容器
+        private long totalRecords;  // 查询到的总记录数
+
+        /**
+         * 构造器
+         */
+        public QueryResult() {
+        }
+
+        /**
+         * 构造器
+         * @param result 持有查询结果的列表容器
+         * @param totalRecords 查询到的总记录数
+         */
+        public QueryResult(List&amp;lt;T&amp;gt; result, long totalRecords) {
+            this.result = result;
+            this.totalRecords = totalRecords;
+        }
+
+        public List&amp;lt;T&amp;gt; getResult() {
+            return result;
+        }
+
+        public void setResult(List&amp;lt;T&amp;gt; result) {
+            this.result = result;
+        }
+
+        public long getTotalRecords() {
+            return totalRecords;
+        }
+
+        public void setTotalRecords(long totalRecords) {
+            this.totalRecords = totalRecords;
+        }
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.dao;
+
+    import com.jackfrued.comm.QueryResult;
+    import com.jackfrued.entity.Dept;
+
+    /**
+     * 部门数据访问对象接口
+     * @author 骆昊
+     *
+     */
+    public interface DeptDao extends BaseDao&amp;lt;Dept, Integer&amp;gt; {
+
+        /**
+         * 分页查询顶级部门
+         * @param page 页码
+         * @param size 页码大小
+         * @return 查询结果对象
+         */
+        public QueryResult&amp;lt;Dept&amp;gt; findTopDeptByPage(int page, int size);
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.dao.impl;
+
+    import java.util.List;
+
+    import org.springframework.stereotype.Repository;
+
+    import com.jackfrued.comm.QueryResult;
+    import com.jackfrued.dao.BaseDaoHibernateImpl;
+    import com.jackfrued.dao.DeptDao;
+    import com.jackfrued.entity.Dept;
+
+    @Repository
+    public class DeptDaoImpl extends BaseDaoHibernateImpl&amp;lt;Dept, Integer&amp;gt; implements DeptDao {
+        private static final String HQL_FIND_TOP_DEPT = " from Dept as d where d.superiorDept is null ";
+
+        @Override
+        public QueryResult&amp;lt;Dept&amp;gt; findTopDeptByPage(int page, int size) {
+            List&amp;lt;Dept&amp;gt; list = findByHQLAndPage(HQL_FIND_TOP_DEPT, page, size);
+            long totalRecords = getCountByHQL(" select count(*) " + HQL_FIND_TOP_DEPT);
+            return new QueryResult&amp;lt;&amp;gt;(list, totalRecords);
+        }
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.comm;
+
+    import java.util.List;
+
+    /**
+     * 分页器
+     * @author 骆昊
+     *
+     * @param &amp;lt;T&amp;gt; 分页数据对象的类型
+     */
+    public class PageBean&amp;lt;T&amp;gt; {
+        private static final int DEFAUL_INIT_PAGE = 1;
+        private static final int DEFAULT_PAGE_SIZE = 10;
+        private static final int DEFAULT_PAGE_COUNT = 5;
+
+        private List&amp;lt;T&amp;gt; data;           // 分页数据
+        private PageRange pageRange;    // 页码范围
+        private int totalPage;          // 总页数
+        private int size;               // 页面大小
+        private int currentPage;        // 当前页码
+        private int pageCount;          // 页码数量
+
+        /**
+         * 构造器
+         * @param currentPage 当前页码
+         * @param size 页码大小
+         * @param pageCount 页码数量
+         */
+        public PageBean(int currentPage, int size, int pageCount) {
+            this.currentPage = currentPage &amp;gt; 0 ? currentPage : 1;
+            this.size = size &amp;gt; 0 ? size : DEFAULT_PAGE_SIZE;
+            this.pageCount = pageCount &amp;gt; 0 ? size : DEFAULT_PAGE_COUNT;
+        }
+
+        /**
+         * 构造器
+         * @param currentPage 当前页码
+         * @param size 页码大小
+         */
+        public PageBean(int currentPage, int size) {
+            this(currentPage, size, DEFAULT_PAGE_COUNT);
+        }
+
+        /**
+         * 构造器
+         * @param currentPage 当前页码
+         */
+        public PageBean(int currentPage) {
+            this(currentPage, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_COUNT);
+        }
+
+        /**
+         * 构造器
+         */
+        public PageBean() {
+            this(DEFAUL_INIT_PAGE, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_COUNT);
+        }
+
+        public List&amp;lt;T&amp;gt; getData() {
+            return data;
+        }
+
+        public int getStartPage() {
+            return pageRange != null ? pageRange.getStartPage() : 1;
+        }
+
+        public int getEndPage() {
+            return pageRange != null ? pageRange.getEndPage() : 1;
+        }
+
+        public long getTotalPage() {
+            return totalPage;
+        }
+
+        public int getSize() {
+            return size;
+        }
+
+        public int getCurrentPage() {
+            return currentPage;
+        }
+
+        /**
+         * 将查询结果转换为分页数据
+         * @param queryResult 查询结果对象
+         */
+        public void transferQueryResult(QueryResult&amp;lt;T&amp;gt; queryResult) {
+            long totalRecords = queryResult.getTotalRecords();
+
+            data = queryResult.getResult();
+            totalPage = (int) ((totalRecords + size - 1) / size); 
+            totalPage = totalPage &amp;gt;= 0 ? totalPage : Integer.MAX_VALUE;
+            this.pageRange = new PageRange(pageCount, currentPage, totalPage);
+        }
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.comm;
+
+    /**
+     * 页码范围
+     * @author 骆昊
+     *
+     */
+    public class PageRange {
+        private int startPage;  // 起始页码
+        private int endPage;    // 终止页码
+
+        /**
+         * 构造器
+         * @param pageCount 总共显示几个页码
+         * @param currentPage 当前页码
+         * @param totalPage 总页数
+         */
+        public PageRange(int pageCount, int currentPage, int totalPage) {
+            startPage = currentPage - (pageCount - 1) / 2;
+            endPage = currentPage + pageCount / 2;
+            if(startPage &amp;lt; 1) {
+                startPage = 1;
+                endPage = totalPage &amp;gt; pageCount ? pageCount : totalPage;
+            }
+            if (endPage &amp;gt; totalPage) {
+                endPage = totalPage;
+                startPage = (endPage - pageCount &amp;gt; 0) ? endPage - pageCount + 1 : 1;
             }
         }
-        return paramList.size() == 0? Collections.EMPTY_LIST : paramList;
-    }
 
-}
-
-package com.jackfrued.comm;
-
-import java.util.List;
-
-/**
- * 查询条件的接口
- * @author 骆昊
- *
- */
-public interface QueryBean {
-
-    /**
-     * 添加排序字段
-     * @param fieldName 用于排序的字段
-     * @param asc 升序还是降序
-     * @return 查询条件对象自身(方便级联编程)
-     */
-    public QueryBean addOrder(String fieldName, boolean asc);
-
-    /**
-     * 添加排序字段
-     * @param available 是否添加此排序字段
-     * @param fieldName 用于排序的字段
-     * @param asc 升序还是降序
-     * @return 查询条件对象自身(方便级联编程)
-     */
-    public QueryBean addOrder(boolean available, String fieldName, boolean asc);
-
-    /**
-     * 添加查询条件
-     * @param condition 条件
-     * @param params 替换掉条件中参数占位符的参数
-     * @return 查询条件对象自身(方便级联编程)
-     */
-    public QueryBean addCondition(String condition, Object... params);
-
-    /**
-     * 添加查询条件
-     * @param available 是否需要添加此条件
-     * @param condition 条件
-     * @param params 替换掉条件中参数占位符的参数
-     * @return 查询条件对象自身(方便级联编程)
-     */
-    public QueryBean addCondition(boolean available, String condition, Object... params);
-
-    /**
-     * 获得查询语句
-     * @return 查询语句
-     */
-    public String getQueryString();
-
-    /**
-     * 获取查询记录数的查询语句
-     * @return 查询记录数的查询语句
-     */
-    public String getCountString();
-
-    /**
-     * 获得查询参数
-     * @return 查询参数的列表容器
-     */
-    public List&amp;lt;Object&amp;gt; getParameters();
-}
-
-package com.jackfrued.comm;
-
-import java.util.List;
-
-/**
- * 查询结果
- * @author 骆昊
- *
- * @param &amp;lt;T&amp;gt; 泛型参数
- */
-public class QueryResult&amp;lt;T&amp;gt; {
-    private List&amp;lt;T&amp;gt; result;     // 持有查询结果的列表容器
-    private long totalRecords;  // 查询到的总记录数
-
-    /**
-     * 构造器
-     */
-    public QueryResult() {
-    }
-
-    /**
-     * 构造器
-     * @param result 持有查询结果的列表容器
-     * @param totalRecords 查询到的总记录数
-     */
-    public QueryResult(List&amp;lt;T&amp;gt; result, long totalRecords) {
-        this.result = result;
-        this.totalRecords = totalRecords;
-    }
-
-    public List&amp;lt;T&amp;gt; getResult() {
-        return result;
-    }
-
-    public void setResult(List&amp;lt;T&amp;gt; result) {
-        this.result = result;
-    }
-
-    public long getTotalRecords() {
-        return totalRecords;
-    }
-
-    public void setTotalRecords(long totalRecords) {
-        this.totalRecords = totalRecords;
-    }
-}
-
-package com.jackfrued.dao;
-
-import com.jackfrued.comm.QueryResult;
-import com.jackfrued.entity.Dept;
-
-/**
- * 部门数据访问对象接口
- * @author 骆昊
- *
- */
-public interface DeptDao extends BaseDao&amp;lt;Dept, Integer&amp;gt; {
-
-    /**
-     * 分页查询顶级部门
-     * @param page 页码
-     * @param size 页码大小
-     * @return 查询结果对象
-     */
-    public QueryResult&amp;lt;Dept&amp;gt; findTopDeptByPage(int page, int size);
-
-}
-
-package com.jackfrued.dao.impl;
-
-import java.util.List;
-
-import org.springframework.stereotype.Repository;
-
-import com.jackfrued.comm.QueryResult;
-import com.jackfrued.dao.BaseDaoHibernateImpl;
-import com.jackfrued.dao.DeptDao;
-import com.jackfrued.entity.Dept;
-
-@Repository
-public class DeptDaoImpl extends BaseDaoHibernateImpl&amp;lt;Dept, Integer&amp;gt; implements DeptDao {
-    private static final String HQL_FIND_TOP_DEPT = " from Dept as d where d.superiorDept is null ";
-
-    @Override
-    public QueryResult&amp;lt;Dept&amp;gt; findTopDeptByPage(int page, int size) {
-        List&amp;lt;Dept&amp;gt; list = findByHQLAndPage(HQL_FIND_TOP_DEPT, page, size);
-        long totalRecords = getCountByHQL(" select count(*) " + HQL_FIND_TOP_DEPT);
-        return new QueryResult&amp;lt;&amp;gt;(list, totalRecords);
-    }
-
-}
-
-package com.jackfrued.comm;
-
-import java.util.List;
-
-/**
- * 分页器
- * @author 骆昊
- *
- * @param &amp;lt;T&amp;gt; 分页数据对象的类型
- */
-public class PageBean&amp;lt;T&amp;gt; {
-    private static final int DEFAUL_INIT_PAGE = 1;
-    private static final int DEFAULT_PAGE_SIZE = 10;
-    private static final int DEFAULT_PAGE_COUNT = 5;
-
-    private List&amp;lt;T&amp;gt; data;           // 分页数据
-    private PageRange pageRange;    // 页码范围
-    private int totalPage;          // 总页数
-    private int size;               // 页面大小
-    private int currentPage;        // 当前页码
-    private int pageCount;          // 页码数量
-
-    /**
-     * 构造器
-     * @param currentPage 当前页码
-     * @param size 页码大小
-     * @param pageCount 页码数量
-     */
-    public PageBean(int currentPage, int size, int pageCount) {
-        this.currentPage = currentPage &amp;gt; 0 ? currentPage : 1;
-        this.size = size &amp;gt; 0 ? size : DEFAULT_PAGE_SIZE;
-        this.pageCount = pageCount &amp;gt; 0 ? size : DEFAULT_PAGE_COUNT;
-    }
-
-    /**
-     * 构造器
-     * @param currentPage 当前页码
-     * @param size 页码大小
-     */
-    public PageBean(int currentPage, int size) {
-        this(currentPage, size, DEFAULT_PAGE_COUNT);
-    }
-
-    /**
-     * 构造器
-     * @param currentPage 当前页码
-     */
-    public PageBean(int currentPage) {
-        this(currentPage, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_COUNT);
-    }
-
-    /**
-     * 构造器
-     */
-    public PageBean() {
-        this(DEFAUL_INIT_PAGE, DEFAULT_PAGE_SIZE, DEFAULT_PAGE_COUNT);
-    }
-
-    public List&amp;lt;T&amp;gt; getData() {
-        return data;
-    }
-
-    public int getStartPage() {
-        return pageRange != null ? pageRange.getStartPage() : 1;
-    }
-
-    public int getEndPage() {
-        return pageRange != null ? pageRange.getEndPage() : 1;
-    }
-
-    public long getTotalPage() {
-        return totalPage;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public int getCurrentPage() {
-        return currentPage;
-    }
-
-    /**
-     * 将查询结果转换为分页数据
-     * @param queryResult 查询结果对象
-     */
-    public void transferQueryResult(QueryResult&amp;lt;T&amp;gt; queryResult) {
-        long totalRecords = queryResult.getTotalRecords();
-
-        data = queryResult.getResult();
-        totalPage = (int) ((totalRecords + size - 1) / size); 
-        totalPage = totalPage &amp;gt;= 0 ? totalPage : Integer.MAX_VALUE;
-        this.pageRange = new PageRange(pageCount, currentPage, totalPage);
-    }
-
-}
-
-package com.jackfrued.comm;
-
-/**
- * 页码范围
- * @author 骆昊
- *
- */
-public class PageRange {
-    private int startPage;  // 起始页码
-    private int endPage;    // 终止页码
-
-    /**
-     * 构造器
-     * @param pageCount 总共显示几个页码
-     * @param currentPage 当前页码
-     * @param totalPage 总页数
-     */
-    public PageRange(int pageCount, int currentPage, int totalPage) {
-        startPage = currentPage - (pageCount - 1) / 2;
-        endPage = currentPage + pageCount / 2;
-        if(startPage &amp;lt; 1) {
-            startPage = 1;
-            endPage = totalPage &amp;gt; pageCount ? pageCount : totalPage;
+        /**
+         * 获得起始页页码
+         * @return 起始页页码
+         */
+        public int getStartPage() {
+            return startPage;
         }
-        if (endPage &amp;gt; totalPage) {
-            endPage = totalPage;
-            startPage = (endPage - pageCount &amp;gt; 0) ? endPage - pageCount + 1 : 1;
+
+        /**
+         * 获得终止页页码
+         * @return 终止页页码
+         */
+        public int getEndPage() {
+            return endPage;
         }
-    }
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.biz;
+
+    import com.jackfrued.comm.PageBean;
+    import com.jackfrued.entity.Dept;
 
     /**
-     * 获得起始页页码
-     * @return 起始页页码
+     * 部门业务逻辑接口
+     * @author 骆昊
+     *
      */
-    public int getStartPage() {
-        return startPage;
-    }
+    public interface DeptService {
 
-    /**
-     * 获得终止页页码
-     * @return 终止页页码
-     */
-    public int getEndPage() {
-        return endPage;
-    }
+        /**
+         * 创建新的部门
+         * @param department 部门对象
+         * @return 创建成功返回true否则返回false
+         */
+        public boolean createNewDepartment(Dept department);
 
-}
+        /**
+         * 删除指定部门
+         * @param id 要删除的部门的编号
+         * @return 删除成功返回true否则返回false
+         */
+        public boolean deleteDepartment(Integer id);
 
-package com.jackfrued.biz;
+        /**
+         * 分页获取顶级部门
+         * @param page 页码
+         * @param size 页码大小
+         * @return 部门对象的分页器对象
+         */
+        public PageBean&amp;lt;Dept&amp;gt; getTopDeptByPage(int page, int size);
 
-import com.jackfrued.comm.PageBean;
-import com.jackfrued.entity.Dept;
+    }&lt;/code&gt;&lt;/pre&gt;
 
-/**
- * 部门业务逻辑接口
- * @author 骆昊
- *
- */
-public interface DeptService {
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.biz.impl;
 
-    /**
-     * 创建新的部门
-     * @param department 部门对象
-     * @return 创建成功返回true否则返回false
-     */
-    public boolean createNewDepartment(Dept department);
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    import org.springframework.transaction.annotation.Transactional;
 
-    /**
-     * 删除指定部门
-     * @param id 要删除的部门的编号
-     * @return 删除成功返回true否则返回false
-     */
-    public boolean deleteDepartment(Integer id);
+    import com.jackfrued.biz.DeptService;
+    import com.jackfrued.comm.PageBean;
+    import com.jackfrued.comm.QueryResult;
+    import com.jackfrued.dao.DeptDao;
+    import com.jackfrued.entity.Dept;
 
-    /**
-     * 分页获取顶级部门
-     * @param page 页码
-     * @param size 页码大小
-     * @return 部门对象的分页器对象
-     */
-    public PageBean&amp;lt;Dept&amp;gt; getTopDeptByPage(int page, int size);
+    @Service
+    @Transactional  // 声明式事务的注解
+    public class DeptServiceImpl implements DeptService {
+        @Autowired
+        private DeptDao deptDao;
 
-}
+        @Override
+        public boolean createNewDepartment(Dept department) {
+            return deptDao.save(department) != null;
+        }
 
-package com.jackfrued.biz.impl;
+        @Override
+        public boolean deleteDepartment(Integer id) {
+            return deptDao.deleteById(id);
+        }
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+        @Override
+        public PageBean&amp;lt;Dept&amp;gt; getTopDeptByPage(int page, int size) {
+            QueryResult&amp;lt;Dept&amp;gt; queryResult = deptDao.findTopDeptByPage(page, size);
+            PageBean&amp;lt;Dept&amp;gt; pageBean = new PageBean&amp;lt;&amp;gt;(page, size);
+            pageBean.transferQueryResult(queryResult);
+            return pageBean;
+        }
 
-import com.jackfrued.biz.DeptService;
-import com.jackfrued.comm.PageBean;
-import com.jackfrued.comm.QueryResult;
-import com.jackfrued.dao.DeptDao;
-import com.jackfrued.entity.Dept;
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;154、如何在Web项目中配置Spring的IoC容器？&lt;/h2&gt;
+&lt;p&gt;答：如果需要在Web项目中使用Spring的IoC容器，可以在Web项目配置文件web.xml中做出如下配置：&lt;/p&gt;
 
-@Service
-@Transactional  // 声明式事务的注解
-public class DeptServiceImpl implements DeptService {
-    @Autowired
-    private DeptDao deptDao;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;context-param&amp;gt;
+        &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
+        &amp;lt;param-value&amp;gt;classpath:applicationContext.xml&amp;lt;/param-value&amp;gt;
+    &amp;lt;/context-param&amp;gt;
 
-    @Override
-    public boolean createNewDepartment(Dept department) {
-        return deptDao.save(department) != null;
-    }
+    &amp;lt;listener&amp;gt;
+        &amp;lt;listener-class&amp;gt;
+            org.springframework.web.context.ContextLoaderListener
+        &amp;lt;/listener-class&amp;gt;
+    &amp;lt;/listener&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;155、如何在Web项目中配置Spring MVC？&lt;/h2&gt;
+&lt;p&gt;答：要使用Spring MVC需要在Web项目配置文件中配置其前端控制器DispatcherServlet，如下所示：&lt;/p&gt;
 
-    @Override
-    public boolean deleteDepartment(Integer id) {
-        return deptDao.deleteById(id);
-    }
+&lt;pre&gt;&lt;code&gt;    &amp;lt;web-app&amp;gt;
 
-    @Override
-    public PageBean&amp;lt;Dept&amp;gt; getTopDeptByPage(int page, int size) {
-        QueryResult&amp;lt;Dept&amp;gt; queryResult = deptDao.findTopDeptByPage(page, size);
-        PageBean&amp;lt;Dept&amp;gt; pageBean = new PageBean&amp;lt;&amp;gt;(page, size);
-        pageBean.transferQueryResult(queryResult);
-        return pageBean;
-    }
+        &amp;lt;servlet&amp;gt;
+            &amp;lt;servlet-name&amp;gt;example&amp;lt;/servlet-name&amp;gt;
+            &amp;lt;servlet-class&amp;gt;
+                org.springframework.web.servlet.DispatcherServlet
+            &amp;lt;/servlet-class&amp;gt;
+            &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;
+        &amp;lt;/servlet&amp;gt;
 
-}
+        &amp;lt;servlet-mapping&amp;gt;
+            &amp;lt;servlet-name&amp;gt;example&amp;lt;/servlet-name&amp;gt;
+            &amp;lt;url-pattern&amp;gt;*.html&amp;lt;/url-pattern&amp;gt;
+        &amp;lt;/servlet-mapping&amp;gt;
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;154、如何在Web项目中配置Spring的IoC容器？
-答：如果需要在Web项目中使用Spring的IoC容器，可以在Web项目配置文件web.xml中做出如下配置：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;context-param&amp;gt;
-    &amp;lt;param-name&amp;gt;contextConfigLocation&amp;lt;/param-name&amp;gt;
-    &amp;lt;param-value&amp;gt;classpath:applicationContext.xml&amp;lt;/param-value&amp;gt;
-&amp;lt;/context-param&amp;gt;
-
-&amp;lt;listener&amp;gt;
-    &amp;lt;listener-class&amp;gt;
-        org.springframework.web.context.ContextLoaderListener
-    &amp;lt;/listener-class&amp;gt;
-&amp;lt;/listener&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;155、如何在Web项目中配置Spring MVC？
-答：要使用Spring MVC需要在Web项目配置文件中配置其前端控制器DispatcherServlet，如下所示：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;web-app&amp;gt;
-
-    &amp;lt;servlet&amp;gt;
-        &amp;lt;servlet-name&amp;gt;example&amp;lt;/servlet-name&amp;gt;
-        &amp;lt;servlet-class&amp;gt;
-            org.springframework.web.servlet.DispatcherServlet
-        &amp;lt;/servlet-class&amp;gt;
-        &amp;lt;load-on-startup&amp;gt;1&amp;lt;/load-on-startup&amp;gt;
-    &amp;lt;/servlet&amp;gt;
-
-    &amp;lt;servlet-mapping&amp;gt;
-        &amp;lt;servlet-name&amp;gt;example&amp;lt;/servlet-name&amp;gt;
-        &amp;lt;url-pattern&amp;gt;*.html&amp;lt;/url-pattern&amp;gt;
-    &amp;lt;/servlet-mapping&amp;gt;
-
-&amp;lt;/web-app&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
+    &amp;lt;/web-app&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;说明：上面的配置中使用了*.html的后缀映射，这样做一方面不能够通过URL推断采用了何种服务器端的技术，另一方面可以欺骗搜索引擎，因为搜索引擎不会搜索动态页面，这种做法称为伪静态化。&lt;/p&gt;
-&lt;p&gt;156、Spring MVC的工作原理是怎样的？
-答：Spring MVC的工作原理如下图所示：&lt;/p&gt;
-&lt;p&gt;201911071003_2.png&lt;/p&gt;
+&lt;h2&gt;156、Spring MVC的工作原理是怎样的？&lt;/h2&gt;
+&lt;p&gt;答：Spring MVC的工作原理如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 91.66666666666667" data-width="550" data-height="300"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/42ec05f41c064512b0ef6e81932b0cc1.png" alt="java-intelview-3-002.png" /&gt;&lt;figcaption&gt;java-intelview-3-002.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;客户端的所有请求都交给前端控制器DispatcherServlet来处理，它会负责调用系统的其他模块来真正处理用户的请求。
-DispatcherServlet收到请求后，将根据请求的信息（包括URL、HTTP协议方法、请求头、请求参数、Cookie等）以及HandlerMapping的配置找到处理该请求的Handler（任何一个对象都可以作为请求的Handler）。
-在这个地方Spring会通过HandlerAdapter对该处理器进行封装。
-HandlerAdapter是一个适配器，它用统一的接口对各种Handler中的方法进行调用。
-Handler完成对用户请求的处理后，会返回一个ModelAndView对象给DispatcherServlet，ModelAndView顾名思义，包含了数据模型以及相应的视图的信息。
-ModelAndView的视图是逻辑视图，DispatcherServlet还要借助ViewResolver完成从逻辑视图到真实视图对象的解析工作。
-当得到真正的视图对象后，DispatcherServlet会利用视图对象对模型数据进行渲染。⑧ 客户端得到响应，可能是一个普通的HTML页面，也可以是XML或JSON字符串，还可以是一张图片或者一个PDF文件。
+&lt;pre&gt;&lt;code&gt;1.客户端的所有请求都交给前端控制器DispatcherServlet来处理，它会负责调用系统的其他模块来真正处理用户的请求。
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;157、如何在Spring IoC容器中配置数据源？
-答：DBCP配置：&lt;/p&gt;
+2.DispatcherServlet收到请求后，将根据请求的信息（包括URL、HTTP协议方法、请求头、请求参数、Cookie等）以及HandlerMapping的配置找到处理该请求的Handler（任何一个对象都可以作为请求的Handler）。
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;bean id="dataSource"
-        class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&amp;gt;
-    &amp;lt;property name="driverClassName" value="${jdbc.driverClassName}"/&amp;gt;
-    &amp;lt;property name="url" value="${jdbc.url}"/&amp;gt;
-    &amp;lt;property name="username" value="${jdbc.username}"/&amp;gt;
-    &amp;lt;property name="password" value="${jdbc.password}"/&amp;gt;
-&amp;lt;/bean&amp;gt;
+3.在这个地方Spring会通过HandlerAdapter对该处理器进行封装。
 
-&amp;lt;context:property-placeholder location="jdbc.properties"/&amp;gt;
+4.HandlerAdapter是一个适配器，它用统一的接口对各种Handler中的方法进行调用。
+
+5.Handler完成对用户请求的处理后，会返回一个ModelAndView对象给DispatcherServlet，ModelAndView顾名思义，包含了数据模型以及相应的视图的信息。
+
+6.ModelAndView的视图是逻辑视图，DispatcherServlet还要借助ViewResolver完成从逻辑视图到真实视图对象的解析工作。
+
+7.当得到真正的视图对象后，DispatcherServlet会利用视图对象对模型数据进行渲染。⑧ 客户端得到响应，可能是一个普通的HTML页面，也可以是XML或JSON字符串，还可以是一张图片或者一个PDF文件。
 
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;157、如何在Spring IoC容器中配置数据源？&lt;/h2&gt;
+&lt;p&gt;答：DBCP配置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;bean id="dataSource"
+            class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&amp;gt;
+        &amp;lt;property name="driverClassName" value="${jdbc.driverClassName}"/&amp;gt;
+        &amp;lt;property name="url" value="${jdbc.url}"/&amp;gt;
+        &amp;lt;property name="username" value="${jdbc.username}"/&amp;gt;
+        &amp;lt;property name="password" value="${jdbc.password}"/&amp;gt;
+    &amp;lt;/bean&amp;gt;
+
+    &amp;lt;context:property-placeholder location="jdbc.properties"/&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;C3P0配置：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;bean id="dataSource"
-        class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"&amp;gt;
-    &amp;lt;property name="driverClass" value="${jdbc.driverClassName}"/&amp;gt;
-    &amp;lt;property name="jdbcUrl" value="${jdbc.url}"/&amp;gt;
-    &amp;lt;property name="user" value="${jdbc.username}"/&amp;gt;
-    &amp;lt;property name="password" value="${jdbc.password}"/&amp;gt;
-&amp;lt;/bean&amp;gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;bean id="dataSource"
+            class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"&amp;gt;
+        &amp;lt;property name="driverClass" value="${jdbc.driverClassName}"/&amp;gt;
+        &amp;lt;property name="jdbcUrl" value="${jdbc.url}"/&amp;gt;
+        &amp;lt;property name="user" value="${jdbc.username}"/&amp;gt;
+        &amp;lt;property name="password" value="${jdbc.password}"/&amp;gt;
+    &amp;lt;/bean&amp;gt;
 
-&amp;lt;context:property-placeholder location="jdbc.properties"/&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
+    &amp;lt;context:property-placeholder location="jdbc.properties"/&amp;gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;提示： DBCP的详细配置在第153题中已经完整的展示过了。&lt;/p&gt;
-&lt;p&gt;158、如何配置配置事务增强？
-答：&lt;/p&gt;
+&lt;h2&gt;158、如何配置配置事务增强？&lt;/h2&gt;
+&lt;p&gt;答：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
-&amp;lt;beans xmlns="http://www.springframework.org/schema/beans"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xmlns:aop="http://www.springframework.org/schema/aop"
-     xmlns:tx="http://www.springframework.org/schema/tx"
-     xsi:schemaLocation="
-     http://www.springframework.org/schema/beans
-     http://www.springframework.org/schema/beans/spring-beans.xsd
-     http://www.springframework.org/schema/tx
-     http://www.springframework.org/schema/tx/spring-tx.xsd
-     http://www.springframework.org/schema/aop
-     http://www.springframework.org/schema/aop/spring-aop.xsd"&amp;gt;
+&lt;pre&gt;&lt;code&gt;    &amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;
+    &amp;lt;beans xmlns="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:aop="http://www.springframework.org/schema/aop"
+         xmlns:tx="http://www.springframework.org/schema/tx"
+         xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd"&amp;gt;
 
-  &amp;lt;!-- this is the service object that we want to make transactional --&amp;gt;
-  &amp;lt;bean id="fooService" class="x.y.service.DefaultFooService"/&amp;gt;
+      &amp;lt;!-- this is the service object that we want to make transactional --&amp;gt;
+      &amp;lt;bean id="fooService" class="x.y.service.DefaultFooService"/&amp;gt;
 
-  &amp;lt;!-- the transactional advice --&amp;gt;
-  &amp;lt;tx:advice id="txAdvice" transaction-manager="txManager"&amp;gt;
-  &amp;lt;!-- the transactional semantics... --&amp;gt;
-  &amp;lt;tx:attributes&amp;gt;
-    &amp;lt;!-- all methods starting with 'get' are read-only --&amp;gt;
-    &amp;lt;tx:method name="get*" read-only="true"/&amp;gt;
-    &amp;lt;!-- other methods use the default transaction settings (see below) --&amp;gt;
-    &amp;lt;tx:method name="*"/&amp;gt;
-  &amp;lt;/tx:attributes&amp;gt;
-  &amp;lt;/tx:advice&amp;gt;
+      &amp;lt;!-- the transactional advice --&amp;gt;
+      &amp;lt;tx:advice id="txAdvice" transaction-manager="txManager"&amp;gt;
+      &amp;lt;!-- the transactional semantics... --&amp;gt;
+      &amp;lt;tx:attributes&amp;gt;
+        &amp;lt;!-- all methods starting with 'get' are read-only --&amp;gt;
+        &amp;lt;tx:method name="get*" read-only="true"/&amp;gt;
+        &amp;lt;!-- other methods use the default transaction settings (see below) --&amp;gt;
+        &amp;lt;tx:method name="*"/&amp;gt;
+      &amp;lt;/tx:attributes&amp;gt;
+      &amp;lt;/tx:advice&amp;gt;
 
-  &amp;lt;!-- ensure that the above transactional advice runs for any execution
-    of an operation defined by the FooService interface --&amp;gt;
-  &amp;lt;aop:config&amp;gt;
-  &amp;lt;aop:pointcut id="fooServiceOperation" 
-    expression="execution(* x.y.service.FooService.*(..))"/&amp;gt;
-  &amp;lt;aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/&amp;gt;
-  &amp;lt;/aop:config&amp;gt;
+      &amp;lt;!-- ensure that the above transactional advice runs for any execution
+        of an operation defined by the FooService interface --&amp;gt;
+      &amp;lt;aop:config&amp;gt;
+      &amp;lt;aop:pointcut id="fooServiceOperation" 
+        expression="execution(* x.y.service.FooService.*(..))"/&amp;gt;
+      &amp;lt;aop:advisor advice-ref="txAdvice" pointcut-ref="fooServiceOperation"/&amp;gt;
+      &amp;lt;/aop:config&amp;gt;
 
-  &amp;lt;!-- don't forget the DataSource --&amp;gt;
-  &amp;lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
-    destroy-method="close"&amp;gt;
-  &amp;lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/&amp;gt;
-  &amp;lt;property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/&amp;gt;
-  &amp;lt;property name="username" value="scott"/&amp;gt;
-  &amp;lt;property name="password" value="tiger"/&amp;gt;
-  &amp;lt;/bean&amp;gt;
+      &amp;lt;!-- don't forget the DataSource --&amp;gt;
+      &amp;lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+        destroy-method="close"&amp;gt;
+      &amp;lt;property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/&amp;gt;
+      &amp;lt;property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/&amp;gt;
+      &amp;lt;property name="username" value="scott"/&amp;gt;
+      &amp;lt;property name="password" value="tiger"/&amp;gt;
+      &amp;lt;/bean&amp;gt;
 
-  &amp;lt;!-- similarly, don't forget the PlatformTransactionManager --&amp;gt;
-  &amp;lt;bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&amp;gt;
-  &amp;lt;property name="dataSource" ref="dataSource"/&amp;gt;
-  &amp;lt;/bean&amp;gt;
+      &amp;lt;!-- similarly, don't forget the PlatformTransactionManager --&amp;gt;
+      &amp;lt;bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&amp;gt;
+      &amp;lt;property name="dataSource" ref="dataSource"/&amp;gt;
+      &amp;lt;/bean&amp;gt;
 
-  &amp;lt;!-- other &amp;lt;bean/&amp;gt; definitions here --&amp;gt;
+      &amp;lt;!-- other &amp;lt;bean/&amp;gt; definitions here --&amp;gt;
 
-&amp;lt;/beans&amp;gt;
+    &amp;lt;/beans&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;159、选择使用Spring框架的原因（Spring框架为企业级开发带来的好处有哪些）？&lt;/h2&gt;
+&lt;p&gt;答：可以从以下几个方面作答：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.非侵入式：支持基于POJO的编程模式，不强制性的要求实现Spring框架中的接口或继承Spring框架中的类。
+
+2.IoC容器：IoC容器帮助应用程序管理对象以及对象之间的依赖关系，对象之间的依赖关系如果发生了改变只需要修改配置文件而不是修改代码，因为代码的修改可能意味着项目的重新构建和完整的回归测试。有了IoC容器，程序员再也不需要自己编写工厂、单例，这一点特别符合Spring的精神"不要重复的发明轮子"。
+
+3.AOP（面向切面编程）：将所有的横切关注功能封装到切面（aspect）中，通过配置的方式将横切关注功能动态添加到目标代码上，进一步实现了业务逻辑和系统服务之间的分离。另一方面，有了AOP程序员可以省去很多自己写代理类的工作。
+
+4.MVC：Spring的MVC框架是非常优秀的，从各个方面都可以甩Struts 2几条街，为Web表示层提供了更好的解决方案。
+
+5.事务管理：Spring以宽广的胸怀接纳多种持久层技术，并且为其提供了声明式的事务管理，在不需要任何一行代码的情况下就能够完成事务管理。
+
+6.其他：选择Spring框架的原因还远不止于此，Spring为Java企业级开发提供了一站式选择，你可以在需要的时候使用它的部分和全部，更重要的是，你甚至可以在感觉不到Spring存在的情况下，在你的项目中使用Spring提供的各种优秀的功能。
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;159、选择使用Spring框架的原因（Spring框架为企业级开发带来的好处有哪些）？
-答：可以从以下几个方面作答：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;非侵入式：支持基于POJO的编程模式，不强制性的要求实现Spring框架中的接口或继承Spring框架中的类。
-IoC容器：IoC容器帮助应用程序管理对象以及对象之间的依赖关系，对象之间的依赖关系如果发生了改变只需要修改配置文件而不是修改代码，因为代码的修改可能意味着项目的重新构建和完整的回归测试。有了IoC容器，程序员再也不需要自己编写工厂、单例，这一点特别符合Spring的精神"不要重复的发明轮子"。
-AOP（面向切面编程）：将所有的横切关注功能封装到切面（aspect）中，通过配置的方式将横切关注功能动态添加到目标代码上，进一步实现了业务逻辑和系统服务之间的分离。另一方面，有了AOP程序员可以省去很多自己写代理类的工作。
-MVC：Spring的MVC框架是非常优秀的，从各个方面都可以甩Struts 2几条街，为Web表示层提供了更好的解决方案。
-事务管理：Spring以宽广的胸怀接纳多种持久层技术，并且为其提供了声明式的事务管理，在不需要任何一行代码的情况下就能够完成事务管理。
-其他：选择Spring框架的原因还远不止于此，Spring为Java企业级开发提供了一站式选择，你可以在需要的时候使用它的部分和全部，更重要的是，你甚至可以在感觉不到Spring存在的情况下，在你的项目中使用Spring提供的各种优秀的功能。
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;160、Spring IoC容器配置Bean的方式？
-答：&lt;/p&gt;
+&lt;h2&gt;160、Spring IoC容器配置Bean的方式？&lt;/h2&gt;
+&lt;p&gt;答：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;基于XML文件进行配置。
 基于注解进行配置。
 基于Java程序进行配置（Spring 3+）
 
-package com.jackfrued.bean;
+&lt;/code&gt;&lt;/pre&gt;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.bean;
 
-@Component
-public class Person {
-    private String name;
-    private int age;
-    @Autowired
-    private Car car;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Component;
 
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    @Component
+    public class Person {
+        private String name;
+        private int age;
+        @Autowired
+        private Car car;
 
-    public void setCar(Car car) {
-        this.car = car;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [name=" + name + ", age=" + age + ", car=" + car + "]";
-    }
-
-}
-
-package com.jackfrued.bean;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public class Car {
-    private String brand;
-    private int maxSpeed;
-
-    public Car(String brand, int maxSpeed) {
-        this.brand = brand;
-        this.maxSpeed = maxSpeed;
-    }
-
-    @Override
-    public String toString() {
-        return "Car [brand=" + brand + ", maxSpeed=" + maxSpeed + "]";
-    }
-
-}
-
-package com.jackfrued.config;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import com.jackfrued.bean.Car;
-import com.jackfrued.bean.Person;
-
-@Configuration
-public class AppConfig {
-
-    @Bean
-    public Car car() {
-        return new Car("Benz", 320);
-    }
-
-    @Bean
-    public Person person() {
-        return new Person("骆昊", 34);
-    }
-}
-
-package com.jackfrued.test;
-
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.jackfrued.bean.Person;
-import com.jackfrued.config.AppConfig;
-
-class Test {
-
-    public static void main(String[] args) {
-        // TWR (Java 7+)
-        try(ConfigurableApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class)) {
-            Person person = factory.getBean(Person.class);
-            System.out.println(person);
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
         }
-    }
-}
 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;161、阐述Spring框架中Bean的生命周期？
-答：
-① Spring IoC容器找到关于Bean的定义并实例化该Bean。
+        public void setCar(Car car) {
+            this.car = car;
+        }
+
+        @Override
+        public String toString() {
+            return "Person [name=" + name + ", age=" + age + ", car=" + car + "]";
+        }
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.bean;
+
+    import org.springframework.stereotype.Component;
+
+    @Component
+    public class Car {
+        private String brand;
+        private int maxSpeed;
+
+        public Car(String brand, int maxSpeed) {
+            this.brand = brand;
+            this.maxSpeed = maxSpeed;
+        }
+
+        @Override
+        public String toString() {
+            return "Car [brand=" + brand + ", maxSpeed=" + maxSpeed + "]";
+        }
+
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.config;
+
+    import org.springframework.context.annotation.Bean;
+    import org.springframework.context.annotation.Configuration;
+
+    import com.jackfrued.bean.Car;
+    import com.jackfrued.bean.Person;
+
+    @Configuration
+    public class AppConfig {
+
+        @Bean
+        public Car car() {
+            return new Car("Benz", 320);
+        }
+
+        @Bean
+        public Person person() {
+            return new Person("骆昊", 34);
+        }
+    }&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    package com.jackfrued.test;
+
+    import org.springframework.context.ConfigurableApplicationContext;
+    import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+    import com.jackfrued.bean.Person;
+    import com.jackfrued.config.AppConfig;
+
+    class Test {
+
+        public static void main(String[] args) {
+            // TWR (Java 7+)
+            try(ConfigurableApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class)) {
+                Person person = factory.getBean(Person.class);
+                System.out.println(person);
+            }
+        }
+    }&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;161、阐述Spring框架中Bean的生命周期？&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;① Spring IoC容器找到关于Bean的定义并实例化该Bean。
+
 ② Spring IoC容器对Bean进行依赖注入。
-③ 如果Bean实现了BeanNameAware接口，则将该Bean的id传给setBeanName方法。
-④ 如果Bean实现了BeanFactoryAware接口，则将BeanFactory对象传给setBeanFactory方法。
-⑤ 如果Bean实现了BeanPostProcessor接口，则调用其postProcessBeforeInitialization方法。
-⑥ 如果Bean实现了InitializingBean接口，则调用其afterPropertySet方法。
-⑦ 如果有和Bean关联的BeanPostProcessors对象，则这些对象的postProcessAfterInitialization方法被调用。
-⑧ 当销毁Bean实例时，如果Bean实现了DisposableBean接口，则调用其destroy方法。&lt;/p&gt;
-&lt;p&gt;162、依赖注入时如何注入集合属性？
-答：可以在定义Bean属性时，通过 / / / 分别为其注入列表、集合、映射和键值都是字符串的映射属性。&lt;/p&gt;
-&lt;p&gt;163、Spring中的自动装配有哪些限制？
-答：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;如果使用了构造器注入或者setter注入，那么将覆盖自动装配的依赖关系。
-基本数据类型的值、字符串字面量、类字面量无法使用自动装配来注入。
-优先考虑使用显式的装配来进行更精确的依赖注入而不是使用自动装配。
+③ 如果Bean实现了BeanNameAware接口，则将该Bean的id传给setBeanName方法。
+
+④ 如果Bean实现了BeanFactoryAware接口，则将BeanFactory对象传给setBeanFactory方法。
+
+⑤ 如果Bean实现了BeanPostProcessor接口，则调用其postProcessBeforeInitialization方法。
+
+⑥ 如果Bean实现了InitializingBean接口，则调用其afterPropertySet方法。
+
+⑦ 如果有和Bean关联的BeanPostProcessors对象，则这些对象的postProcessAfterInitialization方法被调用。
+
+⑧ 当销毁Bean实例时，如果Bean实现了DisposableBean接口，则调用其destroy方法。
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;164、在Web项目中如何获得Spring的IoC容器？ 答：&lt;/p&gt;
+&lt;h2&gt;162、依赖注入时如何注入集合属性？&lt;/h2&gt;
+&lt;p&gt;答：可以在定义Bean属性时，通过 / / / 分别为其注入列表、集合、映射和键值都是字符串的映射属性。&lt;/p&gt;
+&lt;h2&gt;163、Spring中的自动装配有哪些限制？&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;1.如果使用了构造器注入或者setter注入，那么将覆盖自动装配的依赖关系。
+
+2.基本数据类型的值、字符串字面量、类字面量无法使用自动装配来注入。
+
+3.优先考虑使用显式的装配来进行更精确的依赖注入而不是使用自动装配。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;164、在Web项目中如何获得Spring的IoC容器？&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext(servletContext);
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;大型网站在架构上应当考虑哪些问题？
-答：&lt;/p&gt;
-&lt;p&gt;分层：分层是处理任何复杂系统最常见的手段之一，将系统横向切分成若干个层面，每个层面只承担单一的职责，然后通过下层为上层提供的基础设施和服务以及上层对下层的调用来形成一个完整的复杂的系统。计算机网络的开放系统互联参考模型（OSI/RM）和Internet的TCP/IP模型都是分层结构，大型网站的软件系统也可以使用分层的理念将其分为持久层（提供数据存储和访问服务）、业务层（处理业务逻辑，系统中最核心的部分）和表示层（系统交互、视图展示）。需要指出的是：（1）分层是逻辑上的划分，在物理上可以位于同一设备上也可以在不同的设备上部署不同的功能模块，这样可以使用更多的计算资源来应对用户的并发访问；（2）层与层之间应当有清晰的边界，这样分层才有意义，才更利于软件的开发和维护。
-分割：分割是对软件的纵向切分。我们可以将大型网站的不同功能和服务分割开，形成高内聚低耦合的功能模块（单元）。在设计初期可以做一个粗粒度的分割，将网站分割为若干个功能模块，后期还可以进一步对每个模块进行细粒度的分割，这样一方面有助于软件的开发和维护，另一方面有助于分布式的部署，提供网站的并发处理能力和功能的扩展。
-分布式：除了上面提到的内容，网站的静态资源（JavaScript、CSS、图片等）也可以采用独立分布式部署并采用独立的域名，这样可以减轻应用服务器的负载压力，也使得浏览器对资源的加载更快。数据的存取也应该是分布式的，传统的商业级关系型数据库产品基本上都支持分布式部署，而新生的NoSQL产品几乎都是分布式的。当然，网站后台的业务处理也要使用分布式技术，例如查询索引的构建、数据分析等，这些业务计算规模庞大，可以使用Hadoop以及MapReduce分布式计算框架来处理。
-集群：集群使得有更多的服务器提供相同的服务，可以更好的提供对并发的支持。
-缓存：所谓缓存就是用空间换取时间的技术，将数据尽可能放在距离计算最近的位置。使用缓存是网站优化的第一定律。我们通常说的CDN、反向代理、热点数据都是对缓存技术的使用。
-异步：异步是实现软件实体之间解耦合的又一重要手段。异步架构是典型的生产者消费者模式，二者之间没有直接的调用关系，只要保持数据结构不变，彼此功能实现可以随意变化而不互相影响，这对网站的扩展非常有利。使用异步处理还可以提高系统可用性，加快网站的响应速度（用Ajax加载数据就是一种异步技术），同时还可以起到削峰作用（应对瞬时高并发）。&amp;amp;quot；能推迟处理的都要推迟处理"是网站优化的第二定律，而异步是践行网站优化第二定律的重要手段。
-冗余：各种服务器都要提供相应的冗余服务器以便在某台或某些服务器宕机时还能保证网站可以正常工作，同时也提供了灾难恢复的可能性。冗余是网站高可用性的重要保证。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;166、你用过的网站前端优化的技术有哪些？ 答：
-① 浏览器访问优化：&lt;/p&gt;
+&lt;h2&gt;165、大型网站在架构上应当考虑哪些问题？&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;减少HTTP请求数量：合并CSS、合并javascript、合并图片（CSS Sprite）
-使用浏览器缓存：通过设置HTTP响应头中的Cache-Control和Expires属性，将CSS、JavaScript、图片等在浏览器中缓存，当这些静态资源需要更新时，可以更新HTML文件中的引用来让浏览器重新请求新的资源- 启用压缩
-CSS前置，JavaScript后置- 减少Cookie传输
+&lt;pre&gt;&lt;code&gt;1.分层：分层是处理任何复杂系统最常见的手段之一，将系统横向切分成若干个层面，每个层面只承担单一的职责，然后通过下层为上层提供的基础设施和服务以及上层对下层的调用来形成一个完整的复杂的系统。计算机网络的开放系统互联参考模型（OSI/RM）和Internet的TCP/IP模型都是分层结构，大型网站的软件系统也可以使用分层的理念将其分为持久层（提供数据存储和访问服务）、业务层（处理业务逻辑，系统中最核心的部分）和表示层（系统交互、视图展示）。需要指出的是：（1）分层是逻辑上的划分，在物理上可以位于同一设备上也可以在不同的设备上部署不同的功能模块，这样可以使用更多的计算资源来应对用户的并发访问；（2）层与层之间应当有清晰的边界，这样分层才有意义，才更利于软件的开发和维护。
+
+2.分割：分割是对软件的纵向切分。我们可以将大型网站的不同功能和服务分割开，形成高内聚低耦合的功能模块（单元）。在设计初期可以做一个粗粒度的分割，将网站分割为若干个功能模块，后期还可以进一步对每个模块进行细粒度的分割，这样一方面有助于软件的开发和维护，另一方面有助于分布式的部署，提供网站的并发处理能力和功能的扩展。
+
+3.分布式：除了上面提到的内容，网站的静态资源（JavaScript、CSS、图片等）也可以采用独立分布式部署并采用独立的域名，这样可以减轻应用服务器的负载压力，也使得浏览器对资源的加载更快。数据的存取也应该是分布式的，传统的商业级关系型数据库产品基本上都支持分布式部署，而新生的NoSQL产品几乎都是分布式的。当然，网站后台的业务处理也要使用分布式技术，例如查询索引的构建、数据分析等，这些业务计算规模庞大，可以使用Hadoop以及MapReduce分布式计算框架来处理。
+
+4.集群：集群使得有更多的服务器提供相同的服务，可以更好的提供对并发的支持。
+
+5.缓存：所谓缓存就是用空间换取时间的技术，将数据尽可能放在距离计算最近的位置。使用缓存是网站优化的第一定律。我们通常说的CDN、反向代理、热点数据都是对缓存技术的使用。
+
+6.异步：异步是实现软件实体之间解耦合的又一重要手段。异步架构是典型的生产者消费者模式，二者之间没有直接的调用关系，只要保持数据结构不变，彼此功能实现可以随意变化而不互相影响，这对网站的扩展非常有利。使用异步处理还可以提高系统可用性，加快网站的响应速度（用Ajax加载数据就是一种异步技术），同时还可以起到削峰作用（应对瞬时高并发）。&amp;amp;quot；能推迟处理的都要推迟处理"是网站优化的第二定律，而异步是践行网站优化第二定律的重要手段。
+
+7.冗余：各种服务器都要提供相应的冗余服务器以便在某台或某些服务器宕机时还能保证网站可以正常工作，同时也提供了灾难恢复的可能性。冗余是网站高可用性的重要保证。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;166、你用过的网站前端优化的技术有哪些？ 答：&lt;/h2&gt;
+&lt;p&gt;① 浏览器访问优化：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.减少HTTP请求数量：合并CSS、合并javascript、合并图片（CSS Sprite）
+
+2.使用浏览器缓存：通过设置HTTP响应头中的Cache-Control和Expires属性，将CSS、JavaScript、图片等在浏览器中缓存，当这些静态资源需要更新时，可以更新HTML文件中的引用来让浏览器重新请求新的资源- 启用压缩
+
+3.CSS前置，JavaScript后置- 减少Cookie传输
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;② CDN加速：CDN（Content Distribute Network）的本质仍然是缓存，将数据缓存在离用户最近的地方，CDN通常部署在网络运营商的机房，不仅可以提升响应速度，还可以减少应用服务器的压力。当然，CDN缓存的通常都是静态资源。&lt;/p&gt;
 &lt;p&gt;③ 反向代理：反向代理相当于应用服务器的一个门面，可以保护网站的安全性，也可以实现负载均衡的功能，当然最重要的是它缓存了用户访问的热点资源，可以直接从反向代理将某些内容返回给用户浏览器。&lt;/p&gt;
-&lt;p&gt;167、你使用过的应用服务器优化技术有哪些？
-答：
-① 分布式缓存：缓存的本质就是内存中的哈希表，如果设计一个优质的哈希函数，那么理论上哈希表读写的渐近时间复杂度为O(1)。缓存主要用来存放那些读写比很高、变化很少的数据，这样应用程序读取数据时先到缓存中读取，如果没有或者数据已经失效再去访问数据库或文件系统，并根据拟定的规则将数据写入缓存。对网站数据的访问也符合二八定律（Pareto分布，幂律分布），即80%的访问都集中在20%的数据上，如果能够将这20%的数据缓存起来，那么系统的性能将得到显著的改善。当然，使用缓存需要解决以下几个问题：&lt;/p&gt;
+&lt;h2&gt;167、你使用过的应用服务器优化技术有哪些？&lt;/h2&gt;
+&lt;p&gt;① 分布式缓存：缓存的本质就是内存中的哈希表，如果设计一个优质的哈希函数，那么理论上哈希表读写的渐近时间复杂度为O(1)。缓存主要用来存放那些读写比很高、变化很少的数据，这样应用程序读取数据时先到缓存中读取，如果没有或者数据已经失效再去访问数据库或文件系统，并根据拟定的规则将数据写入缓存。对网站数据的访问也符合二八定律（Pareto分布，幂律分布），即80%的访问都集中在20%的数据上，如果能够将这20%的数据缓存起来，那么系统的性能将得到显著的改善。当然，使用缓存需要解决以下几个问题：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;频繁修改的数据；
-数据不一致与脏读；
-缓存雪崩（可以采用分布式缓存服务器集群加以解决，memcached是广泛采用的解决方案）；
-缓存预热；
-缓存穿透（恶意持续请求不存在的数据）。
+&lt;pre&gt;&lt;code&gt;1.频繁修改的数据；
+
+2.数据不一致与脏读；
+
+3.缓存雪崩（可以采用分布式缓存服务器集群加以解决，memcached是广泛采用的解决方案）；
+
+4.缓存预热；
+
+5.缓存穿透（恶意持续请求不存在的数据）。
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;② 异步操作：可以使用消息队列将调用异步化，通过异步处理将短时间高并发产生的事件消息存储在消息队列中，从而起到削峰作用。电商网站在进行促销活动时，可以将用户的订单请求存入消息队列，这样可以抵御大量的并发订单请求对系统和数据库的冲击。目前，绝大多数的电商网站即便不进行促销活动，订单系统都采用了消息队列来处理。
-③ 使用集群。
-④ 代码优化：&lt;/p&gt;
+&lt;p&gt;② 异步操作：可以使用消息队列将调用异步化，通过异步处理将短时间高并发产生的事件消息存储在消息队列中，从而起到削峰作用。电商网站在进行促销活动时，可以将用户的订单请求存入消息队列，这样可以抵御大量的并发订单请求对系统和数据库的冲击。目前，绝大多数的电商网站即便不进行促销活动，订单系统都采用了消息队列来处理。&lt;/p&gt;
+&lt;p&gt;③ 使用集群。&lt;/p&gt;
+&lt;p&gt;④ 代码优化：&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;多线程：基于Java的Web开发基本上都通过多线程的方式响应用户的并发请求，使用多线程技术在编程上要解决线程安全问题，主要可以考虑以下几个方面：
 
-将对象设计为无状态对象（这和面向对象的编程观点是矛盾的，在面向对象的世界中被视为不良设计），这样就不会存在并发访问时对象状态不一致的问题。
-在方法内部创建对象，这样对象由进入方法的线程创建，不会出现多个线程访问同一对象的问题。使用ThreadLocal将对象与线程绑定也是很好的做法，这一点在前面已经探讨过了。
+1.将对象设计为无状态对象（这和面向对象的编程观点是矛盾的，在面向对象的世界中被视为不良设计），这样就不会存在并发访问时对象状态不一致的问题。
 
-对资源进行并发访问时应当使用合理的锁机制。
-    非阻塞I/O： 使用单线程和非阻塞I/O是目前公认的比多线程的方式更能充分发挥服务器性能的应用模式，基于Node.js构建的服务器就采用了这样的方式。Java在JDK 1.4中就引入了NIO（Non-blocking I/O）,在Servlet 3规范中又引入了异步Servlet的概念，这些都为在服务器端采用非阻塞I/O提供了必要的基础。
-    资源复用：资源复用主要有两种方式，一是单例，二是对象池，我们使用的数据库连接池、线程池都是对象池化技术，这是典型的用空间换取时间的策略，另一方面也实现对资源的复用，从而避免了不必要的创建和释放资源所带来的开销。
+2.在方法内部创建对象，这样对象由进入方法的线程创建，不会出现多个线程访问同一对象的问题。使用ThreadLocal将对象与线程绑定也是很好的做法，这一点在前面已经探讨过了。
+
+3.对资源进行并发访问时应当使用合理的锁机制。
+
+    (1)非阻塞I/O： 使用单线程和非阻塞I/O是目前公认的比多线程的方式更能充分发挥服务器性能的应用模式，基于Node.js构建的服务器就采用了这样的方式。Java在JDK 1.4中就引入了NIO（Non-blocking I/O）,在Servlet 3规范中又引入了异步Servlet的概念，这些都为在服务器端采用非阻塞I/O提供了必要的基础。
+
+    (2)资源复用：资源复用主要有两种方式，一是单例，二是对象池，我们使用的数据库连接池、线程池都是对象池化技术，这是典型的用空间换取时间的策略，另一方面也实现对资源的复用，从而避免了不必要的创建和释放资源所带来的开销。
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;168、什么是XSS攻击？什么是SQL注入攻击？什么是CSRF攻击？
-答：&lt;/p&gt;
+&lt;h2&gt;168、什么是XSS攻击？什么是SQL注入攻击？什么是CSRF攻击？&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;XSS（Cross Site Script，跨站脚本攻击）是向网页中注入恶意脚本在用户浏览网页时在用户浏览器中执行恶意脚本的攻击方式。跨站脚本攻击分有两种形式：反射型攻击（诱使用户点击一个嵌入恶意脚本的链接以达到攻击的目标，目前有很多攻击者利用论坛、微博发布含有恶意脚本的URL就属于这种方式）和持久型攻击（将恶意脚本提交到被攻击网站的数据库中，用户浏览网页时，恶意脚本从数据库中被加载到页面执行，QQ邮箱的早期版本就曾经被利用作为持久型跨站脚本攻击的平台）。
+&lt;pre&gt;&lt;code&gt;1.XSS（Cross Site Script，跨站脚本攻击）是向网页中注入恶意脚本在用户浏览网页时在用户浏览器中执行恶意脚本的攻击方式。跨站脚本攻击分有两种形式：反射型攻击（诱使用户点击一个嵌入恶意脚本的链接以达到攻击的目标，目前有很多攻击者利用论坛、微博发布含有恶意脚本的URL就属于这种方式）和持久型攻击（将恶意脚本提交到被攻击网站的数据库中，用户浏览网页时，恶意脚本从数据库中被加载到页面执行，QQ邮箱的早期版本就曾经被利用作为持久型跨站脚本攻击的平台）。
 XSS虽然不是什么新鲜玩意，但是攻击的手法却不断翻新，防范XSS主要有两方面：消毒（对危险字符进行转义）和HttpOnly（防范XSS攻击者窃取Cookie数据）。
-SQL注入攻击是注入攻击最常见的形式（此外还有OS注入攻击（Struts 2的高危漏洞就是通过OGNL实施OS注入攻击导致的）），当服务器使用请求参数构造SQL语句时，恶意的SQL被嵌入到SQL中交给数据库执行。SQL注入攻击需要攻击者对数据库结构有所了解才能进行，攻击者想要获得表结构有多种方式：
+
+2.SQL注入攻击是注入攻击最常见的形式（此外还有OS注入攻击（Struts 2的高危漏洞就是通过OGNL实施OS注入攻击导致的）），当服务器使用请求参数构造SQL语句时，恶意的SQL被嵌入到SQL中交给数据库执行。SQL注入攻击需要攻击者对数据库结构有所了解才能进行，攻击者想要获得表结构有多种方式：
 （1）如果使用开源系统搭建网站，数据库结构也是公开的（目前有很多现成的系统可以直接搭建论坛，电商网站，虽然方便快捷但是风险是必须要认真评估的）；
 （2）错误回显（如果将服务器的错误信息直接显示在页面上，攻击者可以通过非法参数引发页面错误从而通过错误信息了解数据库结构，Web应用应当设置友好的错误页，一方面符合最小惊讶原则，一方面屏蔽掉可能给系统带来危险的错误回显信息）；
 （3）盲注。防范SQL注入攻击也可以采用消毒的方式，通过正则表达式对请求参数进行验证，此外，参数绑定也是很好的手段，这样恶意的SQL会被当做SQL的参数而不是命令被执行，JDBC中的PreparedStatement就是支持参数绑定的语句对象，从性能和安全性上都明显优于Statement。
-CSRF攻击（Cross Site Request Forgery，跨站请求伪造）是攻击者通过跨站请求，以合法的用户身份进行非法操作（如转账或发帖等）。CSRF的原理是利用浏览器的Cookie或服务器的Session，盗取用户身份，其原理如下图所示。
+
+3.CSRF攻击（Cross Site Request Forgery，跨站请求伪造）是攻击者通过跨站请求，以合法的用户身份进行非法操作（如转账或发帖等）。CSRF的原理是利用浏览器的Cookie或服务器的Session，盗取用户身份，其原理如下图所示。
 防范CSRF的主要手段是识别请求者的身份，主要有以下几种方式：
 （1）在表单中添加令牌（token）；
 （2）验证码；
@@ -5076,44 +5096,302 @@ CSRF攻击（Cross Site Request Forgery，跨站请求伪造）是攻击者通�
 令牌和验证都具有一次消费性的特征，因此在原理上一致的，但是验证码是一种糟糕的用户体验，不是必要的情况下不要轻易使用验证码，目前很多网站的做法是如果在短时间内多次提交一个表单未获得成功后才要求提供验证码，这样会获得较好的用户体验。
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;201911071003_3.png&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 74.0506329113924" data-width="585" data-height="395"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/5cb176234525f4c8d3e01cc7fd9a8425.png" alt="java-intelview-3-003.png" /&gt;&lt;figcaption&gt;java-intelview-3-003.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;补充：防火墙的架设是Web安全的重要保障，ModSecurity是开源的Web防火墙中的佼佼者。企业级防火墙的架设应当有两级防火墙，Web服务器和部分应用服务器可以架设在两级防火墙之间的DMZ，而数据和资源服务器应当架设在第二级防火墙之后。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;什么是领域模型(domain model)？贫血模型(anaemic domain model)和充血模型(rich domain model)有什么区别？
-答：领域模型是领域内的概念类或现实世界中对象的可视化表示，又称为概念模型或分析对象模型，它专注于分析问题领域本身，发掘重要的业务领域概念，并建立业务领域概念之间的关系。贫血模型是指使用的领域对象中只有setter和getter方法（POJO），所有的业务逻辑都不包含在领域对象中而是放在业务逻辑层。有人将我们这里说的贫血模型进一步划分成失血模型（领域对象完全没有业务逻辑）和贫血模型（领域对象有少量的业务逻辑），我们这里就不对此加以区分了。充血模型将大多数业务逻辑和持久化放在领域对象中，业务逻辑（业务门面）只是完成对业务逻辑的封装、事务和权限等的处理。下面两张图分别展示了贫血模型和充血模型的分层架构。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2&gt;169、什么是领域模型(domain model)？贫血模型(anaemic domain model)和充血模型(rich domain model)有什么区别？&lt;/h2&gt;
+&lt;p&gt;领域模型是领域内的概念类或现实世界中对象的可视化表示，又称为概念模型或分析对象模型，它专注于分析问题领域本身，发掘重要的业务领域概念，并建立业务领域概念之间的关系。&lt;/p&gt;
+&lt;p&gt;贫血模型是指使用的领域对象中只有setter和getter方法（POJO），所有的业务逻辑都不包含在领域对象中而是放在业务逻辑层。&lt;/p&gt;
+&lt;p&gt;有人将我们这里说的贫血模型进一步划分成失血模型（领域对象完全没有业务逻辑）和贫血模型（领域对象有少量的业务逻辑），我们这里就不对此加以区分了。&lt;/p&gt;
+&lt;p&gt;充血模型将大多数业务逻辑和持久化放在领域对象中，业务逻辑（业务门面）只是完成对业务逻辑的封装、事务和权限等的处理。下面两张图分别展示了贫血模型和充血模型的分层架构。&lt;/p&gt;
 &lt;p&gt;贫血模型&lt;/p&gt;
-&lt;p&gt;201911071003_4.png&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 63.84615384615385" data-width="830" data-height="650"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b23c979f7fae4a6cf96a2b6cfbdd63b0.png" alt="java-intelview-3-004.png" /&gt;&lt;figcaption&gt;java-intelview-3-004.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;充血模型&lt;/p&gt;
-&lt;p&gt;201911071003_5.png&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 43.490701001430615" data-width="608" data-height="699"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b59701b3bfca70d24dc9d6aa14bf2148.png" alt="java-intelview-3-005.png" /&gt;&lt;figcaption&gt;java-intelview-3-005.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;贫血模型下组织领域逻辑通常使用事务脚本模式，让每个过程对应用户可能要做的一个动作，每个动作由一个过程来驱动。也就是说在设计业务逻辑接口的时候，每个方法对应着用户的一个操作，这种模式有以下几个有点：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;它是一个大多数开发者都能够理解的简单过程模型（适合国内的绝大多数开发者）。
-它能够与一个使用行数据入口或表数据入口的简单数据访问层很好的协作。
-事务边界的显而易见，一个事务开始于脚本的开始，终止于脚本的结束，很容易通过代理（或切面）实现声明式事务。
+&lt;pre&gt;&lt;code&gt;1.它是一个大多数开发者都能够理解的简单过程模型（适合国内的绝大多数开发者）。
+
+2.它能够与一个使用行数据入口或表数据入口的简单数据访问层很好的协作。
+
+3.事务边界的显而易见，一个事务开始于脚本的开始，终止于脚本的结束，很容易通过代理（或切面）实现声明式事务。
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;然而，事务脚本模式的缺点也是很多的，随着领域逻辑复杂性的增加，系统的复杂性将迅速增加，程序结构将变得极度混乱。开源中国社区上有一篇很好的译文《贫血领域模型是如何导致糟糕的软件产生》对这个问题做了比较细致的阐述。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;谈一谈测试驱动开发（TDD）的好处以及你的理解。
-答：TDD是指在编写真正的功能实现代码之前先写测试代码，然后根据需要重构实现代码。在JUnit的作者Kent Beck的大作《测试驱动开发：实战与模式解析》（Test-Driven Development: by Example）一书中有这么一段内容：“消除恐惧和不确定性是编写测试驱动代码的重要原因”。因为编写代码时的恐惧会让你小心试探，让你回避沟通，让你羞于得到反馈，让你变得焦躁不安，而TDD是消除恐惧、让Java开发者更加自信更加乐于沟通的重要手段。TDD会带来的好处可能不会马上呈现，但是你在某个时候一定会发现，这些好处包括：- 更清晰的代码 — 只写需要的代码- 更好的设计- 更出色的灵活性 — 鼓励程序员面向接口编程- 更快速的反馈 — 不会到系统上线时才知道bug的存在&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2&gt;170、谈一谈测试驱动开发（TDD）的好处以及你的理解。&lt;/h2&gt;
+&lt;p&gt;答：TDD是指在编写真正的功能实现代码之前先写测试代码，然后根据需要重构实现代码。&lt;/p&gt;
+&lt;p&gt;在JUnit的作者Kent Beck的大作《测试驱动开发：实战与模式解析》（Test-Driven Development: by Example）一书中有这么一段内容：“消除恐惧和不确定性是编写测试驱动代码的重要原因”。因为编写代码时的恐惧会让你小心试探，让你回避沟通，让你羞于得到反馈，让你变得焦躁不安，而TDD是消除恐惧、让Java开发者更加自信更加乐于沟通的重要手段。&lt;/p&gt;
+&lt;p&gt;TDD会带来的好处可能不会马上呈现，但是你在某个时候一定会发现，这些好处包括：- 更清晰的代码 — 只写需要的代码- 更好的设计- 更出色的灵活性 — 鼓励程序员面向接口编程- 更快速的反馈 — 不会到系统上线时才知道bug的存在&lt;/p&gt;
 &lt;p&gt;补充：敏捷软件开发的概念已经有很多年了，而且也部分的改变了软件开发这个行业，TDD也是敏捷开发所倡导的。&lt;/p&gt;
 &lt;p&gt;TDD可以在多个层级上应用，包括单元测试（测试一个类中的代码）、集成测试（测试类之间的交互）、系统测试（测试运行的系统）和系统集成测试（测试运行的系统包括使用的第三方组件）。TDD的实施步骤是：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;红（失败测试）
-绿（通过测试）
-重构。
+&lt;pre&gt;&lt;code&gt;1.红（失败测试）
+
+2.绿（通过测试）
+
+3.重构。
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;关于实施TDD的详细步骤请参考另一篇文章《测试驱动开发之初窥门径》。在使用TDD开发时，经常会遇到需要被测对象需要依赖其他子系统的情况，但是你希望将测试代码跟依赖项隔离，以保证测试代码仅仅针对当前被测对象或方法展开，这时候你需要的是测试替身。&lt;/p&gt;
 &lt;p&gt;测试替身可以分为四类：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;虚设替身：只传递但是不会使用到的对象，一般用于填充方法的参数列表
-存根替身：总是返回相同的预设响应，其中可能包括一些虚设状态
-伪装替身：可以取代真实版本的可用版本（比真实版本还是会差很多）
-模拟替身：可以表示一系列期望值的对象，并且可以提供预设响应Java世界中实现模拟替身的第三方工具非常多，包括EasyMock、Mockito、jMock等。
+&lt;pre&gt;&lt;code&gt;1.虚设替身：只传递但是不会使用到的对象，一般用于填充方法的参数列表
+
+2.存根替身：总是返回相同的预设响应，其中可能包括一些虚设状态
+
+3.伪装替身：可以取代真实版本的可用版本（比真实版本还是会差很多）
+
+4.模拟替身：可以表示一系列期望值的对象，并且可以提供预设响应Java世界中实现模拟替身的第三方工具非常多，包括EasyMock、Mockito、jMock等。
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;来源：&lt;a href="https://www.jianshu.com/p/088a9d0b8249"&gt;https://www.jianshu.com/p/088a9d0b8249&lt;/a&gt;&lt;/p&gt;
-</content><link href="/archives/java-interview-3/" rel="alternate"/><published>2020-01-06T12:00:00+08:06</published></entry></feed>
+&lt;p&gt;来源：&lt;a href="http://blog.csdn.net/jackfrued/article/details/44931161"&gt;http://blog.csdn.net/jackfrued/article/details/44931161&lt;/a&gt;&lt;/p&gt;
+</content><link href="/archives/java-interview-3/" rel="alternate"/><published>2020-01-06T12:00:00+08:06</published></entry><entry><id>/archives/java-thread-problems/</id><title>Java 多线程问题</title><updated>2020-01-15T08:41:48.791930+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;作者：五月的仓颉 出自：&lt;a href="https://www.cnblogs.com/xrq730/p/5060921.html"&gt;https://www.cnblogs.com/xrq730/p/5060921.html&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;1、多线程有什么用？&lt;/h2&gt;
+&lt;p&gt;一个可能在很多人看来很扯淡的一个问题：我会用多线程就好了，还管它有什么用？在我看来，这个回答更扯淡。所谓"知其然知其所以然"，"会用"只是"知其然"，"为什么用"才是"知其所以然"，只有达到"知其然知其所以然"的程度才可以说是把一个知识点运用自如。OK，下面说说我对这个问题的看法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）发挥多核CPU的优势
+
+随着工业的进步，现在的笔记本、台式机乃至商用的应用服务器至少也都是双核的，4核、8核甚至16核的也都不少见，如果是单线程的程序，那么在双核CPU上就浪费了50%，在4核CPU上就浪费了75%。单核CPU上所谓的"多线程"那是假的多线程，同一时间处理器只会处理一段逻辑，只不过线程之间切换得比较快，看着像多个线程"同时"运行罢了。多核CPU上的多线程才是真正的多线程，它能让你的多段逻辑同时工作，多线程，可以真正发挥出多核CPU的优势来，达到充分利用CPU的目的。
+
+（2）防止阻塞
+
+从程序运行效率的角度来看，单核CPU不但不会发挥出多线程的优势，反而会因为在单核CPU上运行多线程导致线程上下文的切换，而降低程序整体的效率。但是单核CPU我们还是要应用多线程，就是为了防止阻塞。试想，如果单核CPU使用单线程，那么只要这个线程阻塞了，比方说远程读取某个数据吧，对端迟迟未返回又没有设置超时时间，那么你的整个程序在数据返回回来之前就停止运行了。多线程可以防止这个问题，多条线程同时运行，哪怕一条线程的代码执行读取数据阻塞，也不会影响其它任务的执行。
+
+（3）便于建模
+
+这是另外一个没有这么明显的优点了。假设有一个大的任务A，单线程编程，那么就要考虑很多，建立整个程序模型比较麻烦。但是如果把这个大的任务A分解成几个小任务，任务B、任务C、任务D，分别建立程序模型，并通过多线程分别运行这几个任务，那就简单很多了。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;2、创建线程的方式？&lt;/h2&gt;
+&lt;p&gt;比较常见的一个问题了，一般就是两种：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）继承Thread类
+
+（2）实现Runnable接口
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至于哪个好，不用说肯定是后者好，因为实现接口的方式比继承类的方式更灵活，也能减少程序之间的耦合度，面向接口编程也是设计模式6大原则的核心。&lt;/p&gt;
+&lt;h2&gt;3、start()方法和run()方法的区别？&lt;/h2&gt;
+&lt;p&gt;只有调用了start()方法，才会表现出多线程的特性，不同线程的run()方法里面的代码交替执行。&lt;/p&gt;
+&lt;p&gt;如果只是调用run()方法，那么代码还是同步执行的，必须等待一个线程的run()方法里面的代码全部执行完毕之后，另外一个线程才可以执行其run()方法里面的代码。&lt;/p&gt;
+&lt;h2&gt;4、Runnable接口和Callable接口的区别？&lt;/h2&gt;
+&lt;p&gt;有点深的问题了，也看出一个Java程序员学习知识的广度。&lt;/p&gt;
+&lt;p&gt;Runnable接口中的run()方法的返回值是void，它做的事情只是纯粹地去执行run()方法中的代码而已；Callable接口中的call()方法是有返回值的，是一个泛型，和Future、FutureTask配合可以用来获取异步执行的结果。&lt;/p&gt;
+&lt;p&gt;这其实是很有用的一个特性，因为多线程相比单线程更难、更复杂的一个重要原因就是因为多线程充满着未知性，某条线程是否执行了？某条线程执行了多久？某条线程执行的时候我们期望的数据是否已经赋值完毕？无法得知，我们能做的只是等待这条多线程的任务执行完毕而已。而Callable+Future/FutureTask却可以获取多线程运行的结果，可以在等待时间太长没获取到需要的数据的情况下取消该线程的任务，真的是非常有用。&lt;/p&gt;
+&lt;h2&gt;5、CyclicBarrier和CountDownLatch的区别？&lt;/h2&gt;
+&lt;p&gt;两个看上去有点像的类，都在java.util.concurrent下，都可以用来表示代码运行到某个点上，二者的区别在于：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）CyclicBarrier的某个线程运行到某个点上之后，该线程即停止运行，直到所有的线程都到达了这个点，所有线程才重新运行；CountDownLatch则不是，某线程运行到某个点上之后，只是给某个数值-1而已，该线程继续运行
+
+（2）CyclicBarrier只能唤起一个任务，CountDownLatch可以唤起多个任务
+
+（3）CyclicBarrier可重用，CountDownLatch不可重用，计数值为0该CountDownLatch就不可再用了
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;6、volatile关键字的作用？&lt;/h2&gt;
+&lt;p&gt;一个非常重要的问题，是每个学习、应用多线程的Java程序员都必须掌握的。理解volatile关键字的作用的前提是要理解Java内存模型，这里就不讲Java内存模型了，可以参见第31点，volatile关键字的作用主要有两个：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）多线程主要围绕可见性和原子性两个特性而展开，使用volatile关键字修饰的变量，保证了其在多线程之间的可见性，即每次读取到volatile变量，一定是最新的数据
+
+（2）代码底层执行不像我们看到的高级语言----Java程序这么简单，它的执行是Java代码--&amp;gt;字节码--&amp;gt;根据字节码执行对应的C/C++代码--&amp;gt;C/C++代码被编译成汇编语言--&amp;gt;和硬件电路交互，现实中，为了获取更好的性能JVM可能会对指令进行重排序，多线程下可能会出现一些意想不到的问题。使用volatile则会对禁止语义重排序，当然这也一定程度上降低了代码执行效率
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从实践角度而言，volatile的一个重要作用就是和CAS结合，保证了原子性，详细的可以参见 java.util.concurrent.atomic 包下的类，比如 AtomicInteger。&lt;/p&gt;
+&lt;h2&gt;7、什么是线程安全&lt;/h2&gt;
+&lt;p&gt;又是一个理论的问题，各式各样的答案有很多，我给出一个个人认为解释地最好的：如果你的代码在多线程下执行和在单线程下执行永远都能获得一样的结果，那么你的代码就是线程安全的。&lt;/p&gt;
+&lt;p&gt;这个问题有值得一提的地方，就是线程安全也是有几个级别的：&lt;/p&gt;
+&lt;p&gt;（1）不可变&lt;/p&gt;
+&lt;p&gt;像String、Integer、Long这些，都是final类型的类，任何一个线程都改变不了它们的值，要改变除非新创建一个，因此这些不可变对象不需要任何同步手段就可以直接在多线程环境下使用&lt;/p&gt;
+&lt;p&gt;（2）绝对线程安全&lt;/p&gt;
+&lt;p&gt;不管运行时环境如何，调用者都不需要额外的同步措施。要做到这一点通常需要付出许多额外的代价，Java中标注自己是线程安全的类，实际上绝大多数都不是线程安全的，不过绝对线程安全的类，Java中也有，比方说CopyOnWriteArrayList、CopyOnWriteArraySet&lt;/p&gt;
+&lt;p&gt;（3）相对线程安全&lt;/p&gt;
+&lt;p&gt;相对线程安全也就是我们通常意义上所说的线程安全，像Vector这种，add、remove方法都是原子操作，不会被打断，但也仅限于此，如果有个线程在遍历某个Vector、有个线程同时在add这个Vector，99%的情况下都会出现ConcurrentModificationException，也就是fail-fast机制。&lt;/p&gt;
+&lt;p&gt;（4）线程非安全&lt;/p&gt;
+&lt;p&gt;这个就没什么好说的了，ArrayList、LinkedList、HashMap等都是线程非安全的类&lt;/p&gt;
+&lt;h2&gt;8、Java中如何获取到线程dump文件？&lt;/h2&gt;
+&lt;p&gt;死循环、死锁、阻塞、页面打开慢等问题，打线程dump是最好的解决问题的途径。所谓线程dump也就是线程堆栈，获取到线程堆栈有两步：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）获取到线程的pid，可以通过使用jps命令，在Linux环境下还可以使用ps -ef | grep java
+（2）打印线程堆栈，可以通过使用jstack pid命令，在Linux环境下还可以使用kill -3 pid
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;另外提一点，Thread类提供了一个getStackTrace()方法也可以用于获取线程堆栈。这是一个实例方法，因此此方法是和具体线程实例绑定的，每次获取获取到的是具体某个线程当前运行的堆栈，&lt;/p&gt;
+&lt;h2&gt;9、一个线程如果出现了运行时异常会怎么样？&lt;/h2&gt;
+&lt;p&gt;如果这个异常没有被捕获的话，这个线程就停止执行了。另外重要的一点是：如果这个线程持有某个某个对象的监视器，那么这个对象监视器会被立即释放&lt;/p&gt;
+&lt;h2&gt;10、如何在两个线程之间共享数据？&lt;/h2&gt;
+&lt;p&gt;通过在线程之间共享对象就可以了，然后通过wait/notify/notifyAll、await/signal/signalAll进行唤起和等待，比方说阻塞队列BlockingQueue就是为线程之间共享数据而设计的。&lt;/p&gt;
+&lt;h2&gt;11、sleep方法和wait方法有什么区别 ？&lt;/h2&gt;
+&lt;p&gt;这个问题常问，sleep方法和wait方法都可以用来放弃CPU一定的时间，不同点在于如果线程持有某个对象的监视器，sleep方法不会放弃这个对象的监视器，wait方法会放弃这个对象的监视器&lt;/p&gt;
+&lt;h2&gt;12、生产者消费者模型的作用是什么？&lt;/h2&gt;
+&lt;p&gt;这个问题很理论，但是很重要：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）通过平衡生产者的生产能力和消费者的消费能力来提升整个系统的运行效率，这是生产者消费者模型最重要的作用
+（2）解耦，这是生产者消费者模型附带的作用，解耦意味着生产者和消费者之间的联系少，联系越少越可以独自发展而不需要收到相互的制约
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;13、ThreadLocal有什么用？&lt;/h2&gt;
+&lt;p&gt;简单说ThreadLocal就是一种以空间换时间的做法，在每个Thread里面维护了一个以开地址法实现的ThreadLocal.ThreadLocalMap，把数据进行隔离，数据不共享，自然就没有线程安全方面的问题了&lt;/p&gt;
+&lt;h2&gt;14、为什么wait()方法和notify()/notifyAll()方法要在同步块中被调用&lt;/h2&gt;
+&lt;p&gt;这是JDK强制的，wait()方法和notify()/notifyAll()方法在调用前都必须先获得对象的锁&lt;/p&gt;
+&lt;h2&gt;15、wait()方法和notify()/notifyAll()方法在放弃对象监视器时有什么区别？&lt;/h2&gt;
+&lt;p&gt;wait()方法和notify()/notifyAll()方法在放弃对象监视器的时候的区别在于：wait()方法立即释放对象监视器，notify()/notifyAll()方法则会等待线程剩余代码执行完毕才会放弃对象监视器。&lt;/p&gt;
+&lt;h2&gt;16、为什么要使用线程池？&lt;/h2&gt;
+&lt;p&gt;避免频繁地创建和销毁线程，达到线程对象的重用。另外，使用线程池还可以根据项目灵活地控制并发的数目。&lt;/p&gt;
+&lt;h2&gt;17、怎么检测一个线程是否持有对象监视器？&lt;/h2&gt;
+&lt;p&gt;我也是在网上看到一道多线程面试题才知道有方法可以判断某个线程是否持有对象监视器：Thread类提供了一个holdsLock(Object obj)方法，当且仅当对象obj的监视器被某条线程持有的时候才会返回true，注意这是一个static方法，这意味着"某条线程"指的是当前线程。&lt;/p&gt;
+&lt;h2&gt;18、synchronized和ReentrantLock的区别？&lt;/h2&gt;
+&lt;p&gt;synchronized是和if、else、for、while一样的关键字，ReentrantLock是类，这是二者的本质区别。既然ReentrantLock是类，那么它就提供了比synchronized更多更灵活的特性，可以被继承、可以有方法、可以有各种各样的类变量，ReentrantLock比synchronized的扩展性体现在几点上：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）ReentrantLock可以对获取锁的等待时间进行设置，这样就避免了死锁
+
+（2）ReentrantLock可以获取各种锁的信息
+
+（3）ReentrantLock可以灵活地实现多路通知
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;另外，二者的锁机制其实也是不一样的。ReentrantLock底层调用的是Unsafe的park方法加锁，synchronized操作的应该是对象头中mark word，这点我不能确定。&lt;/p&gt;
+&lt;h2&gt;19、ConcurrentHashMap的并发度是什么？&lt;/h2&gt;
+&lt;p&gt;ConcurrentHashMap的并发度就是segment的大小，默认为16，这意味着最多同时可以有16条线程操作ConcurrentHashMap，这也是ConcurrentHashMap对Hashtable的最大优势，任何情况下，Hashtable能同时有两条线程获取Hashtable中的数据吗？&lt;/p&gt;
+&lt;h2&gt;20、ReadWriteLock是什么？&lt;/h2&gt;
+&lt;p&gt;首先明确一下，不是说ReentrantLock不好，只是ReentrantLock某些时候有局限。如果使用ReentrantLock，可能本身是为了防止线程A在写数据、线程B在读数据造成的数据不一致，但这样，如果线程C在读数据、线程D也在读数据，读数据是不会改变数据的，没有必要加锁，但是还是加锁了，降低了程序的性能。&lt;/p&gt;
+&lt;p&gt;因为这个，才诞生了读写锁ReadWriteLock。ReadWriteLock是一个读写锁接口，ReentrantReadWriteLock是ReadWriteLock接口的一个具体实现，实现了读写的分离，读锁是共享的，写锁是独占的，读和读之间不会互斥，读和写、写和读、写和写之间才会互斥，提升了读写的性能。&lt;/p&gt;
+&lt;h2&gt;21、FutureTask是什么？&lt;/h2&gt;
+&lt;p&gt;这个其实前面有提到过，FutureTask表示一个异步运算的任务。FutureTask里面可以传入一个Callable的具体实现类，可以对这个异步运算的任务的结果进行等待获取、判断是否已经完成、取消任务等操作。当然，由于FutureTask也是Runnable接口的实现类，所以FutureTask也可以放入线程池中。&lt;/p&gt;
+&lt;h2&gt;22、Linux环境下如何查找哪个线程使用CPU最长&lt;/h2&gt;
+&lt;p&gt;这是一个比较偏实践的问题，这种问题我觉得挺有意义的。可以这么做：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）获取项目的pid，jps或者ps -ef | grep java，这个前面有讲过
+
+（2）top -H -p pid，顺序不能改变
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样就可以打印出当前的项目，每条线程占用CPU时间的百分比。注意这里打出的是LWP，也就是操作系统原生线程的线程号，我笔记本山没有部署Linux环境下的Java工程，因此没有办法截图演示，网友朋友们如果公司是使用Linux环境部署项目的话，可以尝试一下。&lt;/p&gt;
+&lt;p&gt;使用"top -H -p pid"+"jps pid"可以很容易地找到某条占用CPU高的线程的线程堆栈，从而定位占用CPU高的原因，一般是因为不当的代码操作导致了死循环。&lt;/p&gt;
+&lt;p&gt;最后提一点，"top -H -p pid"打出来的LWP是十进制的，"jps pid"打出来的本地线程号是十六进制的，转换一下，就能定位到占用CPU高的线程的当前线程堆栈了。&lt;/p&gt;
+&lt;h2&gt;23、Java编程写一个会导致死锁的程序&lt;/h2&gt;
+&lt;p&gt;第一次看到这个题目，觉得这是一个非常好的问题。很多人都知道死锁是怎么一回事儿：线程A和线程B相互等待对方持有的锁导致程序无限死循环下去。当然也仅限于此了，问一下怎么写一个死锁的程序就不知道了，这种情况说白了就是不懂什么是死锁，懂一个理论就完事儿了，实践中碰到死锁的问题基本上是看不出来的。&lt;/p&gt;
+&lt;p&gt;真正理解什么是死锁，这个问题其实不难，几个步骤：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）两个线程里面分别持有两个Object对象：lock1和lock2。这两个lock作为同步代码块的锁；
+
+（2）线程1的run()方法中同步代码块先获取lock1的对象锁，Thread.sleep(xxx)，时间不需要太多，50毫秒差不多了，然后接着获取lock2的对象锁。这么做主要是为了防止线程1启动一下子就连续获得了lock1和lock2两个对象的对象锁
+
+（3）线程2的run()方法中同步代码块先获取lock2的对象锁，接着获取lock1的对象锁，当然这时lock1的对象锁已经被线程1锁持有，线程2肯定是要等待线程1释放lock1的对象锁的
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样，线程1"睡觉"睡完，线程2已经获取了lock2的对象锁了，线程1此时尝试获取lock2的对象锁，便被阻塞，此时一个死锁就形成了。代码就不写了，占的篇幅有点多，Java多线程7：死锁这篇文章里面有，就是上面步骤的代码实现。&lt;/p&gt;
+&lt;h2&gt;24、怎么唤醒一个阻塞的线程？&lt;/h2&gt;
+&lt;p&gt;如果线程是因为调用了wait()、sleep()或者join()方法而导致的阻塞，可以中断线程，并且通过抛出InterruptedException来唤醒它；如果线程遇到了IO阻塞，无能为力，因为IO是操作系统实现的，Java代码并没有办法直接接触到操作系统。&lt;/p&gt;
+&lt;h2&gt;25、不可变对象对多线程有什么帮助&lt;/h2&gt;
+&lt;p&gt;前面有提到过的一个问题，不可变对象保证了对象的内存可见性，对不可变对象的读取不需要进行额外的同步手段，提升了代码执行效率。&lt;/p&gt;
+&lt;h2&gt;26、什么是多线程的上下文切换？&lt;/h2&gt;
+&lt;p&gt;多线程的上下文切换是指CPU控制权由一个已经正在运行的线程切换到另外一个就绪并等待获取CPU执行权的线程的过程。&lt;/p&gt;
+&lt;h2&gt;27、如果你提交任务时，线程池队列已满，这时会发生什么？&lt;/h2&gt;
+&lt;p&gt;这里区分一下：&lt;/p&gt;
+&lt;p&gt;如果使用的是无界队列LinkedBlockingQueue，也就是无界队列的话，没关系，继续添加任务到阻塞队列中等待执行，因为LinkedBlockingQueue可以近乎认为是一个无穷大的队列，可以无限存放任务&lt;/p&gt;
+&lt;p&gt;如果使用的是有界队列比如ArrayBlockingQueue，任务首先会被添加到ArrayBlockingQueue中，ArrayBlockingQueue满了，会根据maximumPoolSize的值增加线程数量，如果增加了线程数量还是处理不过来，ArrayBlockingQueue继续满，那么则会使用拒绝策略RejectedExecutionHandler处理满了的任务，默认是AbortPolicy&lt;/p&gt;
+&lt;h2&gt;28、Java中用到的线程调度算法是什么？&lt;/h2&gt;
+&lt;p&gt;抢占式。一个线程用完CPU之后，操作系统会根据线程优先级、线程饥饿情况等数据算出一个总的优先级并分配下一个时间片给某个线程执行。&lt;/p&gt;
+&lt;h2&gt;29、Thread.sleep(0)的作用是什么？&lt;/h2&gt;
+&lt;p&gt;这个问题和上面那个问题是相关的，我就连在一起了。由于Java采用抢占式的线程调度算法，因此可能会出现某条线程常常获取到CPU控制权的情况，为了让某些优先级比较低的线程也能获取到CPU控制权，可以使用Thread.sleep(0)手动触发一次操作系统分配时间片的操作，这也是平衡CPU控制权的一种操作。&lt;/p&gt;
+&lt;h2&gt;30、什么是自旋？&lt;/h2&gt;
+&lt;p&gt;很多synchronized里面的代码只是一些很简单的代码，执行时间非常快，此时等待的线程都加锁可能是一种不太值得的操作，因为线程阻塞涉及到用户态和内核态切换的问题。既然synchronized里面的代码执行得非常快，不妨让等待锁的线程不要被阻塞，而是在synchronized的边界做忙循环，这就是自旋。如果做了多次忙循环发现还没有获得锁，再阻塞，这样可能是&lt;/p&gt;
+&lt;h2&gt;31、什么是Java内存模型&lt;/h2&gt;
+&lt;p&gt;Java内存模型定义了一种多线程访问Java内存的规范。Java内存模型要完整讲不是这里几句话能说清楚的，我简单总结一下Java内存模型的几部分内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）Java内存模型将内存分为了主内存和工作内存。类的状态，也就是类之间共享的变量，是存储在主内存中的，每次Java线程用到这些主内存中的变量的时候，会读一次主内存中的变量，并让这些内存在自己的工作内存中有一份拷贝，运行自己线程代码的时候，用到这些变量，操作的都是自己工作内存中的那一份。在线程代码执行完毕之后，会将最新的值更新到主内存中去
+
+（2）定义了几个原子操作，用于操作主内存和工作内存中的变量
+
+（3）定义了volatile变量的使用规则
+
+（4）happens-before，即先行发生原则，定义了操作A必然先行发生于操作B的一些规则，比如在同一个线程内控制流前面的代码一定先行发生于控制流后面的代码、一个释放锁unlock的动作一定先行发生于后面对于同一个锁进行锁定lock的动作等等，只要符合这些规则，则不需要额外做同步措施，如果某段代码不符合所有的happens-before规则，则这段代码一定是线程非安全的
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;32、什么是CAS？&lt;/h2&gt;
+&lt;p&gt;CAS，全称为Compare and Swap，即比较-替换。假设有三个操作数：内存值V、旧的预期值A、要修改的值B，当且仅当预期值A和内存值V相同时，才会将内存值修改为B并返回true，否则什么都不做并返回false。当然CAS一定要volatile变量配合，这样才能保证每次拿到的变量是主内存中最新的那个值，否则旧的预期值A对某条线程来说，永远是一个不会变的值A，只要某次CAS操作失败，永远都不可能成功。&lt;/p&gt;
+&lt;h2&gt;33、什么是乐观锁和悲观锁？&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）乐观锁：就像它的名字一样，对于并发间操作产生的线程安全问题持乐观状态，乐观锁认为竞争不总是会发生，因此它不需要持有锁，将比较-替换这两个动作作为一个原子操作尝试去修改内存中的变量，如果失败则表示发生冲突，那么就应该有相应的重试逻辑。
+
+（2）悲观锁：还是像它的名字一样，对于并发间操作产生的线程安全问题持悲观状态，悲观锁认为竞争总是会发生，因此每次对某资源进行操作时，都会持有一个独占的锁，就像synchronized，不管三七二十一，直接上了锁就操作资源了。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;34、什么是AQS？&lt;/h2&gt;
+&lt;p&gt;简单说一下AQS，AQS全称为AbstractQueuedSychronizer，翻译过来应该是抽象队列同步器。&lt;/p&gt;
+&lt;p&gt;如果说java.util.concurrent的基础是CAS的话，那么AQS就是整个Java并发包的核心了，ReentrantLock、CountDownLatch、Semaphore等等都用到了它。AQS实际上以双向队列的形式连接所有的Entry，比方说ReentrantLock，所有等待的线程都被放在一个Entry中并连成双向队列，前面一个线程使用ReentrantLock好了，则双向队列实际上的第一个Entry开始运行。&lt;/p&gt;
+&lt;p&gt;AQS定义了对双向队列所有的操作，而只开放了tryLock和tryRelease方法给开发者使用，开发者可以根据自己的实现重写tryLock和tryRelease方法，以实现自己的并发功能。&lt;/p&gt;
+&lt;h2&gt;35、单例模式的线程安全性？&lt;/h2&gt;
+&lt;p&gt;老生常谈的问题了，首先要说的是单例模式的线程安全意味着：某个类的实例在多线程环境下只会被创建一次出来。单例模式有很多种的写法，我总结一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）饿汉式单例模式的写法：线程安全
+
+（2）懒汉式单例模式的写法：非线程安全
+
+（3）双检锁单例模式的写法：线程安全
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;36、Semaphore有什么作用？&lt;/h2&gt;
+&lt;p&gt;Semaphore就是一个信号量，它的作用是限制某段代码块的并发数。Semaphore有一个构造函数，可以传入一个int型整数n，表示某段代码最多只有n个线程可以访问，如果超出了n，那么请等待，等到某个线程执行完毕这段代码块，下一个线程再进入。由此可以看出如果Semaphore构造函数中传入的int型整数n=1，相当于变成了一个synchronized了。&lt;/p&gt;
+&lt;h2&gt;37、Hashtable的size()方法中明明只有一条语句"return count"，为什么还要做同步？&lt;/h2&gt;
+&lt;p&gt;这是我之前的一个困惑，不知道大家有没有想过这个问题。某个方法中如果有多条语句，并且都在操作同一个类变量，那么在多线程环境下不加锁，势必会引发线程安全问题，这很好理解，但是size()方法明明只有一条语句，为什么还要加锁？&lt;/p&gt;
+&lt;p&gt;关于这个问题，在慢慢地工作、学习中，有了理解，主要原因有两点：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）同一时间只能有一条线程执行固定类的同步方法，但是对于类的非同步方法，可以多条线程同时访问。所以，这样就有问题了，可能线程A在执行Hashtable的put方法添加数据，线程B则可以正常调用size()方法读取Hashtable中当前元素的个数，那读取到的值可能不是最新的，可能线程A添加了完了数据，但是没有对size++，线程B就已经读取size了，那么对于线程B来说读取到的size一定是不准确的。而给size()方法加了同步之后，意味着线程B调用size()方法只有在线程A调用put方法完毕之后才可以调用，这样就保证了线程安全性
+
+（2）CPU执行代码，执行的不是Java代码，这点很关键，一定得记住。Java代码最终是被翻译成机器码执行的，机器码才是真正可以和硬件电路交互的代码。即使你看到Java代码只有一行，甚至你看到Java代码编译之后生成的字节码也只有一行，也不意味着对于底层来说这句语句的操作只有一个。一句"return count"假设被翻译成了三句汇编语句执行，一句汇编语句和其机器码做对应，完全可能执行完第一句，线程就切换了。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;38、线程类的构造方法、静态块是被哪个线程调用的？&lt;/h2&gt;
+&lt;p&gt;这是一个非常刁钻和狡猾的问题。请记住：线程类的构造方法、静态块是被new这个线程类所在的线程所调用的，而run方法里面的代码才是被线程自身所调用的。&lt;/p&gt;
+&lt;p&gt;如果说上面的说法让你感到困惑，那么我举个例子，假设Thread2中new了Thread1，main函数中new了Thread2，那么：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）Thread2的构造方法、静态块是main线程调用的，Thread2的run()方法是Thread2自己调用的
+
+（2）Thread1的构造方法、静态块是Thread2调用的，Thread1的run()方法是Thread1自己调用的
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;39、同步方法和同步块，哪个是更好的选择&lt;/h2&gt;
+&lt;p&gt;同步块，这意味着同步块之外的代码是异步执行的，这比同步整个方法更提升代码的效率。请知道一条原则：同步的范围越小越好。&lt;/p&gt;
+&lt;p&gt;借着这一条，我额外提一点，虽说同步的范围越少越好，但是在Java虚拟机中还是存在着一种叫做锁粗化的优化方法，这种方法就是把同步范围变大。这是有用的，比方说StringBuffer，它是一个线程安全的类，自然最常用的append()方法是一个同步方法，我们写代码的时候会反复append字符串，这意味着要进行反复的加锁-&amp;gt;解锁，这对性能不利，因为这意味着Java虚拟机在这条线程上要反复地在内核态和用户态之间进行切换，因此Java虚拟机会将多次append方法调用的代码进行一个锁粗化的操作，将多次的append的操作扩展到append方法的头尾，变成一个大的同步块，这样就减少了加锁--&amp;gt;解锁的次数，有效地提升了代码执行的效率。&lt;/p&gt;
+&lt;h2&gt;40、高并发、任务执行时间短的业务怎样使用线程池？并发不高、任务执行时间长的业务怎样使用线程池？并发高、业务执行时间长的业务怎样使用线程池？&lt;/h2&gt;
+&lt;p&gt;这是我在并发编程网上看到的一个问题，把这个问题放在最后一个，希望每个人都能看到并且思考一下，因为这个问题非常好、非常实际、非常专业。关于这个问题，个人看法是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）高并发、任务执行时间短的业务，线程池线程数可以设置为CPU核数+1，减少线程上下文的切换
+
+（2）并发不高、任务执行时间长的业务要区分开看：
+    a）假如是业务时间长集中在IO操作上，也就是IO密集型的任务，因为IO操作并不占用CPU，所以不要让所有的CPU闲下来，可以加大线程池中的线程数目，让CPU处理更多的业务
+    b）假如是业务时间长集中在计算操作上，也就是计算密集型任务，这个就没办法了，和（1）一样吧，线程池中的线程数设置得少一些，减少线程上下文的切换
+
+（3）并发高、业务执行时间长，解决这种类型任务的关键不在于线程池而在于整体架构的设计，看看这些业务里面某些数据是否能做缓存是第一步，增加服务器是第二步，至于线程池的设置，设置参考其他有关线程池的文章。最后，业务执行时间长的问题，也可能需要分析一下，看看能不能使用中间件对任务进行拆分和解耦。&lt;/code&gt;&lt;/pre&gt;
+</content><link href="/archives/java-thread-problems/" rel="alternate"/><published>2020-01-07T12:00:00+08:06</published></entry><entry><id>/archives/redis-problems/</id><title>Redis 问题</title><updated>2020-01-15T08:41:48.791878+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;汇总整理的Redis相关问题，持续更新！&lt;/div&gt;&lt;h2&gt;1.Redis有哪些数据结构？&lt;/h2&gt;
+&lt;p&gt;字符串String、字典Hash、列表List、集合Set、有序集合SortedSet。&lt;/p&gt;
+&lt;p&gt;如果你是Redis中高级用户，还需要加上下面几种数据结构HyperLogLog、Geo、Pub/Sub。&lt;/p&gt;
+&lt;p&gt;如果你说还玩过Redis Module，像BloomFilter，RedisSearch，Redis-ML，面试官得眼睛就开始发亮了。&lt;/p&gt;
+&lt;h2&gt;2.使用过Redis分布式锁么，它是什么回事？&lt;/h2&gt;
+&lt;p&gt;先拿setnx来争抢锁，抢到之后，再用expire给锁加一个过期时间防止锁忘记了释放。&lt;/p&gt;
+&lt;p&gt;这时候对方会告诉你说你回答得不错，然后接着问如果在setnx之后执行expire之前进程意外crash或者要重启维护了，那会怎么样？&lt;/p&gt;
+&lt;p&gt;这时候你要给予惊讶的反馈：唉，是喔，这个锁就永远得不到释放了。紧接着你需要抓一抓自己得脑袋，故作思考片刻，好像接下来的结果是你主动思考出来的，然后回答：我记得set指令有非常复杂的参数，这个应该是可以同时把setnx和expire合成一条指令来用的！对方这时会显露笑容，心里开始默念：摁，这小子还不错。&lt;/p&gt;
+&lt;h2&gt;3.假如Redis里面有1亿个key，其中有10w个key是以某个固定的已知的前缀开头的，如果将它们全部找出来？&lt;/h2&gt;
+&lt;p&gt;使用keys指令可以扫出指定模式的key列表。&lt;/p&gt;
+&lt;p&gt;对方接着追问：如果这个redis正在给线上的业务提供服务，那使用keys指令会有什么问题？&lt;/p&gt;
+&lt;p&gt;这个时候你要回答redis关键的一个特性：redis的单线程的。keys指令会导致线程阻塞一段时间，线上服务会停顿，直到指令执行完毕，服务才能恢复。这个时候可以使用scan指令，scan指令可以无阻塞的提取出指定模式的key列表，但是会有一定的重复概率，在客户端做一次去重就可以了，但是整体所花费的时间会比直接用keys指令长。&lt;/p&gt;
+&lt;h2&gt;4.使用过Redis做异步队列么，你是怎么用的？&lt;/h2&gt;
+&lt;p&gt;一般使用list结构作为队列，rpush生产消息，lpop消费消息。当lpop没有消息的时候，要适当sleep一会再重试。&lt;/p&gt;
+&lt;p&gt;如果对方追问可不可以不用sleep呢？list还有个指令叫blpop，在没有消息的时候，它会阻塞住直到消息到来。&lt;/p&gt;
+&lt;p&gt;如果对方追问能不能生产一次消费多次呢？使用pub/sub主题订阅者模式，可以实现1:N的消息队列。&lt;/p&gt;
+&lt;p&gt;如果对方追问pub/sub有什么缺点？在消费者下线的情况下，生产的消息会丢失，得使用专业的消息队列如rabbitmq等。&lt;/p&gt;
+&lt;p&gt;如果对方追问redis如何实现延时队列？我估计现在你很想把面试官一棒打死如果你手上有一根棒球棍的话，怎么问的这么详细。但是你很克制，然后神态自若的回答道：使用sortedset，拿时间戳作为score，消息内容作为key调用zadd来生产消息，消费者用zrangebyscore指令获取N秒之前的数据轮询进行处理。&lt;/p&gt;
+&lt;p&gt;到这里，面试官暗地里已经对你竖起了大拇指。但是他不知道的是此刻你却竖起了中指，在椅子背后。&lt;/p&gt;
+&lt;h2&gt;5.如果有大量的key需要设置同一时间过期，一般需要注意什么？&lt;/h2&gt;
+&lt;p&gt;如果大量的key过期时间设置的过于集中，到过期的那个时间点，redis可能会出现短暂的卡顿现象。一般需要在时间上加一个随机值，使得过期时间分散一些。&lt;/p&gt;
+&lt;h2&gt;6.Redis如何做持久化的？&lt;/h2&gt;
+&lt;p&gt;bgsave做镜像全量持久化，aof做增量持久化。因为bgsave会耗费较长时间，不够实时，在停机的时候会导致大量丢失数据，所以需要aof来配合使用。在redis实例重启时，会使用bgsave持久化文件重新构建内存，再使用aof重放近期的操作指令来实现完整恢复重启之前的状态。&lt;/p&gt;
+&lt;p&gt;对方追问那如果突然机器掉电会怎样？取决于aof日志sync属性的配置，如果不要求性能，在每条写指令时都sync一下磁盘，就不会丢失数据。但是在高性能的要求下每次都sync是不现实的，一般都使用定时sync，比如1s1次，这个时候最多就会丢失1s的数据。&lt;/p&gt;
+&lt;p&gt;对方追问bgsave的原理是什么？你给出两个词汇就可以了，fork和cow。fork是指redis通过创建子进程来进行bgsave操作，cow指的是copy on write，子进程创建后，父子进程共享数据段，父进程继续提供读写服务，写脏的页面数据会逐渐和子进程分离开来。&lt;/p&gt;
+&lt;h2&gt;7.Pipeline有什么好处，为什么要用pipeline？&lt;/h2&gt;
+&lt;p&gt;可以将多次IO往返的时间缩减为一次，前提是pipeline执行的指令之间没有因果相关性。使用redis-benchmark进行压测的时候可以发现影响redis的QPS峰值的一个重要因素是pipeline批次指令的数目。&lt;/p&gt;
+&lt;h2&gt;8.Redis的同步机制了解么？&lt;/h2&gt;
+&lt;p&gt;Redis可以使用主从同步，从从同步。第一次同步时，主节点做一次bgsave，并同时将后续修改操作记录到内存buffer，待完成后将rdb文件全量同步到复制节点，复制节点接受完成后将rdb镜像加载到内存。加载完成后，再通知主节点将期间修改的操作记录同步到复制节点进行重放就完成了同步过程。&lt;/p&gt;
+&lt;h2&gt;9.是否使用过Redis集群，集群的原理是什么？&lt;/h2&gt;
+&lt;p&gt;Redis Sentinal着眼于高可用，在master宕机时会自动将slave提升为master，继续提供服务。&lt;/p&gt;
+&lt;p&gt;Redis Cluster着眼于扩展性，在单个redis内存不足时，使用Cluster进行分片存储。&lt;/p&gt;
+</content><link href="/archives/redis-problems/" rel="alternate"/><published>2020-01-08T12:00:00+08:06</published></entry></feed>
