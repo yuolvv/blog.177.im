@@ -21,6 +21,76 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
     <url>
+        <loc>/archives/java-interview-jvm/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-thread/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-dubbo/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-mybatis/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-mysql/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-dubbo/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-redis/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-springmvc/</loc>
+        <lastmod>2020-01-11</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-springcloud/</loc>
+        <lastmod>2020-01-10</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-springboot/</loc>
+        <lastmod>2020-01-09</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>/archives/redis-problems/</loc>
         <lastmod>2020-01-08</lastmod>
         <changefreq>always</changefreq>

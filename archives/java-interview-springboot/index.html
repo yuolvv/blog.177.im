@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="177.im,177,听风行,blog,博客" />
+    <meta name="generator" content="Maverick 1.0" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/97cf36c4be3f5d55faecdeabe39acbe2.json"
+        }
+    </script>
+    
+<title>Java面试题-SpringBoot - 177博客</title>
+<meta name="author" content="177" />
+<meta name="description" content="Java面试题SpringBoot收集整理" />
+<meta property="og:title" content="Java面试题-SpringBoot - 177博客" />
+<meta property="og:description" content="Java面试题SpringBoot收集整理" />
+<meta property="og:site_name" content="177博客" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/java-interview-springboot/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-01-09T12:00:00-00.00" />
+<meta name="twitter:title" content="Java面试题-SpringBoot - 177博客" />
+<meta name="twitter:description" content="Java面试题SpringBoot收集整理" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//blog.177.im" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/brand_font/embed.css" />
+<style>.brand{font-family:FZCuJinLFW,serif;font-weight: normal!important;}</style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" color="#505050">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<meta name="application-name" content="177">
+<meta name="apple-mobile-web-app-title" content="177">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#000000">
+<meta name="baidu-site-verification" content="" />
+
+    </head>
+    
+    <body>
+        
+            <div id="bg" style="background-image: url(https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/bg/The_Great_Wave_off_Kanagawa.jpg)"></div>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-logo">
+                        <a href="/" target="_self">
+                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
+                        </a>
+                    </aside>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
+                        <p>天青色等烟雨</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                    <nav class="social-links">
+                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Java面试题-SpringBoot</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>177</span>
+                <time>
+                    2020-01-09
+                </time>
+                
+                in <a no-style class="category" href="/category/极客/">
+                    极客
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <div class="notice">从网络上收集整理的Java面试题，如有侵权，请联系删除！</div><h2>1、什么是 Spring Boot？</h2>
+<p>Spring Boot 是 Spring 开源组织下的子项目，是 Spring 组件一站式处理方案，主要是简化了使用 Spring 的难度，简省了繁重的配置，提供了各种启动器，开发者能快速上手。</p>
+<h2>2、为什么要用 Spring Boot？</h2>
+<p>Spring Boot 优点非常多，如：</p>
+
+<pre><code>- 独立运行
+
+- 简化配置
+
+- 自动配置
+
+- 无代码生成和XML配置
+
+- 应用监控
+
+- 上手容易…..
+
+</code></pre>
+<h2>3、Spring Boot 的核心配置文件有哪几个？它们的区别是什么？</h2>
+
+<pre><code>- Spring Boot 的核心配置文件是 application 和 bootstrap 配置文件。
+
+- application 配置文件这个容易了解，主要用于 Spring Boot 项目的自动化配置。
+
+- bootstrap 配置文件有以下几个应用场景。
+
+- 使用 Spring Cloud Config 配置中心时，这时需要在 bootstrap 配置文件中增加连接到配置中心的配置属性来加载外部配置中心的配置信息；
+
+- 少量固定的不能被覆盖的属性；
+
+- 少量加密/解密的场景；
+
+</code></pre>
+<h2>4、Spring Boot 的配置文件有哪几种格式？它们有什么区别？</h2>
+<p>.properties 和 .yml，它们的区别主要是书写格式不同。</p>
+
+<pre><code>1).properties
+
+2).yml
+
+</code></pre>
+<p>另外，.yml 格式不支持@PropertySource注解导入配置。</p>
+<h2>5、Spring Boot 的核心注解是哪个？它主要由哪几个注解组成的？</h2>
+<p>启动类上面的注解是@SpringBootApplication，它也是 Spring Boot 的核心注解，主要组合包含了以下 3 个注解：</p>
+<p>@SpringBootConfiguration：组合了 @Configuration 注解，实现配置文件的功能。</p>
+<p>@EnableAutoConfiguration：打开自动配置的功能，也可以关闭某个自动配置的选项，如关闭数据源自动配置功能：@SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })。</p>
+<p>@ComponentScan：Spring组件扫描。</p>
+<h2>6、开启 Spring Boot 特性有哪几种方式？</h2>
+<p>1）继承spring-boot-starter-parent项目</p>
+<p>2）导入spring-boot-dependencies项目依赖</p>
+<h2>7、Spring Boot 需要独立的容器运行吗？</h2>
+<p>可以不需要，内置了 Tomcat/ Jetty 等容器。</p>
+<h2>8、运行 Spring Boot 有哪几种方式？</h2>
+<p>1）打包用命令或者者放到容器中运行</p>
+<p>2）用 Maven/ Gradle 插件运行</p>
+<p>3）直接执行 main 方法运行</p>
+<h2>9.springboot常用的starter有哪些?</h2>
+<p>spring-boot-starter-web 嵌入tomcat和web开发需要servlet与jsp支持</p>
+<p>spring-boot-starter-data-jpa 数据库支持</p>
+<p>spring-boot-starter-data-redis redis数据库支持</p>
+<p>spring-boot-starter-data-solr solr支持</p>
+<p>mybatis-spring-boot-starter 第三方的mybatis集成starter</p>
+<h2>10、Spring Boot 自动配置原理是什么？</h2>
+<p>注解 @EnableAutoConfiguration, @Configuration, @ConditionalOnClass 就是自动配置的核心，首先它得是一个配置文件，其次根据类路径下能否有这个类去自动配置。</p>
+<h2>11、Spring Boot 的目录结构是怎么的？</h2>
+<p>这个目录结构是主流及推荐的做法，而在主入口类上加上 @SpringBootApplication 注解来开启 Spring Boot 的各项能力，如自动配置、组件扫描等。</p>
+<h2>12、你如何了解 Spring Boot 中的 Starters？</h2>
+<p>Starters可以了解为启动器，它包含了一系列可以集成到应用里面的依赖包，你可以一站式集成 Spring 及其余技术，而不需要四处找示例代码和依赖包。</p>
+<p>如你想使用 Spring JPA 访问数据库，只需加入 spring-boot-starter-data-jpa 启动器依赖就能使用了。</p>
+<p>Starters包含了许多项目中需要用到的依赖，它们能快速持续的运行，都是一系列得到支持的管理传递性依赖。</p>
+<h2>13、如何在 Spring Boot 启动的时候运行少量特定的代码？</h2>
+<p>可以实现接口 ApplicationRunner 或者者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个 run 方法</p>
+<h2>14、Spring Boot 有哪几种读取配置的方式？</h2>
+<p>Spring Boot 可以通过 @PropertySource,@Value,@Environment, @ConfigurationProperties 来绑定变量</p>
+<h2>15、Spring Boot 支持哪些日志框架？推荐和默认的日志框架是哪个？</h2>
+<p>Spring Boot 支持 Java Util Logging, Log4j2, Lockback 作为日志框架，假如你使用 Starters 启动器，Spring Boot 将使用 Logback 作为默认日志框架</p>
+<h2>16、SpringBoot 实现热部署有哪几种方式？</h2>
+<p>主要有两种方式：</p>
+<p>Spring Loaded</p>
+<p>Spring-boot-devtools</p>
+<h2>17、你如何了解 Spring Boot 配置加载顺序？</h2>
+<p>在 Spring Boot 里面，可以使用以下几种方式来加载配置。</p>
+<p>1）properties文件；</p>
+<p>2）YAML文件；</p>
+<p>3）系统环境变量；</p>
+<p>4）命令行参数；</p>
+<p>等等……</p>
+<h2>18、Spring Boot 如何定义多套不同环境配置？</h2>
+<p>提供多套配置文件，如：</p>
+<p>运行时指定具体的配置文件</p>
+<h2>19、Spring Boot 可以兼容老 Spring 项目吗，如何做？</h2>
+<p>可以兼容，使用@ImportResource注解导入老 Spring 项目配置文件。</p>
+<h2>20、保护 Spring Boot 应用有哪些方法？</h2>
+<p>在生产中使用HTTPS</p>
+<p>使用Snyk检查你的依赖关系</p>
+<p>更新到最新版本</p>
+<p>启用CSRF保护</p>
+<p>使用内容安全策略防止XSS攻击…</p>
+<h2>21、Spring Boot 2.X 有什么新特性？与 1.X 有什么区别？</h2>
+<p>配置变更</p>
+<p>JDK 版本更新</p>
+<p>第三方类库更新</p>
+<p>响应式 Spring 编程支持</p>
+<p>HTTP/2 支持</p>
+<p>配置属性绑定</p>
+<p>更多改进与增强…</p>
+<h2>22.什么是Spring Profiles？</h2>
+<p>Spring Profiles允许用户根据配置文件（dev，test，prod等）来注册bean。</p>
+<p>因此，当应用程序在开发中运行时，只有某些bean可以加载，而在PRODUCTION中，某些其他bean可以加载。</p>
+<p>假设我们的要求是Swagger文档仅适用于QA环境，并且禁用所有其他文档。这可以使用配置文件来完成。Spring Boot使得使用配置文件非常简单。</p>
+<h2>23.什么是Spring Batch？</h2>
+<p>Spring Boot Batch提供可重用的函数，这些函数在处理大量记录时非常重要，包括日志/跟踪，事务管理，作业处理统计信息，作业重新启动，跳过和资源管理。</p>
+<p>它还提供了更先进的技术服务和功能，通过优化和分区技术，可以实现极高批量和高性能批处理作业。</p>
+<p>简单以及复杂的大批量批处理作业可以高度可扩展的方式利用框架处理重要大量的信息。</p>
+<h2>24.什么是FreeMarker模板？</h2>
+<p>FreeMarker是一个基于Java的模板引擎，最初专注于使用MVC软件架构进行动态网页生成。使用Freemarker的主要优点是表示层和业务层的完全分离。</p>
+<p>程序员可以处理应用程序代码，而设计人员可以处理html页面设计。最后使用freemarker可以将这些结合起来，给出最终的输出页面。</p>
+<h2>25.什么是JavaConfig？</h2>
+<p>Spring JavaConfig是Spring社区的产品，它提供了配置Spring IoC容器的纯Java方法。因此它有助于避免使用XML配置。</p>
+<p>使用JavaConfig的优点在于：</p>
+<p>面向对象的配置。由于配置被定义为JavaConfig中的类，因此用户可以充分利用Java中的面向对象功能。一个配置类可以继承另一个，重写它的@Bean方法等。</p>
+<p>减少或消除XML配置。基于依赖注入原则的外化配置的好处已被证明。但是，许多开发人员不希望在XML和Java之间来回切换。</p>
+<p>JavaConfig为开发人员提供了一种纯Java方法来配置与XML配置概念相似的Spring容器。</p>
+<p>从技术角度来讲，只使用JavaConfig配置类来配置容器是可行的，但实际上很多人认为将JavaConfig与XML混合匹配是理想的。</p>
+<p>类型安全和重构友好。JavaConfig提供了一种类型安全的方法来配置Spring容器。由于Java 5.0对泛型的支持，现在可以按类型而不是按名称检索bean，不需要任何强制转换或基于字符串的查找</p>
+<h2>26.启动类注解：</h2>
+<p>@SpringBootConfiguration:Spring Boot的配置类; 标注在某个类上，表示这是一个Spring Boot的配置类; @Configuration:配置类上来标注这个注解;</p>
+<p>配置类 —– 配置文件;配置类也是容器中的一个组件;@Component@EnableAutoConfiguration:开启自动配置功能;</p>
+<p>以前我们需要配置的东西，Spring Boot帮我们自动配置;@EnableAutoConfiguration告诉SpringBoot开启自动配置功能;这样自动配置才能生效;</p>
+<p>Spring Boot在启动的时候从类路径下的META-INF/spring.factories中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入到容器中，自动配置类就失效，帮我们进行自动配置工作</p>
+<h2>27.配置文件的加载顺序?</h2>
+<p>由jar包外向jar包内进行寻找;</p>
+<p>优先加载带profile</p>
+<p>jar包外部的application-{profile}.properties或application.yml(带spring.profile)配置文件</p>
+<p>jar包内部的application-{profile}.properties或application.yml(带spring.profile)配置文件</p>
+<p>再来加载不带profile</p>
+<p>jar包外部的application.properties或application.yml(不带spring.profile)配置文件</p>
+<p>jar包内部的application.properties或application.yml(不带spring.profile)配置文件</p>
+<h2>28.自动配置原理?</h2>
+<p>1)、SpringBoot启动的时候加载主配置类，开启了自动配置功能 @EnableAutoConfiguration</p>
+<p>2)、@EnableAutoConfiguration 作用:将 类路径下 META-INF/spring.factories 里面配置的所有EnableAutoConfiguration的值加入到了容器中;每一个这样的 xxxAutoConfiguration类都是容器中的一个组件，都加入到容器中;用他们来做自动配置;</p>
+<p>3)、每一个自动配置类进行自动配置功能;根据当前不同的条件判断，决定这个配置类是否生效?</p>
+<p>一但这个配置类生效;这个配置类就会给容器中添加各种组件;这些组件的属性是从对应的properties类中获取 的，这些类里面的每一个属性又是和配置文件绑定的;</p>
+<p>4)、所有在配置文件中能配置的属性都是在xxxxProperties类中封装者‘;配置文件能配置什么就可以参照某个功 能对应的这个属性类怎么用好自动配置，精髓:
+– 1)、SpringBoot启动会加载大量的自动配置类
+– 2)、我们看我们需要的功能有没有SpringBoot默认写好的自动配置类;
+– 3)、我们再来看这个自动配置类中到底配置了哪些组件;(只要我们要用的组件有，我们就不需要再来配置了)
+– 4)、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们就可以在配置文件中指定这 些属性的值;</p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Java/">#Java</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/面试题/">#面试题</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/IT/">#IT</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/SpringBoot/">#SpringBoot</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <a class="ga-highlight" href="/archives/java-interview-springcloud/">Java面试题-SpringCloud</a>
+        <p class="yue">Java面试题SpringCloud收集整理</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/redis-problems/">Redis 问题</a>
+        <p class="yue">Redis的问题汇总。</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">177博客</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2015~2020 177</span>
+                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+Whatever will be, Will be.
+
+                            </span>
+                            <!-- <nav class="social-links">
+                                <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav> -->
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2020-01-01T00:00+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+        
+        
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    
+    <!--katex-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    
+<script>
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+       if ($(window.location.hash).length) {
+          $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+          clearInterval(checkExist);
+       }
+    }, 100);
+}
+</script>
+<script>
+if(window.navigator && navigator.serviceWorker) {
+  caches.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+      caches.delete(cacheName);
+    });
+  }).then(function(){
+    console.log('Cache cleaned.');
+  });
+  navigator.serviceWorker.getRegistrations()
+  .then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister();
+    }
+  }).then(function(){
+    console.log('Service Worker stopped.');
+  });
+}
+</script>
+
+    </body>
+</html>

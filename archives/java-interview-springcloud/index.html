@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="177.im,177,听风行,blog,博客" />
+    <meta name="generator" content="Maverick 1.0" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/97cf36c4be3f5d55faecdeabe39acbe2.json"
+        }
+    </script>
+    
+<title>Java面试题-SpringCloud - 177博客</title>
+<meta name="author" content="177" />
+<meta name="description" content="Java面试题SpringCloud收集整理" />
+<meta property="og:title" content="Java面试题-SpringCloud - 177博客" />
+<meta property="og:description" content="Java面试题SpringCloud收集整理" />
+<meta property="og:site_name" content="177博客" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/java-interview-springcloud/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-01-10T12:00:00-00.00" />
+<meta name="twitter:title" content="Java面试题-SpringCloud - 177博客" />
+<meta name="twitter:description" content="Java面试题SpringCloud收集整理" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//blog.177.im" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/brand_font/embed.css" />
+<style>.brand{font-family:FZCuJinLFW,serif;font-weight: normal!important;}</style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" color="#505050">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<meta name="application-name" content="177">
+<meta name="apple-mobile-web-app-title" content="177">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#000000">
+<meta name="baidu-site-verification" content="" />
+
+    </head>
+    
+    <body>
+        
+            <div id="bg" style="background-image: url(https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/bg/The_Great_Wave_off_Kanagawa.jpg)"></div>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-logo">
+                        <a href="/" target="_self">
+                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
+                        </a>
+                    </aside>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
+                        <p>天青色等烟雨</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                    <nav class="social-links">
+                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Java面试题-SpringCloud</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>177</span>
+                <time>
+                    2020-01-10
+                </time>
+                
+                in <a no-style class="category" href="/category/极客/">
+                    极客
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <div class="notice">从网络上收集整理的Java面试题，如有侵权，请联系删除！</div><h2>1. 什么是 spring cloud？</h2>
+<p>spring cloud 是一系列框架的有序集合。它利用 spring boot 的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用 spring boot 的开发风格做到一键启动和部署。</p>
+<h2>2. spring cloud 断路器的作用是什么？</h2>
+<p>在分布式架构中，断路器模式的作用也是类似的，当某个服务单元发生故障（类似用电器发生短路）之后，通过断路器的故障监控（类似熔断保险丝），向调用方返回一个错误响应，而不是长时间的等待。这样就不会使得线程因调用故障服务被长时间占用不释放，避免了故障在分布式系统中的蔓延。</p>
+<h2>3. spring cloud 的核心组件有哪些？</h2>
+<p>Eureka：服务注册于发现。</p>
+<p>Feign：基于动态代理机制，根据注解和选择的机器，拼接请求 url 地址，发起请求。</p>
+<p>Ribbon：实现负载均衡，从一个服务的多台机器中选择一台。</p>
+<p>Hystrix：提供线程池，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题。</p>
+<p>Zuul：网关管理，由 Zuul 网关转发请求给对应的服务。</p>
+<h2>4.SpringCloud和Dubbo</h2>
+<p>SpringCloud和Dubbo都是现在主流的微服务架构</p>
+<p>SpringCloud是Apache旗下的Spring体系下的微服务解决方案</p>
+<p>Dubbo是阿里系的分布式服务治理框架</p>
+<p>从技术维度上,其实SpringCloud远远的超过Dubbo,Dubbo本身只是实现了服务治理,而SpringCloud现在以及有21个子项目以后还会更多</p>
+<p>所以其实很多人都会说Dubbo和SpringCloud是不公平的</p>
+<p>但是由于RPC以及注册中心元数据等原因,在技术选型的时候我们只能二者选其一,所以我们常常为用他俩来对比</p>
+<p>服务的调用方式Dubbo使用的是RPC远程调用,而SpringCloud使用的是 Rest API,其实更符合微服务官方的定义</p>
+<p>服务的注册中心来看,Dubbo使用了第三方的ZooKeeper作为其底层的注册中心,实现服务的注册和发现,SpringCloud使用Spring Cloud Netflix Eureka实现注册中心,当然SpringCloud也可以使用ZooKeeper实现,但一般我们不会这样做</p>
+<p>服务网关,Dubbo并没有本身的实现,只能通过其他第三方技术的整合,而SpringCloud有Zuul路由网关,作为路由服务器,进行消费者的请求分发,SpringCloud还支持断路器,与git完美集成分布式配置文件支持版本控制,事务总线实现配置文件的更新与服务自动装配等等一系列的微服务架构要素</p>
+<h3>从技术选型上讲</h3>
+<p>目前国内的分布式系统选型主要还是Dubbo毕竟国产,而且国内工程师的技术熟练程度高,并且Dubbo在其他维度上的缺陷可以由其他第三方框架进行集成进行弥补</p>
+<p>而SpringCloud目前是国外比较流行,当然我觉得国内的市场也会慢慢的偏向SpringCloud,就连刘军作为Dubbo重启的负责人也发表过观点,Dubbo的发展方向是积极适应SpringCloud生态,并不是起冲突</p>
+<h3>Rest和RPC对比</h3>
+<p>其实如果仔细阅读过微服务提出者马丁福勒的论文的话可以发现其定义的服务间通信机制就是Http Rest</p>
+<p>RPC最主要的缺陷就是服务提供方和调用方式之间依赖太强,我们需要为每一个微服务进行接口的定义,并通过持续继承发布,需要严格的版本控制才不会出现服务提供和调用之间因为版本不同而产生的冲突</p>
+<p>而REST是轻量级的接口,服务的提供和调用不存在代码之间的耦合,只是通过一个约定进行规范,但也有可能出现文档和接口不一致而导致的服务集成问题,但可以通过swagger工具整合,是代码和文档一体化解决,所以REST在分布式环境下比RPC更加灵活</p>
+<p>这也是为什么当当网的DubboX在对Dubbo的增强中增加了对REST的支持的原因</p>
+<h3>文档质量和社区活跃度</h3>
+<p>SpringCloud社区活跃度远高于Dubbo,毕竟由于梁飞团队的原因导致Dubbo停止更新迭代五年,而中小型公司无法承担技术开发的成本导致Dubbo社区严重低落,而SpringCloud异军突起,迅速占领了微服务的市场,背靠Spring混的风生水起</p>
+<p>Dubbo经过多年的积累文档相当成熟,对于微服务的架构体系各个公司也有稳定的现状</p>
+<h2>5.SpringBoot和SpringCloud</h2>
+<p>SpringBoot是Spring推出用于解决传统框架配置文件冗余,装配组件繁杂的基于Maven的解决方案,旨在快速搭建单个微服务</p>
+<p>而SpringCloud专注于解决各个微服务之间的协调与配置,服务之间的通信,熔断,负载均衡等</p>
+<p>技术维度并相同,并且SpringCloud是依赖于SpringBoot的,而SpringBoot并不是依赖与SpringCloud,甚至还可以和Dubbo进行优秀的整合开发</p>
+<p>总结:</p>
+<p>SpringBoot专注于快速方便的开发单个个体的微服务</p>
+<p>SpringCloud是关注全局的微服务协调整理治理框架,整合并管理各个微服务,为各个微服务之间提供,配置管理,服务发现,断路器,路由,事件总线等集成服务</p>
+<p>SpringBoot不依赖于SpringCloud,SpringCloud依赖于SpringBoot,属于依赖关系</p>
+<p>SpringBoot专注于快速,方便的开发单个的微服务个体,SpringCloud关注全局的服务治理框架</p>
+<h2>6.Eureka和ZooKeeper都可以提供服务注册与发现的功能,请说说两个的区别</h2>
+<p>1.ZooKeeper保证的是CP,Eureka保证的是AP</p>
+<p>ZooKeeper在选举期间注册服务瘫痪,虽然服务最终会恢复,但是选举期间不可用的</p>
+<p>Eureka各个节点是平等关系,只要有一台Eureka就可以保证服务可用,而查询到的数据并不是最新的</p>
+<p>自我保护机制会导致</p>
+<p>Eureka不再从注册列表移除因长时间没收到心跳而应该过期的服务</p>
+<p>Eureka仍然能够接受新服务的注册和查询请求,但是不会被同步到其他节点(高可用)</p>
+<p>当网络稳定时,当前实例新的注册信息会被同步到其他节点中(最终一致性)</p>
+<p>Eureka可以很好的应对因网络故障导致部分节点失去联系的情况,而不会像ZooKeeper一样使得整个注册系统瘫痪</p>
+<p>2.ZooKeeper有Leader和Follower角色,Eureka各个节点平等</p>
+<p>3.ZooKeeper采用过半数存活原则,Eureka采用自我保护机制解决分区问题</p>
+<p>4.Eureka本质上是一个工程,而ZooKeeper只是一个进程</p>
+<h2>7.微服务之间是如何独立通讯的</h2>
+<p>1.远程过程调用（Remote Procedure Invocation）：</p>
+<p>也就是我们常说的服务的注册与发现</p>
+<p>直接通过远程过程调用来访问别的service。</p>
+<p>优点：</p>
+<p>简单，常见,因为没有中间件代理，系统更简单</p>
+<p>缺点：</p>
+<p>只支持请求/响应的模式，不支持别的，比如通知、请求/异步响应、发布/订阅、发布/异步响应</p>
+<p>降低了可用性，因为客户端和服务端在请求过程中必须都是可用的</p>
+<p>2.消息：</p>
+<p>使用异步消息来做服务间通信。服务间通过消息管道来交换消息，从而通信。</p>
+<p>优点:</p>
+<p>把客户端和服务端解耦，更松耦合</p>
+<p>提高可用性，因为消息中间件缓存了消息，直到消费者可以消费</p>
+<p>支持很多通信机制比如通知、请求/异步响应、发布/订阅、发布/异步响应</p>
+<p>缺点:</p>
+<p>消息中间件有额外的复杂</p>
+<h2>8.什么是服务熔断?什么是服务降级</h2>
+<p>在复杂的分布式系统中,微服务之间的相互调用,有可能出现各种各样的原因导致服务的阻塞,在高并发场景下,服务的阻塞意味着线程的阻塞,导致当前线程不可用,服务器的线程全部阻塞,导致服务器崩溃,由于服务之间的调用关系是同步的,会对整个微服务系统造成服务雪崩</p>
+<p>为了解决某个微服务的调用响应时间过长或者不可用进而占用越来越多的系统资源引起雪崩效应就需要进行服务熔断和服务降级处理。</p>
+<p>所谓的服务熔断指的是某个服务故障或异常一起类似显示世界中的“保险丝”当某个异常条件被触发就直接熔断整个服务，而不是一直等到此服务超时。</p>
+<p>服务熔断就是相当于我们电闸的保险丝,一旦发生服务雪崩的,就会熔断整个服务,通过维护一个自己的线程池,当线程达到阈值的时候就启动服务降级,如果其他请求继续访问就直接返回fallback的默认值</p>
+<h2>9.微服务的优缺点分别是什么?说下你在项目开发中碰到的坑</h2>
+<p>优点</p>
+<p>每一个服务足够内聚,代码容易理解</p>
+<p>开发效率提高,一个服务只做一件事</p>
+<p>微服务能够被小团队单独开发</p>
+<p>微服务是松耦合的,是有功能意义的服务</p>
+<p>可以用不同的语言开发,面向接口编程</p>
+<p>易于与第三方集成</p>
+<p>微服务只是业务逻辑的代码,不会和HTML,CSS或者其他界面组合</p>
+<p>开发中,两种开发模式:前后端分离,全栈工程师</p>
+<p>可以灵活搭配,连接公共库/连接独立库</p>
+<p>缺点</p>
+<p>分布式系统的负责性</p>
+<p>多服务运维难度,随着服务的增加,运维的压力也在增大</p>
+<p>系统部署依赖</p>
+<p>服务间通信成本</p>
+<p>数据一致性</p>
+<p>系统集成测试</p>
+<p>性能监控</p>
+<h2>10.Eureka和ZooKeeper都可以提供服务注册与发现的功能,请说说两个的区别</h2>
+<p>1.ZooKeeper保证的是CP,Eureka保证的是AP</p>
+<p>ZooKeeper在选举期间注册服务瘫痪,虽然服务最终会恢复,但是选举期间不可用的</p>
+<p>Eureka各个节点是平等关系,只要有一台Eureka就可以保证服务可用,而查询到的数据并不是最新的</p>
+<p>自我保护机制会导致</p>
+<p>Eureka不再从注册列表移除因长时间没收到心跳而应该过期的服务</p>
+<p>Eureka仍然能够接受新服务的注册和查询请求,但是不会被同步到其他节点(高可用)</p>
+<p>当网络稳定时,当前实例新的注册信息会被同步到其他节点中(最终一致性)</p>
+<p>Eureka可以很好的应对因网络故障导致部分节点失去联系的情况,而不会像ZooKeeper一样使得整个注册系统瘫痪</p>
+<p>2.ZooKeeper有Leader和Follower角色,Eureka各个节点平等</p>
+<p>3.ZooKeeper采用过半数存活原则,Eureka采用自我保护机制解决分区问题</p>
+<p>4.Eureka本质上是一个工程,而ZooKeeper只是一个进程</p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Java/">#Java</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/面试题/">#面试题</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/IT/">#IT</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/SpringCloud/">#SpringCloud</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <a class="ga-highlight" href="/archives/java-interview-springmvc/">Java面试题-SpringMVC</a>
+        <p class="yue">Java面试题SpringMVC收集整理</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/java-interview-springboot/">Java面试题-SpringBoot</a>
+        <p class="yue">Java面试题SpringBoot收集整理</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">177博客</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2015~2020 177</span>
+                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+Whatever will be, Will be.
+
+                            </span>
+                            <!-- <nav class="social-links">
+                                <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav> -->
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2020-01-01T00:00+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+        
+        
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    
+    <!--katex-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    
+<script>
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+       if ($(window.location.hash).length) {
+          $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+          clearInterval(checkExist);
+       }
+    }, 100);
+}
+</script>
+<script>
+if(window.navigator && navigator.serviceWorker) {
+  caches.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+      caches.delete(cacheName);
+    });
+  }).then(function(){
+    console.log('Cache cleaned.');
+  });
+  navigator.serviceWorker.getRegistrations()
+  .then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister();
+    }
+  }).then(function(){
+    console.log('Service Worker stopped.');
+  });
+}
+</script>
+
+    </body>
+</html>
