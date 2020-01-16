@@ -13,7 +13,7 @@ tags:
 excerpt: MySQL InnoDB-收集整理
 ---
 
-[notice]从网络上收集整理的Java面试题，如有侵权，请联系删除！[/notice]
+[notice]从网络上收集整理的资料，如有侵权，请联系删除！[/notice]
 
 要创建 InnoDB 表，可以使用 CREATE TABLE 语句
 
