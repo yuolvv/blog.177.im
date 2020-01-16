@@ -2,7 +2,7 @@
 layout: post
 title: Java JVM GC日志
 slug: jvm-gc-log
-date: 2020-02-06 12:00
+date: 2020-02-07 12:00
 status: publish
 author: 177
 categories: 
@@ -80,7 +80,7 @@ excerpt: Java JVM GC日志
     user – 此次垃圾回收, 垃圾收集线程消耗的所有CPU时间(Total CPU time).
     
     sys – 操作系统调用(OS call) 以及等待系统事件的时间(waiting for system event)
-    
+     
     real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Serial Garbage Collector)只会使用单个线程, 所以 real time 等于 user 以及 system time 的总和.
 
 通过上面的分析, 我们可以计算出在垃圾收集期间, JVM 中的内存使用情况。在垃圾收集之前, 堆内存总的使用了 1.54G (1,619,346K)。其中, 年轻代使用了 614M(629,119k)。可以算出老年代使用的内存为: 967M(990,227K)。
