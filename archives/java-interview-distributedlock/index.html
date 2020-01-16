@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="177.im,177,听风行,blog,博客" />
+    <meta name="generator" content="Maverick 1.0" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/bae8c7046aa5cae115ce20f0d50ff1f4.json"
+        }
+    </script>
+    
+<title>Java面试题-分布式锁 - 177博客</title>
+<meta name="author" content="177" />
+<meta name="description" content="Java面试题-分布式锁-收集整理" />
+<meta property="og:title" content="Java面试题-分布式锁 - 177博客" />
+<meta property="og:description" content="Java面试题-分布式锁-收集整理" />
+<meta property="og:site_name" content="177博客" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/java-interview-distributedlock/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-01-19T12:00:00-00.00" />
+<meta name="twitter:title" content="Java面试题-分布式锁 - 177博客" />
+<meta name="twitter:description" content="Java面试题-分布式锁-收集整理" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//blog.177.im" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/brand_font/embed.css" />
+<style>.brand{font-family:FZCuJinLFW,serif;font-weight: normal!important;}</style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" color="#505050">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<meta name="application-name" content="177">
+<meta name="apple-mobile-web-app-title" content="177">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#000000">
+<meta name="baidu-site-verification" content="" />
+
+    </head>
+    
+    <body>
+        
+            <div id="bg" style="background-image: url(https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/bg/The_Great_Wave_off_Kanagawa.jpg)"></div>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-logo">
+                        <a href="/" target="_self">
+                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
+                        </a>
+                    </aside>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
+                        <p>天青色等烟雨</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                    <nav class="social-links">
+                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Java面试题-分布式锁</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>177</span>
+                <time>
+                    2020-01-19
+                </time>
+                
+                in <a no-style class="category" href="/category/极客/">
+                    极客
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <div class="notice">从网络上收集整理的Java面试题，如有侵权，请联系删除！</div><h2>引言</h2>
+<p>为什么要使用分布式锁？为了保证一个方法在高并发情况下的同一时间只能被同一个线程执行，在传统单体应用单机部署的情况下，可以使用Java并发处理相关的API(如ReentrantLcok或synchronized)进行互斥控制。</p>
+<p>但是，随着业务发展的需要，原单体单机部署的系统被演化成分布式系统后，由于分布式系统多线程、多进程并且分布在不同机器上，这将使原单机部署情况下的并发控制锁策略失效，为了解决这个问题就需要一种跨JVM的互斥机制来控制共享资源的访问，这就是分布式锁要解决的问题。</p>
+<p>下面介绍JAVA分布式锁的三种常用实现方式：</p>
+<h3>1.基于数据库实现分布式锁</h3>
+<p>要实现分布式锁，最简单的方式可能就是直接创建一张锁表，然后通过操作该表中的数据来实现了。当我们要锁住某个方法或资源时，我们就在该表中增加一条记录，想要释放锁的时候就删除这条记录.</p>
+<p>具体操作就是在数据库中创建一个表，表中包含方法名等字段，并在方法名字段上创建唯一索引，想要执行某个方法，就使用这个方法名向表中插入数据，成功插入则获取锁，执行完成后删除对应的行数据释放锁。</p>
+<p>上面这种简单的实现有以下几个问题：</p>
+<p>1、这把锁强依赖数据库的可用性，数据库是一个单点，一旦数据库挂掉，会导致业务系统不可用。</p>
+<p>2、这把锁没有失效时间，一旦解锁操作失败，就会导致锁记录一直在数据库中，其他线程无法再获得到锁。</p>
+<p>3、这把锁只能是非阻塞的，因为数据的insert操作，一旦插入失败就会直接报错。没有获得锁的线程并不会进入排队队列，要想再次获得锁就要再次触发获得锁操作。</p>
+<p>4、这把锁是非重入的，同一个线程在没有释放锁之前无法再次获得该锁。因为数据中数据已经存在了。</p>
+<p>当然，我们也可以有其他方式解决上面的问题。</p>
+<p>数据库是单点？搞两个数据库，数据之前双向同步。一旦挂掉快速切换到备库上。</p>
+<p>没有失效时间？只要做一个定时任务，每隔一定时间把数据库中的超时数据清理一遍。</p>
+<p>非阻塞的？搞一个while循环，直到insert成功再返回成功。</p>
+<p>非重入的？在数据库表中加个字段，记录当前获得锁的机器的主机信息和线程信息，那么下次再获取锁的时候先查询数据库，如果当前机器的主机信息和线程信息在数据库可以查到的话，直接把锁分配给他就可以了。</p>
+<p>优点：借助数据库，方案简单。</p>
+<p>缺点：在实际实施的过程中会遇到各种不同的问题，为了解决这些问题，实现方式将会越来越复杂；依赖数据库需要一定的资源开销，性能问题需要考虑</p>
+<h3>2.基于Redis实现分布式锁</h3>
+<p>在Redis2.6.12版本之前，使用setnx命令设置key-value、使用expire命令设置key的过期时间获取分布式锁，使用del命令释放分布式锁，但是这种实现有如下一些问题：</p>
+<p>setnx命令设置完key-value后，还没来得及使用expire命令设置过期时间，当前线程挂掉了，会导致当前线程设置的key一直有效，后续线程无法正常通过setnx获取锁，造成死锁。</p>
+<p>出现这个问题是因为两个命令是分开执行并且不具备原子特性，如果能将这两个命令合二为一就可以解决问题了。在Redis2.6.12版本中实现了这个功能，Redis为set命令增加了一系列选项。</p>
+<p>也就是说现在set命令就可以实现分布式锁，下面我们来了解一下set命令（set(keyName, lockValue, “NX”, “EX”, expireSeconds)）：</p>
+
+<pre><code>SET命令是原子性操作，NX指令保证只要当key不存在时才会设置value
+
+设置的value要有唯一性，来确保锁不会被误删(value=系统时间戳+UUID)
+
+当上述命令执行返回OK时，客户端获取锁成功，否则失败
+
+客户端可以通过redis释放脚本来释放锁（del 命令）
+
+</code></pre>
+<p>5.如果锁到达了最大生存时间将会自动释放</p>
+<p>只有当前key的value和传入的value相同才会执行DEL命令。</p>
+<p>优点：高性能，借助Redis实现比较方便。</p>
+<p>缺点：线程获取锁后，如果处理时间过长会导致锁超时失效(失效时间我设置多长时间为好？如何设置的失效时间太短，方法没等执行完，锁就自动释放了，那么就会产生并发问题。如果设置的时间太长，其他获取锁的线程就可能要平白的多等一段时间。这个问题使用数据库实现分布式锁同样存在)，所以，通过超时时间来控制锁的失效时间并不是十分的靠谱。</p>
+<h3>3.基于Zookeeper实现分布式锁</h3>
+<p>ZooKeeper是一个为分布式应用提供一致性服务的开源组件，它内部是一个分层的文件系统目录树结构，规定同一个目录下只能有一个唯一文件名。</p>
+<p>大致思想即为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。</p>
+<p>判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。</p>
+<p>基于ZooKeeper实现分布式锁的步骤如下：</p>
+<p>创建一个目录mylock；</p>
+<p>线程A想获取锁就在mylock目录下创建临时顺序节点；</p>
+<p>获取mylock目录下所有的子节点，然后获取比自己小的兄弟节点，如果不存在，则说明当前线程顺序号最小，获得锁；</p>
+<p>线程B获取所有节点，判断自己不是最小节点，设置监听比自己次小的节点；</p>
+<p>线程A处理完，删除自己的节点，线程B监听到变更事件，判断自己是不是最小的节点，如果是则获得锁。</p>
+<p>优点：具备高可用、可重入、阻塞锁特性，可解决失效死锁问题。具体说明如下：</p>
+<p>锁无法释放，造成死锁！使用Zookeeper可以有效的解决锁无法释放的问题，因为在创建锁的时候，客户端会在ZK中创建一个临时节点，一旦客户端获取到锁之后突然挂掉（Session连接断开），那么这个临时节点就会自动删除掉。其他客户端就可以再次获得锁。</p>
+<p>阻塞锁特性！使用Zookeeper可以实现阻塞的锁，客户端可以通过在ZK中创建顺序节点，并且在节点上绑定监听器，一旦节点有变化，Zookeeper会通知客户端，客户端可以检查自己创建的节点是不是当前所有节点中序号最小的，如果是，那么自己就获取到锁，便可以执行业务逻辑了。</p>
+<p>可重入！使用Zookeeper也可以有效的解决不可重入的问题，客户端在创建节点的时候，把当前客户端的主机信息和线程信息直接写入到节点中，下次想要获取锁的时候和当前最小的节点中的数据比对一下就可以了。</p>
+<p>如果和自己的信息一样，那么自己直接获取到锁，如果不一样就再创建一个临时的顺序节点，参与排队。</p>
+<p>单点问题？使用Zookeeper可以有效的解决单点问题，ZK是集群部署的，只要集群中有半数以上的机器存活，就可以对外提供服务。</p>
+<p>缺点：因为需要频繁的创建和删除节点，性能上不如Redis方式。</p>
+<h2>总结</h2>
+<p>上面几种方式，哪种方式都无法做到完美。就像CAP一样，在复杂性、可靠性、性能等方面无法同时满足，所以，根据不同的应用场景选择最适合自己的才是王道。</p>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Java/">#Java</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/面试题/">#面试题</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/IT/">#IT</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/分布式锁/">#分布式锁</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <a class="ga-highlight" href="/archives/java-interview-linux/">Java面试题-Linux</a>
+        <p class="yue">Java面试题-Linux-收集整理</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/java-interview-rabbitmq/">Java面试题-RabbitMQ</a>
+        <p class="yue">Java面试题-RabbitMQ-收集整理</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">177博客</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2015~2020 177</span>
+                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+Whatever will be, Will be.
+
+                            </span>
+                            <!-- <nav class="social-links">
+                                <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav> -->
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2020-01-01T00:00+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+        
+        
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    
+    <!--katex-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    
+<script>
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+       if ($(window.location.hash).length) {
+          $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+          clearInterval(checkExist);
+       }
+    }, 100);
+}
+</script>
+<script>
+if(window.navigator && navigator.serviceWorker) {
+  caches.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+      caches.delete(cacheName);
+    });
+  }).then(function(){
+    console.log('Cache cleaned.');
+  });
+  navigator.serviceWorker.getRegistrations()
+  .then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister();
+    }
+  }).then(function(){
+    console.log('Service Worker stopped.');
+  });
+}
+</script>
+
+    </body>
+</html>

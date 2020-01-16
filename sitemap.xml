@@ -6,65 +6,100 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
 
     <url>
-        <loc>/about/</loc>
-        <lastmod>2020-01-01</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
         <loc>/links/</loc>
         <lastmod>2020-01-01</lastmod>
         <changefreq>always</changefreq>
         <priority>0.8</priority>
     </url>
 
-
     <url>
-        <loc>/archives/java-interview-jvm/</loc>
-        <lastmod>2020-01-11</lastmod>
+        <loc>/about/</loc>
+        <lastmod>2020-01-01</lastmod>
         <changefreq>always</changefreq>
-        <priority>0.5</priority>
+        <priority>0.8</priority>
     </url>
 
+
     <url>
-        <loc>/archives/java-interview-thread/</loc>
-        <lastmod>2020-01-11</lastmod>
+        <loc>/archives/java-interview-dubbo/</loc>
+        <lastmod>2020-01-23</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
         <loc>/archives/java-interview-dubbo/</loc>
-        <lastmod>2020-01-11</lastmod>
+        <lastmod>2020-01-22</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
-        <loc>/archives/java-interview-mybatis/</loc>
-        <lastmod>2020-01-11</lastmod>
+        <loc>/archives/java-interview-netty/</loc>
+        <lastmod>2020-01-21</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-linux/</loc>
+        <lastmod>2020-01-20</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-distributedlock/</loc>
+        <lastmod>2020-01-19</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-rabbitmq/</loc>
+        <lastmod>2020-01-18</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-zookeeper/</loc>
+        <lastmod>2020-01-17</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
         <loc>/archives/java-interview-mysql/</loc>
-        <lastmod>2020-01-11</lastmod>
-        <changefreq>always</changefreq>
-        <priority>0.5</priority>
-    </url>
-
-    <url>
-        <loc>/archives/java-interview-dubbo/</loc>
-        <lastmod>2020-01-11</lastmod>
+        <lastmod>2020-01-16</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
         <loc>/archives/java-interview-redis/</loc>
-        <lastmod>2020-01-11</lastmod>
+        <lastmod>2020-01-15</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-jvm/</loc>
+        <lastmod>2020-01-14</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-mybatis/</loc>
+        <lastmod>2020-01-13</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-thread/</loc>
+        <lastmod>2020-01-12</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
@@ -86,6 +121,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>/archives/java-interview-springboot/</loc>
         <lastmod>2020-01-09</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/java-interview-base/</loc>
+        <lastmod>2020-01-08</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
