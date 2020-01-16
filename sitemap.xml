@@ -21,6 +21,41 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
     <url>
+        <loc>/archives/jvm-gc-log/</loc>
+        <lastmod>2020-02-06</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/jvm-gc-g1/</loc>
+        <lastmod>2020-02-06</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/jvm-gc/</loc>
+        <lastmod>2020-02-05</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/mysql-innodb-full-inverted-index/</loc>
+        <lastmod>2020-02-04</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/mysql-innodb-index/</loc>
+        <lastmod>2020-02-03</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>/archives/mysql-innodb-autoincrement/</loc>
         <lastmod>2020-02-02</lastmod>
         <changefreq>always</changefreq>

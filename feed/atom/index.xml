@@ -1,347 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-01-16T02:23:43.382775+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="http://lkiesow.github.io/python-feedgen" version="0.8.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-mysql/</id><title>Java面试题-MySQL</title><updated>2020-01-16T02:23:43.383080+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1. 数据库的三范式是什么？&lt;/h2&gt;
-&lt;p&gt;第一范式：强调的是列的原子性，即数据库表的每一列都是不可分割的原子数据项。&lt;/p&gt;
-&lt;p&gt;第二范式：要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性。&lt;/p&gt;
-&lt;p&gt;第三范式：任何非主属性不依赖于其它非主属性。&lt;/p&gt;
-&lt;h2&gt;2. 一张自增表里面总共有 7 条数据，删除了最后 2 条数据，重启 MySQL 数据库，又插入了一条数据，此时 id 是几？&lt;/h2&gt;
-&lt;p&gt;表类型如果是 MyISAM ，那 id 就是 8。&lt;/p&gt;
-&lt;p&gt;表类型如果是 InnoDB，那 id 就是 6。&lt;/p&gt;
-&lt;p&gt;InnoDB 表只会把自增主键的最大 id 记录在内存中，所以重启之后会导致最大 id 丢失。&lt;/p&gt;
-&lt;h2&gt;3. 如何获取当前数据库版本？&lt;/h2&gt;
-&lt;p&gt;使用 select version() 获取当前 MySQL 数据库版本。&lt;/p&gt;
-&lt;h2&gt;4. 说一下 ACID 是什么？&lt;/h2&gt;
-&lt;p&gt;Atomicity（原子性）：一个事务（transaction）中的所有操作，或者全部完成，或者全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被恢复（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。即，事务不可分割、不可约简。&lt;/p&gt;
-&lt;p&gt;Consistency（一致性）：在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设约束、触发器、级联回滚等。&lt;/p&gt;
-&lt;p&gt;Isolation（隔离性）：数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。&lt;/p&gt;
-&lt;p&gt;Durability（持久性）：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。&lt;/p&gt;
-&lt;h2&gt;5. char 和 varchar 的区别是什么？&lt;/h2&gt;
-&lt;p&gt;char(n) ：固定长度类型，比如订阅 char(10)，当你输入”abc”三个字符的时候，它们占的空间还是 10 个字节，其他 7 个是空字节。&lt;/p&gt;
-&lt;p&gt;chat 优点：效率高；缺点：占用空间；适用场景：存储密码的 md5 值，固定长度的，使用 char 非常合适。&lt;/p&gt;
-&lt;p&gt;varchar(n) ：可变长度，存储的值是每个值占用的字节再加上一个用来记录其长度的字节的长度。&lt;/p&gt;
-&lt;p&gt;所以，从空间上考虑 varcahr 比较合适；从效率上考虑 char 比较合适，二者使用需要权衡。&lt;/p&gt;
-&lt;h2&gt;6. float 和 double 的区别是什么？&lt;/h2&gt;
-&lt;p&gt;float 最多可以存储 8 位的十进制数，并在内存中占 4 字节。&lt;/p&gt;
-&lt;p&gt;double 最可可以存储 16 位的十进制数，并在内存中占 8 字节。&lt;/p&gt;
-&lt;h2&gt;7. MySQL 的内连接、左连接、右连接有什么区别？&lt;/h2&gt;
-&lt;p&gt;内连接关键字：inner join；左连接：left join；右连接：right join。&lt;/p&gt;
-&lt;p&gt;内连接是把匹配的关联数据显示出来；左连接是左边的表全部显示出来，右边的表显示出符合条件的数据；右连接正好相反。&lt;/p&gt;
-&lt;h2&gt;8. MySQL 索引是怎么实现的？&lt;/h2&gt;
-&lt;p&gt;索引是满足某种特定查找算法的数据结构，而这些数据结构会以某种方式指向数据，从而实现高效查找数据。&lt;/p&gt;
-&lt;p&gt;具体来说 MySQL 中的索引，不同的数据引擎实现有所不同，但目前主流的数据库引擎的索引都是 B+ 树实现的，B+ 树的搜索效率，可以到达二分法的性能，找到数据区域之后就找到了完整的数据结构了，所有索引的性能也是更好的。&lt;/p&gt;
-&lt;h2&gt;9. 怎么验证 MySQL 的索引是否满足需求？&lt;/h2&gt;
-&lt;p&gt;使用 explain 查看 SQL 是如何执行查询语句的，从而分析你的索引是否满足需求。&lt;/p&gt;
-&lt;p&gt;explain 语法：explain select * from table where type=1。&lt;/p&gt;
-&lt;h2&gt;10. 说一下数据库的事务隔离？&lt;/h2&gt;
-&lt;p&gt;MySQL 的事务隔离是在 MySQL. ini 配置文件里添加的，在文件的最后添加：&lt;/p&gt;
-&lt;p&gt;transaction-isolation = REPEATABLE-READ&lt;/p&gt;
-&lt;p&gt;可用的配置值：READ-UNCOMMITTED、READ-COMMITTED、REPEATABLE-READ、SERIALIZABLE。&lt;/p&gt;
-&lt;p&gt;READ-UNCOMMITTED：未提交读，最低隔离级别、事务未提交前，就可被其他事务读取（会出现幻读、脏读、不可重复读）。&lt;/p&gt;
-&lt;p&gt;READ-COMMITTED：提交读，一个事务提交后才能被其他事务读取到（会造成幻读、不可重复读）。&lt;/p&gt;
-&lt;p&gt;REPEATABLE-READ：可重复读，默认级别，保证多次读取同一个数据时，其值都和事务开始时候的内容是一致，禁止读取到别的事务未提交的数据（会造成幻读）。&lt;/p&gt;
-&lt;p&gt;SERIALIZABLE：序列化，代价最高最可靠的隔离级别，该隔离级别能防止脏读、不可重复读、幻读。&lt;/p&gt;
-&lt;p&gt;脏读 ：表示一个事务能够读取另一个事务中还未提交的数据。比如，某个事务尝试插入记录 A，此时该事务还未提交，然后另一个事务尝试读取到了记录 A。&lt;/p&gt;
-&lt;p&gt;不可重复读 ：是指在一个事务内，多次读同一数据。&lt;/p&gt;
-&lt;p&gt;幻读 ：指同一个事务内多次查询返回的结果集不一样。比如同一个事务 A 第一次查询时候有 n 条记录，但是第二次同等条件下查询却有 n+1 条记录，这就好像产生了幻觉。发生幻读的原因也是另外一个事务新增或者删除或者修改了第一个事务结果集里面的数据，同一个记录的数据内容被修改了，所有数据行的记录就变多或者变少了。&lt;/p&gt;
-&lt;h2&gt;11. 说一下 MySQL 常用的引擎？&lt;/h2&gt;
-&lt;p&gt;InnoDB 引擎：InnoDB 引擎提供了对数据库 acid 事务的支持，并且还提供了行级锁和外键的约束，它的设计的目标就是处理大数据容量的数据库系统。MySQL 运行的时候，InnoDB 会在内存中建立缓冲池，用于缓冲数据和索引。但是该引擎是不支持全文搜索，同时启动也比较的慢，它是不会保存表的行数的，所以当进行 select count(*) from table 指令的时候，需要进行扫描全表。由于锁的粒度小，写操作是不会锁定全表的,所以在并发度较高的场景下使用会提升效率的。&lt;/p&gt;
-&lt;p&gt;MyIASM 引擎：MySQL 的默认引擎，但不提供事务的支持，也不支持行级锁和外键。因此当执行插入和更新语句时，即执行写操作的时候需要锁定这个表，所以会导致效率会降低。不过和 InnoDB 不同的是，MyIASM 引擎是保存了表的行数，于是当进行 select count(*) from table 语句时，可以直接的读取已经保存的值而不需要进行扫描全表。所以，如果表的读操作远远多于写操作时，并且不需要事务的支持的，可以将 MyIASM 作为数据库引擎的首选。&lt;/p&gt;
-&lt;h2&gt;12. 说一下 MySQL 的行锁和表锁？&lt;/h2&gt;
-&lt;p&gt;MyISAM 只支持表锁，InnoDB 支持表锁和行锁，默认为行锁。&lt;/p&gt;
-&lt;p&gt;表级锁：开销小，加锁快，不会出现死锁。锁定粒度大，发生锁冲突的概率最高，并发量最低。&lt;/p&gt;
-&lt;p&gt;行级锁：开销大，加锁慢，会出现死锁。锁力度小，发生锁冲突的概率小，并发度最高。&lt;/p&gt;
-&lt;h2&gt;13. 说一下乐观锁和悲观锁？&lt;/h2&gt;
-&lt;p&gt;乐观锁：每次去拿数据的时候都认为别人不会修改，所以不会上锁，但是在提交更新的时候会判断一下在此期间别人有没有去更新这个数据。&lt;/p&gt;
-&lt;p&gt;悲观锁：每次去拿数据的时候都认为别人会修改，所以每次在拿数据的时候都会上锁，这样别人想拿这个数据就会阻止，直到这个锁被释放。&lt;/p&gt;
-&lt;p&gt;数据库的乐观锁需要自己实现，在表里面添加一个 version 字段，每次修改成功值加 1，这样每次修改的时候先对比一下，自己拥有的 version 和数据库现在的 version 是否一致，如果不一致就不修改，这样就实现了乐观锁。&lt;/p&gt;
-&lt;h2&gt;14. MySQL 问题排查都有哪些手段？&lt;/h2&gt;
-&lt;p&gt;使用 show processlist 命令查看当前所有连接信息。&lt;/p&gt;
-&lt;p&gt;使用 explain 命令查询 SQL 语句执行计划。&lt;/p&gt;
-&lt;p&gt;开启慢查询日志，查看慢查询的 SQL。&lt;/p&gt;
-&lt;h2&gt;15. 如何做 MySQL 的性能优化？&lt;/h2&gt;
-&lt;p&gt;为搜索字段创建索引。&lt;/p&gt;
-&lt;p&gt;避免使用 select *，列出需要查询的字段。&lt;/p&gt;
-&lt;p&gt;垂直分割分表。&lt;/p&gt;
-&lt;p&gt;选择正确的存储引擎。&lt;/p&gt;
-</content><link href="/archives/java-interview-mysql/" rel="alternate"/><published>2020-01-16T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-zookeeper/</id><title>Java面试题-Zookeeper</title><updated>2020-01-16T02:23:43.383045+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1. zookeeper 是什么？&lt;/h2&gt;
-&lt;p&gt;zookeeper 是一个分布式的，开放源码的分布式应用程序协调服务，是 google chubby 的开源实现，是 hadoop 和 hbase 的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。&lt;/p&gt;
-&lt;h2&gt;2. zookeeper 都有哪些功能？&lt;/h2&gt;
-&lt;p&gt;集群管理：监控节点存活状态、运行请求等。&lt;/p&gt;
-&lt;p&gt;主节点选举：主节点挂掉了之后可以从备用的节点开始新一轮选主，主节点选举说的就是这个选举的过程，使用 zookeeper 可以协助完成这个过程。&lt;/p&gt;
-&lt;p&gt;分布式锁：zookeeper 提供两种锁：独占锁、共享锁。独占锁即一次只能有一个线程使用资源，共享锁是读锁共享，读写互斥，即可以有多线线程同时读同一个资源，如果要使用写锁也只能有一个线程使用。zookeeper可以对分布式锁进行控制。&lt;/p&gt;
-&lt;p&gt;命名服务：在分布式系统中，通过使用命名服务，客户端应用能够根据指定名字来获取资源或服务的地址，提供者等信息。&lt;/p&gt;
-&lt;h2&gt;3. zookeeper 有几种部署模式？&lt;/h2&gt;
-&lt;p&gt;zookeeper 有三种部署模式：&lt;/p&gt;
-&lt;p&gt;单机部署：一台集群上运行；&lt;/p&gt;
-&lt;p&gt;集群部署：多台集群运行；&lt;/p&gt;
-&lt;p&gt;伪集群部署：一台集群启动多个 zookeeper 实例运行。&lt;/p&gt;
-&lt;h2&gt;4. zookeeper 怎么保证主从节点的状态同步？&lt;/h2&gt;
-&lt;p&gt;zookeeper 的核心是原子广播，这个机制保证了各个 server 之间的同步。实现这个机制的协议叫做 zab 协议。zab 协议有两种模式，分别是恢复模式（选主）和广播模式（同步）。&lt;/p&gt;
-&lt;p&gt;当服务启动或者在领导者崩溃后，zab 就进入了恢复模式，当领导者被选举出来，且大多数 server 完成了和 leader 的状态同步以后，恢复模式就结束了。状态同步保证了 leader 和 server 具有相同的系统状态。&lt;/p&gt;
-&lt;h2&gt;5. 集群中为什么要有主节点？&lt;/h2&gt;
-&lt;p&gt;在分布式环境中，有些业务逻辑只需要集群中的某一台机器进行执行，其他的机器可以共享这个结果，这样可以大大减少重复计算，提高性能，所以就需要主节点。&lt;/p&gt;
-&lt;h2&gt;6. 集群中有 3 台服务器，其中一个节点宕机，这个时候 zookeeper 还可以使用吗？&lt;/h2&gt;
-&lt;p&gt;可以继续使用，单数服务器只要没超过一半的服务器宕机就可以继续使用。&lt;/p&gt;
-&lt;h2&gt;7. 说一下 zookeeper 的通知机制？&lt;/h2&gt;
-&lt;p&gt;客户端端会对某个 znode 建立一个 watcher 事件，当该 znode 发生变化时，这些客户端会收到 zookeeper 的通知，然后客户端可以根据 znode 变化来做出业务上的改变。&lt;/p&gt;
-</content><link href="/archives/java-interview-zookeeper/" rel="alternate"/><published>2020-01-17T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-rabbitmq/</id><title>Java面试题-RabbitMQ</title><updated>2020-01-16T02:23:43.383027+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1. RabbitMQ 的使用场景有哪些？&lt;/h2&gt;
-&lt;p&gt;抢购活动，削峰填谷，防止系统崩塌。&lt;/p&gt;
-&lt;p&gt;延迟信息处理，比如 10 分钟之后给下单未付款的用户发送邮件提醒。&lt;/p&gt;
-&lt;p&gt;解耦系统，对于新增的功能可以单独写模块扩展，比如用户确认评价之后，新增了给用户返积分的功能，这个时候不用在业务代码里添加新增积分的功能，只需要把新增积分的接口订阅确认评价的消息队列即可，后面再添加任何功能只需要订阅对应的消息队列即可。&lt;/p&gt;
-&lt;h2&gt;2. RabbitMQ 有哪些重要的角色？&lt;/h2&gt;
-&lt;p&gt;RabbitMQ 中重要的角色有：生产者、消费者和代理：&lt;/p&gt;
-&lt;p&gt;生产者：消息的创建者，负责创建和推送数据到消息服务器；&lt;/p&gt;
-&lt;p&gt;消费者：消息的接收方，用于处理数据和确认消息；&lt;/p&gt;
-&lt;p&gt;代理：就是 RabbitMQ 本身，用于扮演“快递”的角色，本身不生产消息，只是扮演“快递”的角色。&lt;/p&gt;
-&lt;h2&gt;3. RabbitMQ 有哪些重要的组件？&lt;/h2&gt;
-&lt;p&gt;ConnectionFactory（连接管理器）：应用程序与Rabbit之间建立连接的管理器，程序代码中使用。&lt;/p&gt;
-&lt;p&gt;Channel（信道）：消息推送使用的通道。&lt;/p&gt;
-&lt;p&gt;Exchange（交换器）：用于接受、分配消息。&lt;/p&gt;
-&lt;p&gt;Queue（队列）：用于存储生产者的消息。&lt;/p&gt;
-&lt;p&gt;RoutingKey（路由键）：用于把生成者的数据分配到交换器上。&lt;/p&gt;
-&lt;p&gt;BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;/p&gt;
-&lt;h2&gt;4. RabbitMQ 中 vhost 的作用是什么？&lt;/h2&gt;
-&lt;p&gt;vhost：每个 RabbitMQ 都能创建很多 vhost，我们称之为虚拟主机，每个虚拟主机其实都是 mini 版的RabbitMQ，它拥有自己的队列，交换器和绑定，拥有自己的权限机制。&lt;/p&gt;
-&lt;h2&gt;5. RabbitMQ 的消息是怎么发送的？&lt;/h2&gt;
-&lt;p&gt;首先客户端必须连接到 RabbitMQ 服务器才能发布和消费消息，客户端和 rabbit server 之间会创建一个 tcp 连接，一旦 tcp 打开并通过了认证（认证就是你发送给 rabbit 服务器的用户名和密码），你的客户端和 RabbitMQ 就创建了一条 amqp 信道（channel），信道是创建在“真实” tcp 上的虚拟连接，amqp 命令都是通过信道发送出去的，每个信道都会有一个唯一的 id，不论是发布消息，订阅队列都是通过这个信道完成的。&lt;/p&gt;
-&lt;h2&gt;6. RabbitMQ 怎么保证消息的稳定性？&lt;/h2&gt;
-&lt;p&gt;提供了事务的功能。&lt;/p&gt;
-&lt;p&gt;通过将 channel 设置为 confirm（确认）模式。&lt;/p&gt;
-&lt;h2&gt;7. RabbitMQ 怎么避免消息丢失？&lt;/h2&gt;
-&lt;p&gt;把消息持久化磁盘，保证服务器重启消息不丢失。&lt;/p&gt;
-&lt;p&gt;每个集群中至少有一个物理磁盘，保证消息落入磁盘。&lt;/p&gt;
-&lt;h2&gt;8. 要保证消息持久化成功的条件有哪些？&lt;/h2&gt;
-&lt;p&gt;声明队列必须设置持久化 durable 设置为 true.&lt;/p&gt;
-&lt;p&gt;消息推送投递模式必须设置持久化，deliveryMode 设置为 2（持久）。&lt;/p&gt;
-&lt;p&gt;消息已经到达持久化交换器。&lt;/p&gt;
-&lt;p&gt;消息已经到达持久化队列。&lt;/p&gt;
-&lt;p&gt;以上四个条件都满足才能保证消息持久化成功。&lt;/p&gt;
-&lt;h2&gt;9. RabbitMQ 持久化有什么缺点？&lt;/h2&gt;
-&lt;p&gt;持久化的缺点就是降低了服务器的吞吐量，因为使用的是磁盘而非内存存储，从而降低了吞吐量。可尽量使用 ssd 硬盘来缓解吞吐量的问题。&lt;/p&gt;
-&lt;h2&gt;10. RabbitMQ 有几种广播类型？&lt;/h2&gt;
-&lt;p&gt;direct（默认方式）：最基础最简单的模式，发送方把消息发送给订阅方，如果有多个订阅者，默认采取轮询的方式进行消息发送。&lt;/p&gt;
-&lt;p&gt;headers：与 direct 类似，只是性能很差，此类型几乎用不到。&lt;/p&gt;
-&lt;p&gt;fanout：分发模式，把消费分发给所有订阅者。&lt;/p&gt;
-&lt;p&gt;topic：匹配订阅模式，使用正则匹配到消息队列，能匹配到的都能接收到。&lt;/p&gt;
-&lt;h2&gt;11. RabbitMQ 怎么实现延迟消息队列？&lt;/h2&gt;
-&lt;p&gt;延迟队列的实现有两种方式：&lt;/p&gt;
-&lt;p&gt;通过消息过期后进入死信交换器，再由交换器转发到延迟消费队列，实现延迟功能；&lt;/p&gt;
-&lt;p&gt;使用 RabbitMQ-delayed-message-exchange 插件实现延迟功能。&lt;/p&gt;
-&lt;h2&gt;12. RabbitMQ 集群有什么用？&lt;/h2&gt;
-&lt;p&gt;集群主要有以下两个用途：&lt;/p&gt;
-&lt;p&gt;高可用：某个服务器出现问题，整个 RabbitMQ 还可以继续使用；&lt;/p&gt;
-&lt;p&gt;高容量：集群可以承载更多的消息量。&lt;/p&gt;
-&lt;h2&gt;13. RabbitMQ 节点的类型有哪些？&lt;/h2&gt;
-&lt;p&gt;磁盘节点：消息会存储到磁盘。&lt;/p&gt;
-&lt;p&gt;内存节点：消息都存储在内存中，重启服务器消息丢失，性能高于磁盘类型。&lt;/p&gt;
-&lt;h2&gt;14. RabbitMQ 集群搭建需要注意哪些问题？&lt;/h2&gt;
-&lt;p&gt;各节点之间使用“–link”连接，此属性不能忽略。&lt;/p&gt;
-&lt;p&gt;各节点使用的 erlang cookie 值必须相同，此值相当于“秘钥”的功能，用于各节点的认证。&lt;/p&gt;
-&lt;p&gt;整个集群中必须包含一个磁盘节点。&lt;/p&gt;
-&lt;h2&gt;15. RabbitMQ 每个节点是其他节点的完整拷贝吗？为什么？&lt;/h2&gt;
-&lt;p&gt;不是，原因有以下两个：&lt;/p&gt;
-&lt;p&gt;存储空间的考虑：如果每个节点都拥有所有队列的完全拷贝，这样新增节点不但没有新增存储空间，反而增加了更多的冗余数据；&lt;/p&gt;
-&lt;p&gt;性能的考虑：如果每条消息都需要完整拷贝到每一个集群节点，那新增节点并没有提升处理消息的能力，最多是保持和单节点相同的性能甚至是更糟。&lt;/p&gt;
-&lt;h2&gt;16. RabbitMQ 集群中唯一一个磁盘节点崩溃了会发生什么情况？&lt;/h2&gt;
-&lt;p&gt;如果唯一磁盘的磁盘节点崩溃了，不能进行以下操作：&lt;/p&gt;
-&lt;p&gt;不能创建队列&lt;/p&gt;
-&lt;p&gt;不能创建交换器&lt;/p&gt;
-&lt;p&gt;不能创建绑定&lt;/p&gt;
-&lt;p&gt;不能添加用户&lt;/p&gt;
-&lt;p&gt;不能更改权限&lt;/p&gt;
-&lt;p&gt;不能添加和删除集群节点&lt;/p&gt;
-&lt;p&gt;唯一磁盘节点崩溃了，集群是可以保持运行的，但你不能更改任何东西。&lt;/p&gt;
-&lt;h2&gt;17. RabbitMQ 对集群节点停止顺序有要求吗？&lt;/h2&gt;
-&lt;p&gt;RabbitMQ 对集群的停止的顺序是有要求的，应该先关闭内存节点，最后再关闭磁盘节点。如果顺序恰好相反的话，可能会造成消息的丢失。&lt;/p&gt;
-</content><link href="/archives/java-interview-rabbitmq/" rel="alternate"/><published>2020-01-18T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-distributedlock/</id><title>Java面试题-分布式锁</title><updated>2020-01-16T02:23:43.382991+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;引言&lt;/h2&gt;
-&lt;p&gt;为什么要使用分布式锁？为了保证一个方法在高并发情况下的同一时间只能被同一个线程执行，在传统单体应用单机部署的情况下，可以使用Java并发处理相关的API(如ReentrantLcok或synchronized)进行互斥控制。&lt;/p&gt;
-&lt;p&gt;但是，随着业务发展的需要，原单体单机部署的系统被演化成分布式系统后，由于分布式系统多线程、多进程并且分布在不同机器上，这将使原单机部署情况下的并发控制锁策略失效，为了解决这个问题就需要一种跨JVM的互斥机制来控制共享资源的访问，这就是分布式锁要解决的问题。&lt;/p&gt;
-&lt;p&gt;下面介绍JAVA分布式锁的三种常用实现方式：&lt;/p&gt;
-&lt;h3&gt;1.基于数据库实现分布式锁&lt;/h3&gt;
-&lt;p&gt;要实现分布式锁，最简单的方式可能就是直接创建一张锁表，然后通过操作该表中的数据来实现了。当我们要锁住某个方法或资源时，我们就在该表中增加一条记录，想要释放锁的时候就删除这条记录.&lt;/p&gt;
-&lt;p&gt;具体操作就是在数据库中创建一个表，表中包含方法名等字段，并在方法名字段上创建唯一索引，想要执行某个方法，就使用这个方法名向表中插入数据，成功插入则获取锁，执行完成后删除对应的行数据释放锁。&lt;/p&gt;
-&lt;p&gt;上面这种简单的实现有以下几个问题：&lt;/p&gt;
-&lt;p&gt;1、这把锁强依赖数据库的可用性，数据库是一个单点，一旦数据库挂掉，会导致业务系统不可用。&lt;/p&gt;
-&lt;p&gt;2、这把锁没有失效时间，一旦解锁操作失败，就会导致锁记录一直在数据库中，其他线程无法再获得到锁。&lt;/p&gt;
-&lt;p&gt;3、这把锁只能是非阻塞的，因为数据的insert操作，一旦插入失败就会直接报错。没有获得锁的线程并不会进入排队队列，要想再次获得锁就要再次触发获得锁操作。&lt;/p&gt;
-&lt;p&gt;4、这把锁是非重入的，同一个线程在没有释放锁之前无法再次获得该锁。因为数据中数据已经存在了。&lt;/p&gt;
-&lt;p&gt;当然，我们也可以有其他方式解决上面的问题。&lt;/p&gt;
-&lt;p&gt;数据库是单点？搞两个数据库，数据之前双向同步。一旦挂掉快速切换到备库上。&lt;/p&gt;
-&lt;p&gt;没有失效时间？只要做一个定时任务，每隔一定时间把数据库中的超时数据清理一遍。&lt;/p&gt;
-&lt;p&gt;非阻塞的？搞一个while循环，直到insert成功再返回成功。&lt;/p&gt;
-&lt;p&gt;非重入的？在数据库表中加个字段，记录当前获得锁的机器的主机信息和线程信息，那么下次再获取锁的时候先查询数据库，如果当前机器的主机信息和线程信息在数据库可以查到的话，直接把锁分配给他就可以了。&lt;/p&gt;
-&lt;p&gt;优点：借助数据库，方案简单。&lt;/p&gt;
-&lt;p&gt;缺点：在实际实施的过程中会遇到各种不同的问题，为了解决这些问题，实现方式将会越来越复杂；依赖数据库需要一定的资源开销，性能问题需要考虑&lt;/p&gt;
-&lt;h3&gt;2.基于Redis实现分布式锁&lt;/h3&gt;
-&lt;p&gt;在Redis2.6.12版本之前，使用setnx命令设置key-value、使用expire命令设置key的过期时间获取分布式锁，使用del命令释放分布式锁，但是这种实现有如下一些问题：&lt;/p&gt;
-&lt;p&gt;setnx命令设置完key-value后，还没来得及使用expire命令设置过期时间，当前线程挂掉了，会导致当前线程设置的key一直有效，后续线程无法正常通过setnx获取锁，造成死锁。&lt;/p&gt;
-&lt;p&gt;出现这个问题是因为两个命令是分开执行并且不具备原子特性，如果能将这两个命令合二为一就可以解决问题了。在Redis2.6.12版本中实现了这个功能，Redis为set命令增加了一系列选项。&lt;/p&gt;
-&lt;p&gt;也就是说现在set命令就可以实现分布式锁，下面我们来了解一下set命令（set(keyName, lockValue, “NX”, “EX”, expireSeconds)）：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SET命令是原子性操作，NX指令保证只要当key不存在时才会设置value
-
-设置的value要有唯一性，来确保锁不会被误删(value=系统时间戳+UUID)
-
-当上述命令执行返回OK时，客户端获取锁成功，否则失败
-
-客户端可以通过redis释放脚本来释放锁（del 命令）
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;5.如果锁到达了最大生存时间将会自动释放&lt;/p&gt;
-&lt;p&gt;只有当前key的value和传入的value相同才会执行DEL命令。&lt;/p&gt;
-&lt;p&gt;优点：高性能，借助Redis实现比较方便。&lt;/p&gt;
-&lt;p&gt;缺点：线程获取锁后，如果处理时间过长会导致锁超时失效(失效时间我设置多长时间为好？如何设置的失效时间太短，方法没等执行完，锁就自动释放了，那么就会产生并发问题。如果设置的时间太长，其他获取锁的线程就可能要平白的多等一段时间。这个问题使用数据库实现分布式锁同样存在)，所以，通过超时时间来控制锁的失效时间并不是十分的靠谱。&lt;/p&gt;
-&lt;h3&gt;3.基于Zookeeper实现分布式锁&lt;/h3&gt;
-&lt;p&gt;ZooKeeper是一个为分布式应用提供一致性服务的开源组件，它内部是一个分层的文件系统目录树结构，规定同一个目录下只能有一个唯一文件名。&lt;/p&gt;
-&lt;p&gt;大致思想即为：每个客户端对某个方法加锁时，在zookeeper上的与该方法对应的指定节点的目录下，生成一个唯一的瞬时有序节点。&lt;/p&gt;
-&lt;p&gt;判断是否获取锁的方式很简单，只需要判断有序节点中序号最小的一个。当释放锁的时候，只需将这个瞬时节点删除即可。同时，其可以避免服务宕机导致的锁无法释放，而产生的死锁问题。&lt;/p&gt;
-&lt;p&gt;基于ZooKeeper实现分布式锁的步骤如下：&lt;/p&gt;
-&lt;p&gt;创建一个目录mylock；&lt;/p&gt;
-&lt;p&gt;线程A想获取锁就在mylock目录下创建临时顺序节点；&lt;/p&gt;
-&lt;p&gt;获取mylock目录下所有的子节点，然后获取比自己小的兄弟节点，如果不存在，则说明当前线程顺序号最小，获得锁；&lt;/p&gt;
-&lt;p&gt;线程B获取所有节点，判断自己不是最小节点，设置监听比自己次小的节点；&lt;/p&gt;
-&lt;p&gt;线程A处理完，删除自己的节点，线程B监听到变更事件，判断自己是不是最小的节点，如果是则获得锁。&lt;/p&gt;
-&lt;p&gt;优点：具备高可用、可重入、阻塞锁特性，可解决失效死锁问题。具体说明如下：&lt;/p&gt;
-&lt;p&gt;锁无法释放，造成死锁！使用Zookeeper可以有效的解决锁无法释放的问题，因为在创建锁的时候，客户端会在ZK中创建一个临时节点，一旦客户端获取到锁之后突然挂掉（Session连接断开），那么这个临时节点就会自动删除掉。其他客户端就可以再次获得锁。&lt;/p&gt;
-&lt;p&gt;阻塞锁特性！使用Zookeeper可以实现阻塞的锁，客户端可以通过在ZK中创建顺序节点，并且在节点上绑定监听器，一旦节点有变化，Zookeeper会通知客户端，客户端可以检查自己创建的节点是不是当前所有节点中序号最小的，如果是，那么自己就获取到锁，便可以执行业务逻辑了。&lt;/p&gt;
-&lt;p&gt;可重入！使用Zookeeper也可以有效的解决不可重入的问题，客户端在创建节点的时候，把当前客户端的主机信息和线程信息直接写入到节点中，下次想要获取锁的时候和当前最小的节点中的数据比对一下就可以了。&lt;/p&gt;
-&lt;p&gt;如果和自己的信息一样，那么自己直接获取到锁，如果不一样就再创建一个临时的顺序节点，参与排队。&lt;/p&gt;
-&lt;p&gt;单点问题？使用Zookeeper可以有效的解决单点问题，ZK是集群部署的，只要集群中有半数以上的机器存活，就可以对外提供服务。&lt;/p&gt;
-&lt;p&gt;缺点：因为需要频繁的创建和删除节点，性能上不如Redis方式。&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;上面几种方式，哪种方式都无法做到完美。就像CAP一样，在复杂性、可靠性、性能等方面无法同时满足，所以，根据不同的应用场景选择最适合自己的才是王道。&lt;/p&gt;
-</content><link href="/archives/java-interview-distributedlock/" rel="alternate"/><published>2020-01-19T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-linux/</id><title>Java面试题-Linux</title><updated>2020-01-16T02:23:43.382974+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.查看内核&lt;/h2&gt;
-&lt;p&gt;uname -a&lt;/p&gt;
-&lt;h2&gt;2.查看系统调用列表&lt;/h2&gt;
-&lt;p&gt;man 2 syscalls&lt;/p&gt;
-&lt;h2&gt;3.查看系统调用说明&lt;/h2&gt;
-&lt;p&gt;man 2 acct&lt;/p&gt;
-&lt;h1&gt;man 2 系统调用 3 是公共库函数&lt;/h1&gt;
-&lt;h2&gt;4.常用指令：&lt;/h2&gt;
-&lt;p&gt;ls less more cat vi vim……（ps：vim比vi高级，可以多级撤销，语法高亮，跨平台，而且完全兼容vi）&lt;/p&gt;
-&lt;h2&gt;5.远程访问&lt;/h2&gt;
-&lt;p&gt;scp 文件移动到远程服务器&lt;/p&gt;
-&lt;p&gt;wget 下载服务器文件到本地&lt;/p&gt;
-&lt;p&gt;ssh 远程登陆&lt;/p&gt;
-&lt;h2&gt;6.创建文件命令&lt;/h2&gt;
-&lt;p&gt;touch 文件名&lt;/p&gt;
-&lt;p&gt;vi 文件名（文件名不存在的话）&lt;/p&gt;
-&lt;p&gt;mkdir 文件夹名&lt;/p&gt;
-&lt;h2&gt;7. 在Linux中，怎样实现日志文件的自动循环？&lt;/h2&gt;
-&lt;p&gt;‘logrotate’提供日志自动循环功能（注：将旧的日志切断，保存为.1，.2之类的文件名，并在下次切断时，逐个覆盖，并丢弃最老的）。&lt;/p&gt;
-&lt;h2&gt;8. 怎样知道Linux中是谁在调度工作？&lt;/h2&gt;
-&lt;p&gt;使用’at’命令加上’-l’选项，就可以查出。&lt;/p&gt;
-&lt;h2&gt;9. 如何在不解压tar包的前提下，查看包里的内容？&lt;/h2&gt;
-&lt;p&gt;使用’tar -tvf’。选项‘t’(显示内容)，‘v’（详细报告tar处理的文件信息），‘f’（使用档案文件或者设备）&lt;/p&gt;
-&lt;h2&gt;10.查看文件内容有哪些命令可以使用？&lt;/h2&gt;
-&lt;p&gt;vi 文件名 #编辑方式查看，可修改&lt;/p&gt;
-&lt;p&gt;cat 文件名 #显示全部文件内容&lt;/p&gt;
-&lt;p&gt;more 文件名 #分页显示文件内容&lt;/p&gt;
-&lt;p&gt;less 文件名 #与 more 相似，更好的是可以往前翻页&lt;/p&gt;
-&lt;p&gt;tail 文件名 #仅查看尾部，还可以指定行数&lt;/p&gt;
-&lt;p&gt;head 文件名 #仅查看头部,还可以指定行数&lt;/p&gt;
-&lt;h2&gt;11.通过什么命令查找执行命令?&lt;/h2&gt;
-&lt;p&gt;which 只能查可执行文件&lt;/p&gt;
-&lt;p&gt;whereis 只能查二进制文件、说明文档，源文件等&lt;/p&gt;
-&lt;h2&gt;12. 在你的Linux机器上跟踪系统事件的守护进程名是什么？&lt;/h2&gt;
-&lt;p&gt;‘syslogd’，它负责跟踪系统信息，并将跟踪日志存储在特定的日志文件里。&lt;/p&gt;
-&lt;h2&gt;13. 在“/”根分区运行’fsck’命令的最低要求是什么？&lt;/h2&gt;
-&lt;p&gt;“/”根分区必须挂载为只读模式才能运行fsck，读写模式则不行。&lt;/p&gt;
-&lt;h2&gt;14. 如何按层次结构复制/home目录到另一个目录？&lt;/h2&gt;
-&lt;p&gt;Linux的’cpio’命令可以实现效果。’cpio’可以按层次结构地复制文件和目录层次结构到另一个位置。（LCTT译注：实际上使用cpio的很少，而是使用cp -r较多）&lt;/p&gt;
-&lt;h2&gt;15.怎么对命令进行取别名？&lt;/h2&gt;
-&lt;p&gt;alias la='ls -a'&lt;/p&gt;
-&lt;h2&gt;16.Ls 命令执行什么功能？可以带哪些参数，有什么区别？&lt;/h2&gt;
-&lt;p&gt;ls 执行的功能：列出指定目录中的目录，以及文件&lt;/p&gt;
-&lt;p&gt;哪些参数以及区别：a 所有文件l 详细信息，包括大小字节数，可读可写可执行的权限等&lt;/p&gt;
-&lt;h2&gt;17.建立软链接(快捷方式)，以及硬链接的命令。&lt;/h2&gt;
-&lt;p&gt;软链接：ln -s slink source&lt;/p&gt;
-&lt;p&gt;硬链接：ln link source&lt;/p&gt;
-&lt;h2&gt;18.目录创建用什么命令？创建文件用什么命令？复制文件用什么命令？&lt;/h2&gt;
-&lt;p&gt;创建目录：mkdir&lt;/p&gt;
-&lt;p&gt;创建文件：典型的如 touch，vi 也可以创建文件，其实只要向一个不存在的文件输出，都会创建文件&lt;/p&gt;
-&lt;p&gt;复制文件：cp&lt;/p&gt;
-&lt;h2&gt;19.怎么使一个命令在后台运行?&lt;/h2&gt;
-&lt;p&gt;一般都是使用 &amp;amp; 在命令结尾来让程序自动运行。(命令后可以不追加空格)&lt;/p&gt;
-&lt;h2&gt;20. 文件权限修改用什么命令？格式是怎么样的？&lt;/h2&gt;
-&lt;p&gt;文件权限修改：chmod&lt;/p&gt;
-&lt;p&gt;格式如下：&lt;/p&gt;
-&lt;p&gt;chmodu+xfile给file的属主增加执行权限chmodu+xfile给file的属主增加执行权限 chmod 751 file 给 file 的属主分配读、写、执行(7)的权限，给 file 的所在组分配读、执行(5)的权限，给其他用户分配执行(1)的权限&lt;/p&gt;
-&lt;p&gt;chmodu=rwx,g=rx,o=xfile上例的另一种形式chmodu=rwx,g=rx,o=xfile上例的另一种形式 chmod =r file 为所有用户分配读权限&lt;/p&gt;
-&lt;p&gt;chmod444file同上例chmod444file同上例 chmod a-wx,a+r file同上例&lt;/p&gt;
-&lt;p&gt;$ chmod -R u+r directory 递归地给 directory 目录下所有文件和子目录的属主分配读的权限&lt;/p&gt;
-&lt;h2&gt;21.随意写文件命令？怎么向屏幕输出带空格的字符串，比如”hello world”?&lt;/h2&gt;
-&lt;p&gt;写文件命令：vi&lt;/p&gt;
-&lt;p&gt;向屏幕输出带空格的字符串:echo hello world&lt;/p&gt;
-&lt;h2&gt;22.终端是哪个文件夹下的哪个文件？黑洞文件是哪个文件夹下的哪个命令？&lt;/h2&gt;
-&lt;p&gt;终端 /dev/tty&lt;/p&gt;
-&lt;p&gt;黑洞文件 /dev/null&lt;/p&gt;
-&lt;h2&gt;23.移动文件用哪个命令？改名用哪个命令？复制文件用哪个命令？如果需要连同文件夹一块复制呢？如果需要有提示功能呢？&lt;/h2&gt;
-&lt;p&gt;mv mv&lt;/p&gt;
-&lt;p&gt;cp cp -r&lt;/p&gt;
-&lt;h2&gt;24.删除文件用哪个命令？如果需要连目录及目录下文件一块删除呢？删除空文件夹用什么命令？&lt;/h2&gt;
-&lt;p&gt;rm rm -r rmdir&lt;/p&gt;
-&lt;h2&gt;25.Linux 下命令有哪几种可使用的通配符？分别代表什么含义?&lt;/h2&gt;
-&lt;p&gt;“？”可替代单个字符。&lt;/p&gt;
-&lt;p&gt;“*”可替代任意多个字符。&lt;/p&gt;
-&lt;p&gt;方括号“[charset]”可替代 charset 集中的任何单个字符，如[a-z]，[abABC]&lt;/p&gt;
-&lt;h2&gt;26.用什么命令对一个文件的内容进行统计？(行号、单词数、字节数)&lt;/h2&gt;
-&lt;p&gt;wc 命令 – c 统计字节数 – l 统计行数 – w 统计字数。&lt;/p&gt;
-&lt;h2&gt;27.Grep 命令有什么用？如何忽略大小写？如何查找不含该串的行?&lt;/h2&gt;
-&lt;p&gt;是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。&lt;/p&gt;
-&lt;p&gt;grep [stringSTRING] filename grep &lt;sup id="fn_ref_1"&gt;&lt;a href="#fn_1"&gt;1&lt;/a&gt;&lt;/sup&gt; filename&lt;/p&gt;
-&lt;h2&gt;28.怎么使一个命令在后台运行?&lt;/h2&gt;
-&lt;p&gt;一般都是使用 &amp;amp; 在命令结尾来让程序自动运行。(命令后可以不追加空格)&lt;/p&gt;
-&lt;h2&gt;29.利用 ps 怎么显示所有的进程? 怎么利用 ps 查看指定进程的信息？&lt;/h2&gt;
-&lt;p&gt;ps -ef (system v 输出)&lt;/p&gt;
-&lt;p&gt;ps -aux bsd 格式输出&lt;/p&gt;
-&lt;p&gt;ps -ef | grep pid&lt;/p&gt;
-&lt;h2&gt;30.哪个命令专门用来查看后台任务?&lt;/h2&gt;
-&lt;p&gt;job -l&lt;/p&gt;
-&lt;h2&gt;31.把后台任务调到前台执行使用什么命令?把停下的后台任务在后台执行起来用什么命令?&lt;/h2&gt;
-&lt;p&gt;把后台任务调到前台执行 fg&lt;/p&gt;
-&lt;p&gt;把停下的后台任务在后台执行起来 bg&lt;/p&gt;
-&lt;h2&gt;32.终止进程用什么命令? 带什么参数?&lt;/h2&gt;
-&lt;p&gt;kill [-s &lt;信息名称或编号&gt;][程序] 或 kill [-l &lt;信息编号&gt;]&lt;/p&gt;
-&lt;p&gt;kill-9 pid&lt;/p&gt;
-&lt;h2&gt;33.怎么清屏？怎么退出当前命令？怎么执行睡眠？怎么查看当前用户 id？查看指定帮助用什么命令？&lt;/h2&gt;
-&lt;p&gt;清屏：clear&lt;/p&gt;
-&lt;p&gt;退出当前命令：ctrl+c 彻底退出&lt;/p&gt;
-&lt;p&gt;执行睡眠 ：ctrl+z 挂起当前进程fg 恢复后台&lt;/p&gt;
-&lt;p&gt;查看当前用户 id：”id“：查看显示目前登陆账户的 uid 和 gid 及所属分组及用户名&lt;/p&gt;
-&lt;p&gt;查看指定帮助：如 man adduser 这个很全 而且有例子；adduser –help 这个告诉你一些常用参数；info adduesr；&lt;/p&gt;
-&lt;h2&gt;34.搜索文件用什么命令? 格式是怎么样的?&lt;/h2&gt;
-&lt;p&gt;find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;&lt;/p&gt;
-&lt;p&gt;whereis 加参数与文件名&lt;/p&gt;
-&lt;p&gt;locate 只加文件名&lt;/p&gt;
-&lt;p&gt;find 直接搜索磁盘，较慢。&lt;/p&gt;
-&lt;p&gt;find / -name "string*"&lt;/p&gt;
-&lt;h2&gt;35.查看当前谁在使用该主机用什么命令? 查找自己所在的终端信息用什么命令?&lt;/h2&gt;
-&lt;p&gt;查找自己所在的终端信息：who am i&lt;/p&gt;
-&lt;p&gt;查看当前谁在使用该主机：who&lt;/p&gt;
-&lt;h2&gt;36.使用什么命令查看用过的命令列表?&lt;/h2&gt;
-&lt;p&gt;history&lt;/p&gt;
-&lt;h2&gt;37.怎样一页一页地查看一个大文件的内容呢？&lt;/h2&gt;
-&lt;p&gt;通过管道将命令”cat file_name.txt” 和 ’more’ 连接在一起可以实现这个需要.&lt;/p&gt;
-&lt;p&gt;[root@localhost ~]# cat file_name.txt | more&lt;/p&gt;
-&lt;h2&gt;38.数据字典属于哪一个用户的？&lt;/h2&gt;
-&lt;p&gt;数据字典是属于’SYS’用户的，用户‘SYS’ 和 ’SYSEM’是由系统默认自动创建的&lt;/p&gt;
-&lt;h2&gt;39. 如何在/usr目录下找出大小超过10MB的文件？&lt;/h2&gt;
-&lt;h1&gt;find /usr -size +10M&lt;/h1&gt;
-&lt;h2&gt;40. 如何在/var目录下找出90天之内未被访问过的文件？&lt;/h2&gt;
-&lt;h1&gt;find /var /! -atime -90&lt;/h1&gt;
-&lt;h2&gt;41.如何查看Linux的默认网关？&lt;/h2&gt;
-&lt;p&gt;答: 用 “route -n” 和 “netstat -nr” 命令，我们可以查看默认网关。除了默认的网关信息，这两个命令还可以显示当前的路由表。&lt;/p&gt;
-&lt;h2&gt;42.使用top查看系统资源占用情况时，哪一列表示内存占用呢？&lt;/h2&gt;
-&lt;p&gt;PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND&lt;/p&gt;
-&lt;p&gt;301 root      20   0     0    0    0 S  0.3  0.0   0:00.08 jbd2/sda3-8&lt;/p&gt;
-&lt;p&gt;1 root      20   0  2900 1428 1216 S  0.0  0.1   0:01.28 init&lt;/p&gt;
-&lt;p&gt;2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd&lt;/p&gt;
-&lt;p&gt;3 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 migration/0&lt;/p&gt;
-&lt;p&gt;VIRT虚拟内存用量&lt;/p&gt;
-&lt;p&gt;RES物理内存用量&lt;/p&gt;
-&lt;p&gt;SHR共享内存用量&lt;/p&gt;
-&lt;p&gt;%MEM内存用量&lt;/p&gt;
-&lt;hr&gt;&lt;div class="footnotes"&gt;&lt;ol&gt;&lt;li id="fn_1"&gt;string &lt;a no-style href="#fn_ref_1"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</content><link href="/archives/java-interview-linux/" rel="alternate"/><published>2020-01-20T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-netty/</id><title>Java面试题-Netty</title><updated>2020-01-16T02:23:43.382956+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.BIO、NIO和AIO的区别？&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-01-16T06:07:41.777134+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="http://lkiesow.github.io/python-feedgen" version="0.8.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-netty/</id><title>Java面试题-Netty</title><updated>2020-01-16T06:07:41.777419+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.BIO、NIO和AIO的区别？&lt;/h2&gt;
 &lt;p&gt;BIO：一个连接一个线程，客户端有连接请求时服务器端就需要启动一个线程进行处理。线程开销大。&lt;/p&gt;
 &lt;p&gt;伪异步IO：将请求连接放入线程池，一对多，但线程还是很宝贵的资源。&lt;/p&gt;
 &lt;p&gt;NIO：一个请求一个线程，但客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。&lt;/p&gt;
@@ -484,7 +142,7 @@
 &lt;p&gt;ByteBuf的特点：支持自动扩容（4M），保证put方法不会抛出异常、通过内置的复合缓冲类型，实现零拷贝（zero-copy）；不需要调用flip()来切换读/写模式，读取和写入索引分开；&lt;/p&gt;
 &lt;p&gt;方法链；引用计数基于AtomicIntegerFieldUpdater用于内存回收；PooledByteBuf采用二叉树来实现一个内存池，集中管理内存的分配和释放，不用每次使用都新建一个缓冲区对象。&lt;/p&gt;
 &lt;p&gt;UnpooledHeapByteBuf每次都会新建一个缓冲区对象。&lt;/p&gt;
-</content><link href="/archives/java-interview-netty/" rel="alternate"/><published>2020-01-21T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-01-16T02:23:43.382939+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.单例设计模式&lt;/h2&gt;
+</content><link href="/archives/java-interview-netty/" rel="alternate"/><published>2020-01-21T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-01-16T06:07:41.777398+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.单例设计模式&lt;/h2&gt;
 &lt;p&gt;使用设计模式为了代码复用，增加可维护性。&lt;/p&gt;
 &lt;p&gt;设计模式的六大原则：开闭原则、里氏代换原则、依赖倒转原则、接口隔离原则、迪米特法则（最少知道原则）、合成/聚合复用原则&lt;/p&gt;
 &lt;p&gt;Singleton（创建）：保证一个类仅有一个实例，并提供一个访问它的全局访问点。如打印机&lt;/p&gt;
@@ -605,7 +263,7 @@ class Adaptee{
 &lt;h2&gt;3.模板方法设计模式&lt;/h2&gt;
 &lt;p&gt;模板方法设计模式（行为）使用了继承机制，在抽象类中定义一个模板方法，该方法引用了若干个抽象方法（由子类实现）或具体方法（子类可以覆盖重写）&lt;/p&gt;
 &lt;p&gt;模板方法设计模式在JDK源码的使用:Collections.sort()、InputStream.read()等&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-22T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-01-16T02:23:43.382920+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
+</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-22T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-01-16T06:07:41.777377+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
 &lt;p&gt;方案1：服务发布的group设置为不同；&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;  &amp;lt;dubbo:reference id="comm1" timeout="100000" interface="com.acq.facade.CommService" group="comm102" version="1.0.0" retries="0" check="false"&amp;gt;
@@ -648,7 +306,7 @@ class Adaptee{
 &lt;p&gt;dubbo:provider/ 服务提供者缺省值配置&lt;/p&gt;
 &lt;p&gt;dubbo:consumer/ 服务消费者缺省值配置&lt;/p&gt;
 &lt;p&gt;dubbo:method/ 方法级配置&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-01-16T02:23:43.382899+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
+</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-01-16T06:07:41.777356+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
 &lt;p&gt;CREATE TABLE t1 (a INT, b CHAR (20), PRIMARY KEY (a)) ENGINE=InnoDB;&lt;/p&gt;
 &lt;p&gt;如果你的 MySQL 实例将 InnoDB 定义为默认存储引擎 （ 默认情况下为默认存储引擎 )，则可以无需指定 ENGINE = InnoDB 子句。&lt;/p&gt;
 &lt;p&gt;如果你想要查询当前 MySQL 实例的默认存储引擎，可以使用下面的语句&lt;/p&gt;
@@ -733,25 +391,1387 @@ Max_data_length: 0
    ROW_FORMAT: Compact
 ZIP_PAGE_SIZE: 0
    SPACE_TYPE: Single&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-01-16T02:23:43.382835+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1. zookeeper 是什么？&lt;/h2&gt;
-&lt;p&gt;zookeeper 是一个分布式的，开放源码的分布式应用程序协调服务，是 google chubby 的开源实现，是 hadoop 和 hbase 的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。&lt;/p&gt;
-&lt;h2&gt;2. zookeeper 都有哪些功能？&lt;/h2&gt;
-&lt;p&gt;集群管理：监控节点存活状态、运行请求等。&lt;/p&gt;
-&lt;p&gt;主节点选举：主节点挂掉了之后可以从备用的节点开始新一轮选主，主节点选举说的就是这个选举的过程，使用 zookeeper 可以协助完成这个过程。&lt;/p&gt;
-&lt;p&gt;分布式锁：zookeeper 提供两种锁：独占锁、共享锁。独占锁即一次只能有一个线程使用资源，共享锁是读锁共享，读写互斥，即可以有多线线程同时读同一个资源，如果要使用写锁也只能有一个线程使用。zookeeper可以对分布式锁进行控制。&lt;/p&gt;
-&lt;p&gt;命名服务：在分布式系统中，通过使用命名服务，客户端应用能够根据指定名字来获取资源或服务的地址，提供者等信息。&lt;/p&gt;
-&lt;h2&gt;3. zookeeper 有几种部署模式？&lt;/h2&gt;
-&lt;p&gt;zookeeper 有三种部署模式：&lt;/p&gt;
-&lt;p&gt;单机部署：一台集群上运行；&lt;/p&gt;
-&lt;p&gt;集群部署：多台集群运行；&lt;/p&gt;
-&lt;p&gt;伪集群部署：一台集群启动多个 zookeeper 实例运行。&lt;/p&gt;
-&lt;h2&gt;4. zookeeper 怎么保证主从节点的状态同步？&lt;/h2&gt;
-&lt;p&gt;zookeeper 的核心是原子广播，这个机制保证了各个 server 之间的同步。实现这个机制的协议叫做 zab 协议。zab 协议有两种模式，分别是恢复模式（选主）和广播模式（同步）。&lt;/p&gt;
-&lt;p&gt;当服务启动或者在领导者崩溃后，zab 就进入了恢复模式，当领导者被选举出来，且大多数 server 完成了和 leader 的状态同步以后，恢复模式就结束了。状态同步保证了 leader 和 server 具有相同的系统状态。&lt;/p&gt;
-&lt;h2&gt;5. 集群中为什么要有主节点？&lt;/h2&gt;
-&lt;p&gt;在分布式环境中，有些业务逻辑只需要集群中的某一台机器进行执行，其他的机器可以共享这个结果，这样可以大大减少重复计算，提高性能，所以就需要主节点。&lt;/p&gt;
-&lt;h2&gt;6. 集群中有 3 台服务器，其中一个节点宕机，这个时候 zookeeper 还可以使用吗？&lt;/h2&gt;
-&lt;p&gt;可以继续使用，单数服务器只要没超过一半的服务器宕机就可以继续使用。&lt;/p&gt;
-&lt;h2&gt;7. 说一下 zookeeper 的通知机制？&lt;/h2&gt;
-&lt;p&gt;客户端端会对某个 znode 建立一个 watcher 事件，当该 znode 发生变化时，这些客户端会收到 zookeeper 的通知，然后客户端可以根据 znode 变化来做出业务上的改变。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry></feed>
+</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-01-16T06:07:41.777334+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
+&lt;h2&gt;AUTO_INCREMENT 约束&lt;/h2&gt;
+&lt;p&gt;AUTO_INCREMENT 是 Innodb 提供的一种可配置的锁定机制，如果某个表的某一列具有 AUTO_INCREMENT 约束，那么向该表添加数据的时候可以很明显的提高 SQL 语句的性能和可伸缩性。&lt;/p&gt;
+&lt;p&gt;为了充分使用 Innodb 表的 AUTO_INCREMENT 机制，必须 将 AUTO_INCREMENT 字段 ( 或列，下面提到的 「 列 」 和字段可以等价 ) 定义为 「 索引 」 的一部分，这样就可以在表上使用索引执行下面的语句来查找最大的列值&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT MAX (ai_col ) FROM tablename;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ai_col 为定义了 AUTO_INCREMENT 约束的列。&lt;/p&gt;
+&lt;p&gt;通常情况下，为了最大化性能，添加了 AUTO_INCREMENT 约束的列要么独自成一个索引 ( 主索引 )，那么是组合索引中的第一列&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;需要注意的是： 虽然我们日常使用中会把 AUTO_INCREMENT 添加为主键，但它其实也可以不是主键的。甚至可以不是唯一索引。 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;AUTO_INCREMENT 不仅仅是一个字段约束条件，它还是一个 「 锁 」，也就是那个很少见到的 「 AUTO_INCREMENT 锁」。&lt;/p&gt;
+&lt;p&gt;本章节接下来的部分，我们就来介绍介绍这个 「 AUTO_INCREMENT 锁」的模式和行为，包括不同的 「 AUTO_INCREMENT 锁」模式的使用意义，以及 Innodb 如何初始化 「 AUTO_INCREMENT 计数器 」&lt;/p&gt;
+&lt;h2&gt;Innodb AUTO_INCREMENT 锁的模式&lt;/h2&gt;
+&lt;p&gt;使用了 AUTO_INCREMENT 那么多次，我们已经知道它的主要作用就是产生一个不重复的 「 自增值 」。&lt;/p&gt;
+&lt;p&gt;我们知道，插入多条数据有两种插入方法，一种是一条一条的执行 INSERT INTO，另一种是 INSERT INTO VALUES(...),(...) 多条一起插入&lt;/p&gt;
+&lt;p&gt;这两种插入方法都能正确的自增 AUTO_INCREMENT 列，它们是如何做的呢 ？&lt;/p&gt;
+&lt;p&gt;这就仰赖了 AUTO_INCREMENT 锁，为了适应这两种插入方法，它同时也具有多种模式。&lt;/p&gt;
+&lt;h3&gt;术语&lt;/h3&gt;
+&lt;p&gt;在我们继续讲解之前，为了方便大家理解一些术语或概念，我们先罗列在此&lt;/p&gt;
+&lt;p&gt;1、 「 insert like 」 语句&lt;/p&gt;
+&lt;p&gt;所有可以在表中添加新行的语句，我们称之为 「 insert like 」 语句，例如&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.  `INSERT, INSERT ... SELECT`
+2.  `REPLACE`
+3.  `REPLACE ... SELECT`
+4.  `LOAD DATA`
+5.  其它的还有 「 simple-inserts 」、「 bulk-inserts 」和 「 mixed-mode 」 三种插入语句&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2、 「 simple-inserts 」 语句&lt;/p&gt;
+&lt;p&gt;「 simple-inserts 」 是可以预先确定要插入的行数的语句 ( 最初处理语句时 )。包括不带子查询的 &lt;strong&gt;单行&lt;/strong&gt; 和 &lt;strong&gt;多行&lt;/strong&gt; &lt;code&gt;INSERT&lt;/code&gt; 和&lt;code&gt;REPLACE&lt;/code&gt; 语句，但不包括 &lt;code&gt;INSERT ... ON DUPLICATE KEY UPDATE&lt;/code&gt; 语句&lt;/p&gt;
+&lt;p&gt;3、 「 Bulk inserts 」 批量插入&lt;/p&gt;
+&lt;p&gt;「 Bulk inserts 」是预先不知道要插入的行数（以及所需的自动增量值的数量）的语句。&lt;/p&gt;
+&lt;p&gt;包括 &lt;code&gt;INSERT ... SELECT&lt;/code&gt;，&lt;code&gt;REPLACE ... SELECT&lt;/code&gt; 和 &lt;code&gt;LOAD DATA&lt;/code&gt; 语句，但不包括普通的 &lt;code&gt;INSERT&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在处理每一行时，InnoDB 都会重新为 &lt;code&gt;AUTO_INCREMENT&lt;/code&gt; 列分配一个新值&lt;/p&gt;
+&lt;p&gt;4、 「 Mixed-mode inserts 」 混合模式插入&lt;/p&gt;
+&lt;p&gt;「 Mixed-mode inserts 」 是指「 simple-inserts 」 语句中，有些指定了 &lt;code&gt;AUTO_INCREMENT&lt;/code&gt; 列的值，而另一些则没有。&lt;/p&gt;
+&lt;p&gt;例如下面的 SQL 语句，其中 &lt;code&gt;c1&lt;/code&gt; 是表 &lt;code&gt;t1&lt;/code&gt; 的 &lt;code&gt;AUTO_INCREMENT&lt;/code&gt; 列&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (5,'c'), (NULL,'d');
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;另一种类型的 「 Mixed-mode inserts 」 是 &lt;code&gt;INSERT ... ON DUPLICATE KEY UPDATE&lt;/code&gt; ，这种语句最坏的情况下实际上是 &lt;code&gt;INSERT&lt;/code&gt; 后跟 &lt;code&gt;UPDATE&lt;/code&gt;，其中在更新阶段，可能会也可能不会为 &lt;code&gt;AUTO_INCREMENT&lt;/code&gt; 列的分配值&lt;/p&gt;
+&lt;h3&gt;innodb_autoinc_lock_mode&lt;/h3&gt;
+&lt;p&gt;我们先不讨论有几种模式，我们先来看看它是如何配置的。&lt;/p&gt;
+&lt;p&gt;「 AUTO_INCREMENT 锁」模式的配置变量为 innodb_autoinc_lock_mode ，我们可以通过下面的语句查看当前的模式是什么&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;show variables like 'innodb_autoinc_lock_mode';&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在我的 5.7.22 的版本的 MySQL 中，输出结果为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; show variables like 'innodb_autoinc_lock_mode';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| innodb_autoinc_lock_mode | 1     |
++--------------------------+-------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置参数 innodb_autoinc_lock_mode 有三个可选的值，分别是 0、1 和 2 ，分别代表着 「 传统 」，「 连续 」 或 「 交错 」 三种锁模式&lt;/p&gt;
+&lt;p&gt;在不同的版本下，innodb_autoinc_lock_mode 的默认值是不一样的，在 mysql &amp;gt;= 8.0.3 版本中是 2，也就是 「 交错 」 模式，而 mysql &amp;lt;= 8.0.2 版本中是 1，也就是 「 连续 」 模式&lt;/p&gt;
+&lt;p&gt;对于 8.0.3 版本中的这种变更，也反应了 Innodb 的默认 「 复制模式 」 已经从基于 SQL 语句 变更为基于 行 ( row )&lt;/p&gt;
+&lt;p&gt;基于 SQL 语句的复制需要 「 连续 」 模式的 「 AUTO_INCREMENT 锁」，以确保为给定的 SQL 语句序列以可预测和可重复的顺序分配自动增量值，而基于行的复制对 SQL 语句的执行顺序不敏感&lt;/p&gt;
+&lt;h2&gt;innodb_autoinc_lock_mode = 0 传统锁模式&lt;/h2&gt;
+&lt;p&gt;传统锁模式是在 MySQL 5.1 中引入 innodb_autoinc_lock_mode 配置参数之前的默认模式。现在，传统锁模式存在的意义，仅仅是用于向后兼容，性能测试以及解决 「 混合模式插入 」 问题，因为语义方面可能存在差异。&lt;/p&gt;
+&lt;p&gt;在这种锁模式下，为了向具有 AUTO_INCREMENT 列的表中插入数据，所有的 「 insert like 」 语句都会获得一个特殊的 表级 AUTO-INC 锁，这种锁会自动添加到 SQL 语句的末尾 ( 不是事务的末尾 )，以确保以可预测且可重复的顺序为给定的 INSERT 语句序列分配自增值，并确保为任何给定语句分配的自增值都是连续的。&lt;/p&gt;
+&lt;p&gt;在基于 SQL 语句的 ( 主从 ) 复制环境中，在从服务器上运行复制 SQL 语句时，自增量列的值和主服务器的值相同，这样执行多个 INSERT 语句的结果是确定性的，并且从服务器的数据和主服务器的数据一摸一样。&lt;/p&gt;
+&lt;p&gt;如果多个 INSERT 语句生成的自增值是交错的，那么两个并发 INSERT 语句的结果将是不确定的，这样就无法使用基于 SQL 语句的复制模式将数据可靠地复制到从服务器&lt;/p&gt;
+&lt;p&gt;讲解的有点拗口，我们看看一些示例，假设存在一张表 t1，它的建表语句如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE TABLE t1 (
+  c1 INT(11) NOT NULL AUTO_INCREMENT,
+  c2 VARCHAR(10) DEFAULT NULL,
+  PRIMARY KEY (c1)
+) ENGINE=InnoDB;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;把表建完后，我们假设有两个事务在运行，两个事务都是往 t1 表中插入数据，第一个事务使用一个事务使用 INSERT ... SELECT 语句插入 1000 行的，另一个事务使用简单的 INSERT 语句插入一行数据&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Tx1: INSERT INTO t1 (c2) SELECT 1000 rows from another table ...
+Tx2: INSERT INTO t1 (c2) VALUES ('xxx');&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一个事务 Tx1 ，因为 InnoDB 无法预先判断在 INSERT 语句从 SELECT 中检索了多少行，所以它会在每插入一条数据的时候分配一个自增值。这种情况下，会使用 表锁 ，会在 SQL 语句的末尾自动添加一个表锁，一次只能在表 t1 执行一条 INSERT 语句，这样就能保证每条 INSERT 语句的自增值是连续的且不会交错。&lt;/p&gt;
+&lt;p&gt;这样由 Tx1 INSERT ... SELECT 语句生成的自增值是连续的，并且 Tx2 事务中 INSERT 语句使用的 ( 单个 ) 自增值要小于或大于 Tx1 的所有自增值，结果具体取决于哪个语句先执行&lt;/p&gt;
+&lt;p&gt;这时候在主从复制或数据恢复时，只要以二进制日志重放 SQL 语句时 ( 使用基于语句的复制时或恢复方案中）以相同的顺序执行，那么重放的结果与 Tx1 和 Tx2 首次运行时的结果相同&lt;/p&gt;
+&lt;p&gt;如果前面的示例没有使用 「 表锁 」 ，那么 Tx2 中 INSERT 的自增列的值取决于语句执行的时间。如果 Tx2 的 INSERT 在 Tx1 的 INSERT 运行时 ( 而不是在它开始之前或完成之后 ) 执行，则两个 INSERT 语句分配的特定自增值是不确定的，并且可能因运行而异。&lt;/p&gt;
+&lt;p&gt;在 「 连续锁 」模式下，InnoDB 可以避免将表级 AUTO-INC 锁用于 「 insert like 」 语句，因为行数已预先知道，而且还可以确保基于语句的复制的确定性执行和安全性&lt;/p&gt;
+&lt;p&gt;在恢复或复制数据的重放 SQL 语句时如果不使用二进制日志，那么可以使用 「 交错锁 」模式用来消除表级 AUTO-INC 锁的使用，以获得更高的并发性和性能，但代价语句分配的自增值数字可能不是连续的，而且可能因为并发的执行而存在重复的数字&lt;/p&gt;
+&lt;h2&gt;innodb_autoinc_lock_mode = 1 连续锁模式&lt;/h2&gt;
+&lt;p&gt;在此 「 连续锁 」 模式下，「 批量插入 」会首先获取一个特殊的表级 AUTO_INC 锁，并一直保持到所有语句执行结束才释放。连续锁模式适用于所有的批量插入语句，包括 INSERT ... SELECT、REPLACE ... SELECT 和 LOAD DATA 语句。&lt;/p&gt;
+&lt;p&gt;Innodb 存储引擎一次只会执行一个持有 AUTO-INC 锁的 SQL 语句。&lt;/p&gt;
+&lt;p&gt;如果批量插入操作的源表与目标表不同，则会先在源表中选择的第一行上执行共享锁，然后对目标表执行 AUTO-INC 锁。如果批量插入操作的源表和目标表是同一个表，则会先对所有选定的行执行共享锁之后再执行 AUTO-INC 锁&lt;/p&gt;
+&lt;p&gt;简单插入 「 Simple inserts 」 ( 即预先知道要插入的行数 ） 则是不同的，它会在互斥锁 ( 一个轻量级的锁 ) 的控制下获得所需数量的自增量值来避免表级 AUTO-INC 锁定。但这种获得自增值的互斥锁只在分配过程的持续时间内持有，而不是在语句完成之前。除非另一个事务首先持有 AUTO-INC 锁，否则不使用表级 AUTO-INC 锁。如果另一个事务持有 AUTO-INC 锁，则 「 简单插入 」会一直等待直到自己获得 AUTO-INC 锁，就好像它自己也是批量插入一样&lt;/p&gt;
+&lt;p&gt;这种锁定模式可以确保，在存在 INSERT 语句情况下，纵使事先不知道行数 ( 以及在语句执行时分配的自增值数 )，任何由 「 INSERT-like 」 分配的所有自增值都是连续的，且确保对基于语句的复制操作是安全的。&lt;/p&gt;
+&lt;p&gt;简而言之，这种锁模式显着提高了可伸缩性，同时可以安全地进行基于语句的复制。此外，与 「 传统锁」 模式一样，可以确保为任何给定语句分配的自增值数字是连续的。&lt;/p&gt;
+&lt;p&gt;从某些方面说，与 「 传统锁 」 模式相比，对于任何使用自增值的语句，语义并没有变化，除了下面这个重要的例外&lt;/p&gt;
+&lt;p&gt;这个例外就是 「 混合模式插入 」 (mixed-mode inserts ) ， 在混合模式插入中，那些多行的 「 简单插入 」中的某些行 ( 但不是所有行 ) 会显式为 AUTO_INCREMENT 列提供一个值。对与这种插入模式，InnoDB 会分配比要插入的行数更多的自增值。&lt;/p&gt;
+&lt;p&gt;但这样也存在一个问题 ( 可以被忽略的问题 )，因为自动分配的所有值都是连续生成，因此可能高于最后执行的语句生成的自增值，也就是超过的没用到的自增值则被丢失了。&lt;/p&gt;
+&lt;h2&gt;innodb_autoinc_lock_mode = 2 交错锁模式&lt;/h2&gt;
+&lt;p&gt;在 「 交错锁 」模式下，任何 「 INSERT-like 」语句都不会使用表级 AUTO-INC 锁，且多个语句可以同时执行。&lt;/p&gt;
+&lt;p&gt;这是最快且可扩展性最强的锁模式，但在二进制日志重放 SQL 语句中，会让使用基于语句&lt;/p&gt;
+&lt;p&gt;的复制或恢复方案变得不安全。&lt;/p&gt;
+&lt;p&gt;这种锁模式，会确保自增值是唯一的，且可以在所有同时执行的 「 INSERT-like 」 语句中保持单调递增&lt;/p&gt;
+&lt;p&gt;当然了，这种锁模式也是有缺点的，因为多个语句可以同时生成数字 (即自增值数字的分配会在语句之间交错进行 ) ，会造成任何给定语句插入的行生成的值可能不是连续的&lt;/p&gt;
+&lt;h2&gt;总结以上3中模式&lt;/h2&gt;
+&lt;p&gt;好复杂的 AUTO-INC 锁模式，翻译的我都头痛了，虽然在翻译的时候知道是啥意思，但是自己写出来，真的是一头雾水。&lt;/p&gt;
+&lt;p&gt;简单理解这三种锁模式&lt;/p&gt;
+&lt;p&gt;1、 传统锁模式 – 不管三七二十一，先用表级的 AUTO-INC 锁，直到语句插入完成，然后释放锁
+2、 连续锁模式 – 不管三七二十一，先用互斥锁，然后生成所有插入行需要的自增值，然后释放互斥锁，最后使用这些自增值来插入数据。对于行数未知的，那就只能使用 「 传统锁 」 模式了，先锁起来，执行完毕了再释放，因为人家不知道要生成多少自增值啊
+3、 交错模式 – 管它刮风下雨，需要的时候再生成，也管它连续与否，用了就是了…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;以上，介绍了 MySQL Innodb AUTO_INCREMENT 锁的三种模式，分别为 「 传统模式 」 、 「 连续模式 」 、「 交错模式 」 ，这三种模式我们可以用同学聚会定餐馆来形象的描述下&lt;/p&gt;
+&lt;p&gt;1、 「 传统模式 」 – 老板，你家的店我包了，等到我同学聚会完了你再招待其它客人啊….其它客人：坑啊！ 你们快点吃啊，慢吞吞的…&lt;/p&gt;
+&lt;p&gt;2、 「 连续模式 」 – 老爸，我同学总共 50 个人，先给我来 50 个位置，有些同学可能没来，那就空着。剩下的位置，你可以招待其它的同学。有时候，如果不知道有多少同学 ( 健忘症犯了… )，就只能再回到传统模式了。&lt;/p&gt;
+&lt;p&gt;3、 「 交错模式 」 – 老板，我也不知道会来几个同学，反正，来了一个就坐一个位置，其它客人来了也可以坐 ( 假设老板家座位足够 )&lt;/p&gt;
+&lt;p&gt;这三种锁模式的优缺点是啥 ？&lt;/p&gt;
+&lt;p&gt;1、 「 传统模式 」 能保证所有的自增值是连续的，且不会浪费 ( 也就是会一直 123456789…自增下去，不会断掉 )，但其它的事务或语句要等到当前语句执行完才会继续执行&lt;/p&gt;
+&lt;p&gt;2、 「 交错模式 」解决了要 「 传统模式 」中要等待的问题，但也会引入新问题，就是可能造成自增值出现断层，比如 12345 缺了 4 这样。同时，在指定插入数据条数不确定的情况下，会回到 「 传统模式 」&lt;/p&gt;
+&lt;p&gt;3、 「 交错模式 」 解决了自增值断层的问题，但引入了自增值顺序混乱的问题，可能会导致自增值如下 13245687&lt;/p&gt;
+&lt;p&gt;交错模式在日常的 SELECT 语句中是不会出啥问题的，因为会按照自增值排序，出问题就处恢复数据或主从过程中的二进制日志回放，可能导致从库或者恢复的数据的自增值和源数据不一致。&lt;/p&gt;
+&lt;p&gt;好了，MySQL Innodb AUTO_INCREMENT 锁的三种模式我们就介绍到此了，接下来的部分我们讨论讨论下这三种模式在 MySQL Innodb 中的使用说明&lt;/p&gt;
+&lt;h2&gt;MySQL Innodb AUTO_INCREMENT 锁的使用说明&lt;/h2&gt;
+&lt;h3&gt;主从复制中的 AUTO_INCREMENT&lt;/h3&gt;
+&lt;p&gt;主从复制时，如果你使用的是基于 SQL 语句的复制，需要将 innodb_autoinc_lock_mode 配置项的值设置为 0 或 1 ，而且主服务器和从服务器上的值必须相同。&lt;/p&gt;
+&lt;p&gt;如果设置 innodb_autoinc_lock_mode = 2，也就是使用 「 交错锁 」 模式，或者主从服务器上的值不相同，则不能确保从服务器上相同行的自增值和主服务器相同&lt;/p&gt;
+&lt;p&gt;如果你使用的是基于 行 ( row ) 或混合模式的主从复制，那么使用任何一个 AUTO_INCREMENT 锁模式都是安全的，因为基于行的复制对 SQL 语句的执行顺序不敏感。&lt;/p&gt;
+&lt;p&gt;在 交错锁 模式下，主从复制来说，任何基于语句的复制都是不安全的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;注意： 混合模式使用的是基于行的复制方式。 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;「 丢失 」 ( lost ) 自增值和序列间隙&lt;/h3&gt;
+&lt;p&gt;无论你使用的是哪种锁模式 ( 0 , 1 或 2 )，如果生成自增值的事务回滚，则这些自增量值将 「 丢失 」。&lt;/p&gt;
+&lt;p&gt;一旦为 AUTO_INCREMENT 列生成一个自增值后，无论 「 INSERT-like 」 语句是否完成，以及包含事务是否回滚，都无法回滚该自增值。&lt;/p&gt;
+&lt;p&gt;这些丢失的自增值不会被重复使用。因此，表的 AUTO_INCREMENT 列中的值可能存在间隙&lt;/p&gt;
+&lt;h3&gt;为 AUTO_INCREMENT 列指定 NULL 或 0 时候&lt;/h3&gt;
+&lt;p&gt;无论使用哪种 AUTO_INCREMENT 锁模式 ( 0, 1 和 2 )，如果用户在INSERT 语句中为 AUTO_INCREMENT 列指定的值为 NULL 或 0，那么 Innodb 将会忽略这些值并为该列生成一个新的自增值。&lt;/p&gt;
+&lt;p&gt;也就是说，不管是否为 AUTO_INCREMENT 列指定了值为 NULL ，还是指定了值为 0 ，或是未指定，Innodb 都会自动生成一个自增值作为该列的值。&lt;/p&gt;
+&lt;h3&gt;为 AUTO_INCREMENT 列指定一个负值 ( &amp;lt; 0 )&lt;/h3&gt;
+&lt;p&gt;无论使用哪种 AUTO_INCREMENT 锁模式 ( 0, 1 和 2 )，如果用户在INSERT 语句中为 AUTO_INCREMENT 列指定的值为负数，那么 Innodb 为 AUTO_INCREMENT 生成的值就是不确定的 ( is not defined )&lt;/p&gt;
+&lt;p&gt;也就是说，如果指定了一个负数，那么当前插入行的 AUTO_INCREMENT 列的值就是不确定的 ( is not defined )&lt;/p&gt;
+&lt;h3&gt;如果 AUTO_INCREMENT 列的值大于指定列数据类型 ( 一般是整数类型 ) 的最大整数&lt;/h3&gt;
+&lt;p&gt;无论使用哪种 AUTO_INCREMENT 锁模式 ( 0, 1 和 2 )，如果 AUTO_INCREMENT 列的值变得大于可以存储在指定整数类型中的最大整数，则最终的结果也是不确定的 ( is not defined )&lt;/p&gt;
+&lt;h3&gt;「 批量插入 」 中的自增值的间隙&lt;/h3&gt;
+&lt;p&gt;在 innodb_autoinc_lock_mode 配置项的值设置为 0 ( 传统锁模式 ) 或 1 ( 连续锁模式 ) 时，任何给定语句生成的自增值都是连续的，没有间隙。&lt;/p&gt;
+&lt;p&gt;因为在这两个模式下，「 批量插入 」 会使用表级别的 AUTO-INC 锁，且会一直持有直到所有语句运行结束。在表级别的 AUTO-INC 锁控制下，一次只能执行一个这样的语句&lt;/p&gt;
+&lt;p&gt;在 innodb_autoinc_lock_mode 配置项的值设置为 2 ( 交错锁模式 ） 时，「 批量插入 」 生成的自增值可能存在间隙，仅有的出现前提是同时执行 「 INSERT-like 」 语句&lt;/p&gt;
+&lt;p&gt;对于锁模式 1 和 2 ，连续的语句间也可能出现间隙，因为批量插入，可能并不知道每个语句所需的确切数量的自增值，可能会存在高估，如果一旦高估了，那么高估的自增值将会被抛弃且永远也不会使用到。&lt;/p&gt;
+&lt;h2&gt;「 混合模式插入 」 中的自增值&lt;/h2&gt;
+&lt;p&gt;「 混合模式插入 」 中，那些 「 简单插入 」中的某些语句 ( 但不是全部 ) 可能显式的为 AUTO_INCREMENT 列指定了值。&lt;/p&gt;
+&lt;p&gt;如果真的发生了这种情况，三种锁模式下的结果是各不相同的。&lt;/p&gt;
+&lt;p&gt;例如，假设 c1 列是表 t1 的 AUTO_INCREMENT 列，且假设最新自动生成的序列号为 100&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CREATE TABLE t1 (
+    c1 INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    c2 CHAR(1)
+) ENGINE = INNODB;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在，我们来看看下面这条混合模式插入语句&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (5,'c'), (NULL,'d');&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 innodb_autoinc_lock_mode 设置为 0 ( 传统锁模式下 )，刚刚插入的 4 条数据如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT c1, c2 FROM t1 ORDER BY c2;
++-----+------+
+| c1  | c2   |
++-----+------+
+|   1 | a    |
+| 101 | b    |
+|   5 | c    |
+| 102 | d    |
++-----+------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下一个可用的自增值为 103，因为自增值一次分配一个，而不是在语句执行开始时一次性分配。这时候无论是否同时并发的执行其它 「 INSERT-like 」 语句 ( 任何类型 )，此结果都是正确的&lt;/p&gt;
+&lt;p&gt;但如果设置 innodb_autoinc_lock_mode 的值为 1 ，也就是 「 连续锁模式 」，那么刚刚插入的 4 条数据如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT c1, c2 FROM t1 ORDER BY c2;
++-----+------+
+| c1  | c2   |
++-----+------+
+|   1 | a    |
+| 101 | b    |
+|   5 | c    |
+| 102 | d    |
++-----+------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;虽然最终数据看起来一样。但是，行为结果还是不同的。&lt;/p&gt;
+&lt;p&gt;在这种情况下，下一个可用的自增值是 105，而不是 103，因为在处理语句时分配了四个自增值，但只使用了两个，也就是 103 和 104 永远的被丢失了。这时候无论是否同时并发的执行其它 「 INSERT-like 」 语句 ( 任何类型 )，此结果都是正确的&lt;/p&gt;
+&lt;p&gt;但如果设置 innodb_autoinc_lock_mode 的值为 2 ，也就是 「 交错锁模式 」，那么刚刚插入的 4 条数据如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT c1, c2 FROM t1 ORDER BY c2;
++-----+------+
+| c1  | c2   |
++-----+------+
+|   1 | a    |
+|   x | b    |
+|   5 | c    |
+|   y | d    |
++-----+------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;x 和 y 的值是唯一的，并且比任何先前生成的行的都大。但是，x 和 y 的具体值取决于同时执行语句生成的自增值的数量。如果没有其它 「 INSERT-like 」语句并发执行，结果和 「 传统锁 」 模式是一样的。&lt;/p&gt;
+&lt;p&gt;最后，我们来看看下面这个 SQL 语句，假设最新自动生成的序列号为 100&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (101,'c'), (NULL,'d');&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;无论配置项 innodb_autoinc_lock_mode 的值设置为何种锁模式，该语句会抛出生成重复键错误 23000 ( Can’t write; duplicate key in table ) 。因为自增值 101 已经分配给了 (NULL,'b') ，这时候 (101,'c') 再使用 101 就会失败，当然了，前提是 AUTO_INCREMENT 列设置为主键或唯一索引&lt;/p&gt;
+&lt;h3&gt;在一序列 INSERT 语句的中间修改 AUTO_INCREMENT 列值&lt;/h3&gt;
+&lt;p&gt;在 MySQL 5.7 及更早版本中，在一序列 INSERT 语句的中间修改 AUTO_INCREMENT 列值可能会导致 「 重复条目 」 ( Duplicate entry ) 错误。例如，如果执行了将 AUTO_INCREMENT 列值更改为大于当前最大自增值的 UPDATE 操作，那些后续的未指定也未使用自增值的 INSERT 操作可能会遇到 「 重复条目 」 错误&lt;/p&gt;
+&lt;p&gt;在MySQL 8.0 及更高版本中，如果将 AUTO_INCREMENT 列值修改为大于当前最大自增值的值，那么新值将保持不变，后续 INSERT 操作将从新的较大值开始分配自增值&lt;/p&gt;
+&lt;p&gt;下面的示例演示了这种行为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; CREATE TABLE t1 (
+    -&amp;gt; c1 INT NOT NULL AUTO_INCREMENT,
+    -&amp;gt; PRIMARY KEY (c1)
+    -&amp;gt;  ) ENGINE = InnoDB;
+
+mysql&amp;gt; INSERT INTO t1 VALUES(0), (0), (3);
+
+mysql&amp;gt; SELECT c1 FROM t1;
++----+
+| c1 |
++----+
+|  1 |
+|  2 |
+|  3 |
++----+
+
+mysql&amp;gt; UPDATE t1 SET c1 = 4 WHERE c1 = 1;
+
+mysql&amp;gt; SELECT c1 FROM t1;
++----+
+| c1 |
++----+
+|  2 |
+|  3 |
+|  4 |
++----+
+
+mysql&amp;gt; INSERT INTO t1 VALUES(0);
+
+mysql&amp;gt; SELECT c1 FROM t1;
++----+
+| c1 |
++----+
+|  2 |
+|  3 |
+|  4 |
+|  5 |
++----+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;了解了 MySQL Innodb 中的 AUTO_INCREMENT 约束和 AUTO_INCREMENT 锁的模式。也了解了各种模式的影响和缺点。&lt;/p&gt;
+&lt;p&gt;当然了，上面的章节，很多人应该是不关心的。大家最关心的还是本章节的内容：「 MySQL InnoDB AUTO_INCREMENT 计数器如何初始化 」&lt;/p&gt;
+&lt;h2&gt;MySQL InnoDB AUTO_INCREMENT 计数器如何初始化&lt;/h2&gt;
+&lt;p&gt;如果为 InnoDB 表指定了 AUTO_INCREMENT 列，那么内存中，该表对象会包含一个称为 「 自增值计数器 」 的特殊计数器，用于为 AUTO_INCREMENT 列分配新值时使用。&lt;/p&gt;
+&lt;p&gt;在 MySQL 5.7 及更早版本中，自增值计数器仅存储在内存中，而不是磁盘上。&lt;/p&gt;
+&lt;p&gt;为了在 MySQL 启动或重新启动后初始化 自增值计数器，在往含有 AUTO_INCREMENT 列的 InnoDB 表中第一次插入数据之前，会执行以下语句获取当前的 自增值&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT MAX(ai_col) FROM table_name FOR UPDATE;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;这个操作是隐式执行的，就是在插入时，如果 Innodb 发现内存中该表对象不包含自增计数器的时候，会执行上面的 SQL 语句来获取这个自增值 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 MySQL 8.0 中，此行为已经变更了。每次更改时，会将当前自增值计数器的最大值将写入重做 ( redo ) 日志，并保存到每个检查点上的引擎专用系统表中。这种变更使得自增值计数器的当前最大值会在重启时保持不变。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;在原来的模式中，重启前，可能内存中的自增值计数器已经到了 1000+ ，但表中的实际最大值可能只有 100，那么重启后，自增值就会停留在 100，而 8.0 的变更中，最大值仍会保持重启前的 1000+ 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当正常关闭 MySQL 服务器后再重新启动它时，InnoDB 会使用存储在数据字典系统表中的当前最大自增值来初始化内存中的自增值计数器。&lt;/p&gt;
+&lt;p&gt;如果服务器发生了非正常崩溃，在崩溃恢复期间重新启动服务器时，InnoDB 仍会使用存储在数据字典系统表中的当前最大自增值初始化内存中自增值计数器，并且会扫描重做日志 ( redo log ) 以查找自上一个检查点以来写入的自增计数器的值。如果重做日志值大于内存中计数器值，则会应用重做日志值。&lt;/p&gt;
+&lt;p&gt;因此，在服务器崩溃的情况下，无法保证重用先前分配的自增值&lt;/p&gt;
+&lt;p&gt;当每一次执行 INSERT 或 UPDATE 操作会更改当前最大自增值时，会将新值将写入重做日志。但如果在将重做日志刷新到磁盘之前发生崩溃，那么在重新启动服务器后初始化自增计数器时可能会重用以前分配的值。&lt;/p&gt;
+&lt;p&gt;当然了，MySQL 8.0 或更高的版本中也可能会使用等效下面的 SQL 语句来初始化自增计数器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT MAX(ai_col) FROM table_name FOR UPDATE;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但唯一可能发生的情况是: **导入没有 .cfg 元数据文件的表空间。 否则，会从 .cfg 元数据文件中读取当前最大自增计数器值&lt;/p&gt;
+&lt;p&gt;在 MySQL 5.7 及更早版本中，服务器重新启动时会忽略执行表选项中的 AUTO_INCREMENT = N，该选项一般用来在 CREATE TABLE 或 ALTER TABLE 语句中用于设置初始计数器值或更改现有计数器值。&lt;/p&gt;
+&lt;p&gt;但在 MySQL 8.0 及更高的版本中，服务器重新启动时并不会忽略表选项 AUTO_INCREMENT = N。 如果将自增计数器初始化为特定值，或者将自增计数器值更改为更大的值，则新值会在服务器重新启动时保持不变。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;注意
+
+ALTER TABLE ... AUTO_INCREMENT = N 语句仅仅只能用于将自增计数器的值修改为大于当前计数器的最大值，如果小于则是没有任何效果的。 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 MySQL 5.7 及更早版本中，服务器在 ROLLBACK 操作之后立即重新启动可能会导致重用先前分配给回滚事务的自增值，从而可以有效地回滚当前最大自增值。&lt;/p&gt;
+&lt;p&gt;但在 MySQL 8.0 中，当前的最大自增量值是持久的，从而阻止了重用以前分配的值。&lt;/p&gt;
+&lt;p&gt;如果使用 SHOW TABLE STATUS 语句在初始化自增计数器之前检查表，InnoDB 将打开表并使用存储在数据字典系统表中的当前最大自增值初始化计数器值。并将该值存储在内存中以供以后插入或更新使用。&lt;/p&gt;
+&lt;p&gt;启动或重新启动服务器时，初始化自增计数器会使用表上的常规独占锁 ( for update ) 读取，并且会持有该独占锁直到事务结束。在初始化新创建的表的自增计数器时，InnoDB 遵循相同的过程。当然了，新创建的表可以使用 AUTO_INCREMENT = N 选项指定一个大于 0 的自增值&lt;/p&gt;
+&lt;p&gt;初始化自增计数器完成后，如果在插入行时未显式指定自增值，InnoDB 会隐式递增计数器并将新值分配给 AUTO_INCREMENT 列&lt;/p&gt;
+&lt;p&gt;只要服务器一直在运行，InnoDB 就会使用内存中的自增计数器。当服务器停止并重新启动时，InnoDB 会重新初始化自增计数器，如前所述。
+my.cnf 配置文件中的 AUTO_INCREMENT&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;在 my.cnf 配置文件中，可以使用 auto_increment_offset 配置选项确定 AUTO_INCREMENT 列值的起始点。默认设置为 1
+在 my_cnf 配置文件中，可以使用 auto_increment_increment 配置选项控制连续列值之间的间隔。默认设置为 1
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一般情况下，在双主互相备份时，我们一般会指定一台服务器的两个配置项为&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auto_increment_offset=1;
+auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样，这台服务器的自增值将会遵循 1 3 5 7 9 11 13 ，奇数数列&lt;/p&gt;
+&lt;p&gt;而在另一台服务器上指定&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auto_increment_offset=2;
+auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样，这台服务器的自增值将会是 2 4 6 8 10 …. 偶数数列&lt;/p&gt;
+&lt;p&gt;这样，在互为主从的时候，就不会出现自增值重复的问题&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-01-16T06:07:41.777313+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
+&lt;p&gt;如果想要从 查询，插入 和其它数据库操作中获得最佳性能，那么我们就必须了解 InnoDB 如何使用 聚簇索引 来优化每个表的最常见检索和 DML 操作方式&lt;/p&gt;
+&lt;p&gt;（1）当我们在一个 Innodb 表上定义了一个主键，InnoDB 会默认的使用它作为聚簇索引。&lt;/p&gt;
+&lt;p&gt;使用 InnoDB 存储引擎时，建议为每个表都添加一个主键。如果该表没有一个逻辑唯一且非空列或列集合，那么可以添加一个带有 AUTO_INCREMENT 约束的自增列作为主键，InnoDB 会自动填充该列。&lt;/p&gt;
+&lt;p&gt;（2）如果某个 InnoDB 表并没有定义主键。那么 InnoDB 会查找第一个 「 唯一索引 」( UNIQUE Index ) ，因为唯一索引的所有键 ( key ) 都是 NOT ，因此可以用来作为聚簇索引&lt;/p&gt;
+&lt;p&gt;（3）如果某个 InnoDB 表既没有定义主键，也没有一个合适的唯一索引。InnoDB 会在内部生成一个名为 GEN_CLUST_INDEX 的隐式的聚簇索引&lt;/p&gt;
+&lt;p&gt;该聚簇索引的键 ( key ) 会包含一个自动为行生成的 ID 值 ( 行号 ) 。&lt;/p&gt;
+&lt;p&gt;该表中的所有行会按 InnoDB 分配给此类表中的行的 ID 排序。&lt;/p&gt;
+&lt;p&gt;行 ID 是一个 6 字节的字段，在插入新行时会单调自增。&lt;/p&gt;
+&lt;p&gt;因此，可以认为物理上的行保存顺序就是该行 ID 排序的排序顺序&lt;/p&gt;
+&lt;h2&gt;聚簇索引如何加快查询速度&lt;/h2&gt;
+&lt;p&gt;通过聚簇索引访问行很快，因为索引搜索直接指向包含所有行数据页 ( data page )。&lt;/p&gt;
+&lt;p&gt;如果表很大，与那种索引页与数据页分离的 MyISAM 存储引擎相比， 聚簇索引体系结构通常可以节省磁盘 I/O 操作。&lt;/p&gt;
+&lt;h2&gt;非聚簇索引和聚簇索引的关系&lt;/h2&gt;
+&lt;p&gt;非聚簇索引，通常也称之为 「 二级索引 」 ( Secondary Indexes ) 或 「 辅助索引 」 ，一般是指聚簇索引之外的所有其它的索引。&lt;/p&gt;
+&lt;p&gt;在 InnoDB 中，每个辅助索引中的每条记录都会包含该行的主键列 ( 也就是聚簇索引的键 ) ，以及为辅助索引指定的列。InnoDB 使用此主键值来搜索聚簇索引中的行&lt;/p&gt;
+&lt;p&gt;如果主键很长，那么辅助索引就会占用更多空间，因此使用短主键是有利的，也是我们所推荐的。&lt;/p&gt;
+&lt;h2&gt;聚簇索引和非聚簇索引的区别&lt;/h2&gt;
+&lt;p&gt;1、首先，我们要认识到聚簇索引和非聚簇索引的划分依据是什么 ？&lt;/p&gt;
+&lt;p&gt;答案就是 InnoDB 会使用聚簇索索引来保存数据，而非聚簇索引的目的仅仅是加快查询速度&lt;/p&gt;
+&lt;p&gt;2、在第一点认知基础上，我们就可以知道&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;聚簇索引是唯一的，一个 InnoDB 表只有一个聚簇索引，而且一定会有一个聚簇索引，如果不存在，Innodb 存储引擎会自动添加一个
+非聚簇所以可以有多个，而且只能由用户自己添加，InnoDB 默认并不会创建任何非聚簇索引。
+3、非聚簇索引中一定包含了聚簇索引的列值，但反过来却不存在。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;因此，使用非聚簇索引查询数据一定会用到聚簇索引，但反过来却不存在。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;几乎所有的 Innodb 的索引都使用 B 树 数据结构，除了空间索引 ( spatial indexes ) 是个例外。&lt;/p&gt;
+&lt;p&gt;空间索引使用的是 R 树 数据结构 ，这是一种索引多维数据的专用数据结构。&lt;/p&gt;
+&lt;p&gt;但不管使用的是任何索引结构，索引记录只存储在 B 树 或 R树 数据结构的叶子节点中。索引页的默认大小为 16KB&lt;/p&gt;
+&lt;p&gt;当有新的记录插入到 InnoDB 聚簇索引中时，InnoDB 会尝试将页面的 1/16 留空，以便将来插入和更新索引记录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;（1）如果按顺序 ( 升序或降序 ) 插入索引记录，则生成的索引页使用率大约为 15/16
+
+（2）如果以随机顺序插入记录，则页面使用率只会在 1/2到 15/16 之间
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;InnoDB 在创建或重建 B 树索引时执行批量加载，这种索引创建方法称为 「 排序索引构建 」。我们可以使用配置项 innodb_fill_factor 重新设置在排序索引构建期间填充的每个 B 树页面上的空间利用率，那么剩余的空间会保留以待将来的索引增长。这个设置项我们一般称之为 「 填充因子 」&lt;/p&gt;
+&lt;p&gt;但是，即使我们把 innodb_fill_factor 配置项的值设置为 100 ，聚簇索引页仍然会保留出 1/16 的空间用于将来的索引增长。&lt;/p&gt;
+&lt;p&gt;另外，需要注意的是 「 空间索引不支持排序索引构建 」&lt;/p&gt;
+&lt;p&gt;如果 InnoDB 索引页的填充因子低于配置项 MERGE_THRESHOLD 的值 ( 如果未指定，默认情况下为 50% ) ，InnoDB 会尝试优化索引树以释放页面空间。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MERGE_THRESHOLD 同时适用于 B 树和 R 树数据结构 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们可以在初始化 MySQL 实例之前设置 innodb_page_size 配置选项来定义 MySQL 实例中所有 InnoDB 表空间的页面大小。InnoDB 表空间的大小一旦确定，也就是一旦 MySQL 实例初始化完成后，如果不重新初始化实例，则无法更改它。&lt;/p&gt;
+&lt;p&gt;目前支持的大小为 64KB，32KB，16KB ( 默认 ) ，8KB 和 4KB，对应于选项值 64k，32k，16k，8k 和 `4k 。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;注意：使用特定 InnoDB 页面大小的 MySQL 实例不能使用来自不同页面大小的实例的数据文件或日志文件，也就是说两个不同数据页大小的 MySQL 实例的数据文件或日志文件是不能互通的。 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;常用面试题&lt;/p&gt;
+&lt;p&gt;1、 InnoDB 表使用什么数据结构，它们的数据都保存在哪里&lt;/p&gt;
+&lt;p&gt;使用的是 &lt;code&gt;B 树&lt;/code&gt; 数据结构，它们的索引数据都保存在叶子节点中。&lt;/p&gt;
+&lt;p&gt;2、 InnoDB 的页大小一般是多少，把页大小提高为什么能提高 MySQL 的性能。&lt;/p&gt;
+&lt;p&gt;页大小决定了每次 IO 操作读取的数据大小，设置的越高当然每次读取的数据就越多，可以较少 IO 操作&lt;/p&gt;
+&lt;p&gt;结束语&lt;/p&gt;
+&lt;p&gt;其实吧，InnoDB 索引使用的应该是 B+ 树 ，虽然 B+ 树 也是 B 树 的一个变体，但总感觉怪怪的。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;在上面有提到：InnoDB 在创建或重建 B 树索引时会执行批量加载，这种索引创建方法称为 「 排序索引构建 」&lt;/p&gt;
+&lt;p&gt;现在讲讲这个 「 排序索引构建 」，为什么要熟悉呢 ？ 因为它和我们的 InnoDB 创建和重建 B 树索引息息相关。也就和我们的 MySQL 性能优化息息相关了。&lt;/p&gt;
+&lt;h2&gt;排序索引构建&lt;/h2&gt;
+&lt;p&gt;InnoDB 在创建或重建 B 树索引时会执行批量加载，而不是一次只插入一个索引记录。这种索引创建方法也称为排序索引构建。空间索引不支持排序索引构建。&lt;/p&gt;
+&lt;p&gt;索引构建有三个阶段：&lt;/p&gt;
+&lt;p&gt;1、 在第一阶段，扫描 聚簇索引，生成索引条目 ( entries ) 并将其添加到排序缓冲区。当排序缓冲区满了，索引条目将被排序并写入临时中间文件。这个过程也称为 「 运行 」 ( run )。&lt;/p&gt;
+&lt;p&gt;2、 在第二阶段，将一个或多个 「 运行 」 写入临时中间文件，并对文件中的所有条目执行合并排序&lt;/p&gt;
+&lt;p&gt;3、 在第三个也是最后一个阶段，已排序的条目将插入到 B 树中&lt;/p&gt;
+&lt;h2&gt;自顶向下的索引构建方法&lt;/h2&gt;
+&lt;p&gt;在引入引入排序索引构建之前，索引的生成和重建方式是使用插入 API 一次只将一个索引条目插入到 B 树。这种方式会创建并打开 B 树游标以查找插入位置，然后使用 「 乐观插入 」 ( optimistic insert ) 将条目插入 B 树页面。&lt;/p&gt;
+&lt;p&gt;如果由于页面已满而导致插入失败，则将执行 「 悲观插入 」 ( pessimistic insert ) ，这种方式会创建并打开 B 树游标并根据需要拆分和合并 B 树节点以查找条目的空间。这种 「 自上而下 」的构建索引方法的缺点是搜索插入位置的成本太高且B 树节点需要频繁的拆分和合并&lt;/p&gt;
+&lt;h2&gt;自下而上的排序构建方法&lt;/h2&gt;
+&lt;p&gt;排序索引构建使用 「 自下而上 」 方法来构建索引。使用这种方式，B 树的所有级别始终都会持有最右边的叶子页面的引用。在插入索引时，会分配必要的 B 树深度的最右侧叶页，并根据其排序顺序插入条目。一旦叶子页面已满，节点指针将附加到父页面，并为下一个插入分配一个兄弟叶页面。这个过程会一直重复，直到插入所有条目，这可能导致插入到根级别。当分配兄弟页面时，将释放对先前固定的叶子页面的引用，并且新分配的叶子页面将成为最右侧的叶子页面和新的默认插入位置&lt;/p&gt;
+&lt;h2&gt;为未来索引的增长保留 B 树页面空间&lt;/h2&gt;
+&lt;p&gt;如果想要为未来索引的增长留出空间，可以使用 innodb_fill_factor 配置选项来设置 B 树页面空间要保留的百分比。例如，将 innodb_fill_factor 设置为 80 可在排序索引构建期间留出 B 树页面中 20％ 的空间。此设置同时使用于 B 树叶子节点页和非叶子节点页。但它不适用于用于 TEXT 或 BLOB 条目的外部页。实际使用过程中发现，保留的空间大小可能与配置的不完全相同，因为 innodb_fill_factor 值是建议大小而不是强制限制大小。&lt;/p&gt;
+&lt;h2&gt;排序索引构建和全文索引支持&lt;/h2&gt;
+&lt;p&gt;全文索引支持使用 「 排序索引构建 」，而在此之前，全文索引的构建方式为 「 使用 SQL 将条目插入到全文索引中 」&lt;/p&gt;
+&lt;h2&gt;排序索引构建和压缩表&lt;/h2&gt;
+&lt;p&gt;对于压缩表 ( compressed tables )，先前的索引创建方法将条目同时添加到压缩和未压缩页面的末尾。当修改日志 ( 表示压缩页上的可用空间 ) 变满时，压缩页将被重新压缩。如果压缩由于空间不足而导致压缩失败，则该页将被拆分。&lt;/p&gt;
+&lt;p&gt;对于排序索引构建，条目仅仅只添加到未压缩的页的末尾。当未压缩的页变满时，它才会被压缩。在大多数情况会使用自适应填充 ( adaptive padding ) 来确保压缩成功，但如果压缩失败，则会拆分该页并再次尝试压缩。此过程将重复进行，知道压缩成功。&lt;/p&gt;
+&lt;h2&gt;排序索引构建和重做日志&lt;/h2&gt;
+&lt;p&gt;在排序索引构建期间会禁用重做日志。取而代之的是使用一个检查点 ( checkpoint ) 确保排序索引构建能够承受崩溃或故障。这个检查点会强制将所有脏页写入磁盘。在排序索引构建期间，会定期发信号通知页面清理程序线程刷新脏页以确保可以快速处理检查点操作。默认的，当清洁页面的数量低于设定的阈值时，页面清理器线程会刷新脏页面。对于已排序的索引构建，会立即刷新脏页以减少检查点开销并并行 I/O 和 CPU 活动&lt;/p&gt;
+&lt;h2&gt;排序索引构建和性能优化统计&lt;/h2&gt;
+&lt;p&gt;排序索引构建可能会导致性能优化统计信息与以前的索引创建方法生成的统计信息不同，而这种统计数据的差异 ( 预计不会影响工作负载性能 ) 是由于使用了不同的填充索引的算法而引起的。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-01-16T06:07:41.777291+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
+&lt;p&gt;可以在使用 CREATE TABLE 语句创建表时指定全文索引，也可以在创建表之后使用 ALTER TABLE 或 CREATE INDEX 将全文索引添加到现有表中&lt;/p&gt;
+&lt;p&gt;全文索引的使用方式一般为使用 MATCH()... AGAINST 语法执行全文搜索。&lt;/p&gt;
+&lt;h2&gt;InnoDB 全文索引设计&lt;/h2&gt;
+&lt;p&gt;InnoDB 全文索引采用了 「 倒排 」 索引的设计方式。倒排索引存储单词列表，并为每个单词存储单词出现的文档列表。为了支持邻近搜索，每隔单词的位置信息 ( 字节偏移 ) 也会被同时存储。&lt;/p&gt;
+&lt;h2&gt;InnoDB 全文索引表&lt;/h2&gt;
+&lt;p&gt;创建 InnoDB 全文索引时，会同时创建一组索引表，如以下示例所示&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; CREATE TABLE opening_lines (
+       id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+       opening_line TEXT(500),
+       author VARCHAR(200),
+       title VARCHAR(200),
+       FULLTEXT idx (opening_line)
+       ) ENGINE=InnoDB;
+
+mysql&amp;gt; SELECT table_id, name, space from INFORMATION_SCHEMA.INNODB_TABLES
+       WHERE name LIKE 'test/%';
++----------+----------------------------------------------------+-------+
+| table_id | name                                               | space |
++----------+----------------------------------------------------+-------+
+|      333 | test/fts_0000000000000147_00000000000001c9_index_1 |   289 |
+|      334 | test/fts_0000000000000147_00000000000001c9_index_2 |   290 |
+|      335 | test/fts_0000000000000147_00000000000001c9_index_3 |   291 |
+|      336 | test/fts_0000000000000147_00000000000001c9_index_4 |   292 |
+|      337 | test/fts_0000000000000147_00000000000001c9_index_5 |   293 |
+|      338 | test/fts_0000000000000147_00000000000001c9_index_6 |   294 |
+|      330 | test/fts_0000000000000147_being_deleted            |   286 |
+|      331 | test/fts_0000000000000147_being_deleted_cache      |   287 |
+|      332 | test/fts_0000000000000147_config                   |   288 |
+|      328 | test/fts_0000000000000147_deleted                  |   284 |
+|      329 | test/fts_0000000000000147_deleted_cache            |   285 |
+|      327 | test/opening_lines                                 |   283 |
++----------+----------------------------------------------------+-------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;前 6 个表 test/fts_&lt;em&gt;&lt;em&gt;index&lt;/em&gt;&lt;/em&gt; 表表示倒排索引表，也称之为 「 辅助索引表 」。&lt;/p&gt;
+&lt;p&gt;辅助索引表名称以 fts&lt;em&gt; 为前缀，后缀为 index&lt;/em&gt; * 。每个索引表都通过索引表名称中与索引表的 table_id 匹配的十六进制值与数据表相互关联。&lt;/p&gt;
+&lt;p&gt;例如，test/opening_lines 表的 table_id 为 327，十六进制值为 0x147。如前面的示例所示，147十六进制值出现在与 test/ opening_lines 表关联的索引表的名称中&lt;/p&gt;
+&lt;p&gt;代表全文索引的 index_id 的十六进制值也出现在辅助索引表名称中。例如在辅助索引表 test/ fts_0000000000000147_00000000000001c9_index_1 名称中，十六进制值 1c9 的十进制值为 457 。可以通过在INFORMATION_SCHEMA.INNODB_INDEXES 表中查询此值来识别在 opening_lines 表 ( idx ) 上定义的索引 ( 457 )&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT index_id, name, table_id, space from INFORMATION_SCHEMA.INNODB_INDEXES
+       WHERE index_id=457;
++----------+------+----------+-------+
+| index_id | name | table_id | space |
++----------+------+----------+-------+
+|      457 | idx  |      327 |   283 |
++----------+------+----------+-------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果主表是是在自己的文件表空间 ( file-per-table) 中创建的，那么索引表也会保存在这个自己的表空间中。&lt;/p&gt;
+&lt;p&gt;前面示例中显示的其它索引表称为公共辅助表，用于删除处理和存储全文索引的内部状态。与为每个全文索引创建的倒排索引表不同，这组表对于在特定表上创建的所有全文索引是通用的。&lt;/p&gt;
+&lt;p&gt;即使删除了全文索引，也会保留公共辅助表。删除某个全文索引时，将会保留为该索引创建的 FTS_DOC_ID 列。如果想要删除 FTS_DOC_ID 列，则需要重建表&lt;/p&gt;
+&lt;p&gt;公共的辅助表是用来管理 FTS_DOC_ID 列的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(1)fts_*_deleted 和 fts_*_deleted_cache
+
+包含已删除但尚未从全文索引中删除其数据的文档的ID ( DOC_ID )
+
+fts_*_deleted_cache 是 fts_*_deleted 表的内存版本
+
+(2)fts_*_being_deleted 和 fts_*_being_deleted_cache
+
+包含已删除文档的文档 ID ( DOC_ID )，其数据当前正在从全文索引中删除
+
+fts_*_ being_deleted_cache 表是 fts_*_being_deleted 表的内存版本
+
+(3)fts_*_config
+
+存储有关全文索引的内部状态信息。最重要的是，它存储 FTS_SYNCED_DOC_ID ，用于标识已解析并刷新到磁盘的文档。
+
+从崩溃中恢复的时，FTS_SYNCED_DOC_ID 值用于标识尚未刷新到磁盘的文档，以便可以重新解析文档并将其添加回全文索引缓存
+
+要查看此表中的数据，请查询 INFORMATION_SCHEMA.INNODB_FT_CONFIG 表
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当对传入的文档进行分词时。单个单词 ( 也称之为 Token ) 会和位置信息、关联的文档 ID ( DOC_ID ) 一起插入索引表中。&lt;/p&gt;
+&lt;p&gt;插入时会使用基于 「 字母顺序 」对 Token 的第一个单词进行完全排序，并将结果按排序权重分布到这 6 个索引表中。&lt;/p&gt;
+&lt;p&gt;倒排索引划分了 6 个辅助索引表以支持并行索引创建。默认情况下，会创建两个线程对单词和关联数据进行分词，排序和插入索引表。我们可以使用innodb_ft_sort_pll_degree 选项配置线程数。在大型表上创建全文索引时，可以考虑适当增加线程数。&lt;/p&gt;
+&lt;p&gt;注意：千万不要在 MyISAM 和 InnoDB 表的区别时说 「 InnoDB 不支持全文索引了 」 那已经是过去时了！&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;上面学习了 MySQL InnoDB 全文索引的相关的表。当插入文档时，会对其进行分词，也就是 Token 化，并将单个单词和相关数据插入到全文索引中。&lt;/p&gt;
+&lt;h2&gt;InnoDB 全文索引缓存&lt;/h2&gt;
+&lt;p&gt;这个过程，即使要插入的文档非常小，也可能会导致在辅助索引表中进行大量的小插入，从而使这些表的并发访问成为性能的瓶颈。为了避免此问题，InnoDB 使用全文索引缓存 ( cache ) 来临时缓存最近要插入到辅助索引表中的行。&lt;/p&gt;
+&lt;p&gt;此内存缓存结构会一直持有插入的数据，直到缓存已满，然后批量将它们刷新到磁盘 ( 到辅助索引表 ) 。我们可以通过查询INFORMATION_SCHEMA.INNODB_FT_INDEX_CACHE 表以浏览最近插入的行的 Token 化的数据。&lt;/p&gt;
+&lt;p&gt;缓存和批处理刷新行为避免了对辅助索引表的频繁更新，这种频繁更新可能导致在繁忙的插入和更新时间期间出现并发访问问题。批处理机制还避免了对同一个单词的多次插入，并最大限度地减少了重复条目。这种机制不是单独刷新每个单词，而是将同一个单词的插入合并并作为单个条目刷新到磁盘，从而提高插入效率，同时保持辅助索引表尽可能小。&lt;/p&gt;
+&lt;p&gt;我们可以通过 innodb_ft_cache_size 配置项设置全文索引缓存大小 ( 基于每个表 )，这会影响全文索引缓存的刷新频率。 我们还可以使用innodb_ft_total_cache_size 配置选项为给定 MySQL 实例中的所有表定义一个全局全文索引缓存大小限制。&lt;/p&gt;
+&lt;p&gt;全文索引缓存存储与辅助索引表相同的信息。但是，全文索引缓存仅缓存最近插入的行的 Token 化的数据。当使用全文索引检索数据时，已刷新到磁盘 ( 到全文辅助表 ) 的数据不会返回到或更新到全文索引缓存中。只会直接查询辅助索引表中的数据，并在返回之前将辅助索引表的结果与全文索引缓存的结果合并。&lt;/p&gt;
+&lt;h2&gt;InnoDB 全文索引文档 ID 和 FTS_DOC_ID 列&lt;/h2&gt;
+&lt;p&gt;InnoDB 使用一个称为 文档 ID ( DOC_ID ) 的唯一文档标识符将全文索引中的单词映射到单词出现的文档记录。这个映射需要用到数据表中的 FTS_DOC_ID 列。如果未定义 FTS_DOC_ID 列，InnoDB 会在创建全文索引时自动添加一个隐式的 FTS_DOC_ID 列。&lt;/p&gt;
+&lt;p&gt;以下示例演示了此行为。&lt;/p&gt;
+&lt;p&gt;下面的建表语句并没有定义 FTS_DOC_ID 列&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; CREATE TABLE opening_lines (
+       id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+       opening_line TEXT(500),
+       author VARCHAR(200),
+       title VARCHAR(200)
+       ) ENGINE=InnoDB;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当使用 CREATE FULLTEXT INDEX 语法在表上创建全文索引时，会返回一个警告，报告 InnoDB 正在重建表以添加 FTS_DOC_ID 列&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; CREATE FULLTEXT INDEX idx ON opening_lines(opening_line);
+Query OK, 0 rows affected, 1 warning (0.19 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql&amp;gt; SHOW WARNINGS;
++---------+------+--------------------------------------------------+
+| Level   | Code | Message                                          |
++---------+------+--------------------------------------------------+
+| Warning |  124 | InnoDB rebuilding table to add column FTS_DOC_ID |
++---------+------+--------------------------------------------------+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;同样的警告也会出现在使用 ALTER TABLE 将全文索引添加到没有 FTS_DOC_ID 列的表中。&lt;/p&gt;
+&lt;p&gt;但是，如果在 CREATE TABLE 时创建了全文索引但未指定 FTS_DOC_ID 列，则 InnoDB 会添加一个隐藏的 FTS_DOC_ID 列，而不会发出警告。&lt;/p&gt;
+&lt;p&gt;在 CREATE TABLE 创建表时就定义 FTS_DOC_ID 列比在已加载数据的表上创建全文索引有着更快的性能。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;如果在加载数据之前就在表上定义了 FTS_DOC_ID 列，那么创建全文索引时，就不用添加新列，也就不必重建该表及其索引
+如果你并不关心 CREATE FULLTEXT INDEX 性能，那么请忽略 FTS_DOC_ID 列以让 InnoDB 为我们自动创建。InnoDB 会自动创建一个隐藏的 FTS_DOC_ID 列，并在该列上创建一个唯一索引 FTS_DOC_ID_INDEX
+如果你想要创建自己的 FTS_DOC_ID 列，则必须将该列定义为 BIGINT UNSIGNED NOT NULL 并命名为 FTS_DOC_ID ( 全部大写 )
+
+如下例所示
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;    mysql&amp;gt; CREATE TABLE opening_lines (
+        FTS_DOC_ID BIGINT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+        opening_line TEXT(500),
+        author VARCHAR(200),
+        title VARCHAR(200)
+        ) ENGINE=InnoDB;&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;&lt;p&gt;注意： 并不需要将 &lt;code&gt;FTS_DOC_ID&lt;/code&gt; 列添加 &lt;code&gt;AUTO_INCREMENT&lt;/code&gt; 约束，但添加了 &lt;code&gt;AUTO_INCREMENT&lt;/code&gt; 约束可以使加载数据更容易&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;如果你选择自己定义 FTS_DOC_ID 列，则你需要负责管理列以避免空值 ( NULL ) 或重复值。 FTS_DOC_ID 值无法重用，意味着 FTS_DOC_ID值必须不断增加&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;为了解决这个问题，你可以选择在 FTS_DOC_ID 列上创建必须的唯一索引 &lt;code&gt;FTS_DOC_ID_INDEX&lt;/code&gt; ( 全部大写 )&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    mysql&amp;gt; CREATE UNIQUE INDEX FTS_DOC_ID_INDEX on opening_lines(FTS_DOC_ID);&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;如果你没有为 FTS_DOC_ID 创建 FTS_DOC_ID_INDEX，InnoDB 会自动创建它。
+
+    注意： FTS_DOC_ID_INDEX 不能定义为降序索引，因为 InnoDB SQL 解析器不使用降序索引 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最大使用的 FTS_DOC_ID 值与新的 FTS_DOC_ID 值之间的允许间隔为 65535&lt;/p&gt;
+&lt;p&gt;为避免重建表，删除全文索引时将保留 FTS_DOC_ID 列。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;InnoDB 全文索引中的那些处理逻辑，包括删除索引逻辑和事务逻辑。&lt;/p&gt;
+&lt;h2&gt;InnoDB 全文索引删除处理&lt;/h2&gt;
+&lt;p&gt;删除具有全文索引列的记录可能会带来辅助索引表中的大量小删除，使得对这些表的并发访问成为性能的瓶颈。&lt;/p&gt;
+&lt;p&gt;为避免此问题，每当从索引表中删除记录时，已删除文档的文档 ID ( DOC&lt;em&gt;ID ) 将记录在特殊的 FTS&lt;/em&gt;&lt;em&gt;&lt;em&gt;DELETED 表中，同时全文索引仍然会保留索引记录。全文查询返回结果前，会自动过滤掉 FTS&lt;/em&gt;&lt;/em&gt;_ DELETED 表中存储的已删除的文档 ID。&lt;/p&gt;
+&lt;p&gt;这种设计的好处是删除快速且廉价。缺点是删除记录后索引的大小不会立即减少。&lt;/p&gt;
+&lt;p&gt;要删除已删除记录的全文索引条目，需要设置 innodb_optimize_fulltext_only = ON 在索引表上运行 OPTIMIZE TABLE 以重建全文索引。&lt;/p&gt;
+&lt;h2&gt;InnoDB 全文检索事务处理&lt;/h2&gt;
+&lt;p&gt;因为使用了缓存和批处理。InnoDB 全文索引的事务处理是非常特殊的。&lt;/p&gt;
+&lt;p&gt;具体来说，全文索引的更新和插入在事务提交时才真正处理，这意味着全文搜索只能看到已提交的数据。也就是不受事务处理四个级别的控制。&lt;/p&gt;
+&lt;p&gt;下面示例演示了这种事务处理方式。 全文搜索仅在提交插入的行后返回结果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; CREATE TABLE opening_lines (
+       id INT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY,
+       opening_line TEXT(500),
+       author VARCHAR(200),
+       title VARCHAR(200),
+       FULLTEXT idx (opening_line)
+       ) ENGINE=InnoDB;
+
+mysql&amp;gt; BEGIN;
+
+mysql&amp;gt; INSERT INTO opening_lines(opening_line,author,title) VALUES
+       ('Call me Ishmael.','Herman Melville','Moby-Dick'),
+       ('A screaming comes across the sky.','Thomas Pynchon','Gravity\'s Rainbow'),
+       ('I am an invisible man.','Ralph Ellison','Invisible Man'),
+       ('Where now? Who now? When now?','Samuel Beckett','The Unnamable'),
+       ('It was love at first sight.','Joseph Heller','Catch-22'),
+       ('All this happened, more or less.','Kurt Vonnegut','Slaughterhouse-Five'),
+       ('Mrs. Dalloway said she would buy the flowers herself.','Virginia Woolf','Mrs. Dalloway'),
+       ('It was a pleasure to burn.','Ray Bradbury','Fahrenheit 451');
+
+mysql&amp;gt; SELECT COUNT(*) FROM opening_lines WHERE MATCH(opening_line) AGAINST('Ishmael');
++----------+
+| COUNT(*) |
++----------+
+|        0 |
++----------+
+
+mysql&amp;gt; COMMIT;
+
+mysql&amp;gt; SELECT COUNT(*) FROM opening_lines WHERE MATCH(opening_line) AGAINST('Ishmael');
++----------+
+| COUNT(*) |
++----------+
+|        1 |
++----------+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;MySQL InnoDB 全文索引监控&lt;/h2&gt;
+&lt;p&gt;如果你想要监视和检查 InnoDB 全文索引的特殊文本处理方面，可以通过查询以下 INFORMATION_SCHEMA 表实现&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;INNODB_FT_CONFIG
+INNODB_FT_INDEX_TABLE
+INNODB_FT_INDEX_CACHE
+INNODB_FT_DEFAULT_STOPWORD
+INNODB_FT_DELETED
+INNODB_FT_BEING_DELETED
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你还可以通过查询 INNODB_INDEXES 和 INNODB_TABLES 表来查看全文索引和表的基本信息。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-01-16T06:07:41.777268+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
+&lt;p&gt;在本文中, Garbage Collection 翻译为 “垃圾收集”, garbage collector 翻译为 “垃圾收集器”;&lt;/p&gt;
+&lt;p&gt;一般认为, 垃圾回收 和 垃圾收集 是同义词。&lt;/p&gt;
+&lt;p&gt;Minor GC 翻译为： 小型 GC; 而不是 次要 GC&lt;/p&gt;
+&lt;p&gt;Major GC 翻译为： 大型 GC; 而不是 主要 GC&lt;/p&gt;
+&lt;p&gt;原因在于,大部分情况下, 发生在年轻代的 Minor GC 次数会很多,翻译为次要GC明显不对。&lt;/p&gt;
+&lt;p&gt;Full GC 翻译为： 完全 GC; 为了清晰起见,一般直接译为 Full GC,读者明白即可; 其中大型 GC 和完全 GC 差不多, 这些术语出自官方的各种分析工具和垃圾收集日志。并不是很统一。&lt;/p&gt;
+&lt;h2&gt;垃圾收集简介&lt;/h2&gt;
+&lt;p&gt;顾名思义,垃圾收集(Garbage Collection)的意思就是 —— 找到垃圾并进行清理。但现有的垃圾收集实现却恰恰相反: 垃圾收集器跟踪所有正在使用的对象,并把其余部分当做垃圾。记住这一点以后, 我们再深入讲解内存自动回收的原理，探究 JVM 中垃圾收集的具体实现, 。&lt;/p&gt;
+&lt;p&gt;我们不抠细节, 先从基础开始, 介绍垃圾收集的一般特征、核心概念以及实现算法。&lt;/p&gt;
+&lt;p&gt;免责声明: 本文主要讲解 Oracle Hotspot 和 OpenJDK 的行为。对于其他 JVM, 如 jRockit 或者 IBM J9, 在某些方面可能会略有不同。&lt;/p&gt;
+&lt;h2&gt;手动内存管理(Manual Memory Management)&lt;/h2&gt;
+&lt;p&gt;当今的自动垃圾收集算法极为先进, 但我们先来看看什么是手动内存管理。在那个时候, 如果要存储共享数据, 必须显式地进行 内存分配(allocate)和内存释放(free)。如果忘记释放, 则对应的那块内存不能再次使用。内存一直被占着, 却不再使用，这种情况就称为内存泄漏(memory leak)。&lt;/p&gt;
+&lt;p&gt;以下是用C语言来手动管理内存的一个示例程序:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int send_request() {
+    size_t n = read_size();
+    int *elements = malloc(n * sizeof(int));
+
+    if(read_elements(n, elements) &amp;lt; n) {
+        // elements not freed!
+        return -1;
+    }
+
+    // …
+
+    free(elements)
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到,如果程序很长,或者结构比较复杂, 很可能就会忘记释放内存。内存泄漏曾经是个非常普遍的问题, 而且只能通过修复代码来解决。因此,业界迫切希望有一种更好的办法,来自动回收不再使用的内存,完全消除可能的人为错误。这种自动机制被称为 垃圾收集(Garbage Collection,简称 GC)。&lt;/p&gt;
+&lt;h3&gt;智能指针(Smart Pointers)&lt;/h3&gt;
+&lt;p&gt;第一代自动垃圾收集算法, 使用的是引用计数(reference counting)。针对每个对象, 只需要记住被引用的次数, 当引用计数变为0时, 这个对象就可以被安全地回收(reclaimed)了。一个著名的示例是 C++的共享指针(shared pointers):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int send_request() {
+    size_t n = read_size();
+    shared_ptr&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; elements 
+              = make_shared&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;();
+
+    if(read_elements(n, elements) &amp;lt; n) {
+        return -1;
+    }
+
+    return 0;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;shared_ptr 被用来跟踪引用的数量。作为参数传递时这个数字加1, 在离开作用域时这个数字减1。当引用计数变为0时, shared_ptr 自动删除底层的 vector。需要向读者指出的是，这种方式在实际编程中并不常见, 此处仅用于演示。&lt;/p&gt;
+&lt;h2&gt;自动内存管理(Automated Memory Management)&lt;/h2&gt;
+&lt;p&gt;上面的C++代码中,我们要显式地声明什么时候需要进行内存管理。但不能让所有的对象都具备这种特征呢? 那样就太方便了, 开发者不再耗费脑细胞, 去考虑要在何处进行内存清理。运行时环境会自动算出哪些内存不再使用，并将其释放。换句话说, 自动进行收集垃圾。第一款垃圾收集器是 1959 年为 Lisp 语言开发的, 此后 Lisp 的垃圾收集技术也一直处于业界领先水平。&lt;/p&gt;
+&lt;h3&gt;引用计数(Reference Counting)&lt;/h3&gt;
+&lt;p&gt;刚刚演示的C++共享指针方式, 可以应用到所有对象。许多语言都采用这种方法, 包括 Perl、Python 和 PHP 等。下图很好地展示了这种方式:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 139.42307692307693" data-width="580" data-height="208"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/234aed408904cdbdfed5f60f28e25935.png" alt="jvm-gc-001.png" /&gt;&lt;figcaption&gt;jvm-gc-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;图中绿色的云(GC ROOTS) 表示程序正在使用的对象。从技术上讲, 这些可能是当前正在执行的方法中的局部变量，或者是静态变量一类。在某些编程语言中,可能叫法不太一样,这里不必抠名词。&lt;/p&gt;
+&lt;p&gt;蓝色的圆圈表示可以引用到的对象, 里面的数字就是引用计数。然后, 灰色的圆圈是各个作用域都不再引用的对象。灰色的对象被认为是垃圾, 随时会被垃圾收集器清理。&lt;/p&gt;
+&lt;p&gt;看起来很棒, 是吧! 但这种方式有个大坑, 很容易被循环引用(detached cycle) 给搞死。任何作用域中都没有引用指向这些对象，但由于循环引用, 导致引用计数一直大于零。如下图所示:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 139.42307692307693" data-width="580" data-height="208"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/188995e53ff490408d7754904167fa1a.png" alt="jvm-gc-002.png" /&gt;&lt;figcaption&gt;jvm-gc-002.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;看到了吗? 红色的对象实际上属于垃圾。但由于引用计数的局限, 所以存在内存泄漏。&lt;/p&gt;
+&lt;p&gt;当然也有一些办法来应对这种情况, 例如 “弱引用”(‘weak’ references), 或者使用另外的算法来排查循环引用等。前面提到的 Perl、Python 和 PHP 等语言, 都使用了某些方式来解决循环引用问题, 但本文不对其进行讨论。下面介绍 JVM 中使用的垃圾收集方法。&lt;/p&gt;
+&lt;h3&gt;标记-清除(Mark and Sweep)&lt;/h3&gt;
+&lt;p&gt;首先, JVM 明确定义了什么是对象的可达性(reachability)。我们前面所说的绿色云这种只能算是模糊的定义, JVM 中有一类很明确很具体的对象, 称为 垃圾收集根元素(Garbage Collection Roots)，包括:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(1)局部变量(Local variables)
+
+(2)活动线程(Active threads)
+
+(3)静态域(Static fields)
+
+(4)JNI引用(JNI references)
+
+(5)其他对象(稍后介绍 …)
+
+JVM 使用标记-清除算法(Mark and Sweep algorithm), 来跟踪所有的可达对象(即存活对象), 确保所有不可达对象(non-reachable objects)占用的内存都能被重用。其中包含两步:
+
+(6)Marking(标记): 遍历所有的可达对象,并在本地内存(native)中分门别类记下。
+
+(7)Sweeping(清除): 这一步保证了,不可达对象所占用的内存, 在之后进行内存分配时可以重用。
+
+JVM 中包含了多种GC算法, 如 Parallel Scavenge(并行清除), Parallel Mark+Copy(并行标记+复制) 以及 CMS, 他们在实现上略有不同, 但理论上都采用了以上两个步骤。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;标记清除算法最重要的优势, 就是不再因为循环引用而导致内存泄露:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 139.42307692307693" data-width="580" data-height="208"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/5e0bd8b8c698c668ca654a0097bab074.png" alt="jvm-gc-003.png" /&gt;&lt;figcaption&gt;jvm-gc-003.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;而不好的地方在于, 垃圾收集过程中, 需要暂停应用程序的所有线程。假如不暂停,则对象间的引用关系会一直不停地发生变化, 那样就没法进行统计了。这种情况叫做 STW 停顿(Stop The World pause, 全线暂停), 让应用程序暂时停止，让 JVM 进行内存清理工作。有很多原因会触发 STW 停顿, 其中垃圾收集是最主要的因素。&lt;/p&gt;
+&lt;p&gt;在本手册中,我们将介绍 JVM 中垃圾收集的实现原理，以及如何高效地利用 GC。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;标记-清除(Mark and Sweep)是最经典的垃圾收集算法。将理论用于生产实践时, 会有很多需要优化调整的地点, 以适应具体环境。&lt;/p&gt;
+&lt;p&gt;下面通过一个简单的例子, 让我们一步步记录下来, 看看如何才能保证 JVM 能安全持续地分配对象。&lt;/p&gt;
+&lt;h2&gt;碎片整理(Fragmenting and Compacting)&lt;/h2&gt;
+&lt;p&gt;每次执行清除(sweeping), JVM 都必须保证不可达对象占用的内存能被回收重用。但这(最终)有可能会产生内存碎片(类似于磁盘碎片), 进而引发两个问题:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;写入操作越来越耗时, 因为寻找一块足够大的空闲内存会变得非常麻烦。
+
+在创建新对象时, JVM 在连续的块中分配内存。如果碎片问题很严重, 直至没有空闲片段能存放下新创建的对象,就会发生内存分配错误(allocation error)。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;要避免这类问题,JVM 必须确保碎片问题不失控。因此在垃圾收集过程中, 不仅仅是标记和清除, 还需要执行 “内存碎片整理” 过程。这个过程让所有可达对象(reachable objects)依次排列, 以消除(或减少)碎片。示意图如下所示:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 157.6086956521739" data-width="580" data-height="184"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/c94f8fef3ed19b3b9de49e9ef8eb3502.png" alt="jvm-gc-004.png" /&gt;&lt;figcaption&gt;jvm-gc-004.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;说明:JVM中的引用是一个抽象的概念,如果GC移动某个对象, 就会修改(栈和堆中)所有指向该对象的引用。
+移动/提升/压缩 是一个 STW 的过程,所以修改对象引用是一个安全的行为。 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;分代假设(Generational Hypothesis)&lt;/h2&gt;
+&lt;p&gt;我们前面提到过,执行垃圾收集需要停止整个应用。很明显,对象越多则收集所有垃圾消耗的时间就越长。但可不可以只处理一个较小的内存区域呢? 为了探究这种可能性,研究人员发现,程序中的大多数可回收的内存可归为两类:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(1)大部分对象很快就不再使用
+(2)还有一部分不会立即无用,但也不会持续(太)长时间
+
+这些观测形成了 弱代假设(Weak Generational Hypothesis)。基于这一假设, VM中的内存被分为年轻代(Young Generation)和老年代(Old Generation)。老年代有时候也称为 年老区(Tenured)。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 157.6086956521739" data-width="580" data-height="184"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/015567adc6c2fcbefdc9e21bfaeca6a1.png" alt="jvm-gc-005.png" /&gt;&lt;figcaption&gt;jvm-gc-005.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;拆分为这样两个可清理的单独区域，允许采用不同的算法来大幅提高GC的性能。&lt;/p&gt;
+&lt;p&gt;这种方法也不是没有问题。例如，在不同分代中的对象可能会互相引用, 在收集某一个分代时就会成为 “事实上的” GC root。&lt;/p&gt;
+&lt;p&gt;当然,要着重强调的是,分代假设并不适用于所有程序。因为GC算法专门针对“要么死得快”，“否则活得长” 这类特征的对象来进行优化, JVM 对收集那种存活时间半长不长的对象就显得非常尴尬了。&lt;/p&gt;
+&lt;h2&gt;内存池(Memory Pools)&lt;/h2&gt;
+&lt;p&gt;堆内存中的内存池划分也是类似的。不太容易理解的地方在于各个内存池中的垃圾收集是如何运行的。请注意,不同的GC算法在实现细节上可能会有所不同,但和本章所介绍的相关概念都是一致的。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 157.6086956521739" data-width="580" data-height="184"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b6b11f82192e7bc90ae4a08087a16785.png" alt="jvm-gc-006.png" /&gt;&lt;figcaption&gt;jvm-gc-006.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;新生代(Eden,伊甸园)&lt;/h2&gt;
+&lt;p&gt;Eden 是内存中的一个区域, 用来分配新创建的对象。通常会有多个线程同时创建多个对象, 所以 Eden 区被划分为多个 线程本地分配缓冲区(Thread Local Allocation Buffer, 简称TLAB)。通过这种缓冲区划分,大部分对象直接由 JVM 在对应线程的TLAB中分配, 避免与其他线程的同步操作。&lt;/p&gt;
+&lt;p&gt;如果 TLAB 中没有足够的内存空间, 就会在共享 Eden 区(shared Eden space)之中分配。如果共享 Eden 区也没有足够的空间, 就会触发一次 年轻代 GC 来释放内存空间。如果 GC 之后 Eden 区依然没有足够的空闲内存区域, 则对象就会被分配到老年代空间(Old Generation)。&lt;/p&gt;
+&lt;p&gt;当 Eden 区进行垃圾收集时, GC 将所有从 root 可达的对象过一遍, 并标记为存活对象。&lt;/p&gt;
+&lt;p&gt;我们曾指出,对象间可能会有跨代的引用, 所以需要一种方法来标记从其他分代中指向 Eden 的所有引用。这样做又会遭遇各个分代之间一遍又一遍的引用。JVM 在实现时采用了一些绝招: 卡片标记(card-marking)。从本质上讲,JVM 只需要记住 Eden 区中 “脏”对象的粗略位置, 可能有老年代的对象引用指向这部分区间。更多细节请参考: Nitsan 的博客 。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 157.6086956521739" data-width="580" data-height="184"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/0a5803a6b79c87ef5ea097191c7013fd.png" alt="jvm-gc-007.png" /&gt;&lt;figcaption&gt;jvm-gc-007.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;标记阶段完成后, Eden中所有存活的对象都会被复制到存活区(Survivor spaces)里面。整个Eden区就可以被认为是空的, 然后就能用来分配新对象。这种方法称为 “标记-复制”(Mark and Copy): 存活的对象被标记, 然后复制到一个存活区(注意,是复制,而不是移动)。&lt;/p&gt;
+&lt;h2&gt;存活区(Survivor Spaces)&lt;/h2&gt;
+&lt;p&gt;Eden 区的旁边是两个存活区, 称为 from 空间和 to 空间。需要着重强调的的是, 任意时刻总有一个存活区是空的(empty)。&lt;/p&gt;
+&lt;p&gt;空的那个存活区用于在下一次年轻代 GC 时存放收集的对象。年轻代中所有的存活对象(包括 Edenq 区和非空的那个 “from” 存活区)都会被复制到 ”to“ 存活区。GC 过程完成后, ”to“ 区有对象,而 ‘from’ 区里没有对象。两者的角色进行正好切换 。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 157.6086956521739" data-width="580" data-height="184"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3d613ef3e40f58db53ddcdf506927340.png" alt="jvm-gc-008.png" /&gt;&lt;figcaption&gt;jvm-gc-008.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;存活的对象会在两个存活区之间复制多次, 直到某些对象的存活 时间达到一定的阀值。分代理论假设, 存活超过一定时间的对象很可能会继续存活更长时间。&lt;/p&gt;
+&lt;p&gt;这类“ 年老” 的对象因此被提升(promoted )到老年代。提升的时候， 存活区的对象不再是复制到另一个存活区,而是迁移到老年代, 并在老年代一直驻留, 直到变为不可达对象。&lt;/p&gt;
+&lt;p&gt;为了确定一个对象是否“足够老”, 可以被提升(Promotion)到老年代，GC模块跟踪记录每个存活区对象存活的次数。每次分代GC完成后,存活对象的年龄就会增长。当年龄超过提升阈值(tenuring threshold), 就会被提升到老年代区域。&lt;/p&gt;
+&lt;p&gt;具体的提升阈值由JVM动态调整,但也可以用参数-XX:+MaxTenuringThreshold 来指定上限。如果设置 -XX:+MaxTenuringThreshold=0, 则GC时存活对象不在存活区之间复制，直接提升到老年代。现代 JVM 中这个阈值默认设置为15个 GC 周期。这也是HotSpot中的最大值。&lt;/p&gt;
+&lt;p&gt;如果存活区空间不够存放年轻代中的存活对象，提升(Promotion)也可能更早地进行。&lt;/p&gt;
+&lt;h2&gt;老年代(Old Generation)&lt;/h2&gt;
+&lt;p&gt;老年代的GC实现要复杂得多。老年代内存空间通常会更大，里面的对象是垃圾的概率也更小。&lt;/p&gt;
+&lt;p&gt;老年代GC发生的频率比年轻代小很多。同时, 因为预期老年代中的对象大部分是存活的, 所以不再使用标记和复制(Mark and Copy)算法。而是采用移动对象的方式来实现最小化内存碎片。老年代空间的清理算法通常是建立在不同的基础上的。原则上,会执行以下这些步骤:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(1)通过标志位(marked bit),标记所有通过 GC roots 可达的对象.
+
+(2)删除所有不可达对象
+
+(3)整理老年代空间中的内容，方法是将所有的存活对象复制,从老年代空间开始的地方,依次存放。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过上面的描述可知, 老年代GC必须明确地进行整理,以避免内存碎片过多。&lt;/p&gt;
+&lt;h2&gt;永久代(PermGen)&lt;/h2&gt;
+&lt;p&gt;在Java 8 之前有一个特殊的空间,称为“永久代”(Permanent Generation)。这是存储元数据(metadata)的地方,比如 class 信息等。&lt;/p&gt;
+&lt;p&gt;此外,这个区域中也保存有其他的数据和信息, 包括 内部化的字符串(internalized strings)等等。实际上这给Java开发者造成了很多麻烦,因为很难去计算这块区域到底需要占用多少内存空间。&lt;/p&gt;
+&lt;p&gt;预测失败导致的结果就是产生 java.lang.OutOfMemoryError: Permgen space 这种形式的错误。除非 ·OutOfMemoryError· 确实是内存泄漏导致的,否则就只能增加 permgen 的大小，例如下面的示例，就是设置 permgen 最大空间为 256 MB:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;java -XX:MaxPermSize=256m com.mycompany.MyApplication&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;元数据区(Metaspace)&lt;/h2&gt;
+&lt;p&gt;既然估算元数据所需空间那么复杂, Java 8直接删除了永久代(Permanent Generation)，改用 Metaspace。从此以后, Java 中很多杂七杂八的东西都放置到普通的堆内存里。&lt;/p&gt;
+&lt;p&gt;当然，像类定义(class definitions)之类的信息会被加载到 Metaspace 中。元数据区位于本地内存(native memory),不再影响到普通的 Java 对象。默认情况下, Metaspace 的大小只受限于 Java进程可用的本地内存。这样程序就不再因为多加载了几个类/JAR包就导致 java.lang.OutOfMemoryError: Permgen space. 。注意, 这种不受限制的空间也不是没有代价的 —— 如果 Metaspace 失控, 则可能会导致很严重的内存交换(swapping), 或者导致本地内存分配失败。&lt;/p&gt;
+&lt;p&gt;如果需要避免这种最坏情况，那么可以通过下面这样的方式来限制 Metaspace 的大小, 如 256 MB:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;java -XX:MaxMetaspaceSize=256m com.mycompany.MyApplication&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Minor GC vs Major GC vs Full GC&lt;/h2&gt;
+&lt;p&gt;垃圾收集事件(Garbage Collection events)通常分为: 小型GC(Minor GC) – 大型GC(Major GC) – 和完全GC(Full GC) 。本节介绍这些事件及其区别。然后你会发现这些区别也不是特别清晰。&lt;/p&gt;
+&lt;p&gt;最重要的是,应用程序是否满足 服务级别协议(Service Level Agreement, SLA), 并通过监控程序查看响应延迟和吞吐量。也只有那时候才能看到GC事件相关的结果。重要的是这些事件是否停止整个程序,以及持续多长时间。&lt;/p&gt;
+&lt;p&gt;虽然 Minor, Major 和 Full GC 这些术语被广泛应用, 但并没有标准的定义, 我们还是来深入了解一下具体的细节吧。&lt;/p&gt;
+&lt;h2&gt;小型GC(Minor GC)&lt;/h2&gt;
+&lt;p&gt;年轻代内存的垃圾收集事件称为小型 GC。这个定义既清晰又得到广泛共识。对于小型 GC 事件,有一些有趣的事情你应该了解一下:&lt;/p&gt;
+&lt;p&gt;1、当JVM无法为新对象分配内存空间时总会触发 Minor GC,比如 Eden 区占满时。所以(新对象)分配频率越高, Minor GC 的频率就越高。
+2、Minor GC 事件实际上忽略了老年代。从老年代指向年轻代的引用都被认为是 GC Root。而从年轻代指向老年代的引用在标记阶段全部被忽略。
+3、与一般的认识相反, Minor GC 每次都会引起全线停顿(stop-the-world ), 暂停所有的应用线程。对大多数程序而言,暂停时长基本上是可以忽略不计的, 因为 Eden 区的对象基本上都是垃圾, 也不怎么复制到存活区/老年代。如果情况不是这样, 大部分新创建的对象不能被垃圾回收清理掉, 则 Minor GC 的停顿就会持续更长的时间。&lt;/p&gt;
+&lt;p&gt;所以 Minor GC 的定义很简单 —— Minor GC 清理的就是年轻代。&lt;/p&gt;
+&lt;h2&gt;Major GC vs Full GC&lt;/h2&gt;
+&lt;p&gt;值得一提的是, 这些术语并没有正式的定义 —— 无论是在JVM规范还是在GC相关论文中。&lt;/p&gt;
+&lt;p&gt;我们知道, Minor GC 清理的是年轻代空间(Young space)，相应的,其他定义也很简单:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Major GC(大型GC) 清理的是老年代空间(Old space)。
+Full GC(完全GC)清理的是整个堆, 包括年轻代和老年代空间。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;杯具的是更复杂的情况出现了。很多 Major GC 是由 Minor GC 触发的, 所以很多情况下这两者是不可分离的。另一方面, 像G1这样的垃圾收集算法执行的是部分区域垃圾回收, 所以，额，使用术语“cleaning”并不是非常准确。&lt;/p&gt;
+&lt;p&gt;这也让我们认识到,不应该去操心是叫 Major GC 呢还是叫 Full GC, 我们应该关注的是: 某次GC事件 是否停止所有线程,或者是与其他线程并发执行。&lt;/p&gt;
+&lt;p&gt;这些混淆甚至根植于标准的JVM工具中。我的意思可以通过实例来说明。让我们来对比同一JVM中两款工具的GC信息输出吧。这个JVM使用的是 并发标记和清除收集器（Concurrent Mark and Sweep collector，-XX:+UseConcMarkSweepGC).&lt;/p&gt;
+&lt;p&gt;首先我们来看 jstat 的输出:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jstat -gc -t 4235 1s&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Time   S0C    S1C     S0U    S1U      EC       EU        OC         OU       MC       MU     CCSC   CCSU     YGC    YGCT    FGC    FGCT     GCT   
+ 5.7 34048.0 34048.0  0.0   34048.0 272640.0 194699.7 1756416.0   181419.9  18304.0 17865.1 2688.0 2497.6      3    0.275   0      0.000    0.275
+ 6.7 34048.0 34048.0 34048.0  0.0   272640.0 247555.4 1756416.0   263447.9  18816.0 18123.3 2688.0 2523.1      4    0.359   0      0.000    0.359
+ 7.7 34048.0 34048.0  0.0   34048.0 272640.0 257729.3 1756416.0   345109.8  19072.0 18396.6 2688.0 2550.3      5    0.451   0      0.000    0.451
+ 8.7 34048.0 34048.0 34048.0 34048.0 272640.0 272640.0 1756416.0  444982.5  19456.0 18681.3 2816.0 2575.8      7    0.550   0      0.000    0.550
+ 9.7 34048.0 34048.0 34046.7  0.0   272640.0 16777.0  1756416.0   587906.3  20096.0 19235.1 2944.0 2631.8      8    0.720   0      0.000    0.720
+10.7 34048.0 34048.0  0.0   34046.2 272640.0 80171.6  1756416.0   664913.4  20352.0 19495.9 2944.0 2657.4      9    0.810   0      0.000    0.810
+11.7 34048.0 34048.0 34048.0  0.0   272640.0 129480.8 1756416.0   745100.2  20608.0 19704.5 2944.0 2678.4     10    0.896   0      0.000    0.896
+12.7 34048.0 34048.0  0.0   34046.6 272640.0 164070.7 1756416.0   822073.7  20992.0 19937.1 3072.0 2702.8     11    0.978   0      0.000    0.978
+13.7 34048.0 34048.0 34048.0  0.0   272640.0 211949.9 1756416.0   897364.4  21248.0 20179.6 3072.0 2728.1     12    1.087   1      0.004    1.091
+14.7 34048.0 34048.0  0.0   34047.1 272640.0 245801.5 1756416.0   597362.6  21504.0 20390.6 3072.0 2750.3     13    1.183   2      0.050    1.233
+15.7 34048.0 34048.0  0.0   34048.0 272640.0 21474.1  1756416.0   757347.0  22012.0 20792.0 3200.0 2791.0     15    1.336   2      0.050    1.386
+16.7 34048.0 34048.0 34047.0  0.0   272640.0 48378.0  1756416.0   838594.4  22268.0 21003.5 3200.0 2813.2     16    1.433   2      0.050    1.484&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;此片段截取自JVM启动后的前17秒。根据这些信息可以得知: 有2次Full ``GC在12次Minor GC(YGC)之后触发执行, 总计耗时 50ms。当然,也可以通过具备图形界面的工具得出同样的信息, 比如 jconsole 或者 jvisualvm (或者最新的 jmc)。&lt;/p&gt;
+&lt;p&gt;在下结论之前, 让我们看看此JVM进程的GC日志。显然需要配置 -XX:+PrintGCDetails 参数,GC日志的内容更详细,结果也有一些不同:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;java -XX:+PrintGCDetails -XX:+UseConcMarkSweepGC eu.plumbr.demo.GarbageProducer&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;3.157: [GC (Allocation Failure) 3.157: [ParNew: 272640K-&amp;gt;34048K(306688K), 0.0844702 secs] 272640K-&amp;gt;69574K(2063104K), 0.0845560 secs] [Times: user=0.23 sys=0.03, real=0.09 secs] 
+4.092: [GC (Allocation Failure) 4.092: [ParNew: 306688K-&amp;gt;34048K(306688K), 0.1013723 secs] 342214K-&amp;gt;136584K(2063104K), 0.1014307 secs] [Times: user=0.25 sys=0.05, real=0.10 secs] 
+... cut for brevity ...
+
+11.292: [GC (Allocation Failure) 11.292: [ParNew: 306686K-&amp;gt;34048K(306688K), 0.0857219 secs] 971599K-&amp;gt;779148K(2063104K), 0.0857875 secs] [Times: user=0.26 sys=0.04, real=0.09 secs] 
+12.140: [GC (Allocation Failure) 12.140: [ParNew: 306688K-&amp;gt;34046K(306688K), 0.0821774 secs] 1051788K-&amp;gt;856120K(2063104K), 0.0822400 secs] [Times: user=0.25 sys=0.03, real=0.08 secs] 
+12.989: [GC (Allocation Failure) 12.989: [ParNew: 306686K-&amp;gt;34048K(306688K), 0.1086667 secs] 1128760K-&amp;gt;931412K(2063104K), 0.1087416 secs] [Times: user=0.24 sys=0.04, real=0.11 secs] 
+13.098: [GC (CMS Initial Mark) [1 CMS-initial-mark: 897364K(1756416K)] 936667K(2063104K), 0.0041705 secs] [Times: user=0.02 sys=0.00, real=0.00 secs] 
+13.102: [CMS-concurrent-mark-start]
+13.341: [CMS-concurrent-mark: 0.238/0.238 secs] [Times: user=0.36 sys=0.01, real=0.24 secs] 
+13.341: [CMS-concurrent-preclean-start]
+13.350: [CMS-concurrent-preclean: 0.009/0.009 secs] [Times: user=0.03 sys=0.00, real=0.01 secs] 
+13.350: [CMS-concurrent-abortable-preclean-start]
+13.878: [GC (Allocation Failure) 13.878: [ParNew: 306688K-&amp;gt;34047K(306688K), 0.0960456 secs] 1204052K-&amp;gt;1010638K(2063104K), 0.0961542 secs] [Times: user=0.29 sys=0.04, real=0.09 secs] 
+14.366: [CMS-concurrent-abortable-preclean: 0.917/1.016 secs] [Times: user=2.22 sys=0.07, real=1.01 secs] 
+14.366: [GC (CMS Final Remark) [YG occupancy: 182593 K (306688 K)]14.366: [Rescan (parallel) , 0.0291598 secs]14.395: [weak refs processing, 0.0000232 secs]14.395: [class unloading, 0.0117661 secs]14.407: [scrub symbol table, 0.0015323 secs]14.409: [scrub string table, 0.0003221 secs][1 CMS-remark: 976591K(1756416K)] 1159184K(2063104K), 0.0462010 secs] [Times: user=0.14 sys=0.00, real=0.05 secs] 
+14.412: [CMS-concurrent-sweep-start]
+14.633: [CMS-concurrent-sweep: 0.221/0.221 secs] [Times: user=0.37 sys=0.00, real=0.22 secs] 
+14.633: [CMS-concurrent-reset-start]
+14.636: [CMS-concurrent-reset: 0.002/0.002 secs] [Times: user=0.00 sys=0.00, real=0.00 secs]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过 GC 日志可以看到, 在 12 次 Minor GC 之后发生了一些 “不同的事情”。并不是两个 Full GC, 而是在老年代执行了一次 GC, 分为多个阶段执行:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(1)初始标记阶段(Initial Mark phase),耗时 0.0041705 秒(约 4ms)。此阶段是全线停顿(STW)事件,暂停所有应用线程,以便执行初始标记。
+
+(2)标记和预清理阶段(Markup and Preclean phase)。和应用线程并发执行。
+
+(3)最终标记阶段(Final Remark phase), 耗时 0.0462010 秒(约 46ms)。此阶段也是全线停顿(STW)事件。
+
+(4)清除操作(Sweep)是并发执行的, 不需要暂停应用线程。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;所以从实际的 GC 日志可以看到, 并不是执行了两次 Full GC 操作, 而是只执行了一次清理老年代空间的 Major GC 。&lt;/p&gt;
+&lt;p&gt;如果只关心延迟, 通过后面 jstat 显示的数据, 也能得出正确的结果。它正确地列出了两次 STW 事件,总计耗时 50 ms。这段时间影响了所有应用线程的延迟。如果想要优化吞吐量, 这个结果就会有误导性 —— jstat 只列出了 stop-the-world 的初始标记阶段和最终标记阶段, jstat 的输出完全隐藏了并发执行的GC阶段。&lt;/p&gt;
+</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-01-16T06:07:41.777242+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
+&lt;p&gt;concurrent: 并发, 多个线程协同做同一件事情(有状态)&lt;/p&gt;
+&lt;p&gt;parallel: 并行, 多个线程各做各的事情(互相间无共享状态)&lt;/p&gt;
+&lt;p&gt;在 GC 领域: concurrent 算法指GC线程和业务线程能并发执行； parallel 指 GC 线程之间的并行。&lt;/p&gt;
+&lt;p&gt;参考: What’s the difference between concurrency and parallelism&lt;/p&gt;
+&lt;h2&gt;概述&lt;/h2&gt;
+&lt;h3&gt;目的&lt;/h3&gt;
+&lt;p&gt;本文介绍如何使用 G1,及在 Hotspot JVM 中怎么使用 G1 垃圾收集器。 您将了解 G1 收集器的内部原理, 切换为 G1 收集器的命令行参数, 以及让其记录 GC 日志的选项。&lt;/p&gt;
+&lt;h3&gt;简介&lt;/h3&gt;
+&lt;p&gt;本文涵盖了 Java 虚拟机(JVM, Java Virtual Machine)中 G1 的基础知识。&lt;/p&gt;
+&lt;p&gt;1、第一部分, 简单概述JVM的同时介绍了垃圾收集和性能.&lt;/p&gt;
+&lt;p&gt;2、接下来讲述了 Hotspot JVM 中 CMS 收集器是如何工作的.&lt;/p&gt;
+&lt;p&gt;3、接着再一步一步地指导在 Hotspot JVM 中使用G1进行垃圾回收的工作方式.&lt;/p&gt;
+&lt;p&gt;4、之后的一个小节介绍 G1 垃圾收集器可用的命令行参数.&lt;/p&gt;
+&lt;p&gt;5、最后,您将了解如何配置使G1收集器记录日志.&lt;/p&gt;
+&lt;h3&gt;硬件与软件环境需求&lt;/h3&gt;
+&lt;p&gt;下面是 硬件与软件环境需求 清单:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;一台 PC 机, 运行 Windows XP 以上操作系统, Mac OS X 或者 Linux 都可以. 注意,因为作者在 Windows 7 上进行开发和测试, 尚未在所有平台上完成测试。 但在 OS X和 Linux 上应该也- 是正常的。最好配置了多核 CPU.
+
+Java 7 Update 9 或更高版本
+
+最新的 Java 7 Demos and Samples Zip 文件
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;准备条件&lt;/h3&gt;
+&lt;p&gt;在开始学习本教程之前, 你需要:&lt;/p&gt;
+&lt;p&gt;下载并安装最新的 Java JDK (JDK&lt;code&gt;7 u9 或 以后的版本): Java&lt;/code&gt; 7 JDK 下载页面&lt;/p&gt;
+&lt;p&gt;下载并安装 Demos and Samples (示例与样例) zip 文件, 下载页面和JDK相同. 然后解压到合适的位置. 如:C:\javademos&lt;/p&gt;
+&lt;h2&gt;Java 技术 和 JVM&lt;/h2&gt;
+&lt;h3&gt;Java 概述&lt;/h3&gt;
+&lt;p&gt;Java 是 Sun Microsystems 公司在 1995 年发布的一门编程语言. 同时也是一个运行 Java 程序的底层平台. 提供工具、游戏和企业应用程序支持。Java 运行在全世界超过8.5亿的 PC,以及数十亿的智能设备上,包括 mobile 和 TV. Java 是由许多关键部件组成的一个整体, 统称为 Java 平台。&lt;/p&gt;
+&lt;h3&gt;JRE(Java Runtime Edition)&lt;/h3&gt;
+&lt;p&gt;一般来说下载了 Java 以后, 你就得到了一个 Java 运行时: Java Runtime Environment (JRE). JRE 由 Java 虚拟机Java Virtual Machine (JVM), Java 平台核心类(core classes), 以及 Java 平台支持库组成. 必须有这三大组件的支持才能在你的电脑上运行 Java 程序. 例如 Java 7, 可以在操作系统上作为桌面应用程序运行, 还可以通过 Java Web Start 从 Web 上安装, 或者是作为嵌入式Web程序在浏览器中运行 (通过 JavaFX).&lt;/p&gt;
+&lt;h3&gt;Java 编程语言&lt;/h3&gt;
+&lt;p&gt;Java 是一门面向对象编程语言(object-oriented programming language), 包涵以下特性.&lt;/p&gt;
+&lt;p&gt;Platform Independence – Java 应用程序被编译为字节码(bytecode)存放到 class 文件中, 由 JVM 加载. 因为程序在 JVM 中运行, 所以可以跨平台运行在各种操作系统/设备上.&lt;/p&gt;
+&lt;p&gt;Object-Oriented – Java 是一门面向对象的语言, 继承了 C 和 C++ 的很多特性,并在此基础上进行扩充和优化.&lt;/p&gt;
+&lt;p&gt;Automatic Garbage Collection – Java对内存进行 自动分配(allocates) 和自动释放(deallocates). 所以程序不再执行这一繁琐的任务(其实自动内存回收,更多的好处是减少了编程需要重复处理的这种细节,另一个例子是对 JDBC 的封装).&lt;/p&gt;
+&lt;p&gt;Rich Standard Library – Java包含大量的标准对象,可以执行诸如输入输出(input/output), 网络操作以及日期处理等任务.&lt;/p&gt;
+&lt;h3&gt;JDK(Java Development Kit)&lt;/h3&gt;
+&lt;p&gt;JDK 是用来开发Java程序的一系列工具集. 通过 JDK, 你可以编译用 Java 语言书写的程序, 并在 JVM 中运行. 另外, JDK 还提供了打包(packaging)和分发(distributing)程序的工具.&lt;/p&gt;
+&lt;p&gt;JDK 和 JRE 使用同样的 Java Application Programming Interfaces (Java API).Java API 是预先打包好以供程序员用来开发程序的类库集合. 通过 Java API 使得很多常规任务可以很轻松的就完成,如 字符串操作(string manipulation), 时间日期处理(date/time processing), 网络编程(networking), 以及实现各种数据结构(data structures, 如 lists, maps, stacks, and queues).&lt;/p&gt;
+&lt;h3&gt;JVM(Java Virtual Machine)&lt;/h3&gt;
+&lt;p&gt;Java Virtual Machine (JVM) 是一台抽象的计算机(abstract computing machine). JVM 本质是一个程序, 但在运行于 JVM 上的程序看来, 他就像一台真实机器一样. 这样, Java 程序就能使用相同的接口和库. 每种特定操作系统上的 JVM 实现, 都将 Java 程序指令转换为本地机器的指令(instructions)和命令(commands). 由此,实现了 Java 程序的平台独立性.&lt;/p&gt;
+&lt;p&gt;Java 虚拟机的第一个原型实现,由 Sun Microsystems, Inc. 完成, 在一台手持设备上用软件模拟了 Java 虚拟机指令集, 类似于今天的 PDA(Personal Digital Assistant). Oracle 当前在移动设备,桌面系统和服务器上都提供了 Java 虚拟机实现, 但 Java 虚拟机不限制使用任何特定的技术,硬件,或操作系统。JVM 也不一定都是基于软件的,你可以直接在硬件 CPU 上实现 JVM 指令, 还可以芯片上实现,或者采用 microcode 的方式来实现.&lt;/p&gt;
+&lt;p&gt;Java 虚拟机完全不关心 Java 语言的细节, 只识别 class 文件这种特定的二进制格式. 一个 class 文件包含 Java 虚拟机指令(或称之为字节码 bytecode) 及符号变量表(symbol table), 还有一些辅助信息.&lt;/p&gt;
+&lt;p&gt;基于安全性考虑, Java 虚拟机对 class 文件中的代码执行 强语法检查和组成结构规范限制. 既然虚拟机有这种特征, 那么任何一门编程语言,只要能编译为合法的 class 文件，都可以加载到 Java 虚拟机 里面执行。由于具有通用性,跨平台特性, 其他语言的实现者可以把 Java 虚拟机作为该语言的加载执行工具。(1) The Java Virtual Machine&lt;/p&gt;
+&lt;h2&gt;探索 JVM 体系架构&lt;/h2&gt;
+&lt;h3&gt;Hotspot 架构&lt;/h3&gt;
+&lt;p&gt;HotSpot JVM 有一个稳定强悍的架构, 支持强大的功能与特性, 具备实现高性能和大规模可伸缩性的能力。例如,HotSpot JVM JIT 编译器能动态进行优化生成。换句话说,他们运行 Java 程序时,会针对底层系统架构动态生成高性能的本地机器指令。此外,通过成熟的演进和运行时环境的持续工程,加上多线程垃圾收集器,HotSpot JVM 即使实在大型计算机系统上也能获得很高的伸缩性.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 66.66666666666667" data-width="960" data-height="720"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3d977e1aa195a292cc800c5d384d3792.png" alt="jvm-gc-g1-001.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;JVM 的主要组件包括: 类加载器(class loader), 运行时数据区(runtime data areas), 以及执行引擎(execution engine).&lt;/p&gt;
+&lt;h3&gt;Hotspot 关键部分&lt;/h3&gt;
+&lt;p&gt;与性能(performance)有关的部分是 JVM 最重要的组件,下图中用高亮的颜色来显示.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 66.66666666666667" data-width="960" data-height="720"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/a8f69fabf50d49cda880de8e031b8185.png" alt="jvm-gc-g1-002.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-002.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;对 JVM 进行性能调优时有三大组件需要重点关注。堆(Heap)是存放对象的内存空间。这个区域由JVM启动时选择的垃圾收集器进行管理。大多数调优参数都是调整堆内存的大小,以及根据实际情况选择最合适的垃圾收集器. JIT 编译器也对性能有很大的影响, 但新版本的 JVM 调优中很少需要关注.&lt;/p&gt;
+&lt;h3&gt;性能基础&lt;/h3&gt;
+&lt;p&gt;大多数情况下对 Java 程序进行调优, 主要关注两个目标之一: 响应速度(responsiveness) 和/或 吞吐量(throughput). 下面的教程中我们将讲述这些概念.&lt;/p&gt;
+&lt;h3&gt;响应能力(Responsiveness)&lt;/h3&gt;
+&lt;p&gt;响应能力就是程序或系统对一个请求的响应有多迅速. 比如:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;程序UI响应速度有多灵敏
+
+网站页面响应有多快
+
+数据库查询有多快
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对响应速度要求很高的系统, 较大的停顿时间(large pause times) 是不可接受的. 重点是在非常短的时间周期内快速响应.&lt;/p&gt;
+&lt;h3&gt;吞吐量(Throughput)&lt;/h3&gt;
+&lt;p&gt;吞吐量关注在一个特定时间段内应用系统的最大工作量。衡量吞吐量的指标/示例包括:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;给定时间内完成的事务数.
+
+每小时批处理系统能完成的作业(jobs)数量.
+
+每小时能完成多少次数据库查询
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在吞吐量方面优化的系统, 停顿时间长(High pause times)也是可以接受的。由于高吞吐量应用运行时间长,所以此时更关心的是如何尽可能快地完成整个任务，而不考虑快速响应。&lt;/p&gt;
+&lt;h2&gt;G1 垃圾收集器(Garbage Collector)&lt;/h2&gt;
+&lt;h3&gt;G1 垃圾收集器&lt;/h3&gt;
+&lt;p&gt;G1 (Garbage-First)是一款面向服务器的垃圾收集器,主要针对配备多颗处理器及大容量内存的机器. 以极高概率满足GC停顿时间要求的同时,还具备高吞吐量性能特征. 在Oracle JDK 7 update 4 及以上版本中得到完全支持, 专为以下应用程序设计:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;可以像CMS收集器一样,GC操作与应用的线程一起并发执行
+
+紧凑的空闲内存区间且没有很长的GC停顿时间.
+
+需要可预测的GC暂停耗时.
+
+不想牺牲太多吞吐量性能.
+
+启动后不需要请求更大的Java堆.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;G1的长期目标是取代CMS(Concurrent`` Mark-Sweep Collector, 并发标记-清除). 因为特性的不同使 G1 成为比 CMS 更好的解决方案. 一个区别是,G1 是一款压缩型的收集器.G1 通过有效的压缩完全避免了对细微空闲内存空间的分配,不用依赖于 regions，这不仅大大简化了收集器，而且还消除了潜在的内存碎片问题。除压缩以外，G1 的垃圾收集停顿也比 CMS 容易估计，也允许用户自定义所希望的停顿参数(pause targets)&lt;/p&gt;
+&lt;h3&gt;G1 操作概述&lt;/h3&gt;
+&lt;p&gt;上一代的垃圾收集器(串行 serial, 并行 parallel, 以及 CMS )都把堆内存划分为固定大小的三个部分: 年轻代(young generation), 年老代(old generation), 以及持久代(permanent generation).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 93.5672514619883" data-width="960" data-height="513"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/272244ef29e13f0908c4375b73bf662f.png" alt="jvm-gc-g1-003.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-003.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;内存中的每个对象都存放在这三个区域中的一个.&lt;/p&gt;
+&lt;p&gt;而 G1 收集器采用一种不同的方式来管理堆内存.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 76.63716814159292" data-width="866" data-height="565"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/c3ee2b862aec77f99d0cfa4b9902043b.png" alt="jvm-gc-g1-004.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-004.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;堆内存被划分为多个大小相等的 heap 区,每个 heap 区都是逻辑上连续的一段内存(virtual memory). 其中一部分区域被当成老一代收集器相同的角色(eden, survivor, old), 但每个角色的区域个数都不是固定的。这在内存使用上提供了更多的灵活性。&lt;/p&gt;
+&lt;p&gt;G1执行垃圾回收的处理方式与 CMS 相似. G1 在全局标记阶段(global marking phase)并发执行, 以确定堆内存中哪些对象是存活的。标记阶段完成后,G1就可以知道哪些heap区的empty空间最大。&lt;/p&gt;
+&lt;p&gt;它会首先回收这些区,通常会得到大量的自由空间. 这也是为什么这种垃圾收集方法叫做Garbage-First(垃圾优先)的原因。顾名思义, G1 将精力集中放在可能布满可收回对象的区域, 可回收对象(reclaimable objects)也就是所谓的垃圾. G1 使用暂停预测模型(pause prediction model)来达到用户定义的目标暂停时间。&lt;/p&gt;
+&lt;p&gt;并根据目标暂停时间来选择此次进行垃圾回收的 heap 区域数量被 G1 标记为适合回收的 heap 区将使用转移(evacuation)的方式进行垃圾回收. G1 将一个或多个 heap 区域中的对象拷贝到其他的单个区域中,并在此过程中压缩和释放内存. 在多核 CPU 上转移是并行执行的(parallel on multi-processors), 这样能减少停顿时间并增加吞吐量。&lt;/p&gt;
+&lt;p&gt;因此,每次垃圾收集时, G1 都会持续不断地减少碎片, 并且在用户给定的暂停时间内执行. 这比以前的方法强大了很多. CMS 垃圾收集器(Concurrent Mark Sweep,并发标记清理)不进行压缩. ParallelOld 垃圾收集只对整个堆执行压缩,从而导致相当长的暂停时间。&lt;/p&gt;
+&lt;p&gt;需要强调的是, G1 并不是一款实时垃圾收集器(real-time collector). 能以极高的概率在设定的目标暂停时间内完成,但不保证绝对在这个时间内完成。 基于以前收集的各种监控数据, G1 会根据用户指定的目标时间来预估能回收多少个 heap 区. 因此,收集器有一个相当精确的 heap 区耗时计算模型,并根据该模型来确定在给定时间内去回收哪些 heap 区.&lt;/p&gt;
+&lt;p&gt;注意 G1 分为两个阶段: 并发阶段(concurrent, 与应用线程一起运行, 如: 细化 refinement、标记 marking、清理 cleanup) 和 并行阶段(parallel, 多线程执行, 如: 停止所有 JVM 线程, stop the world). 而 FullGC (完整垃圾收集)仍然是单线程的, 但如果进行适当的调优,则应用程序应该能够避免 full GC。&lt;/p&gt;
+&lt;h3&gt;G1 的内存占用(Footprint)&lt;/h3&gt;
+&lt;p&gt;如果从 ParallelOldGC 或者 CMS 收集器迁移到 G1, 您可能会看到JVM进程占用更多的内存(a larger JVM process size). 这在很大程度上与 “accounting” 数据结构有关, 如 Remembered Sets 和 Collection Sets.&lt;/p&gt;
+&lt;p&gt;Remembered Sets 简称 RSets, 跟踪指向某个 heap 区内的对象引用. 堆内存中的每个区都有一个 RSet. RSet 使 heap 区能并行独立地进行垃圾集合. RSets 的总体影响小于5%.&lt;/p&gt;
+&lt;p&gt;Collection Sets 简称 CSets, 收集集合, 在一次 GC 中将执行垃圾回收的 heap 区. GC 时在 CSet 中的所有存活数据(live data)都会被转移(复制/移动). 集合中的 heap 区可以是 Eden, survivor, 和/或 old generation. CSets 所占用的 JVM 内存小于 1%.&lt;/p&gt;
+&lt;h3&gt;推荐使用 G1 的场景(Recommended Use Cases)&lt;/h3&gt;
+&lt;p&gt;G1 的首要目标是为需要大量内存的系统提供一个保证 GC 低延迟的解决方案. 也就是说堆内存在 6GB 及以上,稳定和可预测的暂停时间小于0.5秒.&lt;/p&gt;
+&lt;p&gt;如果应用程序具有如下的一个或多个特征,那么将垃圾收集器从 CMS 或 ParallelOldGC 切换到 G1 将会大大提升性能.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Full GC 次数太频繁或者消耗时间太长.
+
+对象分配的频率或代数提升(promotion)显著变化.
+
+受够了太长的垃圾回收或内存整理时间(超过0.5~1秒)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;&lt;p&gt;注意: 如果正在使用CMS或ParallelOldGC,而应用程序的垃圾收集停顿时间并不长,那么继续使用现在的垃圾收集器是个好主意. 使用最新的JDK时并不要求切换到G1收集器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;CMS的GC概述&lt;/h2&gt;
+&lt;h3&gt;分代GC(Generational GC)与 CMS&lt;/h3&gt;
+&lt;p&gt;并发标记清理(CMS, Concurrent Mark Sweep)收集器(也称为多并发低暂停的收集器)回收老年代内存(tenured generation). 它将垃圾回收中的绝大部分工作与应用程序的线程一起并发执行,以期能最小化暂停时间. 通常多并发低暂停收集器收集器不复制或也不压缩存活的对象. 垃圾回收不移动存活的对象, 如果产生内存碎片问题,就会分配/占用更大的堆内存空间。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;注意: 年轻代使用的CMS收集器也和并行收集器采用一样的算法. 
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;CMS 垃圾收集阶段划分(Collection Phases)&lt;/p&gt;
+&lt;p&gt;CMS 收集器在老年代堆内存的回收中执行分为以下阶段:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:center"&gt;阶段&lt;/th&gt;
+&lt;th style="text-align:center"&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;(1) 初始标记 (Initial Mark)&lt;/td&gt;
+&lt;td style="text-align:center"&gt;(Stop the World Event,所有应用线程暂停) 在老年代(old generation)中的对象, 如果从年轻代(young generation)中能访问到, 则被 “标记,marked” 为可达的(reachable).对象在旧一代“标志”可以包括这些对象可能可以从年轻一代。暂停时间一般持续时间较短,相对小的收集暂停时间.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;(2) 并发标记 (Concurrent Marking)&lt;/td&gt;
+&lt;td style="text-align:center"&gt;在Java应用程序线程运行的同时遍历老年代(tenured generation)的可达对象图。扫描从被标记的对象开始,直到遍历完从root可达的所有对象. 调整器(mutators)在并发阶段的2、3、5阶段执行,在这些阶段中新分配的所有对象(包括被提升的对象)都立刻标记为存活状态.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;(3) 再次标记(Remark)&lt;/td&gt;
+&lt;td style="text-align:center"&gt;(Stop the World Event, 所有应用线程暂停) 查找在并发标记阶段漏过的对象，这些对象是在并发收集器完成对象跟踪之后由应用线程更新的.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;(4) 并发清理(Concurrent Sweep)&lt;/td&gt;
+&lt;td style="text-align:center"&gt;回收在标记阶段(marking phases)确定为不可及的对象. 死对象的回收将此对象占用的空间增加到一个空闲列表(free list),供以后的分配使用。死对象的合并可能在此时发生. 请注意,存活的对象并没有被移动.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;(5) 重置(Resetting)&lt;/td&gt;
+&lt;td style="text-align:center"&gt;清理数据结构,为下一个并发收集做准备.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;CMS的GC步骤&lt;/h3&gt;
+&lt;p&gt;接下来,让我们一步步地讲述CMS收集器的操作.&lt;/p&gt;
+&lt;p&gt;1、 CMS的堆内存结构(Heap Structure)&lt;/p&gt;
+&lt;p&gt;堆内存被分为3个空间.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 69.75190839694656" data-width="731" data-height="524"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b27ef73399a2c2a885361fef0aae5fd2.png" alt="jvm-gc-g1-005.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-005.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;年轻代(Young generation)分为 1个新生代空间(Eden)和2个存活区(survivor spaces). 老年代(Old generation)是一大块连续的空间, 垃圾回收(Object collection)就地解决(is done in place), 除了 Full GC, 否则不会进行压缩(compaction).&lt;/p&gt;
+&lt;p&gt;2、 CMS 年轻代(Young) GC 的工作方式&lt;/p&gt;
+&lt;p&gt;年轻代(young generation)用高亮的绿色表示, 老年代(old generation)用蓝色表示。如果程序运行了一段时间,那么 CMS 看起来就像下图这个样子. 对象散落在老年代中的各处地方.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 61.52623211446741" data-width="774" data-height="629"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/9611d94b3f72dc018ca5237a3b7c92c1.png" alt="jvm-gc-g1-006.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-006.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在使用 CMS 时, 老年代的对象回收就地进行(deallocated in place). 他们不会被移动到其他地方. 除了 Full GC, 否则内存空间不会进行压缩.&lt;/p&gt;
+&lt;p&gt;3、 年轻代垃圾回收(Young Generation Collection)&lt;/p&gt;
+&lt;p&gt;Eden 区和 survivor 区中的存活对象被拷贝到另一个空的 survivor 区. 存活时间更长,达到阀值的对象会被提升到老年代(promoted to old generation).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 67.43542435424354" data-width="731" data-height="542"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3fb4c858fa5e67b2475f40df2aec0d1f.png" alt="jvm-gc-g1-007.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-007.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4、 年轻代(Young) GC 之后&lt;/p&gt;
+&lt;p&gt;年轻代(Young)进行一次垃圾回收之后, Eden 区被清理干净(cleared),两个 survivor 区中的一个也被清理干净了. 如下图所示:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 64.47140381282496" data-width="744" data-height="577"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/5049ffc3255510ad33748f0e84ed211a.png" alt="jvm-gc-g1-008.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-008.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;图中新提升的对象用深蓝色来标识. 绿色的部分是年轻代中存活的对象,但还没被提升到老年代中.&lt;/p&gt;
+&lt;p&gt;5、 CMS 的老年代回收(Old Generation Collection)&lt;/p&gt;
+&lt;p&gt;两次 stop the world 事件发生在: 初始标记(initial mark)以及重新标记(remark)阶段. 当老年代达到一定的占有率时,CMS 垃圾回收器就开始工作.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 63.273615635179155" data-width="777" data-height="614"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f50b54fa9e3fabad08aa947d94711e78.png" alt="jvm-gc-g1-009.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-009.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;(1) 初始标记(Initial mark)阶段的停顿时间很短,在此阶段存活的(live,reachable,可及的) 对象被记下来.&lt;/p&gt;
+&lt;p&gt;(2) 并发标记(Concurrent marking)在程序继续运行的同时找出存活的对象.&lt;/p&gt;
+&lt;p&gt;最后, 在第(3)阶段(remark phase), 查找在第(2)阶段(concurrent marking)中错过的对象.&lt;/p&gt;
+&lt;p&gt;6、 老年代回收 – 并发清理(Concurrent Sweep)&lt;/p&gt;
+&lt;p&gt;在前面阶段未被标记的对象将会就地释放(deallocated in place). 此处没有压缩(compaction).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 66.18887015177066" data-width="785" data-height="593"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/603f54d2638cc0dcd3fd056dfe1b373f.png" alt="jvm-gc-g1-010.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-010.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;备注: 未标记(Unmarked)的对象 == 已死对象(Dead Objects)&lt;/p&gt;
+&lt;p&gt;7、 老年代回收 – 清理之后(After Sweeping)&lt;/p&gt;
+&lt;p&gt;在第(4)步(Sweeping phase)之后, 可以看到很多内存被释放了. 还应该注意到,这里并没有执行内存压缩整理(no compaction).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 78.48324514991182" data-width="890" data-height="567"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/7a03b1faa5310e5e4cb1732255996103.png" alt="jvm-gc-g1-011.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-011.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;最后, CMS 收集器进入(move through)第(5)阶段, 重置(resetting phase), 然后等候下一次的 GC 阀值到来(GC threshold).&lt;/p&gt;
+&lt;h2&gt;G1垃圾收集器概述&lt;/h2&gt;
+&lt;h3&gt;一步步介绍G1&lt;/h3&gt;
+&lt;p&gt;G1 收集器采用一种不同的方式来分配堆. 下面通过图解的方式一步步地讲述 G1 系统.&lt;/p&gt;
+&lt;p&gt;1、 G1的堆内存结构&lt;/p&gt;
+&lt;p&gt;堆内存被划分为固定大小的多个区域.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 85.9344894026975" data-width="892" data-height="519"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/6959b103c8d966e6494b4a34db572ea1.png" alt="jvm-gc-g1-012.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-012.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;每个 heap 区(Region)的大小在 JVM 启动时就确定了. JVM 通常生成 2000 个左右的heap区, 根据堆内存的总大小,区的 size 范围允许为 1Mb 到 32Mb.&lt;/p&gt;
+&lt;p&gt;2、 G1 堆空间分配&lt;/p&gt;
+&lt;p&gt;实际上,这些区域(regions)被映射为逻辑上的 Eden, Survivor, 和 old generation(老年代)空间.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 88.52941176470588" data-width="903" data-height="510"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/e63ca463f966ae9c3033b6bff49874c6.png" alt="jvm-gc-g1-013.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-013.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;图中的颜色标识了每一个区域属于哪个角色. 存活的对象从一块区域转移(复制或移动)到另一块区域。设计成 heap 区的目的是为了并行地进行垃圾回收(的同时停止/或不停止其他应用程序线程).&lt;/p&gt;
+&lt;p&gt;如图所示,heap 区可以分配为 Eden, Survivor, 或 old generation(老年代)区. 此外,还有第四种类型的对象被称为巨无霸区域(Humongous regions),这种巨无霸区是设计了用来保存比标准块(standard region)大 50% 及以上的对象, 它们存储在一组连续的区中. 最后一个类型是堆内存中的未使用区(unused areas).&lt;/p&gt;
+&lt;p&gt;备注: 截止英文原文发表时,巨无霸对象的回收还没有得到优化. 因此,您应该尽量避免创建太大(大于32MB?)的对象.&lt;/p&gt;
+&lt;p&gt;3、 G1中的年轻代(Young Generation)&lt;/p&gt;
+&lt;p&gt;堆被分为大约 2000 个区. 最小 size 为1 Mb, 最大 size 为 32Mb. 蓝色的区保存老年代对象,绿色区域保存年轻代对象.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 87.21153846153847" data-width="907" data-height="520"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/57436d2032b53c172a86cbf0bf8f59d4.png" alt="jvm-gc-g1-014.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-014.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注意G1中各代的 heap 区不像老一代垃圾收集器一样要求各部分是连续的.&lt;/p&gt;
+&lt;p&gt;4、 G1 中的一次年轻代 GC&lt;/p&gt;
+&lt;p&gt;存活的对象被转移(copied or moved)到一个/或多个存活区(survivor regions). 如果存活时间达到阀值,这部分对象就会被提升到老年代(promoted to old generation regions).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 83.9851024208566" data-width="902" data-height="537"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/6b7449fc5e735d887adeaab3d4be08d3.png" alt="jvm-gc-g1-015.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-015.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;此时会有一次 stop the world(STW)暂停. 会计算出 Eden 大小和 survivor 大小,给下一次年轻代 GC 使用. 清单统计信息(Accounting)保存了用来辅助计算 size. 诸如暂停时间目标之类的东西也会纳入考虑.&lt;/p&gt;
+&lt;p&gt;这种方法使得调整各代区域的尺寸很容易, 让其更大或更小一些以满足需要.&lt;/p&gt;
+&lt;p&gt;5、 G1 的一次年轻代GC完成后&lt;/p&gt;
+&lt;p&gt;存活对象被转移到存活区(survivor regions) 或 老年代(old generation regions).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 85.67362428842505" data-width="903" data-height="527"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d3210cc46e5cb0d87431a2d4f2c67d9b.png" alt="jvm-gc-g1-016.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-016.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;刚刚被提升上来的对象用深绿色显示. Survivor 区用绿色表示.&lt;/p&gt;
+&lt;p&gt;总结起来,G1 的年轻代收集归纳如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;堆一整块内存空间,被分为多个heap区(regions).
+
+年轻代内存由一组不连续的heap区组成. 这使得在需要时很容易进行容量调整.
+
+年轻代的垃圾收集,或者叫 young GCs, 会有 stop the world 事件. 在操作时所有的应用程序线程都会被暂停(stopped).
+
+年轻代 GC 通过多线程并行进行.
+
+存活的对象被拷贝到新的 survivor 区或者老年代.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Old Generation Collection with G1&lt;/h3&gt;
+&lt;p&gt;和 CMS 收集器相似, G1 收集器也被设计为用来对老年代的对象进行低延迟(low pause)的垃圾收集. 下表描述了 G1 收集器在老年代进行垃圾回收的各个阶段.&lt;/p&gt;
+&lt;p&gt;G1 收集阶段 – 并发标记周期阶段(Concurrent Marking Cycle Phases)&lt;/p&gt;
+&lt;p&gt;G1 收集器在老年代堆内存中执行下面的这些阶段. 注意有些阶段也是年轻代垃圾收集的一部分.&lt;/p&gt;
+&lt;p&gt;(1) 初始标记(Initial Mark):(Stop the World Event,所有应用线程暂停) 此时会有一次 stop the world(STW)暂停事件. 在 G1 中, 这附加在(piggybacked on)一次正常的年轻代 GC. 标记可能有引用指向老年代对象的 survivor 区(根 regions).&lt;/p&gt;
+&lt;p&gt;(2) 扫描根区域(Root Region Scanning):扫描 survivor 区中引用到老年代的引用. 这个阶段应用程序的线程会继续运行. 在年轻代 GC 可能发生之前此阶段必须完成.&lt;/p&gt;
+&lt;p&gt;(3) 并发标记(Concurrent Marking) 在整个堆中查找活着的对象. 此阶段应用程序的线程正在运行. 此阶段可以被年轻代GC打断(interrupted).&lt;/p&gt;
+&lt;p&gt;(4) 再次标记(Remark):(Stop the World Event,所有应用线程暂停) 完成堆内存中存活对象的标记. 使用一个叫做 snapshot-at-the-beginning(SATB, 起始快照)的算法, 该算法比CMS所使用的算法要快速的多.&lt;/p&gt;
+&lt;p&gt;(5) 清理(Cleanup):(Stop the World Event,所有应用线程暂停,并发执行)在存活对象和完全空闲的区域上执行统计(accounting). (Stop the world)擦写 Remembered Sets. (Stop the world)重置空 heap 区并将他们返还给空闲列表(free list). (Concurrent, 并发)&lt;/p&gt;
+&lt;p&gt;(*) 拷贝(Copying):(Stop the World Event,所有应用线程暂停) 产生STW事件来转移或拷贝存活的对象到新的未使用的heap区(new unused regions). 只在年轻代发生时日志会记录为 [GC pause (young)]. 如果在年轻代和老年代一起执行则会被日志记录为 [GC Pause (mixed)].&lt;/p&gt;
+&lt;p&gt;G1 老年代收集步骤&lt;/p&gt;
+&lt;p&gt;顺着定义的阶段,让我们看看G1收集器如何处理老年代(old generation).&lt;/p&gt;
+&lt;p&gt;6、 初始标记阶段(Initial Marking Phase)&lt;/p&gt;
+&lt;p&gt;存活对象的初始标记被固定在年轻代垃圾收集里面. 在日志中被记为 GC pause (young)(inital-mark)。&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 87.1124031007752" data-width="899" data-height="516"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f831787dcb2853dbbae12bb719ea8b02.png" alt="jvm-gc-g1-017.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-017.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;7、 并发标记阶段(Concurrent Marking Phase)&lt;/p&gt;
+&lt;p&gt;如果找到空的区域(如用红叉“X”标示的区域), 则会在 Remark 阶段立即移除. 当然,”清单(accounting)”信息决定了活跃度(liveness)的计算.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 84.14634146341463" data-width="897" data-height="533"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/78e3e9ad1c8c148cc69681cd6791195b.png" alt="jvm-gc-g1-018.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-018.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;8、 再次标记阶段(Remark Phase)&lt;/p&gt;
+&lt;p&gt;空的区域被移除并回收。现在计算所有区域的活跃度(Region liveness).&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 83.80681818181819" data-width="885" data-height="528"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b6614de7e5cc036bd1542a57b77163b6.png" alt="jvm-gc-g1-019.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-019.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;9、 拷贝/清理阶段(Copying/Cleanup)&lt;/p&gt;
+&lt;p&gt;G1 选择“活跃度(liveness)”最低的区域, 这些区域可以最快的完成回收. 然后这些区域和年轻代 GC 在同时被垃圾收集 . 在日志被标识为 [GC pause (mixed)]. 所以年轻代和老年代都在同一时间被垃圾收集.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 85.34482758620689" data-width="891" data-height="522"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/145a6ea032229c41a1cefde1bb0f8d19.png" alt="jvm-gc-g1-020.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-020.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;10、拷贝/清理之后(After Copying/Cleanup)&lt;/p&gt;
+&lt;p&gt;所选择的区域被收集和压缩到下图所示的深蓝色区域和深绿色区域.&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 84.64566929133858" data-width="860" data-height="508"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/890461c27c935f29bf13fc16b1653521.png" alt="jvm-gc-g1-021.png" /&gt;&lt;figcaption&gt;jvm-gc-g1-021.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3&gt;老年代GC(Old Generation GC)总结&lt;/h3&gt;
+&lt;p&gt;总结下来,G1对老年代的GC有如下几个关键点:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;并发标记清理阶段(Concurrent Marking Phase)
+    活跃度信息在程序运行的时候被并行计算出来
+    活跃度(liveness)信息标识出哪些区域在转移暂停期间最适合回收.
+    不像CMS一样有清理阶段(sweeping phase).
+再次标记阶段(Remark Phase)
+    使用的 Snapshot-at-the-Beginning (SATB, 开始快照) 算法比起 CMS所用的算法要快得多.
+    完全空的区域直接被回收.
+拷贝/清理阶段(Copying/Cleanup Phase)
+    年轻代与老年代同时进行回收.
+    老年代的选择基于其活跃度(liveness).
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;命令行参数与最佳实践&lt;/h2&gt;
+&lt;h3&gt;命令行基本参数&lt;/h3&gt;
+&lt;p&gt;要启用 G1 收集器请使用: -XX:+UseG1GC&lt;/p&gt;
+&lt;p&gt;下面是启动 Java2Demo 示例程序的命令行示例. Java2Demo 位于下载 JDK demos and samples后解压的文件夹中:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;java -Xmx50m -Xms50m -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;关键命令行开关&lt;/h3&gt;
+&lt;p&gt;-XX:+UseG1GC – 让 JVM 使用 G1 垃圾收集器.&lt;/p&gt;
+&lt;p&gt;-XX:MaxGCPauseMillis=200 – 设置最大GC停顿时间(GC pause time)指标(target). 这是一个软性指标(soft goal), JVM 会尽力去达成这个目标. 所以有时候这个目标并不能达成. 默认值为 200 毫秒.&lt;/p&gt;
+&lt;p&gt;-XX:InitiatingHeapOccupancyPercent=45 – 启动并发 GC 时的堆内存占用百分比. G1 用它来触发并发 GC 周期,基于整个堆的使用率,而不只是某一代内存的使用比例。值为 0 则表示“一直执行GC循环)’. 默认值为 45 (例如, 全部的 45% 或者使用了45%).&lt;/p&gt;
+&lt;h3&gt;最佳实践&lt;/h3&gt;
+&lt;p&gt;在使用 G1 作为垃圾收集器时,你应该遵循下面这些最佳实践的指导.&lt;/p&gt;
+&lt;p&gt;不要设置年轻代的大小(Young Generation Size)&lt;/p&gt;
+&lt;p&gt;假若通过 -Xmn显式地指定了年轻代的大小, 则会干扰到 G1收集器的默认行为.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;G1在垃圾收集时将不再关心暂停时间指标. 所以从本质上说,设置年轻代的大小将禁用暂停时间目标.
+G1在必要时也不能够增加或者缩小年轻代的空间. 因为大小是固定的,所以对更改大小无能为力.
+响应时间指标(Response Time Metrics)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置 XX:MaxGCPauseMillis=&lt;N&gt;时不应该使用平均响应时间(ART, average response time) 作为指标,而应该考虑使用目标时间的90%或者更大作为响应时间指标. 也就是说90%的用户(客户端/?)请求响应时间不会超过预设的目标值. 记住,暂停时间只是一个目标,并不能保证总是得到满足.&lt;/p&gt;
+&lt;h3&gt;什么是转移失败(Evacuation Failure)?&lt;/h3&gt;
+&lt;p&gt;对 survivors 或 promoted objects 进行 GC 时如果 JVM 的 heap 区不足就会发生提升失败(promotion failure). 堆内存不能继续扩充,因为已经达到最大值了. 当使用 -XX:+PrintGCDetails 时将会在 GC 日志中显示 to-space overflow (to-空间溢出)。&lt;/p&gt;
+&lt;p&gt;这是很昂贵的操作!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GC仍继续所以空间必须被释放.
+
+拷贝失败的对象必须被放到正确的位置(tenured in place).
+
+CSet指向区域中的任何 RSets 更新都必须重新生成(regenerated).
+
+所有这些步骤都是代价高昂的.
+
+如何避免转移失败(Evacuation Failure)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;要避免避免转移失败, 考虑采纳下列选项.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(1)增加堆内存大小
+
+    增加 -XX:G1ReservePercent=n, 其默认值是 10.
+
+    G1创建了一个假天花板(false ceiling),在需要更大 ‘to-space’ 的情况下会尝试从保留内存获取(leave the reserve memory free).
+
+(2)更早启动标记周期(marking cycle)
+
+(3)通过采用 -XX:ConcGCThreads=n 选项增加标记线程(marking threads)的数量.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;G1 的 GC 参数完全列表&lt;/h3&gt;
+&lt;p&gt;下面是完整的 G1 的 GC 开关参数列表. 在使用时请记住上面所述的最佳实践.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;
+&lt;th style="text-align:center"&gt;选项/默认值&lt;/th&gt;
+&lt;th style="text-align:center"&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:+UseG1GC&lt;/td&gt;
+&lt;td style="text-align:center"&gt;使用 G1 (Garbage First) 垃圾收集器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:MaxGCPauseMillis=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;设置最大GC停顿时间(GC pause time)指标(target). 这是一个软性指标(soft goal), JVM 会尽量去达成这个目标.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:InitiatingHeapOccupancyPercent=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;启动并发GC周期时的堆内存占用百分比. G1之类的垃圾收集器用它来触发并发GC周期,基于整个堆的使用率,而不只是某一代内存的使用比. 值为 0 则表示”一直执行GC循环”. 默认值为 45.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:NewRatio=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;新生代与老生代(new/old generation)的大小比例(Ratio). 默认值为 2.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:SurvivorRatio=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;eden/survivor 空间大小的比例(Ratio). 默认值为 8.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:MaxTenuringThreshold=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;提升年老代的最大临界值(tenuring threshold). 默认值为 15.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:ParallelGCThreads=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;设置垃圾收集器在并行阶段使用的线程数,默认值随JVM运行的平台不同而不同.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:ConcGCThreads=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;并发垃圾收集器使用的线程数量. 默认值随JVM运行的平台不同而不同.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:G1ReservePercent=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;设置堆内存保留为假天花板的总量,以降低提升失败的可能性. 默认值是 10.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align:center"&gt;-XX:G1HeapRegionSize=n&lt;/td&gt;
+&lt;td style="text-align:center"&gt;使用G1时Java堆会被分为大小统一的的区(region)。此参数可以指定每个heap区的大小. 默认值将根据 heap size 算出最优解. 最小值为 1Mb, 最大值为 32Mb.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;记录G1的GC日志&lt;/h2&gt;
+&lt;h3&gt;记录G1的GC日志&lt;/h3&gt;
+&lt;p&gt;我们要介绍的最后一个主题是使用日志信息来分享G1收集器的性能. 本节简要介绍垃圾收集的相关参数,以及日志中打印的相关信息.&lt;/p&gt;
+&lt;p&gt;设置日志细节(Log Detail)&lt;/p&gt;
+&lt;p&gt;可以设置3种不同的日志级别.&lt;/p&gt;
+&lt;p&gt;(1) -verbosegc (等价于 -XX:+PrintGC) 设置日志级别为 好 fine.&lt;/p&gt;
+&lt;p&gt;日志输出示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[GC pause (G1 Humongous Allocation) (young) (initial-mark) 24M- &amp;gt;21M(64M), 0.2349730 secs]
+[GC pause (G1 Evacuation Pause) (mixed) 66M-&amp;gt;21M(236M), 0.1625268 secs]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(2) -XX:+PrintGCDetails 设置日志级别为 更好 finer. 使用此选项会显示以下信息:&lt;/p&gt;
+&lt;p&gt;每个阶段的 Average, Min, 以及 Max 时间.&lt;/p&gt;
+&lt;p&gt;根扫描(Root Scan), RSet 更新(同时处理缓冲区信息), RSet 扫描(Scan), 对象拷贝(Object Copy), 终止(Termination, 包括尝试次数).&lt;/p&gt;
+&lt;p&gt;还显示 “other” 执行时间, 比如选择 CSet, 引用处理(reference processing), 引用排队(reference enqueuing) 以及释放(freeing) CSet等.&lt;/p&gt;
+&lt;p&gt;显示 Eden, Survivors 以及总的 Heap 占用信息(occupancies).&lt;/p&gt;
+&lt;p&gt;日志输出示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Ext Root Scanning (ms): Avg: 1.7 Min: 0.0 Max: 3.7 Diff: 3.7]
+[Eden: 818M(818M)-&amp;gt;0B(714M) Survivors: 0B-&amp;gt;104M Heap: 836M(4096M)-&amp;gt;409M(4096M)]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(3) -XX:+UnlockExperimentalVMOptions -XX:G1LogLevel=finest 设置日志级别为 最好 finest. 和 finer 级别类似, 包含每个 worker 线程信息.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Ext Root Scanning (ms): 2.1 2.4 2.0 0.0
+           Avg: 1.6 Min: 0.0 Max: 2.4 Diff: 2.3]
+       [Update RS (ms):  0.4  0.2  0.4  0.0
+           Avg: 0.2 Min: 0.0 Max: 0.4 Diff: 0.4]
+           [Processed Buffers : 5 1 10 0
+           Sum: 16, Avg: 4, Min: 0, Max: 10, Diff: 10]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Determining Time&lt;/p&gt;
+&lt;p&gt;有两个参数决定了GC日志中打印的时间显示形式.&lt;/p&gt;
+&lt;p&gt;(1) -XX:+PrintGCTimeStamps – 显示从JVM启动时算起的运行时间.&lt;/p&gt;
+&lt;p&gt;日志输出示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1.729: [GC pause (young) 46M-&amp;gt;35M(1332M), 0.0310029 secs]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(2) -XX:+PrintGCDateStamps – 在每条记录前加上日期时间.&lt;/p&gt;
+&lt;p&gt;日志输出示例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2012-05-02T11:16:32.057+0200: [GC pause (young) 46M-&amp;gt;35M(1332M), 0.0317225 secs]&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;理解 G1 日志&lt;/h3&gt;
+&lt;p&gt;为了使你更好地理解 GC 日志, 本节通过实际的日志输出，定义了许多专业术语. 下面的例子显示了 GC 日志的内容,并加上日志中出现的术语和值的解释说明.&lt;/p&gt;
+&lt;p&gt;Note: 更多信息请参考 Poonam Bajaj 的博客： G1 垃圾回收日志.&lt;/p&gt;
+&lt;h3&gt;G1 日志相关术语&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Clear CT
+
+CSet
+
+External Root Scanning
+
+Free CSet
+
+GC Worker End
+
+GC Worker Other
+
+Object Copy
+
+Other
+
+Parallel Time
+
+Ref Eng
+
+Ref Proc
+
+Scanning Remembered Sets
+
+Termination Time
+
+Update Remembered Set
+
+Worker Start
+
+Parallel Time(并行阶段耗时)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;414.557: [GC pause (young), 0.03039600 secs] [Parallel Time: 22.9 ms]
+[GC Worker Start (ms): 7096.0 7096.0 7096.1 7096.1 706.1 7096.1 7096.1 7096.1 7096.2 7096.2 7096.2 7096.2
+       Avg: 7096.1, Min: 7096.0, Max: 7096.2, Diff: 0.2]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Parallel Time – 主要并行部分运行停顿的整体时间&lt;/p&gt;
+&lt;p&gt;Worker Start – 各个工作线程(workers)启动时的时间戳(Timestamp)&lt;/p&gt;
+&lt;p&gt;Note: 日志是根据 thread id 排序,并且每条记录都是一致的.&lt;/p&gt;
+&lt;p&gt;External Root Scanning(外部根扫描)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[Ext Root Scanning (ms): 3.1 3.4 3.4 3.0 4.2 2.0 3.6 3.2 3.4 7.7 3.7 4.4
+     Avg: 3.8, Min: 2.0, Max: 7.7, Diff: 5.7]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;External root scanning – 扫描外部根花费的时间(如指向堆内存的系统词典(system dictionary)等部分)&lt;/p&gt;
+&lt;h3&gt;Update Remembered Set(更新 RSet)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Update RS (ms): 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 Avg: 0.0, Min: 0.0, Max: 0.1, Diff: 0.1]
+   [Processed Buffers : 26 0 0 0 0 0 0 0 0 0 0 0
+    Sum: 26, Avg: 2, Min: 0, Max: 26, Diff: 26]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Update Remembered Set – 必须更新在 pause 之前已经完成但尚未处理的缓冲. 花费的时间取决于 cards 的密度。cards 越多,耗费的时间就越长。&lt;/p&gt;
+&lt;h3&gt;Scanning Remembered Sets(扫描 RSets)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Scan RS (ms): 0.4 0.2 0.1 0.3 0.0 0.0 0.1 0.2 0.0 0.1 0.0 0.0 Avg: 0.1, Min: 0.0, Max: 0.4, Diff: 0.3]F
+Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Object Copy(对象拷贝)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Object Copy (ms): 16.7 16.7 16.7 16.9 16.0 18.1 16.5 16.8 16.7 12.3 16.4 15.7 Avg: 16.3, Min: 12.3, Max: 18.1, Diff: 5.8]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Object copy – 每个独立的线程在拷贝和转移对象时所消耗的时间.&lt;/p&gt;
+&lt;h3&gt;Termination Time(结束时间)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Termination (ms): 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+0.0 Avg: 0.0, Min: 0.0, Max: 0.0, Diff: 0.0] [Termination Attempts : 1 1 1 1 1 1 1 1 1 1 1 1 Sum: 12, Avg: 1, Min: 1, Max: 1, Diff: 0]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Termination time – 当 worker 线程完成了自己那部分对象的复制和扫描,就进入终止协议(termination protocol)。它查找未完成的工作(looks for work to steal), 一旦它完成就会再进入终止协议。 终止尝试记录(Termination attempt counts)所有查找工作的尝试次数(attempts to steal work).&lt;/p&gt;
+&lt;h3&gt;GC Worker End&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[GC Worker End (ms): 7116.4 7116.3 7116.4 7116.3 7116.4 7116.3 7116.4 7116.4 7116.4 7116.4 7116.3 7116.3
+    Avg: 7116.4, Min: 7116.3, Max: 7116.4, Diff:   0.1]
+[GC Worker (ms): 20.4 20.3 20.3 20.2 20.3 20.2 20.2 20.2 20.3 20.2 20.1 20.1
+     Avg: 20.2, Min: 20.1, Max: 20.4, Diff: 0.3]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;GC worker end time – 独立的 GC worker 停止时的时间戳.&lt;/p&gt;
+&lt;p&gt;GC worker time – 每个独立的 GC worker 线程消耗的时间.&lt;/p&gt;
+&lt;h3&gt;GC Worker Other&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[GC Worker Other (ms): 2.6 2.6 2.7 2.7 2.7 2.7 2.7 2.8 2.8 2.8 2.8 2.8
+    Avg: 2.7, Min: 2.6, Max: 2.8, Diff: 0.2]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;GC worker other – 每个 GC 线程中不能归属到之前列出的 worker 阶段的其他时间. 这个值应该很低. 过去我们见过很高的值,是由于JVM的其他部分的瓶颈引起的(例如在分层[Tiered]代码缓存[Code Cache]占有率的增加)。&lt;/p&gt;
+&lt;h3&gt;Clear CT&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Clear CT: 0.6 ms]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;清除 RSet 扫描元数据(scanning meta-data)的 card table 消耗的时间.&lt;/p&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Other: 6.8 ms]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他各种GC暂停的连续阶段花费的时间.&lt;/p&gt;
+&lt;h3&gt;CSet&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Choose CSet: 0.1 ms]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;敲定要进行垃圾回收的 region 集合时消耗的时间. 通常很小,在必须选择 old 区时会稍微长一点点.&lt;/p&gt;
+&lt;h3&gt;Ref Proc&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Ref Proc: 4.4 ms]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;处理 soft, weak, 等引用所花费的时间,不同于前面的GC阶段&lt;/p&gt;
+&lt;h3&gt;Ref Enq&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Ref Enq: 0.1 ms]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将 soft, weak, 等引用放置到待处理列表(pending list)花费的时间.&lt;/p&gt;
+&lt;h3&gt;Free CSet&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Free CSet: 2.0 ms]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;释放刚被垃圾收集的 heap区所消耗的时间,包括对应的remembered sets。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;在此 OBE 中, 您对Java JVM 中的 G1 垃圾收集器有了个大致的了解。首先你学到了为何堆和垃圾收集器是所有 Java JVM 的关键部分。接下来讲述了使用 CMS 和 G1 收集器进行垃圾回收的工作方式. 接下来,您了解了 G1 的命令行参数/开关以及和使用它们的最佳实践。最后,您了解了日志对象以及 GC 日志中的数据。&lt;/p&gt;
+</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-01-16T06:07:41.777193+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-XX:+PrintGCDetails
+-XX:+PrintGCDateStamps
+-XX:+PrintGCTimeStamps&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样配置以后，发生GC时输出的日志就类似于下面这种格式(为了显示方便,已手工折行):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2015-05-26T14:45:37.987-0200: 151.126: 
+  [GC (Allocation Failure) 151.126:
+    [DefNew: 629119K-&amp;gt;69888K(629120K), 0.0584157 secs]
+    1619346K-&amp;gt;1273247K(2027264K), 0.0585007 secs] 
+  [Times: user=0.06 sys=0.00, real=0.06 secs]
+
+2015-05-26T14:45:59.690-0200: 172.829: 
+  [GC (Allocation Failure) 172.829: 
+    [DefNew: 629120K-&amp;gt;629120K(629120K), 0.0000372 secs]
+    172.829: [Tenured: 1203359K-&amp;gt;755802K(1398144K), 0.1855567 secs]
+    1832479K-&amp;gt;755802K(2027264K),
+    [Metaspace: 6741K-&amp;gt;6741K(1056768K)], 0.1856954 secs]
+  [Times: user=0.18 sys=0.00, real=0.18 secs]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面的GC日志暴露了JVM中的一些信息。事实上，这个日志片段中发生了 2 次垃圾回收事件(Garbage Collection events)。其中一次清理的是年轻代(Young generation), 而第二次处理的是整个堆内存。下面我们来看，如何解读第一次GC事件，发生在年轻代中的小型GC(Minor GC):&lt;/p&gt;
+&lt;p&gt;2015-05-26T14:45:37.987-02001:151.1262:&lt;/p&gt;
+&lt;p&gt;[GC3(Allocation Failure4)151.126:&lt;/p&gt;
+&lt;p&gt;[DefNew5:629119K-&amp;gt;69888K6(629120K)7, 0.0584157 secs]
+1619346K-&amp;gt;1273247K8(2027264K)9,0.0585007 secs10]&lt;/p&gt;
+&lt;p&gt;[Times: user=0.06 sys=0.00, real=0.06 secs]11&lt;/p&gt;
+&lt;p&gt;1、 2015-05-26T14:45:37.987-0200 – GC事件(GC event)开始的时间点.&lt;/p&gt;
+&lt;p&gt;2、 151.126 – GC事件的开始时间,相对于JVM的启动时间,单位是秒(Measured in seconds).&lt;/p&gt;
+&lt;p&gt;3、 GC – 用来区分(distinguish)是 Minor GC 还是 Full GC 的标志(Flag). 这里的 GC 表明本次发生的是 Minor GC.&lt;/p&gt;
+&lt;p&gt;4、 Allocation Failure – 引起垃圾回收的原因. 本次GC是因为年轻代中没有任何合适的区域能够存放需要分配的数据结构而触发的.&lt;/p&gt;
+&lt;p&gt;5、 DefNew – 使用的垃圾收集器的名字. DefNew 这个名字代表的是: 单线程(single-threaded), 采用标记复制(mark-copy)算法的, 使整个JVM暂停运行(stop-the-world)的年轻代(Young generation) 垃圾收集器(garbage collector).&lt;/p&gt;
+&lt;p&gt;6、 629119K-&amp;gt;69888K – 在本次垃圾收集之前和之后的年轻代内存使用情况(Usage).&lt;/p&gt;
+&lt;p&gt;7、 (629120K) – 年轻代的总的大小(Total size).&lt;/p&gt;
+&lt;p&gt;8、 1619346K-&amp;gt;1273247K – 在本次垃圾收集之前和之后整个堆内存的使用情况(Total used heap).&lt;/p&gt;
+&lt;p&gt;9、 (2027264K) – 总的可用的堆内存(Total available heap).&lt;/p&gt;
+&lt;p&gt;10、 0.0585007 secs – GC事件的持续时间(Duration),单位是秒.&lt;/p&gt;
+&lt;p&gt;11、 [Times: user=0.06 sys=0.00, real=0.06 secs] – GC事件的持续时间,通过多种分类来进行衡量:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;user – 此次垃圾回收, 垃圾收集线程消耗的所有CPU时间(Total CPU time).
+
+sys – 操作系统调用(OS call) 以及等待系统事件的时间(waiting for system event)
+
+real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Serial Garbage Collector)只会使用单个线程, 所以 real time 等于 user 以及 system time 的总和.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过上面的分析, 我们可以计算出在垃圾收集期间, JVM 中的内存使用情况。在垃圾收集之前, 堆内存总的使用了 1.54G (1,619,346K)。其中, 年轻代使用了 614M(629,119k)。可以算出老年代使用的内存为: 967M(990,227K)。&lt;/p&gt;
+&lt;p&gt;下一组数据( -&amp;gt; 右边)中蕴含了更重要的结论, 年轻代的内存使用在垃圾回收后下降了 546M(559,231k), 但总的堆内存使用(total heap usage)只减少了 337M(346,099k). 通过这一点,我们可以计算出, 有 208M(213,132K) 的年轻代对象被提升到老年代(Old)中。&lt;/p&gt;
+&lt;p&gt;这个GC事件可以用下面的示意图来表示, 上方表示GC之前的内存使用情况, 下方表示结束后的内存使用情况:&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 221.3740458015267" data-width="580" data-height="131"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d0f813f8ac7b4a2fed102209354adfb4.png" alt="jvm-gc-log-001.png" /&gt;&lt;figcaption&gt;jvm-gc-log-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry></feed>
