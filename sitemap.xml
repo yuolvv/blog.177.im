@@ -21,6 +21,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 
     <url>
+        <loc>/archives/mysql-innodb-autoincrement/</loc>
+        <lastmod>2020-02-02</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>/archives/mysql-innodb/</loc>
+        <lastmod>2020-02-01</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
         <loc>/archives/java-interview-dubbo/</loc>
         <lastmod>2020-01-23</lastmod>
         <changefreq>always</changefreq>
