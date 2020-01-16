@@ -22,7 +22,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
         <loc>/archives/jvm-gc-log/</loc>
-        <lastmod>2020-02-06</lastmod>
+        <lastmod>2020-02-07</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
     </url>
