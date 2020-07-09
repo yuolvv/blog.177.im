@@ -7,19 +7,17 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="177.im,177,听风行,blog,博客" />
-    <meta name="generator" content="Maverick 1.1" />
+    <meta name="generator" content="Maverick 1.0" />
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/34aa01aed721cdeec7dff5ceef2aeac8.json"
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/bd3d7333876a548942f9e745e30220ee.json"
         }
     </script>
     
@@ -67,6 +65,11 @@
         <div class="container">
             <header id="ga-header">
                 <div first>
+                    <aside id="ga-logo">
+                        <a href="/" target="_self">
+                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
+                        </a>
+                    </aside>
                     <aside id="ga-brand">
                         <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
                         <p>天青色等烟雨</p>
@@ -75,6 +78,9 @@
                 <div second id="ga-nav">
                     <nav class="navs">
                         <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                    <nav class="social-links">
+                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
                     </nav>
                 </div>
             </header>
@@ -148,11 +154,11 @@ Java 7 Update 9 或更高版本
 <h2>探索 JVM 体系架构</h2>
 <h3>Hotspot 架构</h3>
 <p>HotSpot JVM 有一个稳定强悍的架构, 支持强大的功能与特性, 具备实现高性能和大规模可伸缩性的能力。例如,HotSpot JVM JIT 编译器能动态进行优化生成。换句话说,他们运行 Java 程序时,会针对底层系统架构动态生成高性能的本地机器指令。此外,通过成熟的演进和运行时环境的持续工程,加上多线程垃圾收集器,HotSpot JVM 即使实在大型计算机系统上也能获得很高的伸缩性.</p>
-<p><figure style="flex: 66.66666666666667" ><img width="960" height="720" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3d977e1aa195a292cc800c5d384d3792.png" /><figcaption>jvm-gc-g1-001.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 66.66666666666667" data-width="960" data-height="720"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3d977e1aa195a292cc800c5d384d3792.png" alt="jvm-gc-g1-001.png" /><figcaption>jvm-gc-g1-001.png</figcaption></figure></p>
 <p>JVM 的主要组件包括: 类加载器(class loader), 运行时数据区(runtime data areas), 以及执行引擎(execution engine).</p>
 <h3>Hotspot 关键部分</h3>
 <p>与性能(performance)有关的部分是 JVM 最重要的组件,下图中用高亮的颜色来显示.</p>
-<p><figure style="flex: 66.66666666666667" ><img width="960" height="720" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/a8f69fabf50d49cda880de8e031b8185.png" /><figcaption>jvm-gc-g1-002.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 66.66666666666667" data-width="960" data-height="720"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/a8f69fabf50d49cda880de8e031b8185.png" alt="jvm-gc-g1-002.png" /><figcaption>jvm-gc-g1-002.png</figcaption></figure></p>
 <p>对 JVM 进行性能调优时有三大组件需要重点关注。堆(Heap)是存放对象的内存空间。这个区域由JVM启动时选择的垃圾收集器进行管理。大多数调优参数都是调整堆内存的大小,以及根据实际情况选择最合适的垃圾收集器. JIT 编译器也对性能有很大的影响, 但新版本的 JVM 调优中很少需要关注.</p>
 <h3>性能基础</h3>
 <p>大多数情况下对 Java 程序进行调优, 主要关注两个目标之一: 响应速度(responsiveness) 和/或 吞吐量(throughput). 下面的教程中我们将讲述这些概念.</p>
@@ -196,10 +202,10 @@ Java 7 Update 9 或更高版本
 <p>G1的长期目标是取代CMS(Concurrent`` Mark-Sweep Collector, 并发标记-清除). 因为特性的不同使 G1 成为比 CMS 更好的解决方案. 一个区别是,G1 是一款压缩型的收集器.G1 通过有效的压缩完全避免了对细微空闲内存空间的分配,不用依赖于 regions，这不仅大大简化了收集器，而且还消除了潜在的内存碎片问题。除压缩以外，G1 的垃圾收集停顿也比 CMS 容易估计，也允许用户自定义所希望的停顿参数(pause targets)</p>
 <h3>G1 操作概述</h3>
 <p>上一代的垃圾收集器(串行 serial, 并行 parallel, 以及 CMS )都把堆内存划分为固定大小的三个部分: 年轻代(young generation), 年老代(old generation), 以及持久代(permanent generation).</p>
-<p><figure style="flex: 93.5672514619883" ><img width="960" height="513" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/272244ef29e13f0908c4375b73bf662f.png" /><figcaption>jvm-gc-g1-003.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 93.5672514619883" data-width="960" data-height="513"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/272244ef29e13f0908c4375b73bf662f.png" alt="jvm-gc-g1-003.png" /><figcaption>jvm-gc-g1-003.png</figcaption></figure></p>
 <p>内存中的每个对象都存放在这三个区域中的一个.</p>
 <p>而 G1 收集器采用一种不同的方式来管理堆内存.</p>
-<p><figure style="flex: 76.63716814159292" ><img width="866" height="565" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/c3ee2b862aec77f99d0cfa4b9902043b.png" /><figcaption>jvm-gc-g1-004.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 76.63716814159292" data-width="866" data-height="565"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/c3ee2b862aec77f99d0cfa4b9902043b.png" alt="jvm-gc-g1-004.png" /><figcaption>jvm-gc-g1-004.png</figcaption></figure></p>
 <p>堆内存被划分为多个大小相等的 heap 区,每个 heap 区都是逻辑上连续的一段内存(virtual memory). 其中一部分区域被当成老一代收集器相同的角色(eden, survivor, old), 但每个角色的区域个数都不是固定的。这在内存使用上提供了更多的灵活性。</p>
 <p>G1执行垃圾回收的处理方式与 CMS 相似. G1 在全局标记阶段(global marking phase)并发执行, 以确定堆内存中哪些对象是存活的。标记阶段完成后,G1就可以知道哪些heap区的empty空间最大。</p>
 <p>它会首先回收这些区,通常会得到大量的自由空间. 这也是为什么这种垃圾收集方法叫做Garbage-First(垃圾优先)的原因。顾名思义, G1 将精力集中放在可能布满可收回对象的区域, 可回收对象(reclaimable objects)也就是所谓的垃圾. G1 使用暂停预测模型(pause prediction model)来达到用户定义的目标暂停时间。</p>
@@ -222,8 +228,7 @@ Java 7 Update 9 或更高版本
 受够了太长的垃圾回收或内存整理时间(超过0.5~1秒)
 
 </code></pre>
-<blockquote>
-<p>注意: 如果正在使用CMS或ParallelOldGC,而应用程序的垃圾收集停顿时间并不长,那么继续使用现在的垃圾收集器是个好主意. 使用最新的JDK时并不要求切换到G1收集器。</p>
+<blockquote><p>注意: 如果正在使用CMS或ParallelOldGC,而应用程序的垃圾收集停顿时间并不长,那么继续使用现在的垃圾收集器是个好主意. 使用最新的JDK时并不要求切换到G1收集器。</p>
 </blockquote>
 <h2>CMS的GC概述</h2>
 <h3>分代GC(Generational GC)与 CMS</h3>
@@ -235,32 +240,31 @@ Java 7 Update 9 或更高版本
 <p>CMS 垃圾收集阶段划分(Collection Phases)</p>
 <p>CMS 收集器在老年代堆内存的回收中执行分为以下阶段:</p>
 <table>
-<thead>
-<tr>
-  <th style="text-align:center">阶段</th>
-  <th style="text-align:center">说明</th>
+<thead><tr>
+<th style="text-align:center">阶段</th>
+<th style="text-align:center">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="text-align:center">(1) 初始标记 (Initial Mark)</td>
-  <td style="text-align:center">(Stop the World Event,所有应用线程暂停) 在老年代(old generation)中的对象, 如果从年轻代(young generation)中能访问到, 则被 “标记,marked” 为可达的(reachable).对象在旧一代“标志”可以包括这些对象可能可以从年轻一代。暂停时间一般持续时间较短,相对小的收集暂停时间.</td>
+<td style="text-align:center">(1) 初始标记 (Initial Mark)</td>
+<td style="text-align:center">(Stop the World Event,所有应用线程暂停) 在老年代(old generation)中的对象, 如果从年轻代(young generation)中能访问到, 则被 “标记,marked” 为可达的(reachable).对象在旧一代“标志”可以包括这些对象可能可以从年轻一代。暂停时间一般持续时间较短,相对小的收集暂停时间.</td>
 </tr>
 <tr>
-  <td style="text-align:center">(2) 并发标记 (Concurrent Marking)</td>
-  <td style="text-align:center">在Java应用程序线程运行的同时遍历老年代(tenured generation)的可达对象图。扫描从被标记的对象开始,直到遍历完从root可达的所有对象. 调整器(mutators)在并发阶段的2、3、5阶段执行,在这些阶段中新分配的所有对象(包括被提升的对象)都立刻标记为存活状态.</td>
+<td style="text-align:center">(2) 并发标记 (Concurrent Marking)</td>
+<td style="text-align:center">在Java应用程序线程运行的同时遍历老年代(tenured generation)的可达对象图。扫描从被标记的对象开始,直到遍历完从root可达的所有对象. 调整器(mutators)在并发阶段的2、3、5阶段执行,在这些阶段中新分配的所有对象(包括被提升的对象)都立刻标记为存活状态.</td>
 </tr>
 <tr>
-  <td style="text-align:center">(3) 再次标记(Remark)</td>
-  <td style="text-align:center">(Stop the World Event, 所有应用线程暂停) 查找在并发标记阶段漏过的对象，这些对象是在并发收集器完成对象跟踪之后由应用线程更新的.</td>
+<td style="text-align:center">(3) 再次标记(Remark)</td>
+<td style="text-align:center">(Stop the World Event, 所有应用线程暂停) 查找在并发标记阶段漏过的对象，这些对象是在并发收集器完成对象跟踪之后由应用线程更新的.</td>
 </tr>
 <tr>
-  <td style="text-align:center">(4) 并发清理(Concurrent Sweep)</td>
-  <td style="text-align:center">回收在标记阶段(marking phases)确定为不可及的对象. 死对象的回收将此对象占用的空间增加到一个空闲列表(free list),供以后的分配使用。死对象的合并可能在此时发生. 请注意,存活的对象并没有被移动.</td>
+<td style="text-align:center">(4) 并发清理(Concurrent Sweep)</td>
+<td style="text-align:center">回收在标记阶段(marking phases)确定为不可及的对象. 死对象的回收将此对象占用的空间增加到一个空闲列表(free list),供以后的分配使用。死对象的合并可能在此时发生. 请注意,存活的对象并没有被移动.</td>
 </tr>
 <tr>
-  <td style="text-align:center">(5) 重置(Resetting)</td>
-  <td style="text-align:center">清理数据结构,为下一个并发收集做准备.</td>
+<td style="text-align:center">(5) 重置(Resetting)</td>
+<td style="text-align:center">清理数据结构,为下一个并发收集做准备.</td>
 </tr>
 </tbody>
 </table>
@@ -268,58 +272,58 @@ Java 7 Update 9 或更高版本
 <p>接下来,让我们一步步地讲述CMS收集器的操作.</p>
 <p>1、 CMS的堆内存结构(Heap Structure)</p>
 <p>堆内存被分为3个空间.</p>
-<p><figure style="flex: 69.75190839694656" ><img width="731" height="524" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b27ef73399a2c2a885361fef0aae5fd2.png" /><figcaption>jvm-gc-g1-005.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 69.75190839694656" data-width="731" data-height="524"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b27ef73399a2c2a885361fef0aae5fd2.png" alt="jvm-gc-g1-005.png" /><figcaption>jvm-gc-g1-005.png</figcaption></figure></p>
 <p>年轻代(Young generation)分为 1个新生代空间(Eden)和2个存活区(survivor spaces). 老年代(Old generation)是一大块连续的空间, 垃圾回收(Object collection)就地解决(is done in place), 除了 Full GC, 否则不会进行压缩(compaction).</p>
 <p>2、 CMS 年轻代(Young) GC 的工作方式</p>
 <p>年轻代(young generation)用高亮的绿色表示, 老年代(old generation)用蓝色表示。如果程序运行了一段时间,那么 CMS 看起来就像下图这个样子. 对象散落在老年代中的各处地方.</p>
-<p><figure style="flex: 61.52623211446741" ><img width="774" height="629" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/9611d94b3f72dc018ca5237a3b7c92c1.png" /><figcaption>jvm-gc-g1-006.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 61.52623211446741" data-width="774" data-height="629"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/9611d94b3f72dc018ca5237a3b7c92c1.png" alt="jvm-gc-g1-006.png" /><figcaption>jvm-gc-g1-006.png</figcaption></figure></p>
 <p>在使用 CMS 时, 老年代的对象回收就地进行(deallocated in place). 他们不会被移动到其他地方. 除了 Full GC, 否则内存空间不会进行压缩.</p>
 <p>3、 年轻代垃圾回收(Young Generation Collection)</p>
 <p>Eden 区和 survivor 区中的存活对象被拷贝到另一个空的 survivor 区. 存活时间更长,达到阀值的对象会被提升到老年代(promoted to old generation).</p>
-<p><figure style="flex: 67.43542435424354" ><img width="731" height="542" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3fb4c858fa5e67b2475f40df2aec0d1f.png" /><figcaption>jvm-gc-g1-007.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 67.43542435424354" data-width="731" data-height="542"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/3fb4c858fa5e67b2475f40df2aec0d1f.png" alt="jvm-gc-g1-007.png" /><figcaption>jvm-gc-g1-007.png</figcaption></figure></p>
 <p>4、 年轻代(Young) GC 之后</p>
 <p>年轻代(Young)进行一次垃圾回收之后, Eden 区被清理干净(cleared),两个 survivor 区中的一个也被清理干净了. 如下图所示:</p>
-<p><figure style="flex: 64.47140381282496" ><img width="744" height="577" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/5049ffc3255510ad33748f0e84ed211a.png" /><figcaption>jvm-gc-g1-008.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 64.47140381282496" data-width="744" data-height="577"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/5049ffc3255510ad33748f0e84ed211a.png" alt="jvm-gc-g1-008.png" /><figcaption>jvm-gc-g1-008.png</figcaption></figure></p>
 <p>图中新提升的对象用深蓝色来标识. 绿色的部分是年轻代中存活的对象,但还没被提升到老年代中.</p>
 <p>5、 CMS 的老年代回收(Old Generation Collection)</p>
 <p>两次 stop the world 事件发生在: 初始标记(initial mark)以及重新标记(remark)阶段. 当老年代达到一定的占有率时,CMS 垃圾回收器就开始工作.</p>
-<p><figure style="flex: 63.273615635179155" ><img width="777" height="614" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f50b54fa9e3fabad08aa947d94711e78.png" /><figcaption>jvm-gc-g1-009.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 63.273615635179155" data-width="777" data-height="614"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f50b54fa9e3fabad08aa947d94711e78.png" alt="jvm-gc-g1-009.png" /><figcaption>jvm-gc-g1-009.png</figcaption></figure></p>
 <p>(1) 初始标记(Initial mark)阶段的停顿时间很短,在此阶段存活的(live,reachable,可及的) 对象被记下来.</p>
 <p>(2) 并发标记(Concurrent marking)在程序继续运行的同时找出存活的对象.</p>
 <p>最后, 在第(3)阶段(remark phase), 查找在第(2)阶段(concurrent marking)中错过的对象.</p>
 <p>6、 老年代回收 – 并发清理(Concurrent Sweep)</p>
 <p>在前面阶段未被标记的对象将会就地释放(deallocated in place). 此处没有压缩(compaction).</p>
-<p><figure style="flex: 66.18887015177066" ><img width="785" height="593" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/603f54d2638cc0dcd3fd056dfe1b373f.png" /><figcaption>jvm-gc-g1-010.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 66.18887015177066" data-width="785" data-height="593"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/603f54d2638cc0dcd3fd056dfe1b373f.png" alt="jvm-gc-g1-010.png" /><figcaption>jvm-gc-g1-010.png</figcaption></figure></p>
 <p>备注: 未标记(Unmarked)的对象 == 已死对象(Dead Objects)</p>
 <p>7、 老年代回收 – 清理之后(After Sweeping)</p>
 <p>在第(4)步(Sweeping phase)之后, 可以看到很多内存被释放了. 还应该注意到,这里并没有执行内存压缩整理(no compaction).</p>
-<p><figure style="flex: 78.48324514991182" ><img width="890" height="567" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/7a03b1faa5310e5e4cb1732255996103.png" /><figcaption>jvm-gc-g1-011.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 78.48324514991182" data-width="890" data-height="567"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/7a03b1faa5310e5e4cb1732255996103.png" alt="jvm-gc-g1-011.png" /><figcaption>jvm-gc-g1-011.png</figcaption></figure></p>
 <p>最后, CMS 收集器进入(move through)第(5)阶段, 重置(resetting phase), 然后等候下一次的 GC 阀值到来(GC threshold).</p>
 <h2>G1垃圾收集器概述</h2>
 <h3>一步步介绍G1</h3>
 <p>G1 收集器采用一种不同的方式来分配堆. 下面通过图解的方式一步步地讲述 G1 系统.</p>
 <p>1、 G1的堆内存结构</p>
 <p>堆内存被划分为固定大小的多个区域.</p>
-<p><figure style="flex: 85.9344894026975" ><img width="892" height="519" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/6959b103c8d966e6494b4a34db572ea1.png" /><figcaption>jvm-gc-g1-012.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 85.9344894026975" data-width="892" data-height="519"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/6959b103c8d966e6494b4a34db572ea1.png" alt="jvm-gc-g1-012.png" /><figcaption>jvm-gc-g1-012.png</figcaption></figure></p>
 <p>每个 heap 区(Region)的大小在 JVM 启动时就确定了. JVM 通常生成 2000 个左右的heap区, 根据堆内存的总大小,区的 size 范围允许为 1Mb 到 32Mb.</p>
 <p>2、 G1 堆空间分配</p>
 <p>实际上,这些区域(regions)被映射为逻辑上的 Eden, Survivor, 和 old generation(老年代)空间.</p>
-<p><figure style="flex: 88.52941176470588" ><img width="903" height="510" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/e63ca463f966ae9c3033b6bff49874c6.png" /><figcaption>jvm-gc-g1-013.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 88.52941176470588" data-width="903" data-height="510"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/e63ca463f966ae9c3033b6bff49874c6.png" alt="jvm-gc-g1-013.png" /><figcaption>jvm-gc-g1-013.png</figcaption></figure></p>
 <p>图中的颜色标识了每一个区域属于哪个角色. 存活的对象从一块区域转移(复制或移动)到另一块区域。设计成 heap 区的目的是为了并行地进行垃圾回收(的同时停止/或不停止其他应用程序线程).</p>
 <p>如图所示,heap 区可以分配为 Eden, Survivor, 或 old generation(老年代)区. 此外,还有第四种类型的对象被称为巨无霸区域(Humongous regions),这种巨无霸区是设计了用来保存比标准块(standard region)大 50% 及以上的对象, 它们存储在一组连续的区中. 最后一个类型是堆内存中的未使用区(unused areas).</p>
 <p>备注: 截止英文原文发表时,巨无霸对象的回收还没有得到优化. 因此,您应该尽量避免创建太大(大于32MB?)的对象.</p>
 <p>3、 G1中的年轻代(Young Generation)</p>
 <p>堆被分为大约 2000 个区. 最小 size 为1 Mb, 最大 size 为 32Mb. 蓝色的区保存老年代对象,绿色区域保存年轻代对象.</p>
-<p><figure style="flex: 87.21153846153847" ><img width="907" height="520" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/57436d2032b53c172a86cbf0bf8f59d4.png" /><figcaption>jvm-gc-g1-014.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 87.21153846153847" data-width="907" data-height="520"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/57436d2032b53c172a86cbf0bf8f59d4.png" alt="jvm-gc-g1-014.png" /><figcaption>jvm-gc-g1-014.png</figcaption></figure></p>
 <p>注意G1中各代的 heap 区不像老一代垃圾收集器一样要求各部分是连续的.</p>
 <p>4、 G1 中的一次年轻代 GC</p>
 <p>存活的对象被转移(copied or moved)到一个/或多个存活区(survivor regions). 如果存活时间达到阀值,这部分对象就会被提升到老年代(promoted to old generation regions).</p>
-<p><figure style="flex: 83.9851024208566" ><img width="902" height="537" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/6b7449fc5e735d887adeaab3d4be08d3.png" /><figcaption>jvm-gc-g1-015.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 83.9851024208566" data-width="902" data-height="537"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/6b7449fc5e735d887adeaab3d4be08d3.png" alt="jvm-gc-g1-015.png" /><figcaption>jvm-gc-g1-015.png</figcaption></figure></p>
 <p>此时会有一次 stop the world(STW)暂停. 会计算出 Eden 大小和 survivor 大小,给下一次年轻代 GC 使用. 清单统计信息(Accounting)保存了用来辅助计算 size. 诸如暂停时间目标之类的东西也会纳入考虑.</p>
 <p>这种方法使得调整各代区域的尺寸很容易, 让其更大或更小一些以满足需要.</p>
 <p>5、 G1 的一次年轻代GC完成后</p>
 <p>存活对象被转移到存活区(survivor regions) 或 老年代(old generation regions).</p>
-<p><figure style="flex: 85.67362428842505" ><img width="903" height="527" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d3210cc46e5cb0d87431a2d4f2c67d9b.png" /><figcaption>jvm-gc-g1-016.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 85.67362428842505" data-width="903" data-height="527"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d3210cc46e5cb0d87431a2d4f2c67d9b.png" alt="jvm-gc-g1-016.png" /><figcaption>jvm-gc-g1-016.png</figcaption></figure></p>
 <p>刚刚被提升上来的对象用深绿色显示. Survivor 区用绿色表示.</p>
 <p>总结起来,G1 的年轻代收集归纳如下:</p>
 
@@ -348,19 +352,19 @@ Java 7 Update 9 或更高版本
 <p>顺着定义的阶段,让我们看看G1收集器如何处理老年代(old generation).</p>
 <p>6、 初始标记阶段(Initial Marking Phase)</p>
 <p>存活对象的初始标记被固定在年轻代垃圾收集里面. 在日志中被记为 GC pause (young)(inital-mark)。</p>
-<p><figure style="flex: 87.1124031007752" ><img width="899" height="516" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f831787dcb2853dbbae12bb719ea8b02.png" /><figcaption>jvm-gc-g1-017.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 87.1124031007752" data-width="899" data-height="516"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f831787dcb2853dbbae12bb719ea8b02.png" alt="jvm-gc-g1-017.png" /><figcaption>jvm-gc-g1-017.png</figcaption></figure></p>
 <p>7、 并发标记阶段(Concurrent Marking Phase)</p>
 <p>如果找到空的区域(如用红叉“X”标示的区域), 则会在 Remark 阶段立即移除. 当然,”清单(accounting)”信息决定了活跃度(liveness)的计算.</p>
-<p><figure style="flex: 84.14634146341463" ><img width="897" height="533" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/78e3e9ad1c8c148cc69681cd6791195b.png" /><figcaption>jvm-gc-g1-018.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 84.14634146341463" data-width="897" data-height="533"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/78e3e9ad1c8c148cc69681cd6791195b.png" alt="jvm-gc-g1-018.png" /><figcaption>jvm-gc-g1-018.png</figcaption></figure></p>
 <p>8、 再次标记阶段(Remark Phase)</p>
 <p>空的区域被移除并回收。现在计算所有区域的活跃度(Region liveness).</p>
-<p><figure style="flex: 83.80681818181819" ><img width="885" height="528" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b6614de7e5cc036bd1542a57b77163b6.png" /><figcaption>jvm-gc-g1-019.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 83.80681818181819" data-width="885" data-height="528"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/b6614de7e5cc036bd1542a57b77163b6.png" alt="jvm-gc-g1-019.png" /><figcaption>jvm-gc-g1-019.png</figcaption></figure></p>
 <p>9、 拷贝/清理阶段(Copying/Cleanup)</p>
 <p>G1 选择“活跃度(liveness)”最低的区域, 这些区域可以最快的完成回收. 然后这些区域和年轻代 GC 在同时被垃圾收集 . 在日志被标识为 [GC pause (mixed)]. 所以年轻代和老年代都在同一时间被垃圾收集.</p>
-<p><figure style="flex: 85.34482758620689" ><img width="891" height="522" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/145a6ea032229c41a1cefde1bb0f8d19.png" /><figcaption>jvm-gc-g1-020.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 85.34482758620689" data-width="891" data-height="522"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/145a6ea032229c41a1cefde1bb0f8d19.png" alt="jvm-gc-g1-020.png" /><figcaption>jvm-gc-g1-020.png</figcaption></figure></p>
 <p>10、拷贝/清理之后(After Copying/Cleanup)</p>
 <p>所选择的区域被收集和压缩到下图所示的深蓝色区域和深绿色区域.</p>
-<p><figure style="flex: 84.64566929133858" ><img width="860" height="508" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/890461c27c935f29bf13fc16b1653521.png" /><figcaption>jvm-gc-g1-021.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 84.64566929133858" data-width="860" data-height="508"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/890461c27c935f29bf13fc16b1653521.png" alt="jvm-gc-g1-021.png" /><figcaption>jvm-gc-g1-021.png</figcaption></figure></p>
 <h3>老年代GC(Old Generation GC)总结</h3>
 <p>总结下来,G1对老年代的GC有如下几个关键点:</p>
 
@@ -381,8 +385,7 @@ Java 7 Update 9 或更高版本
 <p>要启用 G1 收集器请使用: -XX:+UseG1GC</p>
 <p>下面是启动 Java2Demo 示例程序的命令行示例. Java2Demo 位于下载 JDK demos and samples后解压的文件夹中:</p>
 
-<pre><code>java -Xmx50m -Xms50m -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar
-</code></pre>
+<pre><code>java -Xmx50m -Xms50m -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -jar c:\javademos\demo\jfc\Java2D\Java2demo.jar</code></pre>
 <h3>关键命令行开关</h3>
 <p>-XX:+UseG1GC – 让 JVM 使用 G1 垃圾收集器.</p>
 <p>-XX:MaxGCPauseMillis=200 – 设置最大GC停顿时间(GC pause time)指标(target). 这是一个软性指标(soft goal), JVM 会尽力去达成这个目标. 所以有时候这个目标并不能达成. 默认值为 200 毫秒.</p>
@@ -429,52 +432,51 @@ CSet指向区域中的任何 RSets 更新都必须重新生成(regenerated).
 <h3>G1 的 GC 参数完全列表</h3>
 <p>下面是完整的 G1 的 GC 开关参数列表. 在使用时请记住上面所述的最佳实践.</p>
 <table>
-<thead>
-<tr>
-  <th style="text-align:center">选项/默认值</th>
-  <th style="text-align:center">说明</th>
+<thead><tr>
+<th style="text-align:center">选项/默认值</th>
+<th style="text-align:center">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="text-align:center">-XX:+UseG1GC</td>
-  <td style="text-align:center">使用 G1 (Garbage First) 垃圾收集器</td>
+<td style="text-align:center">-XX:+UseG1GC</td>
+<td style="text-align:center">使用 G1 (Garbage First) 垃圾收集器</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:MaxGCPauseMillis=n</td>
-  <td style="text-align:center">设置最大GC停顿时间(GC pause time)指标(target). 这是一个软性指标(soft goal), JVM 会尽量去达成这个目标.</td>
+<td style="text-align:center">-XX:MaxGCPauseMillis=n</td>
+<td style="text-align:center">设置最大GC停顿时间(GC pause time)指标(target). 这是一个软性指标(soft goal), JVM 会尽量去达成这个目标.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:InitiatingHeapOccupancyPercent=n</td>
-  <td style="text-align:center">启动并发GC周期时的堆内存占用百分比. G1之类的垃圾收集器用它来触发并发GC周期,基于整个堆的使用率,而不只是某一代内存的使用比. 值为 0 则表示”一直执行GC循环”. 默认值为 45.</td>
+<td style="text-align:center">-XX:InitiatingHeapOccupancyPercent=n</td>
+<td style="text-align:center">启动并发GC周期时的堆内存占用百分比. G1之类的垃圾收集器用它来触发并发GC周期,基于整个堆的使用率,而不只是某一代内存的使用比. 值为 0 则表示”一直执行GC循环”. 默认值为 45.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:NewRatio=n</td>
-  <td style="text-align:center">新生代与老生代(new/old generation)的大小比例(Ratio). 默认值为 2.</td>
+<td style="text-align:center">-XX:NewRatio=n</td>
+<td style="text-align:center">新生代与老生代(new/old generation)的大小比例(Ratio). 默认值为 2.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:SurvivorRatio=n</td>
-  <td style="text-align:center">eden/survivor 空间大小的比例(Ratio). 默认值为 8.</td>
+<td style="text-align:center">-XX:SurvivorRatio=n</td>
+<td style="text-align:center">eden/survivor 空间大小的比例(Ratio). 默认值为 8.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:MaxTenuringThreshold=n</td>
-  <td style="text-align:center">提升年老代的最大临界值(tenuring threshold). 默认值为 15.</td>
+<td style="text-align:center">-XX:MaxTenuringThreshold=n</td>
+<td style="text-align:center">提升年老代的最大临界值(tenuring threshold). 默认值为 15.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:ParallelGCThreads=n</td>
-  <td style="text-align:center">设置垃圾收集器在并行阶段使用的线程数,默认值随JVM运行的平台不同而不同.</td>
+<td style="text-align:center">-XX:ParallelGCThreads=n</td>
+<td style="text-align:center">设置垃圾收集器在并行阶段使用的线程数,默认值随JVM运行的平台不同而不同.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:ConcGCThreads=n</td>
-  <td style="text-align:center">并发垃圾收集器使用的线程数量. 默认值随JVM运行的平台不同而不同.</td>
+<td style="text-align:center">-XX:ConcGCThreads=n</td>
+<td style="text-align:center">并发垃圾收集器使用的线程数量. 默认值随JVM运行的平台不同而不同.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:G1ReservePercent=n</td>
-  <td style="text-align:center">设置堆内存保留为假天花板的总量,以降低提升失败的可能性. 默认值是 10.</td>
+<td style="text-align:center">-XX:G1ReservePercent=n</td>
+<td style="text-align:center">设置堆内存保留为假天花板的总量,以降低提升失败的可能性. 默认值是 10.</td>
 </tr>
 <tr>
-  <td style="text-align:center">-XX:G1HeapRegionSize=n</td>
-  <td style="text-align:center">使用G1时Java堆会被分为大小统一的的区(region)。此参数可以指定每个heap区的大小. 默认值将根据 heap size 算出最优解. 最小值为 1Mb, 最大值为 32Mb.</td>
+<td style="text-align:center">-XX:G1HeapRegionSize=n</td>
+<td style="text-align:center">使用G1时Java堆会被分为大小统一的的区(region)。此参数可以指定每个heap区的大小. 默认值将根据 heap size 算出最优解. 最小值为 1Mb, 最大值为 32Mb.</td>
 </tr>
 </tbody>
 </table>
@@ -487,8 +489,7 @@ CSet指向区域中的任何 RSets 更新都必须重新生成(regenerated).
 <p>日志输出示例</p>
 
 <pre><code>[GC pause (G1 Humongous Allocation) (young) (initial-mark) 24M- &gt;21M(64M), 0.2349730 secs]
-[GC pause (G1 Evacuation Pause) (mixed) 66M-&gt;21M(236M), 0.1625268 secs]   
-</code></pre>
+[GC pause (G1 Evacuation Pause) (mixed) 66M-&gt;21M(236M), 0.1625268 secs]</code></pre>
 <p>(2) -XX:+PrintGCDetails 设置日志级别为 更好 finer. 使用此选项会显示以下信息:</p>
 <p>每个阶段的 Average, Min, 以及 Max 时间.</p>
 <p>根扫描(Root Scan), RSet 更新(同时处理缓冲区信息), RSet 扫描(Scan), 对象拷贝(Object Copy), 终止(Termination, 包括尝试次数).</p>
@@ -497,8 +498,7 @@ CSet指向区域中的任何 RSets 更新都必须重新生成(regenerated).
 <p>日志输出示例</p>
 
 <pre><code>[Ext Root Scanning (ms): Avg: 1.7 Min: 0.0 Max: 3.7 Diff: 3.7]
-[Eden: 818M(818M)-&gt;0B(714M) Survivors: 0B-&gt;104M Heap: 836M(4096M)-&gt;409M(4096M)]
-</code></pre>
+[Eden: 818M(818M)-&gt;0B(714M) Survivors: 0B-&gt;104M Heap: 836M(4096M)-&gt;409M(4096M)]</code></pre>
 <p>(3) -XX:+UnlockExperimentalVMOptions -XX:G1LogLevel=finest 设置日志级别为 最好 finest. 和 finer 级别类似, 包含每个 worker 线程信息.</p>
 
 <pre><code>[Ext Root Scanning (ms): 2.1 2.4 2.0 0.0
@@ -506,20 +506,17 @@ CSet指向区域中的任何 RSets 更新都必须重新生成(regenerated).
        [Update RS (ms):  0.4  0.2  0.4  0.0
            Avg: 0.2 Min: 0.0 Max: 0.4 Diff: 0.4]
            [Processed Buffers : 5 1 10 0
-           Sum: 16, Avg: 4, Min: 0, Max: 10, Diff: 10]
-</code></pre>
+           Sum: 16, Avg: 4, Min: 0, Max: 10, Diff: 10]</code></pre>
 <p>Determining Time</p>
 <p>有两个参数决定了GC日志中打印的时间显示形式.</p>
 <p>(1) -XX:+PrintGCTimeStamps – 显示从JVM启动时算起的运行时间.</p>
 <p>日志输出示例</p>
 
-<pre><code>1.729: [GC pause (young) 46M-&gt;35M(1332M), 0.0310029 secs]
-</code></pre>
+<pre><code>1.729: [GC pause (young) 46M-&gt;35M(1332M), 0.0310029 secs]</code></pre>
 <p>(2) -XX:+PrintGCDateStamps – 在每条记录前加上日期时间.</p>
 <p>日志输出示例</p>
 
-<pre><code>2012-05-02T11:16:32.057+0200: [GC pause (young) 46M-&gt;35M(1332M), 0.0317225 secs]
-</code></pre>
+<pre><code>2012-05-02T11:16:32.057+0200: [GC pause (young) 46M-&gt;35M(1332M), 0.0317225 secs]</code></pre>
 <h3>理解 G1 日志</h3>
 <p>为了使你更好地理解 GC 日志, 本节通过实际的日志输出，定义了许多专业术语. 下面的例子显示了 GC 日志的内容,并加上日志中出现的术语和值的解释说明.</p>
 <p>Note: 更多信息请参考 Poonam Bajaj 的博客： G1 垃圾回收日志.</p>
@@ -561,84 +558,70 @@ Parallel Time(并行阶段耗时)
 
 <pre><code>414.557: [GC pause (young), 0.03039600 secs] [Parallel Time: 22.9 ms]
 [GC Worker Start (ms): 7096.0 7096.0 7096.1 7096.1 706.1 7096.1 7096.1 7096.1 7096.2 7096.2 7096.2 7096.2
-       Avg: 7096.1, Min: 7096.0, Max: 7096.2, Diff: 0.2]
-</code></pre>
+       Avg: 7096.1, Min: 7096.0, Max: 7096.2, Diff: 0.2]</code></pre>
 <p>Parallel Time – 主要并行部分运行停顿的整体时间</p>
 <p>Worker Start – 各个工作线程(workers)启动时的时间戳(Timestamp)</p>
 <p>Note: 日志是根据 thread id 排序,并且每条记录都是一致的.</p>
 <p>External Root Scanning(外部根扫描)</p>
 
 <pre><code>[Ext Root Scanning (ms): 3.1 3.4 3.4 3.0 4.2 2.0 3.6 3.2 3.4 7.7 3.7 4.4
-     Avg: 3.8, Min: 2.0, Max: 7.7, Diff: 5.7]
-</code></pre>
+     Avg: 3.8, Min: 2.0, Max: 7.7, Diff: 5.7]</code></pre>
 <p>External root scanning – 扫描外部根花费的时间(如指向堆内存的系统词典(system dictionary)等部分)</p>
 <h3>Update Remembered Set(更新 RSet)</h3>
 
 <pre><code>[Update RS (ms): 0.1 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 Avg: 0.0, Min: 0.0, Max: 0.1, Diff: 0.1]
    [Processed Buffers : 26 0 0 0 0 0 0 0 0 0 0 0
-    Sum: 26, Avg: 2, Min: 0, Max: 26, Diff: 26]
-</code></pre>
+    Sum: 26, Avg: 2, Min: 0, Max: 26, Diff: 26]</code></pre>
 <p>Update Remembered Set – 必须更新在 pause 之前已经完成但尚未处理的缓冲. 花费的时间取决于 cards 的密度。cards 越多,耗费的时间就越长。</p>
 <h3>Scanning Remembered Sets(扫描 RSets)</h3>
 
 <pre><code>[Scan RS (ms): 0.4 0.2 0.1 0.3 0.0 0.0 0.1 0.2 0.0 0.1 0.0 0.0 Avg: 0.1, Min: 0.0, Max: 0.4, Diff: 0.3]F
-Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)
-</code></pre>
+Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)</code></pre>
 <h3>Object Copy(对象拷贝)</h3>
 
-<pre><code>[Object Copy (ms): 16.7 16.7 16.7 16.9 16.0 18.1 16.5 16.8 16.7 12.3 16.4 15.7 Avg: 16.3, Min: 12.3, Max: 18.1, Diff: 5.8]
-</code></pre>
+<pre><code>[Object Copy (ms): 16.7 16.7 16.7 16.9 16.0 18.1 16.5 16.8 16.7 12.3 16.4 15.7 Avg: 16.3, Min: 12.3, Max: 18.1, Diff: 5.8]</code></pre>
 <p>Object copy – 每个独立的线程在拷贝和转移对象时所消耗的时间.</p>
 <h3>Termination Time(结束时间)</h3>
 
 <pre><code>[Termination (ms): 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-0.0 Avg: 0.0, Min: 0.0, Max: 0.0, Diff: 0.0] [Termination Attempts : 1 1 1 1 1 1 1 1 1 1 1 1 Sum: 12, Avg: 1, Min: 1, Max: 1, Diff: 0]
-</code></pre>
+0.0 Avg: 0.0, Min: 0.0, Max: 0.0, Diff: 0.0] [Termination Attempts : 1 1 1 1 1 1 1 1 1 1 1 1 Sum: 12, Avg: 1, Min: 1, Max: 1, Diff: 0]</code></pre>
 <p>Termination time – 当 worker 线程完成了自己那部分对象的复制和扫描,就进入终止协议(termination protocol)。它查找未完成的工作(looks for work to steal), 一旦它完成就会再进入终止协议。 终止尝试记录(Termination attempt counts)所有查找工作的尝试次数(attempts to steal work).</p>
 <h3>GC Worker End</h3>
 
 <pre><code>[GC Worker End (ms): 7116.4 7116.3 7116.4 7116.3 7116.4 7116.3 7116.4 7116.4 7116.4 7116.4 7116.3 7116.3
     Avg: 7116.4, Min: 7116.3, Max: 7116.4, Diff:   0.1]
 [GC Worker (ms): 20.4 20.3 20.3 20.2 20.3 20.2 20.2 20.2 20.3 20.2 20.1 20.1
-     Avg: 20.2, Min: 20.1, Max: 20.4, Diff: 0.3]
-</code></pre>
+     Avg: 20.2, Min: 20.1, Max: 20.4, Diff: 0.3]</code></pre>
 <p>GC worker end time – 独立的 GC worker 停止时的时间戳.</p>
 <p>GC worker time – 每个独立的 GC worker 线程消耗的时间.</p>
 <h3>GC Worker Other</h3>
 
 <pre><code>[GC Worker Other (ms): 2.6 2.6 2.7 2.7 2.7 2.7 2.7 2.8 2.8 2.8 2.8 2.8
-    Avg: 2.7, Min: 2.6, Max: 2.8, Diff: 0.2]
-</code></pre>
+    Avg: 2.7, Min: 2.6, Max: 2.8, Diff: 0.2]</code></pre>
 <p>GC worker other – 每个 GC 线程中不能归属到之前列出的 worker 阶段的其他时间. 这个值应该很低. 过去我们见过很高的值,是由于JVM的其他部分的瓶颈引起的(例如在分层[Tiered]代码缓存[Code Cache]占有率的增加)。</p>
 <h3>Clear CT</h3>
 
-<pre><code>[Clear CT: 0.6 ms]
-</code></pre>
+<pre><code>[Clear CT: 0.6 ms]</code></pre>
 <p>清除 RSet 扫描元数据(scanning meta-data)的 card table 消耗的时间.</p>
 <h3>Other</h3>
 
-<pre><code>[Other: 6.8 ms]
-</code></pre>
+<pre><code>[Other: 6.8 ms]</code></pre>
 <p>其他各种GC暂停的连续阶段花费的时间.</p>
 <h3>CSet</h3>
 
-<pre><code>[Choose CSet: 0.1 ms]
-</code></pre>
+<pre><code>[Choose CSet: 0.1 ms]</code></pre>
 <p>敲定要进行垃圾回收的 region 集合时消耗的时间. 通常很小,在必须选择 old 区时会稍微长一点点.</p>
 <h3>Ref Proc</h3>
 
-<pre><code>[Ref Proc: 4.4 ms]
-</code></pre>
+<pre><code>[Ref Proc: 4.4 ms]</code></pre>
 <p>处理 soft, weak, 等引用所花费的时间,不同于前面的GC阶段</p>
 <h3>Ref Enq</h3>
 
-<pre><code>[Ref Enq: 0.1 ms]
-</code></pre>
+<pre><code>[Ref Enq: 0.1 ms]</code></pre>
 <p>将 soft, weak, 等引用放置到待处理列表(pending list)花费的时间.</p>
 <h3>Free CSet</h3>
 
-<pre><code>[Free CSet: 2.0 ms]
-</code></pre>
+<pre><code>[Free CSet: 2.0 ms]</code></pre>
 <p>释放刚被垃圾收集的 heap区所消耗的时间,包括对应的remembered sets。</p>
 <h2>总结</h2>
 <p>在此 OBE 中, 您对Java JVM 中的 G1 垃圾收集器有了个大致的了解。首先你学到了为何堆和垃圾收集器是所有 Java JVM 的关键部分。接下来讲述了使用 CMS 和 G1 收集器进行垃圾回收的工作方式. 接下来,您了解了 G1 的命令行参数/开关以及和使用它们的最佳实践。最后,您了解了日志对象以及 GC 日志中的数据。</p>
@@ -698,8 +681,8 @@ Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2020 177</span>
-                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                            <span>Copyright © 2015~2020 177</span>
+                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
                         </p>
                         <div class="copyright">
                             <span class="footer-addon">
@@ -707,21 +690,63 @@ Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)
 Whatever will be, Will be.
 
                             </span>
-                            <nav class="social-links">
+                            <!-- <nav class="social-links">
                                 <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
-                            </nav>
+                            </nav> -->
                         </div>
                     </section>
                     <script>
                         var site_build_date = "2020-01-01T00:00+08:00"
                     </script>
-                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
                 </footer>
             </div>
         </div>
     </div>
+        
+        
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    
     <!--katex-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
@@ -734,9 +759,6 @@ Whatever will be, Will be.
     };
     </script>
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
-
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
 <script>
