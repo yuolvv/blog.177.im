@@ -9,7 +9,7 @@
 {% block more_section %}
 
 <!-- <section id="ga-post_list" class="ga-section" data-title="Posts"></section> -->
-<section id="ga-post_list" class="ga-section" data-title='{{ tr('Posts') }}'></section>
+<section id="ga-post_list" class="ga-section" data-title={{ tr('Posts') }}></section>
     <ul>
         {% for content in content_list %}
         <li>
