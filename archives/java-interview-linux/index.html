@@ -7,17 +7,19 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="177.im,177,听风行,blog,博客" />
-    <meta name="generator" content="Maverick 1.0" />
+    <meta name="generator" content="Maverick 1.1" />
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/2b508a3cae8153f0b1d22b41a4e33a1f.json"
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/34aa01aed721cdeec7dff5ceef2aeac8.json"
         }
     </script>
     
@@ -65,11 +67,6 @@
         <div class="container">
             <header id="ga-header">
                 <div first>
-                    <aside id="ga-logo">
-                        <a href="/" target="_self">
-                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
-                        </a>
-                    </aside>
                     <aside id="ga-brand">
                         <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
                         <p>天青色等烟雨</p>
@@ -78,9 +75,6 @@
                 <div second id="ga-nav">
                     <nav class="navs">
                         <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
-                    </nav>
-                    <nav class="social-links">
-                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
                     </nav>
                 </div>
             </header>
@@ -109,7 +103,7 @@
 <p>man 2 syscalls</p>
 <h2>3.查看系统调用说明</h2>
 <p>man 2 acct</p>
-<h1>man 2 系统调用 3 是公共库函数</h1>
+<p>#man 2 系统调用 3 是公共库函数</p>
 <h2>4.常用指令：</h2>
 <p>ls less more cat vi vim……（ps：vim比vi高级，可以多级撤销，语法高亮，跨平台，而且完全兼容vi）</p>
 <h2>5.远程访问</h2>
@@ -182,7 +176,7 @@
 <p>wc 命令 – c 统计字节数 – l 统计行数 – w 统计字数。</p>
 <h2>27.Grep 命令有什么用？如何忽略大小写？如何查找不含该串的行?</h2>
 <p>是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。</p>
-<p>grep [stringSTRING] filename grep <sup id="fn_ref_1"><a href="#fn_1">1</a></sup> filename</p>
+<p>grep [stringSTRING] filename grep <sup class="footnote-ref" id="fnref-1"><a href="#fn-1">1</a></sup> filename</p>
 <h2>28.怎么使一个命令在后台运行?</h2>
 <p>一般都是使用 &amp; 在命令结尾来让程序自动运行。(命令后可以不追加空格)</p>
 <h2>29.利用 ps 怎么显示所有的进程? 怎么利用 ps 查看指定进程的信息？</h2>
@@ -195,7 +189,7 @@
 <p>把后台任务调到前台执行 fg</p>
 <p>把停下的后台任务在后台执行起来 bg</p>
 <h2>32.终止进程用什么命令? 带什么参数?</h2>
-<p>kill [-s <信息名称或编号>][程序] 或 kill [-l <信息编号>]</p>
+<p>kill [-s &lt;信息名称或编号&gt;][程序] 或 kill [-l &lt;信息编号&gt;]</p>
 <p>kill-9 pid</p>
 <h2>33.怎么清屏？怎么退出当前命令？怎么执行睡眠？怎么查看当前用户 id？查看指定帮助用什么命令？</h2>
 <p>清屏：clear</p>
@@ -204,11 +198,11 @@
 <p>查看当前用户 id：”id“：查看显示目前登陆账户的 uid 和 gid 及所属分组及用户名</p>
 <p>查看指定帮助：如 man adduser 这个很全 而且有例子；adduser –help 这个告诉你一些常用参数；info adduesr；</p>
 <h2>34.搜索文件用什么命令? 格式是怎么样的?</h2>
-<p>find <指定目录> <指定条件> <指定动作></p>
+<p>find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</p>
 <p>whereis 加参数与文件名</p>
 <p>locate 只加文件名</p>
 <p>find 直接搜索磁盘，较慢。</p>
-<p>find / -name "string*"</p>
+<p>find / -name &quot;string*&quot;</p>
 <h2>35.查看当前谁在使用该主机用什么命令? 查找自己所在的终端信息用什么命令?</h2>
 <p>查找自己所在的终端信息：who am i</p>
 <p>查看当前谁在使用该主机：who</p>
@@ -235,7 +229,12 @@
 <p>RES物理内存用量</p>
 <p>SHR共享内存用量</p>
 <p>%MEM内存用量</p>
-<hr><div class="footnotes"><ol><li id="fn_1">string <a no-style href="#fn_ref_1">↩</a></li></ol></div>
+<section class="footnotes">
+<ol>
+<li id="fn-1"><p>string<a href="#fnref-1" class="footnote">&#8617;</a></p></li>
+</ol>
+</section>
+
             </div>
         </article>
         <div id="ga-tags">
@@ -287,8 +286,8 @@
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2015~2020 177</span>
-                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                            <span>Copyright © 2020 177</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">
                             <span class="footer-addon">
@@ -296,63 +295,21 @@
 Whatever will be, Will be.
 
                             </span>
-                            <!-- <nav class="social-links">
+                            <nav class="social-links">
                                 <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
-                            </nav> -->
+                            </nav>
                         </div>
                     </section>
                     <script>
                         var site_build_date = "2020-01-01T00:00+08:00"
                     </script>
-                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.js"></script>
                 </footer>
             </div>
         </div>
     </div>
-        
-        
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
-    
     <!--katex-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
@@ -365,6 +322,9 @@ Whatever will be, Will be.
     };
     </script>
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
 <script>

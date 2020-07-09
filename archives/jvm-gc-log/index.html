@@ -7,17 +7,19 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="177.im,177,听风行,blog,博客" />
-    <meta name="generator" content="Maverick 1.0" />
+    <meta name="generator" content="Maverick 1.1" />
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/2b508a3cae8153f0b1d22b41a4e33a1f.json"
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/34aa01aed721cdeec7dff5ceef2aeac8.json"
         }
     </script>
     
@@ -65,11 +67,6 @@
         <div class="container">
             <header id="ga-header">
                 <div first>
-                    <aside id="ga-logo">
-                        <a href="/" target="_self">
-                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
-                        </a>
-                    </aside>
                     <aside id="ga-brand">
                         <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
                         <p>天青色等烟雨</p>
@@ -78,9 +75,6 @@
                 <div second id="ga-nav">
                     <nav class="navs">
                         <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
-                    </nav>
-                    <nav class="social-links">
-                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
                     </nav>
                 </div>
             </header>
@@ -107,7 +101,8 @@
 
 <pre><code>-XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
--XX:+PrintGCTimeStamps</code></pre>
+-XX:+PrintGCTimeStamps
+</code></pre>
 <p>这样配置以后，发生GC时输出的日志就类似于下面这种格式(为了显示方便,已手工折行):</p>
 
 <pre><code>2015-05-26T14:45:37.987-0200: 151.126: 
@@ -122,7 +117,8 @@
     172.829: [Tenured: 1203359K-&gt;755802K(1398144K), 0.1855567 secs]
     1832479K-&gt;755802K(2027264K),
     [Metaspace: 6741K-&gt;6741K(1056768K)], 0.1856954 secs]
-  [Times: user=0.18 sys=0.00, real=0.18 secs]</code></pre>
+  [Times: user=0.18 sys=0.00, real=0.18 secs]
+</code></pre>
 <p>上面的GC日志暴露了JVM中的一些信息。事实上，这个日志片段中发生了 2 次垃圾回收事件(Garbage Collection events)。其中一次清理的是年轻代(Young generation), 而第二次处理的是整个堆内存。下面我们来看，如何解读第一次GC事件，发生在年轻代中的小型GC(Minor GC):</p>
 <p>2015-05-26T14:45:37.987-02001:151.1262:</p>
 <p>[GC3(Allocation Failure4)151.126:</p>
@@ -151,7 +147,7 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 <p>通过上面的分析, 我们可以计算出在垃圾收集期间, JVM 中的内存使用情况。在垃圾收集之前, 堆内存总的使用了 1.54G (1,619,346K)。其中, 年轻代使用了 614M(629,119k)。可以算出老年代使用的内存为: 967M(990,227K)。</p>
 <p>下一组数据( -&gt; 右边)中蕴含了更重要的结论, 年轻代的内存使用在垃圾回收后下降了 546M(559,231k), 但总的堆内存使用(total heap usage)只减少了 337M(346,099k). 通过这一点,我们可以计算出, 有 208M(213,132K) 的年轻代对象被提升到老年代(Old)中。</p>
 <p>这个GC事件可以用下面的示意图来表示, 上方表示GC之前的内存使用情况, 下方表示结束后的内存使用情况:</p>
-<p><figure class="pswp-item" style="flex: 221.3740458015267" data-width="580" data-height="131"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d0f813f8ac7b4a2fed102209354adfb4.png" alt="jvm-gc-log-001.png" /><figcaption>jvm-gc-log-001.png</figcaption></figure></p>
+<p><figure style="flex: 221.3740458015267" ><img width="580" height="131" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d0f813f8ac7b4a2fed102209354adfb4.png" /><figcaption>jvm-gc-log-001.png</figcaption></figure></p>
 
             </div>
         </article>
@@ -208,8 +204,8 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2015~2020 177</span>
-                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                            <span>Copyright © 2020 177</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">
                             <span class="footer-addon">
@@ -217,63 +213,21 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 Whatever will be, Will be.
 
                             </span>
-                            <!-- <nav class="social-links">
+                            <nav class="social-links">
                                 <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
-                            </nav> -->
+                            </nav>
                         </div>
                     </section>
                     <script>
                         var site_build_date = "2020-01-01T00:00+08:00"
                     </script>
-                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.js"></script>
                 </footer>
             </div>
         </div>
     </div>
-        
-        
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
-    
     <!--katex-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
@@ -286,6 +240,9 @@ Whatever will be, Will be.
     };
     </script>
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
 <script>

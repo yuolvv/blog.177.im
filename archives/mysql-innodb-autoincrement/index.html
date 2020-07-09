@@ -7,17 +7,19 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="177.im,177,听风行,blog,博客" />
-    <meta name="generator" content="Maverick 1.0" />
+    <meta name="generator" content="Maverick 1.1" />
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/2b508a3cae8153f0b1d22b41a4e33a1f.json"
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/34aa01aed721cdeec7dff5ceef2aeac8.json"
         }
     </script>
     
@@ -65,11 +67,6 @@
         <div class="container">
             <header id="ga-header">
                 <div first>
-                    <aside id="ga-logo">
-                        <a href="/" target="_self">
-                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
-                        </a>
-                    </aside>
                     <aside id="ga-brand">
                         <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
                         <p>天青色等烟雨</p>
@@ -78,9 +75,6 @@
                 <div second id="ga-nav">
                     <nav class="navs">
                         <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
-                    </nav>
-                    <nav class="social-links">
-                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
                     </nav>
                 </div>
             </header>
@@ -108,7 +102,8 @@
 <p>AUTO_INCREMENT 是 Innodb 提供的一种可配置的锁定机制，如果某个表的某一列具有 AUTO_INCREMENT 约束，那么向该表添加数据的时候可以很明显的提高 SQL 语句的性能和可伸缩性。</p>
 <p>为了充分使用 Innodb 表的 AUTO_INCREMENT 机制，必须 将 AUTO_INCREMENT 字段 ( 或列，下面提到的 「 列 」 和字段可以等价 ) 定义为 「 索引 」 的一部分，这样就可以在表上使用索引执行下面的语句来查找最大的列值</p>
 
-<pre><code>SELECT MAX (ai_col ) FROM tablename;</code></pre>
+<pre><code>SELECT MAX (ai_col ) FROM tablename;
+</code></pre>
 <p>ai_col 为定义了 AUTO_INCREMENT 约束的列。</p>
 <p>通常情况下，为了最大化性能，添加了 AUTO_INCREMENT 约束的列要么独自成一个索引 ( 主索引 )，那么是组合索引中的第一列</p>
 
@@ -131,7 +126,8 @@
 2.  `REPLACE`
 3.  `REPLACE ... SELECT`
 4.  `LOAD DATA`
-5.  其它的还有 「 simple-inserts 」、「 bulk-inserts 」和 「 mixed-mode 」 三种插入语句</code></pre>
+5.  其它的还有 「 simple-inserts 」、「 bulk-inserts 」和 「 mixed-mode 」 三种插入语句
+</code></pre>
 <p>2、 「 simple-inserts 」 语句</p>
 <p>「 simple-inserts 」 是可以预先确定要插入的行数的语句 ( 最初处理语句时 )。包括不带子查询的 <strong>单行</strong> 和 <strong>多行</strong> <code>INSERT</code> 和<code>REPLACE</code> 语句，但不包括 <code>INSERT ... ON DUPLICATE KEY UPDATE</code> 语句</p>
 <p>3、 「 Bulk inserts 」 批量插入</p>
@@ -150,7 +146,8 @@
 <p>我们先不讨论有几种模式，我们先来看看它是如何配置的。</p>
 <p>「 AUTO_INCREMENT 锁」模式的配置变量为 innodb_autoinc_lock_mode ，我们可以通过下面的语句查看当前的模式是什么</p>
 
-<pre><code>show variables like 'innodb_autoinc_lock_mode';</code></pre>
+<pre><code>show variables like 'innodb_autoinc_lock_mode';
+</code></pre>
 <p>在我的 5.7.22 的版本的 MySQL 中，输出结果为</p>
 
 <pre><code>mysql&gt; show variables like 'innodb_autoinc_lock_mode';
@@ -158,7 +155,8 @@
 | Variable_name            | Value |
 +--------------------------+-------+
 | innodb_autoinc_lock_mode | 1     |
-+--------------------------+-------+</code></pre>
++--------------------------+-------+
+</code></pre>
 <p>配置参数 innodb_autoinc_lock_mode 有三个可选的值，分别是 0、1 和 2 ，分别代表着 「 传统 」，「 连续 」 或 「 交错 」 三种锁模式</p>
 <p>在不同的版本下，innodb_autoinc_lock_mode 的默认值是不一样的，在 mysql &gt;= 8.0.3 版本中是 2，也就是 「 交错 」 模式，而 mysql &lt;= 8.0.2 版本中是 1，也就是 「 连续 」 模式</p>
 <p>对于 8.0.3 版本中的这种变更，也反应了 Innodb 的默认 「 复制模式 」 已经从基于 SQL 语句 变更为基于 行 ( row )</p>
@@ -174,11 +172,13 @@
   c1 INT(11) NOT NULL AUTO_INCREMENT,
   c2 VARCHAR(10) DEFAULT NULL,
   PRIMARY KEY (c1)
-) ENGINE=InnoDB;</code></pre>
+) ENGINE=InnoDB;
+</code></pre>
 <p>把表建完后，我们假设有两个事务在运行，两个事务都是往 t1 表中插入数据，第一个事务使用一个事务使用 INSERT ... SELECT 语句插入 1000 行的，另一个事务使用简单的 INSERT 语句插入一行数据</p>
 
 <pre><code>Tx1: INSERT INTO t1 (c2) SELECT 1000 rows from another table ...
-Tx2: INSERT INTO t1 (c2) VALUES ('xxx');</code></pre>
+Tx2: INSERT INTO t1 (c2) VALUES ('xxx');
+</code></pre>
 <p>第一个事务 Tx1 ，因为 InnoDB 无法预先判断在 INSERT 语句从 SELECT 中检索了多少行，所以它会在每插入一条数据的时候分配一个自增值。这种情况下，会使用 表锁 ，会在 SQL 语句的末尾自动添加一个表锁，一次只能在表 t1 执行一条 INSERT 语句，这样就能保证每条 INSERT 语句的自增值是连续的且不会交错。</p>
 <p>这样由 Tx1 INSERT ... SELECT 语句生成的自增值是连续的，并且 Tx2 事务中 INSERT 语句使用的 ( 单个 ) 自增值要小于或大于 Tx1 的所有自增值，结果具体取决于哪个语句先执行</p>
 <p>这时候在主从复制或数据恢复时，只要以二进制日志重放 SQL 语句时 ( 使用基于语句的复制时或恢复方案中）以相同的顺序执行，那么重放的结果与 Tx1 和 Tx2 首次运行时的结果相同</p>
@@ -207,7 +207,7 @@ Tx2: INSERT INTO t1 (c2) VALUES ('xxx');</code></pre>
 <p>1、 传统锁模式 – 不管三七二十一，先用表级的 AUTO-INC 锁，直到语句插入完成，然后释放锁
 2、 连续锁模式 – 不管三七二十一，先用互斥锁，然后生成所有插入行需要的自增值，然后释放互斥锁，最后使用这些自增值来插入数据。对于行数未知的，那就只能使用 「 传统锁 」 模式了，先锁起来，执行完毕了再释放，因为人家不知道要生成多少自增值啊
 3、 交错模式 – 管它刮风下雨，需要的时候再生成，也管它连续与否，用了就是了…</p>
-<hr>
+<hr />
 <p>以上，介绍了 MySQL Innodb AUTO_INCREMENT 锁的三种模式，分别为 「 传统模式 」 、 「 连续模式 」 、「 交错模式 」 ，这三种模式我们可以用同学聚会定餐馆来形象的描述下</p>
 <p>1、 「 传统模式 」 – 老板，你家的店我包了，等到我同学聚会完了你再招待其它客人啊….其它客人：坑啊！ 你们快点吃啊，慢吞吞的…</p>
 <p>2、 「 连续模式 」 – 老爸，我同学总共 50 个人，先给我来 50 个位置，有些同学可能没来，那就空着。剩下的位置，你可以招待其它的同学。有时候，如果不知道有多少同学 ( 健忘症犯了… )，就只能再回到传统模式了。</p>
@@ -253,10 +253,12 @@ Tx2: INSERT INTO t1 (c2) VALUES ('xxx');</code></pre>
 <pre><code>CREATE TABLE t1 (
     c1 INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     c2 CHAR(1)
-) ENGINE = INNODB;</code></pre>
+) ENGINE = INNODB;
+</code></pre>
 <p>现在，我们来看看下面这条混合模式插入语句</p>
 
-<pre><code>INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (5,'c'), (NULL,'d');</code></pre>
+<pre><code>INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (5,'c'), (NULL,'d');
+</code></pre>
 <p>在 innodb_autoinc_lock_mode 设置为 0 ( 传统锁模式下 )，刚刚插入的 4 条数据如下</p>
 
 <pre><code>mysql&gt; SELECT c1, c2 FROM t1 ORDER BY c2;
@@ -267,7 +269,8 @@ Tx2: INSERT INTO t1 (c2) VALUES ('xxx');</code></pre>
 | 101 | b    |
 |   5 | c    |
 | 102 | d    |
-+-----+------+</code></pre>
++-----+------+
+</code></pre>
 <p>下一个可用的自增值为 103，因为自增值一次分配一个，而不是在语句执行开始时一次性分配。这时候无论是否同时并发的执行其它 「 INSERT-like 」 语句 ( 任何类型 )，此结果都是正确的</p>
 <p>但如果设置 innodb_autoinc_lock_mode 的值为 1 ，也就是 「 连续锁模式 」，那么刚刚插入的 4 条数据如下</p>
 
@@ -279,7 +282,8 @@ Tx2: INSERT INTO t1 (c2) VALUES ('xxx');</code></pre>
 | 101 | b    |
 |   5 | c    |
 | 102 | d    |
-+-----+------+</code></pre>
++-----+------+
+</code></pre>
 <p>虽然最终数据看起来一样。但是，行为结果还是不同的。</p>
 <p>在这种情况下，下一个可用的自增值是 105，而不是 103，因为在处理语句时分配了四个自增值，但只使用了两个，也就是 103 和 104 永远的被丢失了。这时候无论是否同时并发的执行其它 「 INSERT-like 」 语句 ( 任何类型 )，此结果都是正确的</p>
 <p>但如果设置 innodb_autoinc_lock_mode 的值为 2 ，也就是 「 交错锁模式 」，那么刚刚插入的 4 条数据如下</p>
@@ -292,11 +296,13 @@ Tx2: INSERT INTO t1 (c2) VALUES ('xxx');</code></pre>
 |   x | b    |
 |   5 | c    |
 |   y | d    |
-+-----+------+</code></pre>
++-----+------+
+</code></pre>
 <p>x 和 y 的值是唯一的，并且比任何先前生成的行的都大。但是，x 和 y 的具体值取决于同时执行语句生成的自增值的数量。如果没有其它 「 INSERT-like 」语句并发执行，结果和 「 传统锁 」 模式是一样的。</p>
 <p>最后，我们来看看下面这个 SQL 语句，假设最新自动生成的序列号为 100</p>
 
-<pre><code>INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (101,'c'), (NULL,'d');</code></pre>
+<pre><code>INSERT INTO t1 (c1,c2) VALUES (1,'a'), (NULL,'b'), (101,'c'), (NULL,'d');
+</code></pre>
 <p>无论配置项 innodb_autoinc_lock_mode 的值设置为何种锁模式，该语句会抛出生成重复键错误 23000 ( Can’t write; duplicate key in table ) 。因为自增值 101 已经分配给了 (NULL,'b') ，这时候 (101,'c') 再使用 101 就会失败，当然了，前提是 AUTO_INCREMENT 列设置为主键或唯一索引</p>
 <h3>在一序列 INSERT 语句的中间修改 AUTO_INCREMENT 列值</h3>
 <p>在 MySQL 5.7 及更早版本中，在一序列 INSERT 语句的中间修改 AUTO_INCREMENT 列值可能会导致 「 重复条目 」 ( Duplicate entry ) 错误。例如，如果执行了将 AUTO_INCREMENT 列值更改为大于当前最大自增值的 UPDATE 操作，那些后续的未指定也未使用自增值的 INSERT 操作可能会遇到 「 重复条目 」 错误</p>
@@ -340,8 +346,10 @@ mysql&gt; SELECT c1 FROM t1;
 |  3 |
 |  4 |
 |  5 |
-+----+</code></pre>
-<hr>
++----+
+
+</code></pre>
+<hr />
 <p>了解了 MySQL Innodb 中的 AUTO_INCREMENT 约束和 AUTO_INCREMENT 锁的模式。也了解了各种模式的影响和缺点。</p>
 <p>当然了，上面的章节，很多人应该是不关心的。大家最关心的还是本章节的内容：「 MySQL InnoDB AUTO_INCREMENT 计数器如何初始化 」</p>
 <h2>MySQL InnoDB AUTO_INCREMENT 计数器如何初始化</h2>
@@ -349,7 +357,8 @@ mysql&gt; SELECT c1 FROM t1;
 <p>在 MySQL 5.7 及更早版本中，自增值计数器仅存储在内存中，而不是磁盘上。</p>
 <p>为了在 MySQL 启动或重新启动后初始化 自增值计数器，在往含有 AUTO_INCREMENT 列的 InnoDB 表中第一次插入数据之前，会执行以下语句获取当前的 自增值</p>
 
-<pre><code>SELECT MAX(ai_col) FROM table_name FOR UPDATE;</code></pre>
+<pre><code>SELECT MAX(ai_col) FROM table_name FOR UPDATE;
+</code></pre>
 
 <pre><code>这个操作是隐式执行的，就是在插入时，如果 Innodb 发现内存中该表对象不包含自增计数器的时候，会执行上面的 SQL 语句来获取这个自增值 
 
@@ -365,7 +374,8 @@ mysql&gt; SELECT c1 FROM t1;
 <p>当每一次执行 INSERT 或 UPDATE 操作会更改当前最大自增值时，会将新值将写入重做日志。但如果在将重做日志刷新到磁盘之前发生崩溃，那么在重新启动服务器后初始化自增计数器时可能会重用以前分配的值。</p>
 <p>当然了，MySQL 8.0 或更高的版本中也可能会使用等效下面的 SQL 语句来初始化自增计数器</p>
 
-<pre><code>SELECT MAX(ai_col) FROM table_name FOR UPDATE;</code></pre>
+<pre><code>SELECT MAX(ai_col) FROM table_name FOR UPDATE;
+</code></pre>
 <p>但唯一可能发生的情况是: **导入没有 .cfg 元数据文件的表空间。 否则，会从 .cfg 元数据文件中读取当前最大自增计数器值</p>
 <p>在 MySQL 5.7 及更早版本中，服务器重新启动时会忽略执行表选项中的 AUTO_INCREMENT = N，该选项一般用来在 CREATE TABLE 或 ALTER TABLE 语句中用于设置初始计数器值或更改现有计数器值。</p>
 <p>但在 MySQL 8.0 及更高的版本中，服务器重新启动时并不会忽略表选项 AUTO_INCREMENT = N。 如果将自增计数器初始化为特定值，或者将自增计数器值更改为更大的值，则新值会在服务器重新启动时保持不变。</p>
@@ -390,12 +400,14 @@ my.cnf 配置文件中的 AUTO_INCREMENT</p>
 <p>一般情况下，在双主互相备份时，我们一般会指定一台服务器的两个配置项为</p>
 
 <pre><code>auto_increment_offset=1;
-auto_increment_increment=2;</code></pre>
+auto_increment_increment=2;
+</code></pre>
 <p>这样，这台服务器的自增值将会遵循 1 3 5 7 9 11 13 ，奇数数列</p>
 <p>而在另一台服务器上指定</p>
 
 <pre><code>auto_increment_offset=2;
-auto_increment_increment=2;</code></pre>
+auto_increment_increment=2;
+</code></pre>
 <p>这样，这台服务器的自增值将会是 2 4 6 8 10 …. 偶数数列</p>
 <p>这样，在互为主从的时候，就不会出现自增值重复的问题</p>
 
@@ -442,8 +454,8 @@ auto_increment_increment=2;</code></pre>
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2015~2020 177</span>
-                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                            <span>Copyright © 2020 177</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">
                             <span class="footer-addon">
@@ -451,63 +463,21 @@ auto_increment_increment=2;</code></pre>
 Whatever will be, Will be.
 
                             </span>
-                            <!-- <nav class="social-links">
+                            <nav class="social-links">
                                 <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
-                            </nav> -->
+                            </nav>
                         </div>
                     </section>
                     <script>
                         var site_build_date = "2020-01-01T00:00+08:00"
                     </script>
-                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.js"></script>
                 </footer>
             </div>
         </div>
     </div>
-        
-        
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
-    
     <!--katex-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
@@ -520,6 +490,9 @@ Whatever will be, Will be.
     };
     </script>
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
 <script>

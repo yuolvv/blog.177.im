@@ -7,17 +7,19 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="177.im,177,听风行,blog,博客" />
-    <meta name="generator" content="Maverick 1.0" />
+    <meta name="generator" content="Maverick 1.1" />
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/2b508a3cae8153f0b1d22b41a4e33a1f.json"
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/34aa01aed721cdeec7dff5ceef2aeac8.json"
         }
     </script>
     
@@ -65,11 +67,6 @@
         <div class="container">
             <header id="ga-header">
                 <div first>
-                    <aside id="ga-logo">
-                        <a href="/" target="_self">
-                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
-                        </a>
-                    </aside>
                     <aside id="ga-brand">
                         <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
                         <p>天青色等烟雨</p>
@@ -78,9 +75,6 @@
                 <div second id="ga-nav">
                     <nav class="navs">
                         <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
-                    </nav>
-                    <nav class="social-links">
-                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
                     </nav>
                 </div>
             </header>
@@ -158,19 +152,19 @@ exception：封装页面抛出异常的对象。
 <p>对同一个JSP页面的后续请求，容器会查看这个JSP页面是否被修改过，如果修改过就会重新转换并重新编译并执行。如果没有则执行内存中已经存在的Servlet实例。我们可以看一段JSP代码对应的Java程序就知道一切了，而且9个内置对象的神秘面纱也会被揭开。</p>
 <p>JSP页面：</p>
 
-<pre><code>    &lt;%@ page pageEncoding="UTF-8"%&gt;
+<pre><code>    &lt;%@ page pageEncoding=&quot;UTF-8&quot;%&gt;
     &lt;%
     String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    String basePath = request.getScheme() + &quot;://&quot; + request.getServerName() + &quot;:&quot; + request.getServerPort() + path + &quot;/&quot;;
     %&gt;
 
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
       &lt;head&gt;
-        &lt;base href="&lt;%=basePath%&gt;"&gt;
+        &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;
         &lt;title&gt;首页&lt;/title&gt;
-        &lt;style type="text/css"&gt;
-            * { font-family: "Arial"; }
+        &lt;style type=&quot;text/css&quot;&gt;
+            * { font-family: &quot;Arial&quot;; }
         &lt;/style&gt;
       &lt;/head&gt;
 
@@ -179,7 +173,8 @@ exception：封装页面抛出异常的对象。
         &lt;hr/&gt;
         &lt;h2&gt;Current time is: &lt;%= new java.util.Date().toString() %&gt;&lt;/h2&gt;
       &lt;/body&gt;
-    &lt;/html&gt;</code></pre>
+    &lt;/html&gt;
+</code></pre>
 <p>对应的Java代码：</p>
 
 <pre><code>    /*
@@ -236,7 +231,7 @@ exception：封装页面抛出异常的对象。
             javax.servlet.jsp.PageContext _jspx_page_context = null;
 
             try {
-                response.setContentType("text/html;charset=UTF-8");
+                response.setContentType(&quot;text/html;charset=UTF-8&quot;);
                 pageContext = _jspxFactory.getPageContext(this, request, response,
                         null, true, 8192, true);
                 _jspx_page_context = pageContext;
@@ -250,32 +245,32 @@ exception：封装页面抛出异常的对象。
                 out.write('\n');
 
                 String path = request.getContextPath();
-                String basePath = request.getScheme() + "://"
-                        + request.getServerName() + ":" + request.getServerPort()
-                        + path + "/";
+                String basePath = request.getScheme() + &quot;://&quot;
+                        + request.getServerName() + &quot;:&quot; + request.getServerPort()
+                        + path + &quot;/&quot;;
     // 以下代码通过输出流将HTML标签输出到浏览器中
-                out.write("\r\n");
-                out.write("\r\n");
-                out.write("&lt;!DOCTYPE html&gt;\r\n");
-                out.write("&lt;html&gt;\r\n");
-                out.write("  &lt;head&gt;\r\n");
-                out.write("    &lt;base href=\"");
+                out.write(&quot;\r\n&quot;);
+                out.write(&quot;\r\n&quot;);
+                out.write(&quot;&lt;!DOCTYPE html&gt;\r\n&quot;);
+                out.write(&quot;&lt;html&gt;\r\n&quot;);
+                out.write(&quot;  &lt;head&gt;\r\n&quot;);
+                out.write(&quot;    &lt;base href=\&quot;&quot;);
                 out.print(basePath);
-                out.write("\"&gt;\r\n");
-                out.write("    &lt;title&gt;首页&lt;/title&gt;\r\n");
-                out.write("    &lt;style type=\"text/css\"&gt;\r\n");
-                out.write("    \t* { font-family: \"Arial\"; }\r\n");
-                out.write("    &lt;/style&gt;\r\n");
-                out.write("  &lt;/head&gt;\r\n");
-                out.write("  \r\n");
-                out.write("  &lt;body&gt;\r\n");
-                out.write("    &lt;h1&gt;Hello, World!&lt;/h1&gt;\r\n");
-                out.write("    &lt;hr/&gt;\r\n");
-                out.write("    &lt;h2&gt;Current time is: ");
+                out.write(&quot;\&quot;&gt;\r\n&quot;);
+                out.write(&quot;    &lt;title&gt;首页&lt;/title&gt;\r\n&quot;);
+                out.write(&quot;    &lt;style type=\&quot;text/css\&quot;&gt;\r\n&quot;);
+                out.write(&quot;    \t* { font-family: \&quot;Arial\&quot;; }\r\n&quot;);
+                out.write(&quot;    &lt;/style&gt;\r\n&quot;);
+                out.write(&quot;  &lt;/head&gt;\r\n&quot;);
+                out.write(&quot;  \r\n&quot;);
+                out.write(&quot;  &lt;body&gt;\r\n&quot;);
+                out.write(&quot;    &lt;h1&gt;Hello, World!&lt;/h1&gt;\r\n&quot;);
+                out.write(&quot;    &lt;hr/&gt;\r\n&quot;);
+                out.write(&quot;    &lt;h2&gt;Current time is: &quot;);
                 out.print(new java.util.Date().toString());
-                out.write("&lt;/h2&gt;\r\n");
-                out.write("  &lt;/body&gt;\r\n");
-                out.write("&lt;/html&gt;\r\n");
+                out.write(&quot;&lt;/h2&gt;\r\n&quot;);
+                out.write(&quot;  &lt;/body&gt;\r\n&quot;);
+                out.write(&quot;&lt;/html&gt;\r\n&quot;);
             } catch (java.lang.Throwable t) {
                 if (!(t instanceof javax.servlet.jsp.SkipPageException)) {
                     out = _jspx_out;
@@ -293,13 +288,14 @@ exception：封装页面抛出异常的对象。
                 _jspxFactory.releasePageContext(_jspx_page_context);
             }
         }
-    }</code></pre>
+    }
+</code></pre>
 <h2>100、get和post请求的区别？</h2>
 <p>答：①get请求用来从服务器上获得资源，而post是用来向服务器提交数据；</p>
-<p>②get将表单中数据按照name=value的形式，添加到action 所指向的URL 后面，并且两者使用"?"连接，而各个变量之间使用"&amp;"连接；post是将表单中的数据放在HTTP协议的请求头或消息体中，传递到action所指向URL；</p>
+<p>②get将表单中数据按照name=value的形式，添加到action 所指向的URL 后面，并且两者使用&quot;?&quot;连接，而各个变量之间使用&quot;&amp;&quot;连接；post是将表单中的数据放在HTTP协议的请求头或消息体中，传递到action所指向URL；</p>
 <p>③get传输的数据要受到URL长度限制（1024字节）；而post可以传输大量的数据，上传文件通常要使用post方式；</p>
 <p>④使用get时参数会显示在地址栏上，如果这些数据不是敏感数据，那么可以使用get；对于敏感数据还是应用使用post；</p>
-<p>⑤get使用MIME类型application/x-www-form-urlencoded的URL编码（也叫百分号编码）文本的格式传递参数，保证被传送的参数由遵循规范的文本组成，例如一个空格的编码是"%20"。</p>
+<p>⑤get使用MIME类型application/x-www-form-urlencoded的URL编码（也叫百分号编码）文本的格式传递参数，保证被传送的参数由遵循规范的文本组成，例如一个空格的编码是&quot;%20&quot;。</p>
 <h2>101、常用的Web服务器有哪些？</h2>
 <p>答：Unix和Linux平台下使用最广泛的免费HTTP服务器是Apache服务器，而Windows平台的服务器通常使用IIS作为Web服务器。</p>
 <p>选择Web服务器应考虑的因素有：性能、安全性、日志和统计、虚拟主机、代理服务器、缓冲服务和集成应用程序等。</p>
@@ -317,7 +313,7 @@ Apache：目前Apache仍然是世界上用得最多的Web服务器，其市场�
 
 Tomcat：Tomcat是一个开放源代码、运行Servlet和JSP的容器。Tomcat实现了Servlet和JSP规范。此外，Tomcat还实现了Apache-Jakarta规范而且比绝大多数商业应用软件服务器要好，因此目前也有不少的Web服务器都选择了Tomcat。
 
-Nginx：读作"engine x"，是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。 Nginx是由Igor Sysoev为俄罗斯访问量第二的Rambler站点开发的，第一个公开版本0.1.0发布于2004年10月4日。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。在2014年下半年，Nginx的市场份额达到了14%。
+Nginx：读作&quot;engine x&quot;，是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP代理服务器。 Nginx是由Igor Sysoev为俄罗斯访问量第二的Rambler站点开发的，第一个公开版本0.1.0发布于2004年10月4日。其将源代码以类BSD许可证的形式发布，因它的稳定性、丰富的功能集、示例配置文件和低系统资源的消耗而闻名。在2014年下半年，Nginx的市场份额达到了14%。
 
 </code></pre>
 <h2>102、JSP和Servlet是什么关系？</h2>
@@ -338,7 +334,8 @@ application代表与整个Web应用程序相关的对象和属性，它实质上
 <h2>104、如何实现JSP或Servlet的单线程模式？</h2>
 <p>答：对于JSP页面，可以通过page指令进行设置。</p>
 
-<pre><code>    &lt;%@page isThreadSafe=”false”%&gt;</code></pre>
+<pre><code>    &lt;%@page isThreadSafe=”false”%&gt;
+</code></pre>
 <p>对于Servlet，可以让自定义的Servlet实现SingleThreadModel标识接口。</p>
 <p>说明：如果将JSP或Servlet设置成单线程工作模式，会导致每个请求创建一个Servlet实例，这种实践将导致严重的性能问题（服务器的内存压力很大，还会导致频繁的垃圾回收），所以通常情况下并不会这么做。</p>
 <h2>105、实现会话跟踪的技术有哪些？</h2>
@@ -370,10 +367,10 @@ cookie：cookie有两种，一种是基于窗口的，浏览器窗口关闭后�
     import javax.servlet.annotation.WebFilter;
     import javax.servlet.annotation.WebInitParam;
 
-    @WebFilter(urlPatterns = { "*" }, 
-            initParams = {@WebInitParam(name="encoding", value="utf-8")})
+    @WebFilter(urlPatterns = { &quot;*&quot; }, 
+            initParams = {@WebInitParam(name=&quot;encoding&quot;, value=&quot;utf-8&quot;)})
     public class CodingFilter implements Filter {
-        private String defaultEncoding = "utf-8";
+        private String defaultEncoding = &quot;utf-8&quot;;
 
         @Override
         public void destroy() {
@@ -389,12 +386,13 @@ cookie：cookie有两种，一种是基于窗口的，浏览器窗口关闭后�
 
         @Override
         public void init(FilterConfig config) throws ServletException {
-            String encoding = config.getInitParameter("encoding");
+            String encoding = config.getInitParameter(&quot;encoding&quot;);
             if (encoding != null) {
                 defaultEncoding = encoding;
             }
         }
-    }</code></pre>
+    }
+</code></pre>
 <p>下载计数过滤器的例子：</p>
 
 <pre><code>    import java.io.File;
@@ -414,7 +412,7 @@ cookie：cookie有两种，一种是基于窗口的，浏览器窗口关闭后�
     import javax.servlet.annotation.WebFilter;
     import javax.servlet.http.HttpServletRequest;
 
-    @WebFilter(urlPatterns = {"/*"})
+    @WebFilter(urlPatterns = {&quot;/*&quot;})
     public class DownloadCounterFilter implements Filter {
 
         private ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -437,14 +435,14 @@ cookie：cookie有两种，一种是基于窗口的，浏览器窗口关闭后�
                 public void run() {
                     String value = downloadLog.getProperty(uri);
                     if(value == null) {
-                        downloadLog.setProperty(uri, "1");
+                        downloadLog.setProperty(uri, &quot;1&quot;);
                     }
                     else {
                         int count = Integer.parseInt(value);
                         downloadLog.setProperty(uri, String.valueOf(++count));
                     }
                     try {
-                        downloadLog.store(new FileWriter(logFile), "");
+                        downloadLog.store(new FileWriter(logFile), &quot;&quot;);
                     } 
                     catch (IOException e) {
                         e.printStackTrace();
@@ -456,8 +454,8 @@ cookie：cookie有两种，一种是基于窗口的，浏览器窗口关闭后�
 
         @Override
         public void init(FilterConfig config) throws ServletException {
-            String appPath = config.getServletContext().getRealPath("/");
-            logFile = new File(appPath, "downloadLog.txt");
+            String appPath = config.getServletContext().getRealPath(&quot;/&quot;);
+            logFile = new File(appPath, &quot;downloadLog.txt&quot;);
             if(!logFile.exists()) {
                 try {
                     logFile.createNewFile();
@@ -474,7 +472,8 @@ cookie：cookie有两种，一种是基于窗口的，浏览器窗口关闭后�
             }
         }
 
-    }</code></pre>
+    }
+</code></pre>
 <p>说明：这里使用了Servlet 3规范中的注解来部署过滤器，当然也可以在web.xml中使用和标签部署过滤器，如108题中所示。</p>
 <h2>107、监听器有哪些作用和用法？</h2>
 <p>答：Java Web开发中的监听器（listener）就是application、session、request三个对象创建、销毁或者往其中添加修改删除属性时自动执行代码的功能组件，如下所示：</p>
@@ -513,8 +512,8 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
 
         @Override
         public void contextInitialized(ServletContextEvent evt) {
-            evt.getServletContext().setAttribute("onLineCount", 0);
-            evt.getServletContext().setAttribute("maxOnLineCount", 0);
+            evt.getServletContext().setAttribute(&quot;onLineCount&quot;, 0);
+            evt.getServletContext().setAttribute(&quot;maxOnLineCount&quot;, 0);
         }
 
     }
@@ -538,25 +537,26 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
         @Override
         public void sessionCreated(HttpSessionEvent event) {
             ServletContext ctx = event.getSession().getServletContext();
-            int count = Integer.parseInt(ctx.getAttribute("onLineCount").toString());
+            int count = Integer.parseInt(ctx.getAttribute(&quot;onLineCount&quot;).toString());
             count++;
-            ctx.setAttribute("onLineCount", count);
-            int maxOnLineCount = Integer.parseInt(ctx.getAttribute("maxOnLineCount").toString());
+            ctx.setAttribute(&quot;onLineCount&quot;, count);
+            int maxOnLineCount = Integer.parseInt(ctx.getAttribute(&quot;maxOnLineCount&quot;).toString());
             if (count &gt; maxOnLineCount) {
-                ctx.setAttribute("maxOnLineCount", count);
-                DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                ctx.setAttribute("date", df.format(new Date()));
+                ctx.setAttribute(&quot;maxOnLineCount&quot;, count);
+                DateFormat df = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+                ctx.setAttribute(&quot;date&quot;, df.format(new Date()));
             }
         }
 
         @Override
         public void sessionDestroyed(HttpSessionEvent event) {
             ServletContext app = event.getSession().getServletContext();
-            int count = Integer.parseInt(app.getAttribute("onLineCount").toString());
+            int count = Integer.parseInt(app.getAttribute(&quot;onLineCount&quot;).toString());
             count--;
-            app.setAttribute("onLineCount", count);
+            app.setAttribute(&quot;onLineCount&quot;, count);
         }
-    }</code></pre>
+    }
+</code></pre>
 <p>说明：这里使用了Servlet 3规范中的@WebListener注解配置监听器，当然你可以在web.xml文件中用标签配置监听器，如108题中所示。</p>
 <h2>108、web.xml文件中可以配置哪些内容？</h2>
 <p>答：web.xml用于配置Web应用的相关信息，如：监听器（listener）、过滤器（filter）、 Servlet、相关参数、会话超时时间、安全验证方式、错误页面等，下面是一些开发中常见的配置：</p>
@@ -574,7 +574,8 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
          &lt;listener-class&gt;
            org.springframework.web.context.ContextLoaderListener
          &lt;/listener-class&gt;
-      &lt;/listener&gt;</code></pre>
+      &lt;/listener&gt;
+</code></pre>
 
 <pre><code>配置Spring的OpenSessionInView过滤器来解决延迟加载和hibernate会话关闭的矛盾：
 
@@ -590,7 +591,8 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
       &lt;filter-mapping&gt;
           &lt;filter-name&gt;openSessionInView&lt;/filter-name&gt;
           &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-      &lt;/filter-mapping&gt;</code></pre>
+      &lt;/filter-mapping&gt;
+</code></pre>
 
 <pre><code>配置会话超时时间为10分钟：
 
@@ -598,7 +600,8 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
 
 <pre><code>      &lt;session-config&gt;
           &lt;session-timeout&gt;10&lt;/session-timeout&gt;
-      &lt;/session-config&gt;</code></pre>
+      &lt;/session-config&gt;
+</code></pre>
 
 <pre><code>配置404和Exception的错误页面：
 
@@ -612,7 +615,8 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
       &lt;error-page&gt;
           &lt;exception-type&gt;java.lang.Exception&lt;/exception-type&gt;
           &lt;location&gt;/error.jsp&lt;/location&gt;
-      &lt;/error-page&gt;</code></pre>
+      &lt;/error-page&gt;
+</code></pre>
 
 <pre><code>配置安全认证方式：
 
@@ -636,7 +640,8 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
 
       &lt;security-role&gt;
           &lt;role-name&gt;admin&lt;/role-name&gt;
-      &lt;/security-role&gt;</code></pre>
+      &lt;/security-role&gt;
+</code></pre>
 <p>说明：对Servlet（小服务）、Listener（监听器）和Filter（过滤器）等Web组件的配置，Servlet 3规范提供了基于注解的配置方式，可以分别使用@WebServlet、@WebListener、@WebFilter注解进行配置。</p>
 <p>补充：如果Web提供了有价值的商业信息或者是敏感数据，那么站点的安全性就是必须考虑的问题。安全认证是实现安全性的重要手段，认证就是要解决“Are you who you say you are?”的问题。</p>
 <p>认证的方式非常多，简单说来可以分为三类：</p>
@@ -681,15 +686,15 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
     public class TimeTag extends TagSupport {
         private static final long serialVersionUID = 1L;
 
-        private String format = "yyyy-MM-dd hh:mm:ss";
-        private String foreColor = "black";
-        private String backColor = "white";
+        private String format = &quot;yyyy-MM-dd hh:mm:ss&quot;;
+        private String foreColor = &quot;black&quot;;
+        private String backColor = &quot;white&quot;;
 
         public int doStartTag() throws JspException {
              SimpleDateFormat sdf = new SimpleDateFormat(format);
              JspWriter writer = pageContext.getOut();
              StringBuilder sb = new StringBuilder();
-             sb.append(String.format("&lt;span style='color:%s;background-color:%s'&gt;%s&lt;/span&gt;",
+             sb.append(String.format(&quot;&lt;span style='color:%s;background-color:%s'&gt;%s&lt;/span&gt;&quot;,
                  foreColor, backColor, sdf.format(new Date())));
              try {
                writer.print(sb.toString());
@@ -710,15 +715,16 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
         public void setBackColor(String backColor) {
             this.backColor = backColor;
         }
-    }</code></pre>
+    }
+</code></pre>
 <p>步骤2 - 编写标签库描述文件my.tld：</p>
 
-<pre><code>    &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-    &lt;taglib xmlns="http://java.sun.com/xml/ns/j2ee"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-        http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
-        version="2.0"&gt;
+<pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+    &lt;taglib xmlns=&quot;http://java.sun.com/xml/ns/j2ee&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/j2ee 
+        http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd&quot;
+        version=&quot;2.0&quot;&gt;
 
         &lt;description&gt;定义标签库&lt;/description&gt;
         &lt;tlib-version&gt;1.0&lt;/tlib-version&gt;
@@ -738,44 +744,47 @@ ServletRequestListener：对请求对象的初始化和销毁进行监听。⑥S
                 &lt;name&gt;backColor&lt;/name&gt;
             &lt;/attribute&gt;
         &lt;/tag&gt;
-    &lt;/taglib&gt;</code></pre>
+    &lt;/taglib&gt;
+</code></pre>
 <p>步骤3 - 在JSP页面中使用自定义标签：</p>
 
-<pre><code>    &lt;%@ page pageEncoding="UTF-8"%&gt;
-    &lt;%@ taglib prefix="my" uri="/WEB-INF/tld/my.tld" %&gt;
+<pre><code>    &lt;%@ page pageEncoding=&quot;UTF-8&quot;%&gt;
+    &lt;%@ taglib prefix=&quot;my&quot; uri=&quot;/WEB-INF/tld/my.tld&quot; %&gt;
     &lt;%
     String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    String basePath = request.getScheme() + &quot;://&quot; + request.getServerName() + &quot;:&quot; + request.getServerPort() + path + &quot;/&quot;;
     %&gt;
 
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
       &lt;head&gt;
-        &lt;base href="&lt;%=basePath%&gt;"&gt;
+        &lt;base href=&quot;&lt;%=basePath%&gt;&quot;&gt;
         &lt;title&gt;首页&lt;/title&gt;
-        &lt;style type="text/css"&gt;
-            * { font-family: "Arial"; font-size:72px; }
+        &lt;style type=&quot;text/css&quot;&gt;
+            * { font-family: &quot;Arial&quot;; font-size:72px; }
         &lt;/style&gt;
       &lt;/head&gt;
 
       &lt;body&gt;
-        &lt;my:time format="yyyy-MM-dd" backColor="blue" foreColor="yellow"/&gt;
+        &lt;my:time format=&quot;yyyy-MM-dd&quot; backColor=&quot;blue&quot; foreColor=&quot;yellow&quot;/&gt;
       &lt;/body&gt;
-    &lt;/html&gt;</code></pre>
+    &lt;/html&gt;
+</code></pre>
 <p>提示：如果要将自定义的标签库发布成JAR文件，需要将标签库描述文件（tld文件）放在JAR文件的META-INF目录下，可以JDK中的jar工具完成JAR文件的生成，如果不清楚如何操作，可以请教谷老师和百老师。</p>
 <h2>111、说一下表达式语言（EL）的隐式对象及其作用。</h2>
 <p>答：EL的隐式对象包括：pageContext、initParam（访问上下文参数）、param（访问请求参数）、paramValues、header（访问请求头）、headerValues、cookie（访问cookie）、applicationScope（访问application作用域）、sessionScope（访问session作用域）、requestScope（访问request作用域）、pageScope（访问page作用域）。</p>
 <p>用法如下所示：</p>
 
 <pre><code>    ${pageContext.request.method}
-    ${pageContext["request"]["method"]}
-    ${pageContext.request["method"]}
-    ${pageContext["request"].method}
+    ${pageContext[&quot;request&quot;][&quot;method&quot;]}
+    ${pageContext.request[&quot;method&quot;]}
+    ${pageContext[&quot;request&quot;].method}
     ${initParam.defaultEncoding}
-    ${header["accept-language"]}
-    ${headerValues["accept-language"][0]}
+    ${header[&quot;accept-language&quot;]}
+    ${headerValues[&quot;accept-language&quot;][0]}
     ${cookie.jsessionid.value}
-    ${sessionScope.loginUser.username}</code></pre>
+    ${sessionScope.loginUser.username}
+</code></pre>
 <p>补充：表达式语言的.和[]运算作用是一致的，唯一的差别在于如果访问的属性名不符合Java标识符命名规则，例如上面的accept-language就不是一个有效的Java标识符，那么这时候就只能用[]运算符而不能使用.运算符获取它的值</p>
 <h2>112、表达式语言（EL）支持哪些运算符？</h2>
 <p>答：除了.和[]运算符，EL还提供了：</p>
@@ -793,7 +802,7 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
 </code></pre>
 <h2>113、Java Web开发的Model 1和Model 2分别指的是什么？</h2>
 <p>答：Model 1是以页面为中心的Java Web开发，使用JSP+JavaBean技术将页面显示逻辑和业务逻辑处理分开，JSP实现页面显示，JavaBean对象用来保存数据和实现业务逻辑。Model 2是基于MVC（模型-视图-控制器，Model-View-Controller）架构模式的开发模型，实现了模型和视图的彻底分离，利于团队开发和代码复用，如下图所示。</p>
-<p><figure class="pswp-item" style="flex: 116.57754010695187" data-width="436" data-height="187"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/cdad837baf47f63a6c56a0fd1eece427.png" alt="java-intelview-2-001" /><figcaption>java-intelview-2-001</figcaption></figure></p>
+<p><figure style="flex: 116.57754010695187" ><img width="436" height="187" src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/cdad837baf47f63a6c56a0fd1eece427.png" /><figcaption>java-intelview-2-001</figcaption></figure></p>
 <h2>114、Servlet 3中的异步处理指的是什么？</h2>
 <p>答：在Servlet 3中引入了一项新的技术可以让Servlet异步处理请求。</p>
 <p>有人可能会质疑，既然都有多线程了，还需要异步处理请求吗？答案是肯定的，因为如果一个任务处理时间相当长，那么Servlet或Filter会一直占用着请求处理线程直到任务结束，随着并发用户的增加，容器将会遭遇线程超出的风险，这这种情况下很多的请求将会被堆积起来而后续的请求可能会遭遇拒绝服务，直到有资源可以处理请求为止。</p>
@@ -809,7 +818,7 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
     import javax.servlet.http.HttpServletRequest;
     import javax.servlet.http.HttpServletResponse;
 
-    @WebServlet(urlPatterns = {"/async"}, asyncSupported = true)
+    @WebServlet(urlPatterns = {&quot;/async&quot;}, asyncSupported = true)
     public class AsyncServlet extends HttpServlet {
         private static final long serialVersionUID = 1L;
 
@@ -817,7 +826,7 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
         public void doGet(HttpServletRequest req, HttpServletResponse resp) 
                 throws ServletException, IOException {
             // 开启Tomcat异步Servlet支持
-            req.setAttribute("org.apache.catalina.ASYNC_SUPPORTED", true);
+            req.setAttribute(&quot;org.apache.catalina.ASYNC_SUPPORTED&quot;, true);
 
             final AsyncContext ctx = req.startAsync();  // 启动异步处理的上下文
             // ctx.setTimeout(30000);
@@ -831,29 +840,31 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
                 }
             });
         }
-    }</code></pre>
+    }
+</code></pre>
 <h2>115、如何在基于Java的Web项目中实现文件上传和下载？</h2>
 <p>答：在Sevlet 3 以前，Servlet API中没有支持上传功能的API，因此要实现上传功能需要引入第三方工具从POST请求中获得上传的附件或者通过自行处理输入流来获得上传的文件，我们推荐使用Apache的commons-fileupload。</p>
 <p>从Servlet 3开始，文件上传变得无比简单，相信看看下面的例子一切都清楚了。</p>
 <p>上传页面index.jsp：</p>
 
-<pre><code>    &lt;%@ page pageEncoding="utf-8"%&gt;
+<pre><code>    &lt;%@ page pageEncoding=&quot;utf-8&quot;%&gt;
     &lt;!DOCTYPE html&gt;
     &lt;html&gt;
     &lt;head&gt;
-    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
     &lt;title&gt;Photo Upload&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;h1&gt;Select your photo and upload&lt;/h1&gt;
     &lt;hr/&gt;
-    &lt;div style="color:red;font-size:14px;"&gt;${hint}&lt;/div&gt;
-    &lt;form action="UploadServlet" method="post" enctype="multipart/form-data"&gt;
-        Photo file: &lt;input type="file" name="photo" /&gt;
-        &lt;input type="submit" value="Upload" /&gt;
+    &lt;div style=&quot;color:red;font-size:14px;&quot;&gt;${hint}&lt;/div&gt;
+    &lt;form action=&quot;UploadServlet&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        Photo file: &lt;input type=&quot;file&quot; name=&quot;photo&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Upload&quot; /&gt;
     &lt;/form&gt;
     &lt;/body&gt;
-    &lt;/html&gt;</code></pre>
+    &lt;/html&gt;
+</code></pre>
 <p>支持上传的Servlet：</p>
 
 <pre><code>    package com.jackfrued.servlet;
@@ -868,7 +879,7 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
     import javax.servlet.http.HttpServletResponse;
     import javax.servlet.http.Part;
 
-    @WebServlet("/UploadServlet")
+    @WebServlet(&quot;/UploadServlet&quot;)
     @MultipartConfig
     public class UploadServlet extends HttpServlet {
         private static final long serialVersionUID = 1L;
@@ -878,38 +889,40 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
             // 可以用request.getPart()方法获得名为photo的上传附件
             // 也可以用request.getParts()获得所有上传附件（多文件上传）
             // 然后通过循环分别处理每一个上传的文件
-            Part part = request.getPart("photo");
+            Part part = request.getPart(&quot;photo&quot;);
             if (part != null &amp;&amp; part.getSubmittedFileName().length() &gt; 0) {
                 // 用ServletContext对象的getRealPath()方法获得上传文件夹的绝对路径
-                String savePath = request.getServletContext().getRealPath("/upload");
+                String savePath = request.getServletContext().getRealPath(&quot;/upload&quot;);
                 // Servlet 3.1规范中可以用Part对象的getSubmittedFileName()方法获得上传的文件名
                 // 更好的做法是为上传的文件进行重命名（避免同名文件的相互覆盖）
-                part.write(savePath + "/" + part.getSubmittedFileName());
-                request.setAttribute("hint", "Upload Successfully!");
+                part.write(savePath + &quot;/&quot; + part.getSubmittedFileName());
+                request.setAttribute(&quot;hint&quot;, &quot;Upload Successfully!&quot;);
             } else {
-                request.setAttribute("hint", "Upload failed!");
+                request.setAttribute(&quot;hint&quot;, &quot;Upload failed!&quot;);
             }
             // 跳转回到上传页面
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher(&quot;index.jsp&quot;).forward(request, response);
         }
 
-    }</code></pre>
+    }
+</code></pre>
 <h2>116、服务器收到用户提交的表单数据，到底是调用Servlet的doGet()还是doPost()方法？</h2>
 <p>答：HTML的元素有一个method属性，用来指定提交表单的方式，其值可以是get或post。我们自定义的Servlet一般情况下会重写doGet()或doPost()两个方法之一或全部，如果是GET请求就调用doGet()方法，如果是POST请求就调用doPost()方法，那为什么为什么这样呢？</p>
 <p>我们自定义的Servlet通常继承自HttpServlet，HttpServlet继承自GenericServlet并重写了其中的service()方法，这个方法是Servlet接口中定义的。</p>
 <p>HttpServlet重写的service()方法会先获取用户请求的方法，然后根据请求方法调用doGet()、doPost()、doPut()、doDelete()等方法，如果在自定义Servlet中重写了这些方法，那么显然会调用重写过的（自定义的）方法，这显然是对模板方法模式的应用（如果不理解，请参考阎宏博士的《Java与模式》一书的第37章）。</p>
 <p>当然，自定义Servlet中也可以直接重写service()方法，那么不管是哪种方式的请求，都可以通过自己的代码进行处理，这对于不区分请求方法的场景比较合适。</p>
 <h2>117、JSP中的静态包含和动态包含有什么区别？</h2>
-<p>答：静态包含是通过JSP的include指令包含页面，动态包含是通过JSP标准动作包含页面。静态包含是编译时包含，如果包含的页面不存在则会产生编译错误，而且两个页面的"contentType"属性应保持一致，因为两个页面会合二为一，只产生一个class文件，因此被包含页面发生的变动再包含它的页面更新前不会得到更新。</p>
+<p>答：静态包含是通过JSP的include指令包含页面，动态包含是通过JSP标准动作包含页面。静态包含是编译时包含，如果包含的页面不存在则会产生编译错误，而且两个页面的&quot;contentType&quot;属性应保持一致，因为两个页面会合二为一，只产生一个class文件，因此被包含页面发生的变动再包含它的页面更新前不会得到更新。</p>
 <p>动态包含是运行时包含，可以向被包含的页面传递参数，包含页面和被包含页面是独立的，会编译出两个class文件，如果被包含的页面不存在，不会产生编译错误，也不影响页面其他部分的执行。代码如下所示：</p>
 
 <pre><code>    &lt;%-- 静态包含 --%&gt;
-    &lt;%@ include file="..." %&gt;
+    &lt;%@ include file=&quot;...&quot; %&gt;
 
     &lt;%-- 动态包含 --%&gt;
-    &lt;jsp:include page="..."&gt;
-        &lt;jsp:param name="..." value="..." /&gt;
-    &lt;/jsp:include&gt;</code></pre>
+    &lt;jsp:include page=&quot;...&quot;&gt;
+        &lt;jsp:param name=&quot;...&quot; value=&quot;...&quot; /&gt;
+    &lt;/jsp:include&gt;
+</code></pre>
 <h2>118、Servlet中如何获取用户提交的查询参数或表单数据？</h2>
 <p>答：可以通过请求对象（HttpServletRequest）的getParameter()方法通过参数名获得参数值。如果有包含多个值的参数（例如复选框），可以通过请求对象的getParameterValues()方法获得。当然也可以通过请求对象的getParameterMap()获得一个参数名和参数值的映射（Map）。</p>
 <h2>119、Servlet中如何获取用户配置的初始化参数以及服务器上下文参数？</h2>
@@ -922,7 +935,7 @@ empty运算符：检查一个值是否为null或者空（数组长度为0或集�
 <p>其中B代表浏览器（Browser）、C代表客户端（Client）、S代表服务器（Server），P2P是对等模式，不区分客户端和服务器。</p>
 <p>B/S应用模式中可以视为特殊的C/S应用模式，只是将C/S应用模式中的特殊的客户端换成了浏览器，因为几乎所有的系统上都有浏览器，那么只要打开浏览器就可以使用应用，没有安装、配置、升级客户端所带来的各种开销。</p>
 <p>P2P应用模式中，成千上万台彼此连接的计算机都处于对等的地位，整个网络一般来说不依赖专用的集中服务器。网络中的每一台计算机既能充当网络服务的请求者，又对其它计算机的请求作出响应，提供资源和服务。通常这些资源和服务包括：信息的共享和交换、计算资源（如CPU的共享）、存储共享（如缓存和磁盘空间的使用）等，这种应用模式最大的阻力安全性、版本等问题，目前有很多应用都混合使用了多种应用模型，最常见的网络视频应用，它几乎把三种模式都用上了。</p>
-<p>补充：此题要跟"电子商务模式"区分开，因为有很多人被问到这个问题的时候马上想到的是B2B（如阿里巴巴）、B2C（如当当、亚马逊、京东）、C2C（如淘宝、拍拍）、C2B（如威客）、O2O（如美团、饿了么）。对于这类问题，可以去百度上面科普一下。</p>
+<p>补充：此题要跟&quot;电子商务模式&quot;区分开，因为有很多人被问到这个问题的时候马上想到的是B2B（如阿里巴巴）、B2C（如当当、亚马逊、京东）、C2C（如淘宝、拍拍）、C2B（如威客）、O2O（如美团、饿了么）。对于这类问题，可以去百度上面科普一下。</p>
 <h2>122、什么是Web Service（Web服务）？</h2>
 <p>答：从表面上看，Web Service就是一个应用程序，它向外界暴露出一个能够通过Web进行调用的API。这就是说，你能够用编程的方法透明的调用这个应用程序，不需要了解它的任何细节，跟你使用的编程语言也没有关系。</p>
 <p>例如可以创建一个提供天气预报的Web Service，那么无论你用哪种编程语言开发的应用都可以通过调用它的API并传入城市信息来获得该城市的天气预报。之所以称之为Web Service，是因为它基于HTTP协议传输数据，这使得运行在不同机器上的不同应用无须借助附加的、专门的第三方软件或硬件，就可相互交换数据或集成。</p>
@@ -1000,8 +1013,8 @@ JAX-RS(JSR 311 &amp; JSR 339 &amp; JSR 370)：是Java针对REST（Representation
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © 2015~2020 177</span>
-                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                            <span>Copyright © 2020 177</span>
+                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
                         </p>
                         <div class="copyright">
                             <span class="footer-addon">
@@ -1009,63 +1022,21 @@ JAX-RS(JSR 311 &amp; JSR 339 &amp; JSR 370)：是Java针对REST（Representation
 Whatever will be, Will be.
 
                             </span>
-                            <!-- <nav class="social-links">
+                            <nav class="social-links">
                                 <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
-                            </nav> -->
+                            </nav>
                         </div>
                     </section>
                     <script>
                         var site_build_date = "2020-01-01T00:00+08:00"
                     </script>
-                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo.js"></script>
                 </footer>
             </div>
         </div>
     </div>
-        
-        
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                          <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
-    
     <!--katex-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
     <script>
     mathOpts = {
@@ -1078,6 +1049,9 @@ Whatever will be, Will be.
     };
     </script>
     <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     
 <script>
