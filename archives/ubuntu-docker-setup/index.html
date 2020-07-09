@@ -17,7 +17,7 @@
     <script>
         var ExSearchConfig = {
             root: "",
-            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/06ae7e2c9bc1d84f32dc763f44bf1cf6.json"
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/ca28cc118076a0113455d7b4083960be.json"
         }
     </script>
     
@@ -113,25 +113,25 @@
 <pre><code>sudo apt-get remove docker docker-engine docker.io containerd runc</code></pre>
 <h2>安装Docker</h2>
 
-<pre><code>1.sudo apt-get update
+<pre><code>1. sudo apt-get update
 
-2.sudo apt-get install \
+2. sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common
 
-3.curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+3. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-4.sudo add-apt-repository \
+4. sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 
-5.sudo apt-get update
+5. sudo apt-get update
 
-6.sudo apt-get install docker-ce docker-ce-cli containerd.io</code></pre>
+6. sudo apt-get install docker-ce docker-ce-cli containerd.io</code></pre>
 <h2>验证Docker安装是否成功</h2>
 
 <pre><code>sudo docker run hello-world</code></pre>
