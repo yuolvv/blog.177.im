@@ -33,11 +33,11 @@
 
 <section class="ga-section ga-mono" id="ga-pager">
     {% if current_page > 1 %}
-        <a prev class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev<<</a>
+        <a prev class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page-1) }}">Prev<<<</a>
     {% endif %}
     <span>Page {{ current_page }} of {{ max_pages }}</span>
     {% if current_page < max_pages %}
-        <a next class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next>></a>
+        <a next class="ga-highlight" href="{{ Router.gen_permalink('index', '', current_page+1) }}">Next>>></a>
     {% endif %}
 </section>
 

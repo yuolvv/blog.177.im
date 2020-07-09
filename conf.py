@@ -6,8 +6,8 @@
 site_prefix = "/"
 source_dir = "../src/"
 build_dir = "../dist/"
-index_page_size = 10
-archives_page_size = 20
+index_page_size = 20
+archives_page_size = 30
 enable_jsdelivr = {
     "enabled": True,
     "repo": "yuolvv/blog.177.im@gh-pages"
