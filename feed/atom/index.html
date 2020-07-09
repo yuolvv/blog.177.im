@@ -1,148 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-07-09T03:08:46.449754+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-netty/</id><title>Java面试题-Netty</title><updated>2020-07-09T03:08:46.450027+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.BIO、NIO和AIO的区别？&lt;/h2&gt;
-&lt;p&gt;BIO：一个连接一个线程，客户端有连接请求时服务器端就需要启动一个线程进行处理。线程开销大。&lt;/p&gt;
-&lt;p&gt;伪异步IO：将请求连接放入线程池，一对多，但线程还是很宝贵的资源。&lt;/p&gt;
-&lt;p&gt;NIO：一个请求一个线程，但客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。&lt;/p&gt;
-&lt;p&gt;AIO：一个有效请求一个线程，客户端的I/O请求都是由OS先完成了再通知服务器应用去启动线程进行处理，&lt;/p&gt;
-&lt;p&gt;BIO是面向流的，NIO是面向缓冲区的；BIO的各种流是阻塞的。而NIO是非阻塞的；BIO的Stream是单向的，而NIO的channel是双向的。&lt;/p&gt;
-&lt;p&gt;NIO的特点：事件驱动模型、单线程处理多任务、非阻塞I/O，I/O读写不再阻塞，而是返回0、基于block的传输比基于流的传输更高效、更高级的IO函数zero-copy、IO多路复用大大提高了Java网络应用的可伸缩性和实用性。基于Reactor线程模型。&lt;/p&gt;
-&lt;p&gt;在Reactor模式中，事件分发器等待某个事件或者可应用或个操作的状态发生，事件分发器就把这个事件传给事先注册的事件处理函数或者回调函数，由后者来做实际的读写操作。&lt;/p&gt;
-&lt;p&gt;如在Reactor中实现读：注册读就绪事件和相应的事件处理器、事件分发器等待事件、事件到来，激活分发器，分发器调用事件对应的处理器、事件处理器完成实际的读操作，处理读到的数据，注册新的事件，然后返还控制权。&lt;/p&gt;
-&lt;h2&gt;2.NIO的组成？&lt;/h2&gt;
-&lt;p&gt;Buffer：与Channel进行交互，数据是从Channel读入缓冲区，从缓冲区写入Channel中的&lt;/p&gt;
-&lt;p&gt;flip方法 ：反转此缓冲区，将position给limit，然后将position置为0，其实就是切换读写模式&lt;/p&gt;
-&lt;p&gt;clear方法 ：清除此缓冲区，将position置为0，把capacity的值给limit。&lt;/p&gt;
-&lt;p&gt;rewind方法 ：重绕此缓冲区，将position置为0&lt;/p&gt;
-&lt;p&gt;DirectByteBuffer可减少一次系统空间到用户空间的拷贝。但Buffer创建和销毁的成本更高，不可控，通常会用内存池来提高性能。&lt;/p&gt;
-&lt;p&gt;直接缓冲区主要分配给那些易受基础系统的本机I/O 操作影响的大型、持久的缓冲区。如果数据量比较小的中小应用情况下，可以考虑使用heapBuffer，由JVM进行管理。&lt;/p&gt;
-&lt;p&gt;Channel：表示 IO 源与目标打开的连接，是双向的，但不能直接访问数据，只能与Buffer 进行交互。通过源码可知，FileChannel的read方法和write方法都导致数据复制了两次！&lt;/p&gt;
-&lt;p&gt;Selector可使一个单独的线程管理多个Channel，open方法可创建Selector，register方法向多路复用器器注册通道，可以监听的事件类型：读、写、连接、accept。&lt;/p&gt;
-&lt;p&gt;注册事件后会产生一个SelectionKey：它表示SelectableChannel 和Selector 之间的注册关系，wakeup方法：使尚未返回的第一个选择操作立即返回。&lt;/p&gt;
-&lt;p&gt;唤醒的原因是：注册了新的channel或者事件；channel关闭，取消注册；优先级更高的事件触发（如定时器事件），希望及时处理。&lt;/p&gt;
-&lt;p&gt;Selector在Linux的实现类是EPollSelectorImpl，委托给EPollArrayWrapper实现，其中三个native方法是对epoll的封装，而EPollSelectorImpl. implRegister方法，通过调用epoll_ctl向epoll实例中注册事件，还将注册的文件描述符(fd)与SelectionKey的对应关系添加到fdToKey中，这个map维护了文件描述符与SelectionKey的映射。&lt;/p&gt;
-&lt;p&gt;fdToKey有时会变得非常大，因为注册到Selector上的Channel非常多（百万连接）；过期或失效的Channel没有及时关闭。fdToKey总是串行读取的，而读取是在select方法中进行的，该方法是非线程安全的。&lt;/p&gt;
-&lt;p&gt;Pipe：两个线程之间的单向数据连接，数据会被写到sink通道，从source通道读取&lt;/p&gt;
-&lt;p&gt;NIO的服务端建立过程：Selector.open()：打开一个Selector；ServerSocketChannel.open()：创建服务端的Channel；bind()：绑定到某个端口上。并配置非阻塞模式；register()：注册Channel和关注的事件到Selector上；select()轮询拿到已经就绪的事件&lt;/p&gt;
-&lt;h2&gt;3.Netty的特点？&lt;/h2&gt;
-&lt;p&gt;一个高性能、异步事件驱动的NIO框架，它提供了对TCP、UDP和文件传输的支持&lt;/p&gt;
-&lt;p&gt;使用更高效的socket底层，对epoll空轮询引起的cpu占用飙升在内部进行了处理，避免了直接使用NIO的陷阱，简化了NIO的处理方式。&lt;/p&gt;
-&lt;p&gt;采用多种decoder/encoder 支持，对TCP粘包/分包进行自动化处理&lt;/p&gt;
-&lt;p&gt;可使用接受/处理线程池，提高连接效率，对重连、心跳检测的简单支持&lt;/p&gt;
-&lt;p&gt;可配置IO线程数、TCP参数， TCP接收和发送缓冲区使用直接内存代替堆内存，通过内存池的方式循环利用ByteBuf&lt;/p&gt;
-&lt;p&gt;通过引用计数器及时申请释放不再引用的对象，降低了GC频率&lt;/p&gt;
-&lt;p&gt;使用单线程串行化的方式，高效的Reactor线程模型&lt;/p&gt;
-&lt;p&gt;大量使用了volitale、使用了CAS和原子类、线程安全类的使用、读写锁的使用&lt;/p&gt;
-&lt;h2&gt;4.Netty的线程模型？&lt;/h2&gt;
-&lt;p&gt;Netty通过Reactor模型基于多路复用器接收并处理用户请求，内部实现了两个线程池，boss线程池和work线程池，其中boss线程池的线程负责处理请求的accept事件。&lt;/p&gt;
-&lt;p&gt;当接收到accept事件的请求时，把对应的socket封装到一个NioSocketChannel中，并交给work线程池，其中work线程池负责请求的read和write事件，由对应的Handler处理。&lt;/p&gt;
-&lt;p&gt;单线程模型：&lt;/p&gt;
-&lt;p&gt;所有I/O操作都由一个线程完成，即多路复用、事件分发和处理都是在一个Reactor线程上完成的。&lt;/p&gt;
-&lt;p&gt;既要接收客户端的连接请求,向服务端发起连接，又要发送/读取请求或应答/响应消息。&lt;/p&gt;
-&lt;p&gt;一个NIO 线程同时处理成百上千的链路，性能上无法支撑，速度慢，若线程进入死循环，整个程序不可用，对于高负载、大并发的应用场景不合适。&lt;/p&gt;
-&lt;p&gt;多线程模型：&lt;/p&gt;
-&lt;p&gt;有一个NIO 线程（Acceptor） 只负责监听服务端，接收客户端的TCP 连接请求；&lt;/p&gt;
-&lt;p&gt;NIO 线程池负责网络IO 的操作，即消息的读取、解码、编码和发送；1 个NIO 线程可以同时处理N 条链路，但是1 个链路只对应1 个NIO 线程，这是为了防止发生并发操作问题。&lt;/p&gt;
-&lt;p&gt;但在并发百万客户端连接或需要安全认证时，一个Acceptor 线程可能会存在性能不足问题。&lt;/p&gt;
-&lt;p&gt;主从多线程模型：Acceptor 线程用于绑定监听端口，接收客户端连接，将SocketChannel 从主线程池的Reactor 线程的多路复用器上移除，重新注册到Sub 线程池的线程上，用于处理I/O 的读写等操作，从而保证mainReactor只负责接入认证、握手等操作；&lt;/p&gt;
-&lt;h2&gt;5.TCP 粘包/拆包的原因及解决方法？&lt;/h2&gt;
-&lt;p&gt;TCP是以流的方式来处理数据，一个完整的包可能会被TCP拆分成多个包进行发送，也可能把小的封装成一个大的数据包发送。&lt;/p&gt;
-&lt;p&gt;TCP粘包/分包的原因：&lt;/p&gt;
-&lt;p&gt;应用程序写入的字节大小大于套接字发送缓冲区的大小，会发生拆包现象，而应用程序写入数据小于套接字缓冲区大小，网卡将应用多次写入的数据发送到网络上，这将会发生粘包现象；&lt;/p&gt;
-&lt;p&gt;进行MSS大小的TCP分段，当TCP报文长度-TCP头部长度&amp;gt;MSS的时候将发生拆包&lt;/p&gt;
-&lt;p&gt;以太网帧的payload（净荷）大于MTU（1500字节）进行ip分片。&lt;/p&gt;
-&lt;p&gt;解决方法&lt;/p&gt;
-&lt;p&gt;消息定长：FixedLengthFrameDecoder类&lt;/p&gt;
-&lt;p&gt;包尾增加特殊字符分割：行分隔符类：LineBasedFrameDecoder或自定义分隔符类 ：DelimiterBasedFrameDecoder&lt;/p&gt;
-&lt;p&gt;将消息分为消息头和消息体：LengthFieldBasedFrameDecoder类。分为有头部的拆包与粘包、长度字段在前且有头部的拆包与粘包、多扩展头部的拆包与粘包。&lt;/p&gt;
-&lt;h2&gt;6.了解哪几种序列化协议？&lt;/h2&gt;
-&lt;p&gt;序列化（编码）是将对象序列化为二进制形式（字节数组），主要用于网络传输、数据持久化等；而反序列化（解码）则是将从网络、磁盘等读取的字节数组还原成原始对象，主要用于网络传输对象的解码，以便完成远程调用。&lt;/p&gt;
-&lt;p&gt;影响序列化性能的关键因素：序列化后的码流大小（网络带宽的占用）、序列化的性能（CPU资源占用）；是否支持跨语言（异构系统的对接和开发语言切换）。&lt;/p&gt;
-&lt;p&gt;Java默认提供的序列化：无法跨语言、序列化后的码流太大、序列化的性能差&lt;/p&gt;
-&lt;p&gt;XML，&lt;/p&gt;
-&lt;p&gt;优点：人机可读性好，可指定元素或特性的名称。&lt;/p&gt;
-&lt;p&gt;缺点：序列化数据只包含数据本身以及类的结构，不包括类型标识和程序集信息；只能序列化公共属性和字段；不能序列化方法；文件庞大，文件格式复杂，传输占带宽。适用场景：当做配置文件存储数据，实时数据转换。&lt;/p&gt;
-&lt;p&gt;JSON，是一种轻量级的数据交换格式。&lt;/p&gt;
-&lt;p&gt;优点：兼容性高、数据格式比较简单，易于读写、序列化后数据较小，可扩展性好，兼容性好、与XML相比，其协议比较简单，解析速度比较快。&lt;/p&gt;
-&lt;p&gt;缺点：数据的描述性比XML差、不适合性能要求为ms级别的情况、额外空间开销比较大。&lt;/p&gt;
-&lt;p&gt;适用场景（可替代ＸＭＬ）：跨防火墙访问、可调式性要求高、基于Web browser的Ajax请求、传输数据量相对小，实时性要求相对低（例如秒级别）的服务。&lt;/p&gt;
-&lt;p&gt;Fastjson，采用一种“假定有序快速匹配”的算法。&lt;/p&gt;
-&lt;p&gt;优点：接口简单易用、目前java语言中最快的json库。&lt;/p&gt;
-&lt;p&gt;缺点：过于注重快，而偏离了“标准”及功能性、代码质量不高，文档不全。适用场景：协议交互、Web输出、Android客户端&lt;/p&gt;
-&lt;p&gt;Thrift，不仅是序列化协议，还是一个RPC框架。&lt;/p&gt;
-&lt;p&gt;优点：序列化后的体积小, 速度快、支持多种语言和丰富的数据类型、对于数据字段的增删具有较强的兼容性、支持二进制压缩编码。&lt;/p&gt;
-&lt;p&gt;缺点：使用者较少、跨防火墙访问时，不安全、不具有可读性，调试代码时相对困难、不能与其他传输层协议共同使用（例如HTTP）、无法支持向持久层直接读写数据，即不适合做数据持久化序列化协议。适用场景：分布式系统的RPC解决方案&lt;/p&gt;
-&lt;p&gt;Avro，Hadoop的一个子项目，解决了JSON的冗长和没有IDL的问题。&lt;/p&gt;
-&lt;p&gt;优点：支持丰富的数据类型、简单的动态语言结合功能、具有自我描述属性、提高了数据解析速度、快速可压缩的二进制数据形式、可以实现远程过程调用RPC、支持跨编程语言实现。&lt;/p&gt;
-&lt;p&gt;缺点：对于习惯于静态类型语言的用户不直观。适用场景：在Hadoop中做Hive、Pig和MapReduce的持久化数据格式。&lt;/p&gt;
-&lt;p&gt;Protobuf，将数据结构以.proto文件进行描述，通过代码生成工具可以生成对应数据结构的POJO对象和Protobuf相关的方法和属性。&lt;/p&gt;
-&lt;p&gt;优点：序列化后码流小，性能高、结构化数据存储格式（XML JSON等）、通过标识字段的顺序，可以实现协议的前向兼容、结构化的文档更容易管理和维护。&lt;/p&gt;
-&lt;p&gt;缺点：需要依赖于工具生成代码、支持的语言相对较少，官方只支持Java 、C++ 、python。适用场景：对性能要求高的RPC调用、具有良好的跨防火墙的访问属性、适合应用层对象的持久化&lt;/p&gt;
-&lt;p&gt;其它&lt;/p&gt;
-&lt;p&gt;protostuff 基于protobuf协议，但不需要配置proto文件，直接导包即可&lt;/p&gt;
-&lt;p&gt;Jboss marshaling 可以直接序列化java类， 无须实java.io.Serializable接口&lt;/p&gt;
-&lt;p&gt;Message pack 一个高效的二进制序列化格式&lt;/p&gt;
-&lt;p&gt;Hessian 采用二进制协议的轻量级remoting onhttp工具&lt;/p&gt;
-&lt;p&gt;kryo 基于protobuf协议，只支持java语言,需要注册（Registration），然后序列化（Output），反序列化（Input）&lt;/p&gt;
-&lt;h2&gt;7.如何选择序列化协议？&lt;/h2&gt;
-&lt;p&gt;具体场景&lt;/p&gt;
-&lt;p&gt;对于公司间的系统调用，如果性能要求在100ms以上的服务，基于XML的SOAP协议是一个值得考虑的方案。&lt;/p&gt;
-&lt;p&gt;基于Web browser的Ajax，以及Mobile app与服务端之间的通讯，JSON协议是首选。对于性能要求不太高，或者以动态类型语言为主，或者传输数据载荷很小的的运用场景，JSON也是非常不错的选择。&lt;/p&gt;
-&lt;p&gt;对于调试环境比较恶劣的场景，采用JSON或XML能够极大的提高调试效率，降低系统开发成本。&lt;/p&gt;
-&lt;p&gt;当对性能和简洁性有极高要求的场景，Protobuf，Thrift，Avro之间具有一定的竞争关系。&lt;/p&gt;
-&lt;p&gt;对于T级别的数据的持久化应用场景，Protobuf和Avro是首要选择。如果持久化后的数据存储在hadoop子项目里，Avro会是更好的选择。&lt;/p&gt;
-&lt;p&gt;对于持久层非Hadoop项目，以静态类型语言为主的应用场景，Protobuf会更符合静态类型语言工程师的开发习惯。由于Avro的设计理念偏向于动态类型语言，对于动态语言为主的应用场景，Avro是更好的选择。&lt;/p&gt;
-&lt;p&gt;如果需要提供一个完整的RPC解决方案，Thrift是一个好的选择。&lt;/p&gt;
-&lt;p&gt;如果序列化之后需要支持不同的传输层协议，或者需要跨防火墙访问的高性能场景，Protobuf可以优先考虑。&lt;/p&gt;
-&lt;p&gt;protobuf的数据类型有多种：bool、double、float、int32、int64、string、bytes、enum、message。&lt;/p&gt;
-&lt;p&gt;protobuf的限定符：required: 必须赋值，不能为空、optional:字段可以赋值，也可以不赋值、repeated: 该字段可以重复任意次数（包括0次）、枚举；只能用指定的常量集中的一个值作为其值；&lt;/p&gt;
-&lt;p&gt;protobuf的基本规则：每个消息中必须至少留有一个required类型的字段、包含0个或多个optional类型的字段；repeated表示的字段可以包含0个或多个数据；&lt;/p&gt;
-&lt;p&gt;[1,15]之内的标识号在编码的时候会占用一个字节（常用），[16,2047]之内的标识号则占用2个字节，标识号一定不能重复、使用消息类型，也可以将消息嵌套任意多层，可用嵌套消息类型来代替组。&lt;/p&gt;
-&lt;p&gt;protobuf的消息升级原则：不要更改任何已有的字段的数值标识；不能移除已经存在的required字段，optional和repeated类型的字段可以被移除，但要保留标号不能被重用。&lt;/p&gt;
-&lt;p&gt;新添加的字段必须是optional或repeated。因为旧版本程序无法读取或写入新增的required限定符的字段。&lt;/p&gt;
-&lt;p&gt;编译器为每一个消息类型生成了一个.java文件，以及一个特殊的Builder类（该类是用来创建消息类接口的）。如：UserProto.User.Builder builder = UserProto.User.newBuilder();builder.build()；&lt;/p&gt;
-&lt;p&gt;Netty中的使用：ProtobufVarint32FrameDecoder 是用于处理半包消息的解码类；ProtobufDecoder(UserProto.User.getDefaultInstance())这是创建的UserProto.java文件中的解码类；&lt;/p&gt;
-&lt;p&gt;ProtobufVarint32LengthFieldPrepender 对protobuf协议的消息头上加上一个长度为32的整形字段，用于标志这个消息的长度的类；ProtobufEncoder 是编码类&lt;/p&gt;
-&lt;p&gt;将StringBuilder转换为ByteBuf类型：copiedBuffer()方法&lt;/p&gt;
-&lt;h2&gt;8.Netty的零拷贝实现？&lt;/h2&gt;
-&lt;p&gt;Netty的接收和发送ByteBuffer采用DIRECT BUFFERS，使用堆外直接内存进行Socket读写，不需要进行字节缓冲区的二次拷贝。&lt;/p&gt;
-&lt;p&gt;堆内存多了一次内存拷贝，JVM会将堆内存Buffer拷贝一份到直接内存中，然后才写入Socket中。ByteBuffer由ChannelConfig分配，而ChannelConfig创建ByteBufAllocator默认使用Direct Buffer&lt;/p&gt;
-&lt;p&gt;CompositeByteBuf 类可以将多个 ByteBuf 合并为一个逻辑上的 ByteBuf, 避免了传统通过内存拷贝的方式将几个小Buffer合并成一个大的Buffer。&lt;/p&gt;
-&lt;p&gt;addComponents方法将 header 与 body 合并为一个逻辑上的 ByteBuf, 这两个 ByteBuf 在CompositeByteBuf 内部都是单独存在的, CompositeByteBuf 只是逻辑上是一个整体&lt;/p&gt;
-&lt;p&gt;通过 FileRegion 包装的FileChannel.tranferTo方法 实现文件传输, 可以直接将文件缓冲区的数据发送到目标 Channel，避免了传统通过循环write方式导致的内存拷贝问题。&lt;/p&gt;
-&lt;p&gt;通过 wrap方法, 我们可以将 byte[] 数组、ByteBuf、ByteBuffer等包装成一个 Netty ByteBuf 对象, 进而避免了拷贝操作。&lt;/p&gt;
-&lt;p&gt;Selector BUG：若Selector的轮询结果为空，也没有wakeup或新消息处理，则发生空轮询，CPU使用率100%，&lt;/p&gt;
-&lt;p&gt;Netty的解决办法：对Selector的select操作周期进行统计，每完成一次空的select操作进行一次计数，若在某个周期内连续发生N次空轮询，则触发了epoll死循环bug。&lt;/p&gt;
-&lt;p&gt;重建Selector，判断是否是其他线程发起的重建请求，若不是则将原SocketChannel从旧的Selector上去除注册，重新注册到新的Selector上，并将原来的Selector关闭。&lt;/p&gt;
-&lt;h2&gt;9.Netty的高性能表现在哪些方面？&lt;/h2&gt;
-&lt;p&gt;心跳，对服务端：会定时清除闲置会话inactive(netty5)，对客户端:用来检测会话是否断开，是否重来，检测网络延迟，其中idleStateHandler类 用来检测会话状态&lt;/p&gt;
-&lt;p&gt;串行无锁化设计，即消息的处理尽可能在同一个线程内完成，期间不进行线程切换，这样就避免了多线程竞争和同步锁。表面上看，串行化设计似乎CPU利用率不高，并发程度不够。&lt;/p&gt;
-&lt;p&gt;但是，通过调整NIO线程池的线程参数，可以同时启动多个串行化的线程并行运行，这种局部无锁化的串行线程设计相比一个队列-多个工作线程模型性能更优。&lt;/p&gt;
-&lt;p&gt;可靠性，链路有效性检测：链路空闲检测机制，读/写空闲超时机制；内存保护机制：通过内存池重用ByteBuf;ByteBuf的解码保护；优雅停机：不再接收新消息、退出前的预处理操作、资源的释放操作。&lt;/p&gt;
-&lt;p&gt;Netty安全性：支持的安全协议：SSL V2和V3，TLS，SSL单向认证、双向认证和第三方CA认证。&lt;/p&gt;
-&lt;p&gt;高效并发编程的体现：volatile的大量、正确使用；CAS和原子类的广泛使用；线程安全容器的使用；通过读写锁提升并发性能。IO通信性能三原则：传输（AIO）、协议（Http）、线程（主从多线程）&lt;/p&gt;
-&lt;p&gt;流量整型的作用（变压器）：防止由于上下游网元性能不均衡导致下游网元被压垮，业务流中断；防止由于通信模块接受消息过快，后端业务线程处理不及时导致撑死问题。&lt;/p&gt;
-&lt;p&gt;TCP参数配置：SO_RCVBUF和SO_SNDBUF：通常建议值为128K或者256K；SO_TCPNODELAY：NAGLE算法通过将缓冲区内的小封包自动相连，组成较大的封包，阻止大量小封包的发送阻塞网络，从而提高网络应用效率。但是对于时延敏感的应用场景需要关闭该优化算法；&lt;/p&gt;
-&lt;h2&gt;10.NIOEventLoopGroup源码？&lt;/h2&gt;
-&lt;p&gt;NioEventLoopGroup(其实是MultithreadEventExecutorGroup) 内部维护一个类型为 EventExecutor children [], 默认大小是处理器核数 * 2, 这样就构成了一个线程池，初始化EventExecutor时NioEventLoopGroup重载newChild方法，所以children元素的实际类型为NioEventLoop。&lt;/p&gt;
-&lt;p&gt;线程启动时调用SingleThreadEventExecutor的构造方法，执行NioEventLoop类的run方法，首先会调用hasTasks()方法判断当前taskQueue是否有元素。&lt;/p&gt;
-&lt;p&gt;如果taskQueue中有元素，执行 selectNow() 方法，最终执行selector.selectNow()，该方法会立即返回。如果taskQueue没有元素，执行 select(oldWakenUp) 方法&lt;/p&gt;
-&lt;p&gt;select ( oldWakenUp) 方法解决了 Nio 中的 bug，selectCnt 用来记录selector.select方法的执行次数和标识是否执行过selector.selectNow()。&lt;/p&gt;
-&lt;p&gt;若触发了epoll的空轮询bug，则会反复执行selector.select(timeoutMillis)，变量selectCnt 会逐渐变大，当selectCnt 达到阈值（默认512），则执行rebuildSelector方法，进行selector重建，解决cpu占用100%的bug。&lt;/p&gt;
-&lt;p&gt;rebuildSelector方法先通过openSelector方法创建一个新的selector。然后将old selector的selectionKey执行cancel。&lt;/p&gt;
-&lt;p&gt;最后将old selector的channel重新注册到新的selector中。rebuild后，需要重新执行方法selectNow，检查是否有已ready的selectionKey。&lt;/p&gt;
-&lt;p&gt;接下来调用processSelectedKeys 方法（处理I/O任务），当selectedKeys != null时，调用processSelectedKeysOptimized方法，迭代 selectedKeys 获取就绪的 IO 事件的selectkey存放在数组selectedKeys中, 然后为每个事件都调用 processSelectedKey 来处理它，processSelectedKey 中分别处理OP_READ；OP_WRITE；OP_CONNECT事件。&lt;/p&gt;
-&lt;p&gt;最后调用runAllTasks方法（非IO任务），该方法首先会调用fetchFromScheduledTaskQueue方法，把scheduledTaskQueue中已经超过延迟执行时间的任务移到taskQueue中等待被执行，然后依次从taskQueue中取任务执行，每执行64个任务，进行耗时检查，如果已执行时间超过预先设定的执行时间，则停止执行非IO任务，避免非IO任务太多，影响IO任务的执行。&lt;/p&gt;
-&lt;p&gt;每个NioEventLoop对应一个线程和一个Selector，NioServerSocketChannel会主动注册到某一个NioEventLoop的Selector上，NioEventLoop负责事件轮询。&lt;/p&gt;
-&lt;p&gt;Outbound 事件都是请求事件, 发起者是 Channel，处理者是 unsafe，通过 Outbound 事件进行通知，传播方向是 tail到head。&lt;/p&gt;
-&lt;p&gt;Inbound 事件发起者是 unsafe，事件的处理者是 Channel, 是通知事件，传播方向是从头到尾。&lt;/p&gt;
-&lt;p&gt;内存管理机制，首先会预申请一大块内存Arena，Arena由许多Chunk组成，而每个Chunk默认由2048个page组成。&lt;/p&gt;
-&lt;p&gt;Chunk通过AVL树的形式组织Page，每个叶子节点表示一个Page，而中间节点表示内存区域，节点自己记录它在整个Arena中的偏移地址。&lt;/p&gt;
-&lt;p&gt;当区域被分配出去后，中间节点上的标记位会被标记，这样就表示这个中间节点以下的所有节点都已被分配了。&lt;/p&gt;
-&lt;p&gt;大于8k的内存分配在poolChunkList中，而PoolSubpage用于分配小于8k的内存，它会把一个page分割成多段，进行内存分配。&lt;/p&gt;
-&lt;p&gt;ByteBuf的特点：支持自动扩容（4M），保证put方法不会抛出异常、通过内置的复合缓冲类型，实现零拷贝（zero-copy）；不需要调用flip()来切换读/写模式，读取和写入索引分开；&lt;/p&gt;
-&lt;p&gt;方法链；引用计数基于AtomicIntegerFieldUpdater用于内存回收；PooledByteBuf采用二叉树来实现一个内存池，集中管理内存的分配和释放，不用每次使用都新建一个缓冲区对象。&lt;/p&gt;
-&lt;p&gt;UnpooledHeapByteBuf每次都会新建一个缓冲区对象。&lt;/p&gt;
-</content><link href="/archives/java-interview-netty/" rel="alternate"/><published>2020-01-21T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-09T03:08:46.450008+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.单例设计模式&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-07-09T08:47:24.222191+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-09T08:47:24.222489+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.单例设计模式&lt;/h2&gt;
 &lt;p&gt;使用设计模式为了代码复用，增加可维护性。&lt;/p&gt;
 &lt;p&gt;设计模式的六大原则：开闭原则、里氏代换原则、依赖倒转原则、接口隔离原则、迪米特法则（最少知道原则）、合成/聚合复用原则&lt;/p&gt;
 &lt;p&gt;Singleton（创建）：保证一个类仅有一个实例，并提供一个访问它的全局访问点。如打印机&lt;/p&gt;
@@ -263,7 +120,7 @@ class Adaptee{
 &lt;h2&gt;3.模板方法设计模式&lt;/h2&gt;
 &lt;p&gt;模板方法设计模式（行为）使用了继承机制，在抽象类中定义一个模板方法，该方法引用了若干个抽象方法（由子类实现）或具体方法（子类可以覆盖重写）&lt;/p&gt;
 &lt;p&gt;模板方法设计模式在JDK源码的使用:Collections.sort()、InputStream.read()等&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-22T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-09T03:08:46.449990+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
+</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-22T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-09T08:47:24.222467+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
 &lt;p&gt;方案1：服务发布的group设置为不同；&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;  &amp;lt;dubbo:reference id="comm1" timeout="100000" interface="com.acq.facade.CommService" group="comm102" version="1.0.0" retries="0" check="false"&amp;gt;
@@ -306,7 +163,7 @@ class Adaptee{
 &lt;p&gt;dubbo:provider/ 服务提供者缺省值配置&lt;/p&gt;
 &lt;p&gt;dubbo:consumer/ 服务消费者缺省值配置&lt;/p&gt;
 &lt;p&gt;dubbo:method/ 方法级配置&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-07-09T03:08:46.449971+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
+</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-07-09T08:47:24.222445+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
 &lt;p&gt;CREATE TABLE t1 (a INT, b CHAR (20), PRIMARY KEY (a)) ENGINE=InnoDB;&lt;/p&gt;
 &lt;p&gt;如果你的 MySQL 实例将 InnoDB 定义为默认存储引擎 （ 默认情况下为默认存储引擎 )，则可以无需指定 ENGINE = InnoDB 子句。&lt;/p&gt;
 &lt;p&gt;如果你想要查询当前 MySQL 实例的默认存储引擎，可以使用下面的语句&lt;/p&gt;
@@ -391,7 +248,7 @@ Max_data_length: 0
    ROW_FORMAT: Compact
 ZIP_PAGE_SIZE: 0
    SPACE_TYPE: Single&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-07-09T03:08:46.449952+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-07-09T08:47:24.222423+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
 &lt;h2&gt;AUTO_INCREMENT 约束&lt;/h2&gt;
 &lt;p&gt;AUTO_INCREMENT 是 Innodb 提供的一种可配置的锁定机制，如果某个表的某一列具有 AUTO_INCREMENT 约束，那么向该表添加数据的时候可以很明显的提高 SQL 语句的性能和可伸缩性。&lt;/p&gt;
 &lt;p&gt;为了充分使用 Innodb 表的 AUTO_INCREMENT 机制，必须 将 AUTO_INCREMENT 字段 ( 或列，下面提到的 「 列 」 和字段可以等价 ) 定义为 「 索引 」 的一部分，这样就可以在表上使用索引执行下面的语句来查找最大的列值&lt;/p&gt;
@@ -686,7 +543,7 @@ auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这样，这台服务器的自增值将会是 2 4 6 8 10 …. 偶数数列&lt;/p&gt;
 &lt;p&gt;这样，在互为主从的时候，就不会出现自增值重复的问题&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-07-09T03:08:46.449932+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-07-09T08:47:24.222399+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
 &lt;p&gt;如果想要从 查询，插入 和其它数据库操作中获得最佳性能，那么我们就必须了解 InnoDB 如何使用 聚簇索引 来优化每个表的最常见检索和 DML 操作方式&lt;/p&gt;
 &lt;p&gt;（1）当我们在一个 Innodb 表上定义了一个主键，InnoDB 会默认的使用它作为聚簇索引。&lt;/p&gt;
 &lt;p&gt;使用 InnoDB 存储引擎时，建议为每个表都添加一个主键。如果该表没有一个逻辑唯一且非空列或列集合，那么可以添加一个带有 AUTO_INCREMENT 约束的自增列作为主键，InnoDB 会自动填充该列。&lt;/p&gt;
@@ -771,7 +628,7 @@ auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在排序索引构建期间会禁用重做日志。取而代之的是使用一个检查点 ( checkpoint ) 确保排序索引构建能够承受崩溃或故障。这个检查点会强制将所有脏页写入磁盘。在排序索引构建期间，会定期发信号通知页面清理程序线程刷新脏页以确保可以快速处理检查点操作。默认的，当清洁页面的数量低于设定的阈值时，页面清理器线程会刷新脏页面。对于已排序的索引构建，会立即刷新脏页以减少检查点开销并并行 I/O 和 CPU 活动&lt;/p&gt;
 &lt;h2&gt;排序索引构建和性能优化统计&lt;/h2&gt;
 &lt;p&gt;排序索引构建可能会导致性能优化统计信息与以前的索引创建方法生成的统计信息不同，而这种统计数据的差异 ( 预计不会影响工作负载性能 ) 是由于使用了不同的填充索引的算法而引起的。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-07-09T03:08:46.449911+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-07-09T08:47:24.222376+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
 &lt;p&gt;可以在使用 CREATE TABLE 语句创建表时指定全文索引，也可以在创建表之后使用 ALTER TABLE 或 CREATE INDEX 将全文索引添加到现有表中&lt;/p&gt;
 &lt;p&gt;全文索引的使用方式一般为使用 MATCH()... AGAINST 语法执行全文搜索。&lt;/p&gt;
 &lt;h2&gt;InnoDB 全文索引设计&lt;/h2&gt;
@@ -971,7 +828,7 @@ INNODB_FT_BEING_DELETED
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;你还可以通过查询 INNODB_INDEXES 和 INNODB_TABLES 表来查看全文索引和表的基本信息。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-07-09T03:08:46.449889+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-07-09T08:47:24.222352+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
 &lt;p&gt;在本文中, Garbage Collection 翻译为 “垃圾收集”, garbage collector 翻译为 “垃圾收集器”;&lt;/p&gt;
 &lt;p&gt;一般认为, 垃圾回收 和 垃圾收集 是同义词。&lt;/p&gt;
 &lt;p&gt;Minor GC 翻译为： 小型 GC; 而不是 次要 GC&lt;/p&gt;
@@ -1203,7 +1060,7 @@ Full GC(完全GC)清理的是整个堆, 包括年轻代和老年代空间。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;所以从实际的 GC 日志可以看到, 并不是执行了两次 Full GC 操作, 而是只执行了一次清理老年代空间的 Major GC 。&lt;/p&gt;
 &lt;p&gt;如果只关心延迟, 通过后面 jstat 显示的数据, 也能得出正确的结果。它正确地列出了两次 STW 事件,总计耗时 50 ms。这段时间影响了所有应用线程的延迟。如果想要优化吞吐量, 这个结果就会有误导性 —— jstat 只列出了 stop-the-world 的初始标记阶段和最终标记阶段, jstat 的输出完全隐藏了并发执行的GC阶段。&lt;/p&gt;
-</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-07-09T03:08:46.449865+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
+</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-07-09T08:47:24.222328+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
 &lt;p&gt;concurrent: 并发, 多个线程协同做同一件事情(有状态)&lt;/p&gt;
 &lt;p&gt;parallel: 并行, 多个线程各做各的事情(互相间无共享状态)&lt;/p&gt;
 &lt;p&gt;在 GC 领域: concurrent 算法指GC线程和业务线程能并发执行； parallel 指 GC 线程之间的并行。&lt;/p&gt;
@@ -1725,7 +1582,7 @@ Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)&lt;/c
 &lt;p&gt;释放刚被垃圾收集的 heap区所消耗的时间,包括对应的remembered sets。&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
 &lt;p&gt;在此 OBE 中, 您对Java JVM 中的 G1 垃圾收集器有了个大致的了解。首先你学到了为何堆和垃圾收集器是所有 Java JVM 的关键部分。接下来讲述了使用 CMS 和 G1 收集器进行垃圾回收的工作方式. 接下来,您了解了 G1 的命令行参数/开关以及和使用它们的最佳实践。最后,您了解了日志对象以及 GC 日志中的数据。&lt;/p&gt;
-</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-07-09T03:08:46.449820+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
+</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-07-09T08:47:24.222300+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;-XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
@@ -1774,4 +1631,28 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 &lt;p&gt;下一组数据( -&amp;gt; 右边)中蕴含了更重要的结论, 年轻代的内存使用在垃圾回收后下降了 546M(559,231k), 但总的堆内存使用(total heap usage)只减少了 337M(346,099k). 通过这一点,我们可以计算出, 有 208M(213,132K) 的年轻代对象被提升到老年代(Old)中。&lt;/p&gt;
 &lt;p&gt;这个GC事件可以用下面的示意图来表示, 上方表示GC之前的内存使用情况, 下方表示结束后的内存使用情况:&lt;/p&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 221.3740458015267" data-width="580" data-height="131"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d0f813f8ac7b4a2fed102209354adfb4.png" alt="jvm-gc-log-001.png" /&gt;&lt;figcaption&gt;jvm-gc-log-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-07T12:00:00+08:06</published></entry></feed>
+</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-07T12:00:00+08:06</published></entry><entry><id>/archives/ubuntu-docker-setup/</id><title>Ubuntu安装Docker步骤</title><updated>2020-07-09T08:47:24.222249+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;官方安装教程&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;支持的Ubuntu版本&lt;/h2&gt;
+&lt;p&gt;Ubuntu Focal 20.04 (LTS)&lt;/p&gt;
+&lt;p&gt;Ubuntu Eoan 19.10&lt;/p&gt;
+&lt;p&gt;Ubuntu Bionic 18.04 (LTS)&lt;/p&gt;
+&lt;p&gt;Ubuntu Xenial 16.04 (LTS)&lt;/p&gt;
+&lt;h2&gt;卸载当前的旧版本&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get remove docker docker-engine docker.io containerd runc&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;安装Docker&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;1.sudo apt-get update
+
+2.sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+3.curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+4.sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+5.sudo apt-get update
+
+6.sudo apt-get install docker-ce docker-ce-cli containerd.io&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;验证Docker安装是否成功&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo docker run hello-world&lt;/code&gt;&lt;/pre&gt;
+</content><link href="/archives/ubuntu-docker-setup/" rel="alternate"/><published>2020-07-07T12:00:00+08:06</published></entry></feed>
