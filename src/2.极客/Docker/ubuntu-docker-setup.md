@@ -59,5 +59,5 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 sudo docker run hello-world
 ```
-
+![ubuntu-docker-setup-001.png](./assets/ubuntu-docker-setup-001.png)
 
