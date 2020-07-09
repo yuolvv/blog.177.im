@@ -1,13 +1,8 @@
-theme:
-	cd ./Templates/Galileo && gulp
+.PHONY: site dep
+default: site
 
-dep:
+dep: prod_req.txt
 	pip install -r prod_req.txt
-	cd ./Templates/Galileo && npm install -g gulp && npm install
 
 site:
 	python build.py
-
-all: theme site
-
-.PHONY: theme site clean all

@@ -4,14 +4,14 @@
 
 import os
 import sys
-
+from pathlib import Path
 
 class Config(object):
     def update_fromfile(self, filepath=None):
         if filepath is None:
             return
 
-        sys.path.append(os.path.dirname(filepath))
+        sys.path.insert(0, os.path.dirname(filepath))
 
         name, _ = os.path.splitext(os.path.basename(filepath))
         module = __import__(name)
@@ -31,9 +31,30 @@ class Config(object):
 
     # For Maverick
     site_prefix = "/"
-    source_dir = "./test_src/"
+    mvrk_path = str(Path(os.path.dirname(os.path.abspath(__file__))).parent)
+    source_dir = mvrk_path + '/test_src/'
     build_dir = "./test_dist/"
+
+    """Config theme for Maverick
+    
+    to use theme in another local folder, set:
+    template = {
+        "name": "<name of template, required>",
+        "type": "local",
+        "path": "<path to template, required>"
+    }
+    
+    to use theme from a remote git repo, set:
+    template = {
+        "name": "<name of template, required>",
+        "type": "git",
+        "url": "<url of git repo, required>",
+        "branch": "<branch of repo, optional, default to master>",
+        "tag": "<tag of repo, optional, default to latest>"
+    }
+    """
     template = "Galileo"
+
     index_page_size = 10
     archives_page_size = 30
     fetch_remote_imgs = False
@@ -43,6 +64,12 @@ class Config(object):
     }
     locale = "Asia/Shanghai"
     category_by_folder = False
+
+    # !DEPRECIATE
+    # This option will be removed in the future
+    # prefer `output_image` hook and template specific config
+    # to control rendering behavior of images
+    parse_alt_as_figcaption = True
 
     # For site
     site_name = ""
@@ -62,13 +89,6 @@ class Config(object):
 
     valine = {
         "enable": False,
-        "appId": "",
-        "appKey": "",
-        "notify": "false",
-        "visitor": "false",
-        "recordIP": "false",
-        "serverURLs": None,
-        "placeholder": "Just go go~"
     }
 
     head_addon = ""
@@ -76,5 +96,6 @@ class Config(object):
     footer_addon = ""
 
     body_addon = ""
+
 
 g_conf = Config()

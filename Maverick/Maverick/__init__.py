@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-"""177.im 
+"""Maverick: Go My Own Way
 
-Author: 177
-Link:   https://blog.177.im
-GitHub: https://github.com/yuolvv
+Author: AlanDecode | 熊猫小A
+Link:   https://www.imalan.cn
+GitHub: https://github.com/AlanDecode
 """
+
+Maverick_Version = 'Maverick 1.1'

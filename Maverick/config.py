@@ -4,14 +4,12 @@
 
 # For Maverick
 site_prefix = "/"
-source_dir = "./test_src/"
-build_dir = "./test_dist/"
 template = "Galileo"
 index_page_size = 10
 archives_page_size = 30
 fetch_remote_imgs = False
 enable_jsdelivr = {
-    "enabled": True,
+    "enabled": False,
     "repo": "AlanDecode/Maverick@gh-pages"
 }
 locale = "Asia/Shanghai"
@@ -27,10 +25,9 @@ author_homepage = "https://www.imalan.cn"
 description = "This is Maverick, Theme Galileo."
 key_words = ["Maverick", "AlanDecode", "Galileo", "blog"]
 language = 'english'
-background_img = '${static_prefix}bg/The_Great_Wave_off_Kanagawa.jpg'
 external_links = [
     {
-        "name": "AlanDecode/Maverick",
+        "name": "Maverick",
         "url": "https://github.com/AlanDecode/Maverick",
         "brief": "🏄‍ Go My Own Way."
     },
@@ -77,24 +74,16 @@ social_links = [
 ]
 
 valine = {
-    "enable": False,
-    "appId": "",
-    "appKey": "",
-    "notify": "false",
-    "visitor": "false",
-    "recordIP": "false",
-    "serverURLs": None,
-    "placeholder": "Just go go~"
+    "enable": True,
+    "el": '#vcomments',
+    "appId": "IKRAfuPq0zrz6Wfje8ahHAIP-gzGzoHsz",
+    "appKey": "lFaCWkd4xCs0Ng5UWs1eHNwU",
+    "visitor": True,
+    "recordIP": True
 }
 
-head_addon = r"""
-<!-- Content here will be added before </head>. -->
-"""
+head_addon = ''
 
-footer_addon = r"""
-<!-- Content here will be added to <footer> tag.-->
-"""
+footer_addon = ''
 
-body_addon = r"""
-<!-- Content here will be added before </body>. -->
-"""
+body_addon = ''
