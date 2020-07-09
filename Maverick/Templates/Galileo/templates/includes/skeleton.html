@@ -7,15 +7,13 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="{{ ','.join(config.key_words) }}" />
-    <meta name="generator" content="{{ maverick_version }}" />
+    <meta name="generator" content="Maverick 1.0" />
     <meta name="template" content="Galileo" />
     <link rel="alternate" type="application/rss+xml" title="{{ fp(config.site_name) }} &raquo; RSS 2.0" href="{{ fp(config.site_prefix) }}feed/index.xml" />
     <link rel="alternate" type="application/atom+xml" title="{{ fp(config.site_name) }} &raquo; ATOM 1.0" href="{{ fp(config.site_prefix) }}feed/atom/index.xml" />
-    <link rel="stylesheet" href="{{ Router.gen_static_file_prefix() }}assets/galileo.css">
+    <link rel="stylesheet" href="{{ Router.gen_static_file_prefix() }}assets/galileo-ec40839efa.css">
     <link rel="stylesheet" href="{{ Router.gen_static_file_prefix() }}assets/ExSearch/ExSearch-182e5a8868.css">
-    <link rel="stylesheet" href="{{ Router.gen_static_file_prefix() }}assets/katex.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700&display=swap">
     <script>
         var ExSearchConfig = {
             root: "",
@@ -34,6 +32,11 @@
         <div class="container">
             <header id="ga-header">
                 <div first>
+                    <aside id="ga-logo">
+                        <a href="{{ fp(config.site_prefix) }}" target="_self">
+                            <img src="{{ fp(config.site_logo) }}" alt="{{ fp(config.site_name) }}">
+                        </a>
+                    </aside>
                     <aside id="ga-brand">
                         <h1 class="brand"><a class="no-style" href="{{ fp(config.site_prefix) }}">{{ fp(config.site_name) }}</a></h1>
                         <p>{{ fp(config.description) }}</p>
@@ -42,6 +45,9 @@
                 <div second id="ga-nav">
                     <nav class="navs">
                         {{ build_navs(config.nav) }}
+                    </nav>
+                    <nav class="social-links">
+                        {{ build_links(config.social_links) }}
                     </nav>
                 </div>
             </header>
@@ -54,28 +60,70 @@
                     </section>
                     <section>
                         <p class="copyright">
-                            <span>Copyright © {{ moment.now().format('%Y') }} {{ fp(config.author) }}</span>
-                            <span>Powered by <a no-style href="https://github.com/AlanDecode/Maverick" target="_blank">Maverick & Galileo</a></span>
+                            <span>Copyright © 2015~{{ moment.now().format('%Y') }} {{ fp(config.author) }}</span>
+                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
                         </p>
                         <div class="copyright">
                             <span class="footer-addon">
                                 {{ fp(config.footer_addon) }}
                             </span>
-                            <nav class="social-links">
+                            <!-- <nav class="social-links">
                                 {{ build_links(config.social_links) }}
-                            </nav>
+                            </nav> -->
                         </div>
                     </section>
                     <script>
                         var site_build_date = "{{ fp(config.site_build_date) }}"
                     </script>
-                    <script src="{{ Router.gen_static_file_prefix() }}assets/galileo.js"></script>
+                    <script src="{{ Router.gen_static_file_prefix() }}assets/galileo-d8a0a06eff.js"></script>
                 </footer>
             </div>
         </div>
     </div>
+        
+        
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="{{ Router.gen_static_file_prefix() }}assets/ExSearch/jquery.min.js"></script>
+    <script src="{{ Router.gen_static_file_prefix() }}assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    
     <!--katex-->
+    <link rel="stylesheet" href="{{ Router.gen_static_file_prefix() }}assets/katex.min.css">
     <script defer src="{{ Router.gen_static_file_prefix() }}assets/katex.min.js"></script>
     <script>
     mathOpts = {
@@ -88,9 +136,6 @@
     };
     </script>
     <script defer src="{{ Router.gen_static_file_prefix() }}assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
-
-    <script src="{{ Router.gen_static_file_prefix() }}assets/ExSearch/jquery.min.js"></script>
-    <script src="{{ Router.gen_static_file_prefix() }}assets/ExSearch/ExSearch-493cb9cd89.js"></script>
 
     {{ fp(config.body_addon) }}
     </body>

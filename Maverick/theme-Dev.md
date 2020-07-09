@@ -1,3 +1,0 @@
-# Theme Development
-
-TODO
