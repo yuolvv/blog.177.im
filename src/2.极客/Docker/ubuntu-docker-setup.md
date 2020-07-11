@@ -10,6 +10,7 @@ categories:
 tags:
   - Docker
   - IT
+  - Ubuntu
 excerpt: 详细记录Ubuntu安装Docker的步骤
 ---
 
