@@ -1,0 +1,526 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="177.im,177,听风行,blog,博客" />
+    <meta name="generator" content="Maverick 1.0" />
+    <meta name="template" content="Galileo" />
+    <link rel="alternate" type="application/rss+xml" title="177博客 &raquo; RSS 2.0" href="/feed/index.xml" />
+    <link rel="alternate" type="application/atom+xml" title="177博客 &raquo; ATOM 1.0" href="/feed/atom/index.xml" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-ec40839efa.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-182e5a8868.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <script>
+        var ExSearchConfig = {
+            root: "",
+            api: "https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/6f1f9d81c762c6a74aab27b117eb49e4.json"
+        }
+    </script>
+    
+<title>Docker安装配置Nacos - 177博客</title>
+<meta name="author" content="177" />
+<meta name="description" content="详细记录Docker安装配置Nacos的步骤" />
+<meta property="og:title" content="Docker安装配置Nacos - 177博客" />
+<meta property="og:description" content="详细记录Docker安装配置Nacos的步骤" />
+<meta property="og:site_name" content="177博客" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/archives/nacos-docker-setup/" />
+<meta property="og:image" content="" />
+<meta property="article:published_time" content="2020-07-08T12:00:00-00.00" />
+<meta name="twitter:title" content="Docker安装配置Nacos - 177博客" />
+<meta name="twitter:description" content="详细记录Docker安装配置Nacos的步骤" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="" />
+
+
+    
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+<link rel="dns-prefetch" href="//blog.177.im" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/brand_font/embed.css" />
+<style>.brand{font-family:FZCuJinLFW,serif;font-weight: normal!important;}</style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" color="#505050">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico">
+<meta name="application-name" content="177">
+<meta name="apple-mobile-web-app-title" content="177">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#000000">
+<meta name="baidu-site-verification" content="" />
+
+    </head>
+    
+    <body>
+        
+            <div id="bg" style="background-image: url(https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/bg/The_Great_Wave_off_Kanagawa.jpg)"></div>
+        
+        <div class="container">
+            <header id="ga-header">
+                <div first>
+                    <aside id="ga-logo">
+                        <a href="/" target="_self">
+                            <img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/favicon.ico" alt="177博客">
+                        </a>
+                    </aside>
+                    <aside id="ga-brand">
+                        <h1 class="brand"><a class="no-style" href="/">177博客</a></h1>
+                        <p>天青色等烟雨</p>
+                    </aside>
+                </div>
+                <div second id="ga-nav">
+                    <nav class="navs">
+                        <ul><li><a class="ga-highlight" href="/" target="_self">首页</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/archives/" target="_self">归档</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/links/" target="_self">友链</a></li><span class="separator">·</span><li><a class="ga-highlight" href="/about/" target="_self">关于</a></li><span class="separator">·</span><li><a href="#" target="_self" class="search-form-input ga-highlight">搜索</a></li></ul>
+                    </nav>
+                    <nav class="social-links">
+                        <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="wrapper">
+                
+<main>    
+    <section class="ga-section ga-content">
+        <article class="yue">
+            <h1 class="ga-post_title">Docker安装配置Nacos</h1>
+            <span class="ga-post_meta ga-mono">
+                <span>177</span>
+                <time>
+                    2020-07-08
+                </time>
+                
+                in <a no-style class="category" href="/category/极客/">
+                    极客
+                </a>
+                
+                
+            </span>
+            <div class="ga-content_body">
+                <div class="notice"> <a href="https://nacos.io/zh-cn/">Nacos官网</a> </div><h2>查询nacos镜像</h2>
+
+<pre><code>docker search nacos</code></pre>
+<p><figure class="pswp-item" style="flex: 125.23191094619666" data-width="1350" data-height="539"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/73c24f8cfd2b207cf36f5f249a4d3c40.png" alt="nacos-docker-setup-001.png" /><figcaption>nacos-docker-setup-001.png</figcaption></figure></p>
+<h2>拉取镜像</h2>
+
+<pre><code>docker pull nacos/nacos-server</code></pre>
+<p><figure class="pswp-item" style="flex: 96.6304347826087" data-width="889" data-height="460"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d33cb4c36a0d2851aacb9c50e293757f.png" alt="nacos-docker-setup-002.png" /><figcaption>nacos-docker-setup-002.png</figcaption></figure></p>
+<h2>查看镜像</h2>
+
+<pre><code>docker images</code></pre>
+<p><figure class="pswp-item" style="flex: 544.1176470588235" data-width="925" data-height="85"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/de50429f4532a7f3f5161dab56922275.png" alt="nacos-docker-setup-003.png" /><figcaption>nacos-docker-setup-003.png</figcaption></figure></p>
+<h2>启动镜像</h2>
+
+<pre><code>docker run --env MODE=standalone --name nacos -d -p 8848:8848 nacos/nacos-server</code></pre>
+<p><figure class="pswp-item" style="flex: 1420.4545454545455" data-width="1250" data-height="44"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/28475c38dfdee65aec1d99df173d1165.png" alt="nacos-docker-setup-004.png" /><figcaption>nacos-docker-setup-004.png</figcaption></figure></p>
+<p>在浏览器上打开  <a href="http://服务器IP:8848/nacos">http://服务器IP:8848/nacos</a>  默认账号/密码 ：nacos</p>
+<p><figure class="pswp-item" style="flex: 108.50340136054422" data-width="1914" data-height="882"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/2d8b1722a006f8b438051c309edfd397.png" alt="nacos-docker-setup-006.png" /><figcaption>nacos-docker-setup-006.png</figcaption></figure></p>
+<h2>配置Nacos</h2>
+<p>默认是使用nacos自带的数据，为了方便管理，这里修改nacos配置，使用mysql数据库，这里是单数据库，所有db.url.1被注释了</p>
+<p>nacos初始化sql,需要先创建nacos数据库后，然后执行下面的sql</p>
+<p>官方提供的sql脚本：<a href="https://github.com/alibaba/nacos/blob/master/config/src/main/resources/META-INF/nacos-db.sql">https://github.com/alibaba/nacos/blob/master/config/src/main/resources/META-INF/nacos-db.sql</a></p>
+
+<pre><code>/*
+ * Copyright 1999-2018 Alibaba Group Holding Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info   */
+/******************************************/
+CREATE TABLE `config_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(255) DEFAULT NULL,
+  `content` longtext NOT NULL COMMENT 'content',
+  `md5` varchar(32) DEFAULT NULL COMMENT 'md5',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  `src_user` text COMMENT 'source user',
+  `src_ip` varchar(20) DEFAULT NULL COMMENT 'source ip',
+  `app_name` varchar(128) DEFAULT NULL,
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  `c_desc` varchar(256) DEFAULT NULL,
+  `c_use` varchar(64) DEFAULT NULL,
+  `effect` varchar(64) DEFAULT NULL,
+  `type` varchar(64) DEFAULT NULL,
+  `c_schema` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfo_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_aggr   */
+/******************************************/
+CREATE TABLE `config_info_aggr` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(255) NOT NULL COMMENT 'group_id',
+  `datum_id` varchar(255) NOT NULL COMMENT 'datum_id',
+  `content` longtext NOT NULL COMMENT '内容',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `app_name` varchar(128) DEFAULT NULL,
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfoaggr_datagrouptenantdatum` (`data_id`,`group_id`,`tenant_id`,`datum_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='增加租户字段';
+
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_beta   */
+/******************************************/
+CREATE TABLE `config_info_beta` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(128) NOT NULL COMMENT 'group_id',
+  `app_name` varchar(128) DEFAULT NULL COMMENT 'app_name',
+  `content` longtext NOT NULL COMMENT 'content',
+  `beta_ips` varchar(1024) DEFAULT NULL COMMENT 'betaIps',
+  `md5` varchar(32) DEFAULT NULL COMMENT 'md5',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  `src_user` text COMMENT 'source user',
+  `src_ip` varchar(20) DEFAULT NULL COMMENT 'source ip',
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfobeta_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info_beta';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_tag   */
+/******************************************/
+CREATE TABLE `config_info_tag` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(128) NOT NULL COMMENT 'group_id',
+  `tenant_id` varchar(128) DEFAULT '' COMMENT 'tenant_id',
+  `tag_id` varchar(128) NOT NULL COMMENT 'tag_id',
+  `app_name` varchar(128) DEFAULT NULL COMMENT 'app_name',
+  `content` longtext NOT NULL COMMENT 'content',
+  `md5` varchar(32) DEFAULT NULL COMMENT 'md5',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  `src_user` text COMMENT 'source user',
+  `src_ip` varchar(20) DEFAULT NULL COMMENT 'source ip',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfotag_datagrouptenanttag` (`data_id`,`group_id`,`tenant_id`,`tag_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info_tag';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_tags_relation   */
+/******************************************/
+CREATE TABLE `config_tags_relation` (
+  `id` bigint(20) NOT NULL COMMENT 'id',
+  `tag_name` varchar(128) NOT NULL COMMENT 'tag_name',
+  `tag_type` varchar(64) DEFAULT NULL COMMENT 'tag_type',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(128) NOT NULL COMMENT 'group_id',
+  `tenant_id` varchar(128) DEFAULT '' COMMENT 'tenant_id',
+  `nid` bigint(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`nid`),
+  UNIQUE KEY `uk_configtagrelation_configidtag` (`id`,`tag_name`,`tag_type`),
+  KEY `idx_tenant_id` (`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_tag_relation';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = group_capacity   */
+/******************************************/
+CREATE TABLE `group_capacity` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `group_id` varchar(128) NOT NULL DEFAULT '' COMMENT 'Group ID，空字符表示整个集群',
+  `quota` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '配额，0表示使用默认值',
+  `usage` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '使用量',
+  `max_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个配置大小上限，单位为字节，0表示使用默认值',
+  `max_aggr_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '聚合子配置最大个数，，0表示使用默认值',
+  `max_aggr_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值',
+  `max_history_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最大变更历史数量',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_group_id` (`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='集群、各Group容量信息表';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = his_config_info   */
+/******************************************/
+CREATE TABLE `his_config_info` (
+  `id` bigint(64) unsigned NOT NULL,
+  `nid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `data_id` varchar(255) NOT NULL,
+  `group_id` varchar(128) NOT NULL,
+  `app_name` varchar(128) DEFAULT NULL COMMENT 'app_name',
+  `content` longtext NOT NULL,
+  `md5` varchar(32) DEFAULT NULL,
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00',
+  `src_user` text,
+  `src_ip` varchar(20) DEFAULT NULL,
+  `op_type` char(10) DEFAULT NULL,
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  PRIMARY KEY (`nid`),
+  KEY `idx_gmt_create` (`gmt_create`),
+  KEY `idx_gmt_modified` (`gmt_modified`),
+  KEY `idx_did` (`data_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='多租户改造';
+
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = tenant_capacity   */
+/******************************************/
+CREATE TABLE `tenant_capacity` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `tenant_id` varchar(128) NOT NULL DEFAULT '' COMMENT 'Tenant ID',
+  `quota` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '配额，0表示使用默认值',
+  `usage` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '使用量',
+  `max_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个配置大小上限，单位为字节，0表示使用默认值',
+  `max_aggr_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '聚合子配置最大个数',
+  `max_aggr_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值',
+  `max_history_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最大变更历史数量',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_tenant_id` (`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='租户容量信息表';
+
+
+CREATE TABLE `tenant_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `kp` varchar(128) NOT NULL COMMENT 'kp',
+  `tenant_id` varchar(128) default '' COMMENT 'tenant_id',
+  `tenant_name` varchar(128) default '' COMMENT 'tenant_name',
+  `tenant_desc` varchar(256) DEFAULT NULL COMMENT 'tenant_desc',
+  `create_source` varchar(32) DEFAULT NULL COMMENT 'create_source',
+  `gmt_create` bigint(20) NOT NULL COMMENT '创建时间',
+  `gmt_modified` bigint(20) NOT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_tenant_info_kptenantid` (`kp`,`tenant_id`),
+  KEY `idx_tenant_id` (`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='tenant_info';
+
+CREATE TABLE users (
+    username varchar(50) NOT NULL PRIMARY KEY,
+    password varchar(500) NOT NULL,
+    enabled boolean NOT NULL
+);
+
+CREATE TABLE roles (
+    username varchar(50) NOT NULL,
+    role varchar(50) NOT NULL,
+    constraint uk_username_role UNIQUE (username,role)
+);
+
+CREATE TABLE permissions (
+    role varchar(50) NOT NULL,
+    resource varchar(512) NOT NULL,
+    action varchar(8) NOT NULL,
+    constraint uk_role_permission UNIQUE (role,resource,action)
+);
+
+INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', TRUE);
+
+INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');</code></pre>
+<p><figure class="pswp-item" style="flex: 61.02661596958175" data-width="321" data-height="263"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/694c0a850dc40ce76f563673dbb3c71f.png" alt="nacos-docker-setup-005.png" /><figcaption>nacos-docker-setup-005.png</figcaption></figure></p>
+<p>进入nacos容器修改相关的配置文件</p>
+
+<pre><code>docker exec -it nacos bash
+
+vi config/application.properties</code></pre>
+<p>注释掉db.url.1，修改db.url.0的mysql信息（mysql的IP地址，端口，账号，密码等）</p>
+<p><figure class="pswp-item" style="flex: 261.9942196531792" data-width="1813" data-height="346"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/faadaec6b6baa6a80b1280ca18b89033.png" alt="nacos-docker-setup-007.png" /><figcaption>nacos-docker-setup-007.png</figcaption></figure></p>
+<p>修改完配置，退出镜像(直接输入exit)，重启容器</p>
+
+<pre><code>docker restart nacos</code></pre>
+<h2>测试MySQL是否配置成功</h2>
+<p>在浏览器上打开  <a href="http://服务器IP:8848/nacos">http://服务器IP:8848/nacos</a>  默认账号/密码 ：nacos</p>
+<p>添加一个命名空间</p>
+<p><figure class="pswp-item" style="flex: 149.68944099378882" data-width="964" data-height="322"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/2fc0e9b079f3c041a451e2db8b35ee16.png" alt="nacos-docker-setup-008.png" /><figcaption>nacos-docker-setup-008.png</figcaption></figure></p>
+<p><figure class="pswp-item" style="flex: 268.0124223602484" data-width="1726" data-height="322"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/a04c87572cf968be49d4ea604fb518fe.png" alt="nacos-docker-setup-009.png" /><figcaption>nacos-docker-setup-009.png</figcaption></figure></p>
+<p>添加完成之后，在mysql数据库中可以看到如下：</p>
+<p><figure class="pswp-item" style="flex: 423.1404958677686" data-width="1024" data-height="121"><img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f63ecc2d4cb3f9afdf94f4b759ce99f0.png" alt="nacos-docker-setup-010.png" /><figcaption>nacos-docker-setup-010.png</figcaption></figure></p>
+<p>可以看到，mysql中新增了一条命名空间的记录，说明mysql的配置成功了。</p>
+<h3>到这里，docker安装配置nacos基本完成！</h3>
+
+            </div>
+        </article>
+        <div id="ga-tags">
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Docker/">#Docker</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/IT/">#IT</a>
+    </span>
+    
+    <span class="ga-tag">
+        <a class="ga-highlight" href="/tag/Docker/">#Docker</a>
+    </span>
+    
+</div>
+    </section>
+
+    
+<section id="ga-content_pager">
+
+    <div class="next">
+        <h3>没有了</h3>
+        <p class="yue">这是最新的文章</p>
+    </div>
+
+
+    <div class="prev">
+        <a class="ga-highlight" href="/archives/ubuntu-docker-setup/">Ubuntu安装Docker步骤</a>
+        <p class="yue">详细记录Ubuntu安装Docker的步骤</p>
+    </div>
+
+</section>
+
+
+    
+
+</main>
+
+                <footer class="ga-mono" id="ga-footer">
+                    <section>
+                        <span id="ga-uptime"></span>
+                        <span class="brand">177博客</span>
+                    </section>
+                    <section>
+                        <p class="copyright">
+                            <span>Copyright © 2015~2020 177</span>
+                            <span>Powered by <a no-style href="https://177.im" target="_blank">177</a></span>
+                        </p>
+                        <div class="copyright">
+                            <span class="footer-addon">
+                                
+Whatever will be, Will be.
+
+                            </span>
+                            <!-- <nav class="social-links">
+                                <ul><li><a class="no-style" title="Twitter" href="https://twitter.com/tingfengxing" target="_blank"><i class="gi gi-twitter"></i>Twitter</a></li><span class="separator">·</span><li><a class="no-style" title="GitHub" href="https://github.com/yuolvv" target="_blank"><i class="gi gi-github"></i>GitHub</a></li><span class="separator">·</span><li><a class="no-style" title="Weibo" href="https://weibo.com/test2020/" target="_blank"><i class="gi gi-weibo"></i>Weibo</a></li></ul>
+                            </nav> -->
+                        </div>
+                    </section>
+                    <script>
+                        var site_build_date = "2020-01-01T00:00+08:00"
+                    </script>
+                    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/galileo-d8a0a06eff.js"></script>
+                </footer>
+            </div>
+        </div>
+    </div>
+        
+        
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/ExSearch/ExSearch-493cb9cd89.js"></script>
+    
+    <!--katex-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/katex.min.js"></script>
+    <script>
+    mathOpts = {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false}
+        ]
+    };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/assets/auto-render.min.js" onload="renderMathInElement(document.body, mathOpts);"></script>
+
+    
+<script>
+if(window.location.hash){
+    var checkExist = setInterval(function() {
+       if ($(window.location.hash).length) {
+          $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+          clearInterval(checkExist);
+       }
+    }, 100);
+}
+</script>
+<script>
+if(window.navigator && navigator.serviceWorker) {
+  caches.keys().then(function(cacheNames) {
+    cacheNames.forEach(function(cacheName) {
+      caches.delete(cacheName);
+    });
+  }).then(function(){
+    console.log('Cache cleaned.');
+  });
+  navigator.serviceWorker.getRegistrations()
+  .then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister();
+    }
+  }).then(function(){
+    console.log('Service Worker stopped.');
+  });
+}
+</script>
+
+    </body>
+</html>

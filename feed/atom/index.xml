@@ -1,126 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-07-09T09:12:13.512845+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-09T09:12:13.513104+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1.单例设计模式&lt;/h2&gt;
-&lt;p&gt;使用设计模式为了代码复用，增加可维护性。&lt;/p&gt;
-&lt;p&gt;设计模式的六大原则：开闭原则、里氏代换原则、依赖倒转原则、接口隔离原则、迪米特法则（最少知道原则）、合成/聚合复用原则&lt;/p&gt;
-&lt;p&gt;Singleton（创建）：保证一个类仅有一个实例，并提供一个访问它的全局访问点。如打印机&lt;/p&gt;
-&lt;p&gt;饿汉式单例模式&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;//饿汉模式：线程安全，耗费资源。
-public class HugerSingletonTest {
-    //该对象的引用不可修改。还可以将对象的创建放到静态代码块中。
-    private static final HugerSingletonTest ourInstance = new HugerSingletonTest();
-
-    public static HugerSingletonTest getInstance() {
-        return ourInstance;
-    }
-    private HugerSingletonTest() {
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;懒汉式：非线程安全&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class Singleton {
-    private static Singleton ourInstance;
-
-    public static Singleton getInstance() {
-        if (null == ourInstance) {
-            ourInstance = new Singleton();
-        }
-        return ourInstance;
-    }
-    private Singleton() {
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;懒汉式，线程安全：给方法加锁，消耗资源。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class Singleton {
-    private static Singleton ourInstance;
-
-    public synchronized static Singleton getInstance() {
-        if (null == ourInstance) {
-            ourInstance = new Singleton();
-        }
-        return ourInstance;
-    }
-    private Singleton() {
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;懒汉式，线程安全：双重检查锁。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class Singleton {
-    private static Singleton ourInstance;
-
-    public synchronized static Singleton getInstance() {
-        if (null == ourInstance) {
-            synchronized (Singleton.class) {
-                if (null == ourInstance) {
-                    ourInstance = new Singleton();
-                }
-            }
-        }
-        return ourInstance;
-    }
-    private Singleton() {
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;分析：
-JVM会进行指令重排序，原本的步骤应该是先给 singleton 分配内存，然后调用 Singleton 的构造函数来初始化成员变量，形成实例，最后将singleton对象指向分配的内存空间，但有可能步骤会打乱，就会出现实例非空但没有初始化，抛出异常。将singleton声明成 volatile ，就可以解决该问题。&lt;/p&gt;
-&lt;p&gt;懒汉式，线程安全：静态内部类&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public class Singleton {
-    private static class SingletonHodler {
-        private static Singleton ourInstance = new Singleton();
-    }
-
-    public synchronized static Singleton getInstance() {
-        return SingletonHodler.ourInstance;
-    }
-
-    private Singleton() {
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;懒汉式，线程安全：枚举&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;enum SingletonTest {  
-    INSTANCE;  
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;单例模式在JDK8源码中的使用：Runtime.getRuntime()方法（饿汉式单例模式）&lt;/p&gt;
-&lt;h2&gt;2.适配器设计模式&lt;/h2&gt;
-&lt;p&gt;适配器模式（结构）中的角色：目标接口（Target）：客户所期待的接口、需要适配的类（Adaptee）、适配器（Adapter）。&lt;/p&gt;
-&lt;p&gt;对象适配器（采用对象组合方式实现）&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;//适配器类实现了目标接口
-public class Adapter implements Target{
-    private Adaptee adaptee ;
-    public Adapter() {
-        super();
-        this.adaptee = new Adaptee();
-    }
-    @Override
-    public void getHeadset2() {
-        adaptee.getHeadset3();
-    }
-    public static void main(String args[]){
-        Target target = new Adapter();
-        //表面上调用的是2孔插座方法，但其实调用的三孔插座方法。
-        target.getHeadset2();
-    }
-}
-interface Target{
-    //两孔插座
-    void getHeadset2();
-}
-class Adaptee{
-    public void getHeadset3(){
-        System.out.println("我是三孔插座！");
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;适配器模式在JDK源码的使用&lt;/p&gt;
-&lt;p&gt;Arrays.asList()，其中Arrays是目标类，内部类ArrayList是适配器类，而Objects.requireNonNull(array);需要适配的类。&lt;/p&gt;
-&lt;p&gt;InputStreamReader .read()，其中Reader 是目标类，InputStreamReader是适配器类，而StreamDecoder 是需要适配的类。&lt;/p&gt;
-&lt;h2&gt;3.模板方法设计模式&lt;/h2&gt;
-&lt;p&gt;模板方法设计模式（行为）使用了继承机制，在抽象类中定义一个模板方法，该方法引用了若干个抽象方法（由子类实现）或具体方法（子类可以覆盖重写）&lt;/p&gt;
-&lt;p&gt;模板方法设计模式在JDK源码的使用:Collections.sort()、InputStream.read()等&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-22T12:00:00+08:06</published></entry><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-09T09:12:13.513084+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-07-11T03:56:37.766615+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-07-11T03:56:37.766897+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
 &lt;p&gt;方案1：服务发布的group设置为不同；&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;  &amp;lt;dubbo:reference id="comm1" timeout="100000" interface="com.acq.facade.CommService" group="comm102" version="1.0.0" retries="0" check="false"&amp;gt;
@@ -163,7 +42,7 @@ class Adaptee{
 &lt;p&gt;dubbo:provider/ 服务提供者缺省值配置&lt;/p&gt;
 &lt;p&gt;dubbo:consumer/ 服务消费者缺省值配置&lt;/p&gt;
 &lt;p&gt;dubbo:method/ 方法级配置&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-07-09T09:12:13.513064+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
+</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-07-11T03:56:37.766876+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
 &lt;p&gt;CREATE TABLE t1 (a INT, b CHAR (20), PRIMARY KEY (a)) ENGINE=InnoDB;&lt;/p&gt;
 &lt;p&gt;如果你的 MySQL 实例将 InnoDB 定义为默认存储引擎 （ 默认情况下为默认存储引擎 )，则可以无需指定 ENGINE = InnoDB 子句。&lt;/p&gt;
 &lt;p&gt;如果你想要查询当前 MySQL 实例的默认存储引擎，可以使用下面的语句&lt;/p&gt;
@@ -248,7 +127,7 @@ Max_data_length: 0
    ROW_FORMAT: Compact
 ZIP_PAGE_SIZE: 0
    SPACE_TYPE: Single&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-07-09T09:12:13.513045+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-07-11T03:56:37.766855+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
 &lt;h2&gt;AUTO_INCREMENT 约束&lt;/h2&gt;
 &lt;p&gt;AUTO_INCREMENT 是 Innodb 提供的一种可配置的锁定机制，如果某个表的某一列具有 AUTO_INCREMENT 约束，那么向该表添加数据的时候可以很明显的提高 SQL 语句的性能和可伸缩性。&lt;/p&gt;
 &lt;p&gt;为了充分使用 Innodb 表的 AUTO_INCREMENT 机制，必须 将 AUTO_INCREMENT 字段 ( 或列，下面提到的 「 列 」 和字段可以等价 ) 定义为 「 索引 」 的一部分，这样就可以在表上使用索引执行下面的语句来查找最大的列值&lt;/p&gt;
@@ -543,7 +422,7 @@ auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这样，这台服务器的自增值将会是 2 4 6 8 10 …. 偶数数列&lt;/p&gt;
 &lt;p&gt;这样，在互为主从的时候，就不会出现自增值重复的问题&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-07-09T09:12:13.513026+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-07-11T03:56:37.766834+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
 &lt;p&gt;如果想要从 查询，插入 和其它数据库操作中获得最佳性能，那么我们就必须了解 InnoDB 如何使用 聚簇索引 来优化每个表的最常见检索和 DML 操作方式&lt;/p&gt;
 &lt;p&gt;（1）当我们在一个 Innodb 表上定义了一个主键，InnoDB 会默认的使用它作为聚簇索引。&lt;/p&gt;
 &lt;p&gt;使用 InnoDB 存储引擎时，建议为每个表都添加一个主键。如果该表没有一个逻辑唯一且非空列或列集合，那么可以添加一个带有 AUTO_INCREMENT 约束的自增列作为主键，InnoDB 会自动填充该列。&lt;/p&gt;
@@ -628,7 +507,7 @@ auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在排序索引构建期间会禁用重做日志。取而代之的是使用一个检查点 ( checkpoint ) 确保排序索引构建能够承受崩溃或故障。这个检查点会强制将所有脏页写入磁盘。在排序索引构建期间，会定期发信号通知页面清理程序线程刷新脏页以确保可以快速处理检查点操作。默认的，当清洁页面的数量低于设定的阈值时，页面清理器线程会刷新脏页面。对于已排序的索引构建，会立即刷新脏页以减少检查点开销并并行 I/O 和 CPU 活动&lt;/p&gt;
 &lt;h2&gt;排序索引构建和性能优化统计&lt;/h2&gt;
 &lt;p&gt;排序索引构建可能会导致性能优化统计信息与以前的索引创建方法生成的统计信息不同，而这种统计数据的差异 ( 预计不会影响工作负载性能 ) 是由于使用了不同的填充索引的算法而引起的。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-07-09T09:12:13.513006+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-07-11T03:56:37.766812+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
 &lt;p&gt;可以在使用 CREATE TABLE 语句创建表时指定全文索引，也可以在创建表之后使用 ALTER TABLE 或 CREATE INDEX 将全文索引添加到现有表中&lt;/p&gt;
 &lt;p&gt;全文索引的使用方式一般为使用 MATCH()... AGAINST 语法执行全文搜索。&lt;/p&gt;
 &lt;h2&gt;InnoDB 全文索引设计&lt;/h2&gt;
@@ -828,7 +707,7 @@ INNODB_FT_BEING_DELETED
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;你还可以通过查询 INNODB_INDEXES 和 INNODB_TABLES 表来查看全文索引和表的基本信息。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-07-09T09:12:13.512985+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-07-11T03:56:37.766790+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
 &lt;p&gt;在本文中, Garbage Collection 翻译为 “垃圾收集”, garbage collector 翻译为 “垃圾收集器”;&lt;/p&gt;
 &lt;p&gt;一般认为, 垃圾回收 和 垃圾收集 是同义词。&lt;/p&gt;
 &lt;p&gt;Minor GC 翻译为： 小型 GC; 而不是 次要 GC&lt;/p&gt;
@@ -1060,7 +939,7 @@ Full GC(完全GC)清理的是整个堆, 包括年轻代和老年代空间。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;所以从实际的 GC 日志可以看到, 并不是执行了两次 Full GC 操作, 而是只执行了一次清理老年代空间的 Major GC 。&lt;/p&gt;
 &lt;p&gt;如果只关心延迟, 通过后面 jstat 显示的数据, 也能得出正确的结果。它正确地列出了两次 STW 事件,总计耗时 50 ms。这段时间影响了所有应用线程的延迟。如果想要优化吞吐量, 这个结果就会有误导性 —— jstat 只列出了 stop-the-world 的初始标记阶段和最终标记阶段, jstat 的输出完全隐藏了并发执行的GC阶段。&lt;/p&gt;
-</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-07-09T09:12:13.512964+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
+</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-07-11T03:56:37.766768+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
 &lt;p&gt;concurrent: 并发, 多个线程协同做同一件事情(有状态)&lt;/p&gt;
 &lt;p&gt;parallel: 并行, 多个线程各做各的事情(互相间无共享状态)&lt;/p&gt;
 &lt;p&gt;在 GC 领域: concurrent 算法指GC线程和业务线程能并发执行； parallel 指 GC 线程之间的并行。&lt;/p&gt;
@@ -1582,7 +1461,7 @@ Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)&lt;/c
 &lt;p&gt;释放刚被垃圾收集的 heap区所消耗的时间,包括对应的remembered sets。&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
 &lt;p&gt;在此 OBE 中, 您对Java JVM 中的 G1 垃圾收集器有了个大致的了解。首先你学到了为何堆和垃圾收集器是所有 Java JVM 的关键部分。接下来讲述了使用 CMS 和 G1 收集器进行垃圾回收的工作方式. 接下来,您了解了 G1 的命令行参数/开关以及和使用它们的最佳实践。最后,您了解了日志对象以及 GC 日志中的数据。&lt;/p&gt;
-</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-07-09T09:12:13.512940+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
+</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-07-11T03:56:37.766745+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;-XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
@@ -1631,7 +1510,7 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 &lt;p&gt;下一组数据( -&amp;gt; 右边)中蕴含了更重要的结论, 年轻代的内存使用在垃圾回收后下降了 546M(559,231k), 但总的堆内存使用(total heap usage)只减少了 337M(346,099k). 通过这一点,我们可以计算出, 有 208M(213,132K) 的年轻代对象被提升到老年代(Old)中。&lt;/p&gt;
 &lt;p&gt;这个GC事件可以用下面的示意图来表示, 上方表示GC之前的内存使用情况, 下方表示结束后的内存使用情况:&lt;/p&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 221.3740458015267" data-width="580" data-height="131"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d0f813f8ac7b4a2fed102209354adfb4.png" alt="jvm-gc-log-001.png" /&gt;&lt;figcaption&gt;jvm-gc-log-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-07T12:00:00+08:06</published></entry><entry><id>/archives/ubuntu-docker-setup/</id><title>Ubuntu安装Docker步骤</title><updated>2020-07-09T09:12:13.512897+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;官方安装教程&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;支持的Ubuntu版本&lt;/h2&gt;
+</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-07T12:00:00+08:06</published></entry><entry><id>/archives/ubuntu-docker-setup/</id><title>Ubuntu安装Docker步骤</title><updated>2020-07-11T03:56:37.766720+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;官方安装教程&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;支持的Ubuntu版本&lt;/h2&gt;
 &lt;p&gt;Ubuntu Focal 20.04 (LTS)&lt;/p&gt;
 &lt;p&gt;Ubuntu Eoan 19.10&lt;/p&gt;
 &lt;p&gt;Ubuntu Bionic 18.04 (LTS)&lt;/p&gt;
@@ -1664,4 +1543,265 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 
 &lt;pre&gt;&lt;code&gt;sudo docker run hello-world&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 79.04135338345864" data-width="841" data-height="532"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/1245469ef079a4d246ee4d65d2986854.png" alt="ubuntu-docker-setup-001.png" /&gt;&lt;figcaption&gt;ubuntu-docker-setup-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/ubuntu-docker-setup/" rel="alternate"/><published>2020-07-07T12:00:00+08:06</published></entry></feed>
+</content><link href="/archives/ubuntu-docker-setup/" rel="alternate"/><published>2020-07-07T12:00:00+08:06</published></entry><entry><id>/archives/nacos-docker-setup/</id><title>Docker安装配置Nacos</title><updated>2020-07-11T03:56:37.766672+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://nacos.io/zh-cn/"&gt;Nacos官网&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;查询nacos镜像&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;docker search nacos&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 125.23191094619666" data-width="1350" data-height="539"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/73c24f8cfd2b207cf36f5f249a4d3c40.png" alt="nacos-docker-setup-001.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;拉取镜像&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;docker pull nacos/nacos-server&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 96.6304347826087" data-width="889" data-height="460"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d33cb4c36a0d2851aacb9c50e293757f.png" alt="nacos-docker-setup-002.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-002.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;查看镜像&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;docker images&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 544.1176470588235" data-width="925" data-height="85"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/de50429f4532a7f3f5161dab56922275.png" alt="nacos-docker-setup-003.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-003.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;启动镜像&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run --env MODE=standalone --name nacos -d -p 8848:8848 nacos/nacos-server&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 1420.4545454545455" data-width="1250" data-height="44"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/28475c38dfdee65aec1d99df173d1165.png" alt="nacos-docker-setup-004.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-004.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在浏览器上打开  &lt;a href="http://服务器IP:8848/nacos"&gt;http://服务器IP:8848/nacos&lt;/a&gt;  默认账号/密码 ：nacos&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 108.50340136054422" data-width="1914" data-height="882"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/2d8b1722a006f8b438051c309edfd397.png" alt="nacos-docker-setup-006.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-006.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2&gt;配置Nacos&lt;/h2&gt;
+&lt;p&gt;默认是使用nacos自带的数据，为了方便管理，这里修改nacos配置，使用mysql数据库，这里是单数据库，所有db.url.1被注释了&lt;/p&gt;
+&lt;p&gt;nacos初始化sql,需要先创建nacos数据库后，然后执行下面的sql&lt;/p&gt;
+&lt;p&gt;官方提供的sql脚本：&lt;a href="https://github.com/alibaba/nacos/blob/master/config/src/main/resources/META-INF/nacos-db.sql"&gt;https://github.com/alibaba/nacos/blob/master/config/src/main/resources/META-INF/nacos-db.sql&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+ * Copyright 1999-2018 Alibaba Group Holding Ltd.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info   */
+/******************************************/
+CREATE TABLE `config_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(255) DEFAULT NULL,
+  `content` longtext NOT NULL COMMENT 'content',
+  `md5` varchar(32) DEFAULT NULL COMMENT 'md5',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  `src_user` text COMMENT 'source user',
+  `src_ip` varchar(20) DEFAULT NULL COMMENT 'source ip',
+  `app_name` varchar(128) DEFAULT NULL,
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  `c_desc` varchar(256) DEFAULT NULL,
+  `c_use` varchar(64) DEFAULT NULL,
+  `effect` varchar(64) DEFAULT NULL,
+  `type` varchar(64) DEFAULT NULL,
+  `c_schema` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfo_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_aggr   */
+/******************************************/
+CREATE TABLE `config_info_aggr` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(255) NOT NULL COMMENT 'group_id',
+  `datum_id` varchar(255) NOT NULL COMMENT 'datum_id',
+  `content` longtext NOT NULL COMMENT '内容',
+  `gmt_modified` datetime NOT NULL COMMENT '修改时间',
+  `app_name` varchar(128) DEFAULT NULL,
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfoaggr_datagrouptenantdatum` (`data_id`,`group_id`,`tenant_id`,`datum_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='增加租户字段';
+
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_beta   */
+/******************************************/
+CREATE TABLE `config_info_beta` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(128) NOT NULL COMMENT 'group_id',
+  `app_name` varchar(128) DEFAULT NULL COMMENT 'app_name',
+  `content` longtext NOT NULL COMMENT 'content',
+  `beta_ips` varchar(1024) DEFAULT NULL COMMENT 'betaIps',
+  `md5` varchar(32) DEFAULT NULL COMMENT 'md5',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  `src_user` text COMMENT 'source user',
+  `src_ip` varchar(20) DEFAULT NULL COMMENT 'source ip',
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfobeta_datagrouptenant` (`data_id`,`group_id`,`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info_beta';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_info_tag   */
+/******************************************/
+CREATE TABLE `config_info_tag` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(128) NOT NULL COMMENT 'group_id',
+  `tenant_id` varchar(128) DEFAULT '' COMMENT 'tenant_id',
+  `tag_id` varchar(128) NOT NULL COMMENT 'tag_id',
+  `app_name` varchar(128) DEFAULT NULL COMMENT 'app_name',
+  `content` longtext NOT NULL COMMENT 'content',
+  `md5` varchar(32) DEFAULT NULL COMMENT 'md5',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  `src_user` text COMMENT 'source user',
+  `src_ip` varchar(20) DEFAULT NULL COMMENT 'source ip',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_configinfotag_datagrouptenanttag` (`data_id`,`group_id`,`tenant_id`,`tag_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_info_tag';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = config_tags_relation   */
+/******************************************/
+CREATE TABLE `config_tags_relation` (
+  `id` bigint(20) NOT NULL COMMENT 'id',
+  `tag_name` varchar(128) NOT NULL COMMENT 'tag_name',
+  `tag_type` varchar(64) DEFAULT NULL COMMENT 'tag_type',
+  `data_id` varchar(255) NOT NULL COMMENT 'data_id',
+  `group_id` varchar(128) NOT NULL COMMENT 'group_id',
+  `tenant_id` varchar(128) DEFAULT '' COMMENT 'tenant_id',
+  `nid` bigint(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`nid`),
+  UNIQUE KEY `uk_configtagrelation_configidtag` (`id`,`tag_name`,`tag_type`),
+  KEY `idx_tenant_id` (`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='config_tag_relation';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = group_capacity   */
+/******************************************/
+CREATE TABLE `group_capacity` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `group_id` varchar(128) NOT NULL DEFAULT '' COMMENT 'Group ID，空字符表示整个集群',
+  `quota` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '配额，0表示使用默认值',
+  `usage` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '使用量',
+  `max_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个配置大小上限，单位为字节，0表示使用默认值',
+  `max_aggr_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '聚合子配置最大个数，，0表示使用默认值',
+  `max_aggr_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值',
+  `max_history_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最大变更历史数量',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_group_id` (`group_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='集群、各Group容量信息表';
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = his_config_info   */
+/******************************************/
+CREATE TABLE `his_config_info` (
+  `id` bigint(64) unsigned NOT NULL,
+  `nid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `data_id` varchar(255) NOT NULL,
+  `group_id` varchar(128) NOT NULL,
+  `app_name` varchar(128) DEFAULT NULL COMMENT 'app_name',
+  `content` longtext NOT NULL,
+  `md5` varchar(32) DEFAULT NULL,
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00',
+  `src_user` text,
+  `src_ip` varchar(20) DEFAULT NULL,
+  `op_type` char(10) DEFAULT NULL,
+  `tenant_id` varchar(128) DEFAULT '' COMMENT '租户字段',
+  PRIMARY KEY (`nid`),
+  KEY `idx_gmt_create` (`gmt_create`),
+  KEY `idx_gmt_modified` (`gmt_modified`),
+  KEY `idx_did` (`data_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='多租户改造';
+
+
+/******************************************/
+/*   数据库全名 = nacos_config   */
+/*   表名称 = tenant_capacity   */
+/******************************************/
+CREATE TABLE `tenant_capacity` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `tenant_id` varchar(128) NOT NULL DEFAULT '' COMMENT 'Tenant ID',
+  `quota` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '配额，0表示使用默认值',
+  `usage` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '使用量',
+  `max_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个配置大小上限，单位为字节，0表示使用默认值',
+  `max_aggr_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '聚合子配置最大个数',
+  `max_aggr_size` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '单个聚合数据的子配置大小上限，单位为字节，0表示使用默认值',
+  `max_history_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '最大变更历史数量',
+  `gmt_create` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '创建时间',
+  `gmt_modified` datetime NOT NULL DEFAULT '2010-05-05 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_tenant_id` (`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='租户容量信息表';
+
+
+CREATE TABLE `tenant_info` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `kp` varchar(128) NOT NULL COMMENT 'kp',
+  `tenant_id` varchar(128) default '' COMMENT 'tenant_id',
+  `tenant_name` varchar(128) default '' COMMENT 'tenant_name',
+  `tenant_desc` varchar(256) DEFAULT NULL COMMENT 'tenant_desc',
+  `create_source` varchar(32) DEFAULT NULL COMMENT 'create_source',
+  `gmt_create` bigint(20) NOT NULL COMMENT '创建时间',
+  `gmt_modified` bigint(20) NOT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_tenant_info_kptenantid` (`kp`,`tenant_id`),
+  KEY `idx_tenant_id` (`tenant_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='tenant_info';
+
+CREATE TABLE users (
+    username varchar(50) NOT NULL PRIMARY KEY,
+    password varchar(500) NOT NULL,
+    enabled boolean NOT NULL
+);
+
+CREATE TABLE roles (
+    username varchar(50) NOT NULL,
+    role varchar(50) NOT NULL,
+    constraint uk_username_role UNIQUE (username,role)
+);
+
+CREATE TABLE permissions (
+    role varchar(50) NOT NULL,
+    resource varchar(512) NOT NULL,
+    action varchar(8) NOT NULL,
+    constraint uk_role_permission UNIQUE (role,resource,action)
+);
+
+INSERT INTO users (username, password, enabled) VALUES ('nacos', '$2a$10$EuWPZHzz32dJN7jexM34MOeYirDdFAZm2kuWj7VEOJhhZkDrxfvUu', TRUE);
+
+INSERT INTO roles (username, role) VALUES ('nacos', 'ROLE_ADMIN');&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 61.02661596958175" data-width="321" data-height="263"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/694c0a850dc40ce76f563673dbb3c71f.png" alt="nacos-docker-setup-005.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-005.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;进入nacos容器修改相关的配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker exec -it nacos bash
+
+vi config/application.properties&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注释掉db.url.1，修改db.url.0的mysql信息（mysql的IP地址，端口，账号，密码等）&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 261.9942196531792" data-width="1813" data-height="346"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/faadaec6b6baa6a80b1280ca18b89033.png" alt="nacos-docker-setup-007.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-007.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;修改完配置，退出镜像(直接输入exit)，重启容器&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker restart nacos&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;测试MySQL是否配置成功&lt;/h2&gt;
+&lt;p&gt;在浏览器上打开  &lt;a href="http://服务器IP:8848/nacos"&gt;http://服务器IP:8848/nacos&lt;/a&gt;  默认账号/密码 ：nacos&lt;/p&gt;
+&lt;p&gt;添加一个命名空间&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 149.68944099378882" data-width="964" data-height="322"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/2fc0e9b079f3c041a451e2db8b35ee16.png" alt="nacos-docker-setup-008.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-008.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 268.0124223602484" data-width="1726" data-height="322"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/a04c87572cf968be49d4ea604fb518fe.png" alt="nacos-docker-setup-009.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-009.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;添加完成之后，在mysql数据库中可以看到如下：&lt;/p&gt;
+&lt;p&gt;&lt;figure class="pswp-item" style="flex: 423.1404958677686" data-width="1024" data-height="121"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f63ecc2d4cb3f9afdf94f4b759ce99f0.png" alt="nacos-docker-setup-010.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-010.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，mysql中新增了一条命名空间的记录，说明mysql的配置成功了。&lt;/p&gt;
+&lt;h3&gt;到这里，docker安装配置nacos基本完成！&lt;/h3&gt;
+</content><link href="/archives/nacos-docker-setup/" rel="alternate"/><published>2020-07-08T12:00:00+08:06</published></entry></feed>
