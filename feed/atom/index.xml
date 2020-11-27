@@ -1,133 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-11-27T01:54:13.390539+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/java-interview-dubbo/</id><title>Java面试题-Dubbo</title><updated>2020-11-27T01:54:13.390771+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的Java面试题，如有侵权，请联系删除！&lt;/div&gt;&lt;h2&gt;1、测试和生产共用一套zookeeper，怎么保证消费不冲突 ？&lt;/h2&gt;
-&lt;p&gt;方案1：服务发布的group设置为不同；&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  &amp;lt;dubbo:reference id="comm1" timeout="100000" interface="com.acq.facade.CommService" group="comm102" version="1.0.0" retries="0" check="false"&amp;gt;
-  &amp;lt;/dubbo:reference&amp;gt;
-
-  &amp;lt;dubbo:reference id="comm2" timeout="100000" interface="com.acq.facade.CommService" group="comm103" version="1.0.0" retries="0" check="false"&amp;gt;
-  &amp;lt;/dubbo:reference&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;方案2：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;dubbo:service interface="com.foo.BarService" version="1.0.0" &amp;gt;&amp;lt;/dubbo:service&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;方案3：dubbo白名单（Filter过滤器）&lt;/p&gt;
-&lt;p&gt;1.新增一个类继承阿里巴巴的Filter&lt;/p&gt;
-&lt;p&gt;2.添加阿里巴巴的约定新建配置文件 com.alibaba.dubbo.rpc.Filter，指定上面的类&lt;/p&gt;
-&lt;p&gt;3.配置ip白名单&lt;/p&gt;
-&lt;p&gt;4.配置服务端dubbo配置&lt;/p&gt;
-&lt;h2&gt;2、dubbo运行时,突然所有的zookeeper全部宕机,dubbo是否还会继续提供服务？&lt;/h2&gt;
-&lt;p&gt;会的，dubbo根据本地缓存的服务地址进行服务调用&lt;/p&gt;
-&lt;p&gt;监控中心宕掉不影响使用，只是丢失部分采样数据&lt;/p&gt;
-&lt;p&gt;数据库宕掉后，注册中心仍能通过缓存提供服务列表查询，但不能注册新服务&lt;/p&gt;
-&lt;p&gt;注册中心对等集群，任意一台宕掉后，将自动切换到另一台&lt;/p&gt;
-&lt;p&gt;注册中心全部宕掉后，服务提供者和服务消费者仍能通过本地缓存通讯&lt;/p&gt;
-&lt;p&gt;服务提供者无状态，任意一台宕掉后，不影响使用&lt;/p&gt;
-&lt;p&gt;服务提供者全部宕掉后，服务消费者应用将无法使用，并无限次重连等待服务提供者恢复&lt;/p&gt;
-&lt;h2&gt;3、服务提供者能实现失效踢出是什么原理？&lt;/h2&gt;
-&lt;p&gt;基于zookeeper的临时节点原理&lt;/p&gt;
-&lt;p&gt;持久节点&lt;/p&gt;
-&lt;p&gt;所谓持久节点,是指在节点创建后,就一直存在,直到有删除操作来主动清除这个节点,也就是说不会因为创建该节点的客户端会话失效而消失&lt;/p&gt;
-&lt;p&gt;临时节点&lt;/p&gt;
-&lt;p&gt;临时节点的生命周期和客户端会话绑定,也就是说,如果客户端会话失效,那么这个节点就会自动被清除掉&lt;/p&gt;
-&lt;h2&gt;4、创建的临时节点什么时候会被删除，是连接一断就删除吗？延时是多少？&lt;/h2&gt;
-&lt;p&gt;连接断了之后，ZK不会马上移除临时数据，只有当SESSIONEXPIRED之后，才会把这个会话建立的临时数据移除。因此，用户需要谨慎设置Session_TimeOut&lt;/p&gt;
-&lt;h2&gt;5、Dubbo在安全机制方面是如何解决的 ？&lt;/h2&gt;
-&lt;p&gt;Dubbo通过Token令牌防止用户绕过注册中心直连，然后在注册中心上管理授权。Dubbo还提供服务黑白名单，来控制服务所允许的调用方。&lt;/p&gt;
-&lt;h2&gt;6、说说核心的配置有哪些？&lt;/h2&gt;
-&lt;p&gt;dubbo:service/ 服务提供者暴露服务配置&lt;/p&gt;
-&lt;p&gt;dubbo:reference/ 服务消费者引用服务配置&lt;/p&gt;
-&lt;p&gt;dubbo:protocol/ 服务提供者协议配置&lt;/p&gt;
-&lt;p&gt;dubbo:registry/ 注册中心配置&lt;/p&gt;
-&lt;p&gt;dubbo:application/ 应用信息配置&lt;/p&gt;
-&lt;p&gt;dubbo:provider/ 服务提供者缺省值配置&lt;/p&gt;
-&lt;p&gt;dubbo:consumer/ 服务消费者缺省值配置&lt;/p&gt;
-&lt;p&gt;dubbo:method/ 方法级配置&lt;/p&gt;
-</content><link href="/archives/java-interview-dubbo/" rel="alternate"/><published>2020-01-23T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb/</id><title>MySQL InnoDB</title><updated>2020-11-27T01:54:13.390754+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;要创建 InnoDB 表，可以使用 CREATE TABLE 语句&lt;/p&gt;
-&lt;p&gt;CREATE TABLE t1 (a INT, b CHAR (20), PRIMARY KEY (a)) ENGINE=InnoDB;&lt;/p&gt;
-&lt;p&gt;如果你的 MySQL 实例将 InnoDB 定义为默认存储引擎 （ 默认情况下为默认存储引擎 )，则可以无需指定 ENGINE = InnoDB 子句。&lt;/p&gt;
-&lt;p&gt;如果你想要查询当前 MySQL 实例的默认存储引擎，可以使用下面的语句&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT @@default_storage_engine;
-+--------------------------+
-| @@default_storage_engine |
-+--------------------------+
-| InnoDB                   |
-+--------------------------+&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;但是我们建议，无论任何时候，都使用 ENGINE = InnoDB 子句指定表的引擎为 InnoDB 。&lt;/p&gt;
-&lt;p&gt;因为如果没有指定，使用 mysqldump 或主从复制重放 CREATE TABLE 建表语句时，并不会自动添加 ENGINE = InnoDB。在默认存储引擎不是 InnoDB 的服务器上，表的存储引擎可能就不是 InnoDB 了。&lt;/p&gt;
-&lt;p&gt;每个表及其索引，可以存储在系统表空间 ( idbdata1 ) ，也可以存储在每个表自己的表空间 ( file-per-table ) ，还可以存储在通用的表空间 ( general tablespace )。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;当在 my.cnf 配置文件中启用 innodb_file_per_table（默认值）时，每个表及其索引会存储在每个表自己的独有表空间 ( file-per-table )
-相反，当禁用 innodb_file_per_table 配置项时，InnoDB 会在系统表空间中隐式创建 InnoDB 表。
-如果要在通用的空间内创建 InnoDB 表，则必须使用 CREATE TABLE ... TABLESPACE 语句。
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;当你启用 innodb_file_per_table 在每个表独自的文件表空间中创建一个表时，默认情况下，MySQL 会在 MySQL 服务器目录下的数据库目录中创建一个 .ibd 表空间文件。在 InnoDB 系统表空间中创建的表会存储在现有的 ibdata 文件中，该文件位于 MySQL 数据目录中。在通用表空间中创建的表会存储在现有的通用表空间 .ibd 文件中。可以在 MySQL 数据目录的内部或外部创建常规表空间文件。&lt;/p&gt;
-&lt;p&gt;在 InnoDB 内部，InnoDB 会将每个表的条目添加到数据字典中，该条目包含了数据库的名称。例如，如果在 test 数据库中创建了表 t1，则数据字典条目中的数据库名称为 test/t1 。 这意味着我们可以在不同的数据库中创建一个具有相同名称 t1 的表，并且表名不会在 InnoDB 中发生冲突。
-InnoDB 表和行格式&lt;/p&gt;
-&lt;p&gt;InnoDB 表的默认行格式由 innodb_default_row_format 配置选项指定，可选的值有 DYNAMIC 、 COMPACT 和 REDUNDANT ，默认值为DYNAMIC。&lt;/p&gt;
-&lt;p&gt;dynamic 和 compact 行格式允许我们充分利用 InnoDB 的功能，例如表压缩和长列值的高效页外存储。要使用这些行格式，必须启用innodb_file_per_table ( 默认值 )&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SET GLOBAL innodb_file_per_table=1;
-CREATE TABLE t3 (a INT, b CHAR (20), PRIMARY KEY (a)) ROW_FORMAT=DYNAMIC;
-CREATE TABLE t4 (a INT, b CHAR (20), PRIMARY KEY (a)) ROW_FORMAT=COMPRESSED;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;或者，我们还可以使用 CREATE TABLE ... TABLESPACE 语句在通用表空间中创建 InnoDB 表。通用表空间支持所有行格式。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CREATE TABLE t1 (c1 INT PRIMARY KEY) TABLESPACE ts1 ROW_FORMAT=DYNAMIC;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;CREATE TABLE ... TABLESPACE 语句也可用在系统表空间中创建具有 DYNAMIC 行格式的 InnoDB 表，以及具有 Compact 或 Redundant 行格式的表。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CREATE TABLE t1 (c1 INT PRIMARY KEY) TABLESPACE = innodb_system ROW_FORMAT=DYNAMIC;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;InnoDB 表和主键 ( primary key )&lt;/p&gt;
-&lt;p&gt;应该始终为 InnoDB 表指定一个主键，且定义为主键的列应该符合以下要求：&lt;/p&gt;
-&lt;p&gt;1、 被最重要的查询引用
-2、 永远不会留空 ( NULL )
-3、 永远不会有重复值
-4、 很少变更，一旦插入就永保不变&lt;/p&gt;
-&lt;p&gt;例如，在包含有关人员信息的表中，你不应该在 ( firstname，lastname ) 上创建主键，因为多个人可以使用相同的名称，而且有些人的姓氏是可空的，更何况，有些人会变更他们的姓名。&lt;/p&gt;
-&lt;p&gt;因为如此多的约束的存在，通常没有一组明显的列用作主键，因此你应该创建一个带有数字 id 的新列作为主键的全部或部分。为此，你可以声明一个带有 AUTO_INCREMENT 约束的列，以便在插入行时自动填充升序值。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# 主键 ID 可以作为不同表之间的关联指针
-CREATE TABLE t5 (id INT AUTO_INCREMENT, b CHAR (20), PRIMARY KEY (id));
-
-# 主键可以包含多列，但必须以一个自增列开始
-CREATE TABLE t6 (id INT AUTO_INCREMENT, a INT, b CHAR (20), PRIMARY KEY (id,a));&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;尽管该表在没有定义主键的情况下可以正常工作，但主键涉及性能的许多方面，并且对于任何大型或经常使用的表都是关键的存在。因此，始终建议你在 CREATE TABLE 语句中指定主键。如果你先创建表，加载数据，然后运行 ALTER TABLE 以稍后添加主键，那么该操作比创建表时定义主键要慢得多
-查看 InnoDB 表属性&lt;/p&gt;
-&lt;p&gt;要查看 InnoDB 表的属性，可以运行 SHOW TABLE STATUS 语句&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SHOW TABLE STATUS FROM test LIKE 't%' \G;
-*************************** 1. row ***************************
-           Name: t1
-         Engine: InnoDB
-        Version: 10
-     Row_format: Compact
-           Rows: 0
- Avg_row_length: 0
-    Data_length: 16384
-Max_data_length: 0
-   Index_length: 0
-      Data_free: 0
- Auto_increment: NULL
-    Create_time: 2015-03-16 15:13:31
-    Update_time: NULL
-     Check_time: NULL
-      Collation: utf8mb4_0900_ai_ci
-       Checksum: NULL
- Create_options:
-        Comment:&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;也可以使用 InnoDB 信息模式系统表查询 InnoDB 表属性&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mysql&amp;gt; SELECT * FROM INFORMATION_SCHEMA.INNODB_TABLES WHERE NAME='test/t1' \G
-*************************** 1. row ***************************
-     TABLE_ID: 45
-         NAME: test/t1
-         FLAG: 1
-       N_COLS: 5
-        SPACE: 35
-   ROW_FORMAT: Compact
-ZIP_PAGE_SIZE: 0
-   SPACE_TYPE: Single&lt;/code&gt;&lt;/pre&gt;
-</content><link href="/archives/mysql-innodb/" rel="alternate"/><published>2020-02-01T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-11-27T01:54:13.390737+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>/</id><title>177博客</title><updated>2020-11-27T02:14:23.900284+08:06</updated><author><name>177</name><email>0@177.im</email></author><link href="/" rel="alternate"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><logo>${static_prefix}favicon.ico</logo><subtitle>天青色等烟雨</subtitle><entry><id>/archives/mysql-innodb-autoincrement/</id><title>MySQL InnoDB AUTO_INCREMENT</title><updated>2020-11-27T02:14:23.900509+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;想必你已经很熟悉 MySQL Innodb 中的 AUTO_INCREMENT，它是一个约束条件，如果某个字段添加了这个约束条件，插入数据的时候，如果没有给该字段指定一个值，那么它就会自动插入一个自增长的值。&lt;/p&gt;
 &lt;h2&gt;AUTO_INCREMENT 约束&lt;/h2&gt;
 &lt;p&gt;AUTO_INCREMENT 是 Innodb 提供的一种可配置的锁定机制，如果某个表的某一列具有 AUTO_INCREMENT 约束，那么向该表添加数据的时候可以很明显的提高 SQL 语句的性能和可伸缩性。&lt;/p&gt;
 &lt;p&gt;为了充分使用 Innodb 表的 AUTO_INCREMENT 机制，必须 将 AUTO_INCREMENT 字段 ( 或列，下面提到的 「 列 」 和字段可以等价 ) 定义为 「 索引 」 的一部分，这样就可以在表上使用索引执行下面的语句来查找最大的列值&lt;/p&gt;
@@ -422,7 +294,7 @@ auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;这样，这台服务器的自增值将会是 2 4 6 8 10 …. 偶数数列&lt;/p&gt;
 &lt;p&gt;这样，在互为主从的时候，就不会出现自增值重复的问题&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-11-27T01:54:13.390720+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-autoincrement/" rel="alternate"/><published>2020-02-02T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-index/</id><title>MySQL InnoDB INDEX</title><updated>2020-11-27T02:14:23.900493+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;每个 InnoDB 表都有一个称为 「 聚簇索引 」 的特殊索引，通常情况下，这个聚簇索引就是 「 主键 」( primary key ) 。Innodb 使用它存储表中每一行的数据。&lt;/p&gt;
 &lt;p&gt;如果想要从 查询，插入 和其它数据库操作中获得最佳性能，那么我们就必须了解 InnoDB 如何使用 聚簇索引 来优化每个表的最常见检索和 DML 操作方式&lt;/p&gt;
 &lt;p&gt;（1）当我们在一个 Innodb 表上定义了一个主键，InnoDB 会默认的使用它作为聚簇索引。&lt;/p&gt;
 &lt;p&gt;使用 InnoDB 存储引擎时，建议为每个表都添加一个主键。如果该表没有一个逻辑唯一且非空列或列集合，那么可以添加一个带有 AUTO_INCREMENT 约束的自增列作为主键，InnoDB 会自动填充该列。&lt;/p&gt;
@@ -507,7 +379,7 @@ auto_increment_increment=2;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;在排序索引构建期间会禁用重做日志。取而代之的是使用一个检查点 ( checkpoint ) 确保排序索引构建能够承受崩溃或故障。这个检查点会强制将所有脏页写入磁盘。在排序索引构建期间，会定期发信号通知页面清理程序线程刷新脏页以确保可以快速处理检查点操作。默认的，当清洁页面的数量低于设定的阈值时，页面清理器线程会刷新脏页面。对于已排序的索引构建，会立即刷新脏页以减少检查点开销并并行 I/O 和 CPU 活动&lt;/p&gt;
 &lt;h2&gt;排序索引构建和性能优化统计&lt;/h2&gt;
 &lt;p&gt;排序索引构建可能会导致性能优化统计信息与以前的索引创建方法生成的统计信息不同，而这种统计数据的差异 ( 预计不会影响工作负载性能 ) 是由于使用了不同的填充索引的算法而引起的。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-11-27T01:54:13.390703+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-index/" rel="alternate"/><published>2020-02-03T12:00:00+08:06</published></entry><entry><id>/archives/mysql-innodb-full-inverted-index/</id><title>MySQL InnoDB Full Inverted INDEX</title><updated>2020-11-27T02:14:23.900476+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;从网络上收集整理的资料，如有侵权，请联系删除！&lt;/div&gt;&lt;p&gt;在基于文本类型的列 ( char 、varchar 和 text ) 上创建全文 ( FULLTEXT ) 索引，并忽略任何定义为停用词的单词, 可以加快对这些列中包含的数据的查询和 DML 操作。&lt;/p&gt;
 &lt;p&gt;可以在使用 CREATE TABLE 语句创建表时指定全文索引，也可以在创建表之后使用 ALTER TABLE 或 CREATE INDEX 将全文索引添加到现有表中&lt;/p&gt;
 &lt;p&gt;全文索引的使用方式一般为使用 MATCH()... AGAINST 语法执行全文搜索。&lt;/p&gt;
 &lt;h2&gt;InnoDB 全文索引设计&lt;/h2&gt;
@@ -707,7 +579,7 @@ INNODB_FT_BEING_DELETED
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;你还可以通过查询 INNODB_INDEXES 和 INNODB_TABLES 表来查看全文索引和表的基本信息。&lt;/p&gt;
-</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-11-27T01:54:13.390686+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
+</content><link href="/archives/mysql-innodb-full-inverted-index/" rel="alternate"/><published>2020-02-04T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc/</id><title>Java JVM GC性能优化</title><updated>2020-11-27T02:14:23.900460+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;说明:&lt;/p&gt;
 &lt;p&gt;在本文中, Garbage Collection 翻译为 “垃圾收集”, garbage collector 翻译为 “垃圾收集器”;&lt;/p&gt;
 &lt;p&gt;一般认为, 垃圾回收 和 垃圾收集 是同义词。&lt;/p&gt;
 &lt;p&gt;Minor GC 翻译为： 小型 GC; 而不是 次要 GC&lt;/p&gt;
@@ -939,7 +811,7 @@ Full GC(完全GC)清理的是整个堆, 包括年轻代和老年代空间。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;所以从实际的 GC 日志可以看到, 并不是执行了两次 Full GC 操作, 而是只执行了一次清理老年代空间的 Major GC 。&lt;/p&gt;
 &lt;p&gt;如果只关心延迟, 通过后面 jstat 显示的数据, 也能得出正确的结果。它正确地列出了两次 STW 事件,总计耗时 50 ms。这段时间影响了所有应用线程的延迟。如果想要优化吞吐量, 这个结果就会有误导性 —— jstat 只列出了 stop-the-world 的初始标记阶段和最终标记阶段, jstat 的输出完全隐藏了并发执行的GC阶段。&lt;/p&gt;
-</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-11-27T01:54:13.390669+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
+</content><link href="/archives/jvm-gc/" rel="alternate"/><published>2020-02-05T18:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-g1/</id><title>Java JVM G1垃圾收集器</title><updated>2020-11-27T02:14:23.900444+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;h2&gt;G1垃圾收集器入门&lt;/h2&gt;
 &lt;p&gt;concurrent: 并发, 多个线程协同做同一件事情(有状态)&lt;/p&gt;
 &lt;p&gt;parallel: 并行, 多个线程各做各的事情(互相间无共享状态)&lt;/p&gt;
 &lt;p&gt;在 GC 领域: concurrent 算法指GC线程和业务线程能并发执行； parallel 指 GC 线程之间的并行。&lt;/p&gt;
@@ -1461,7 +1333,7 @@ Scanning Remembered Sets - 查找指向 Collection Set 的指针(pointers)&lt;/c
 &lt;p&gt;释放刚被垃圾收集的 heap区所消耗的时间,包括对应的remembered sets。&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
 &lt;p&gt;在此 OBE 中, 您对Java JVM 中的 G1 垃圾收集器有了个大致的了解。首先你学到了为何堆和垃圾收集器是所有 Java JVM 的关键部分。接下来讲述了使用 CMS 和 G1 收集器进行垃圾回收的工作方式. 接下来,您了解了 G1 的命令行参数/开关以及和使用它们的最佳实践。最后,您了解了日志对象以及 GC 日志中的数据。&lt;/p&gt;
-</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-11-27T01:54:13.390651+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
+</content><link href="/archives/jvm-gc-g1/" rel="alternate"/><published>2020-02-06T12:00:00+08:06</published></entry><entry><id>/archives/jvm-gc-log/</id><title>Java JVM GC日志</title><updated>2020-11-27T02:14:23.900427+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;Java的JVM 知识整理。来源:&lt;a href="https://blog.csdn.net/renfufei/column/info/14851"&gt;https://blog.csdn.net/renfufei/column/info/14851&lt;/a&gt;&lt;/div&gt;&lt;p&gt;将介绍GC日志的输出格式, 以及如何解读GC日志, 从中提取有用的信息。我们通过 -XX:+UseSerialGC 选项,指定JVM使用串行垃圾收集器, 并使用下面的启动参数让 JVM 打印出详细的GC日志:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;-XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
@@ -1510,7 +1382,7 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 &lt;p&gt;下一组数据( -&amp;gt; 右边)中蕴含了更重要的结论, 年轻代的内存使用在垃圾回收后下降了 546M(559,231k), 但总的堆内存使用(total heap usage)只减少了 337M(346,099k). 通过这一点,我们可以计算出, 有 208M(213,132K) 的年轻代对象被提升到老年代(Old)中。&lt;/p&gt;
 &lt;p&gt;这个GC事件可以用下面的示意图来表示, 上方表示GC之前的内存使用情况, 下方表示结束后的内存使用情况:&lt;/p&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 221.3740458015267" data-width="580" data-height="131"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/d0f813f8ac7b4a2fed102209354adfb4.png" alt="jvm-gc-log-001.png" /&gt;&lt;figcaption&gt;jvm-gc-log-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-07T12:00:00+08:06</published></entry><entry><id>/archives/ubuntu-docker-setup/</id><title>Ubuntu安装Docker步骤</title><updated>2020-11-27T01:54:13.390630+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;官方安装教程&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;支持的Ubuntu版本&lt;/h2&gt;
+</content><link href="/archives/jvm-gc-log/" rel="alternate"/><published>2020-02-07T12:00:00+08:06</published></entry><entry><id>/archives/ubuntu-docker-setup/</id><title>Ubuntu安装Docker步骤</title><updated>2020-11-27T02:14:23.900411+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://docs.docker.com/engine/install/ubuntu/"&gt;官方安装教程&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;支持的Ubuntu版本&lt;/h2&gt;
 &lt;p&gt;Ubuntu Focal 20.04 (LTS)&lt;/p&gt;
 &lt;p&gt;Ubuntu Eoan 19.10&lt;/p&gt;
 &lt;p&gt;Ubuntu Bionic 18.04 (LTS)&lt;/p&gt;
@@ -1543,7 +1415,7 @@ real – 应用程序暂停的时间(Clock time). 由于串行垃圾收集器(Se
 
 &lt;pre&gt;&lt;code&gt;sudo docker run hello-world&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 79.04135338345864" data-width="841" data-height="532"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/1245469ef079a4d246ee4d65d2986854.png" alt="ubuntu-docker-setup-001.png" /&gt;&lt;figcaption&gt;ubuntu-docker-setup-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
-</content><link href="/archives/ubuntu-docker-setup/" rel="alternate"/><published>2020-07-07T12:00:00+08:06</published></entry><entry><id>/archives/nacos-docker-setup/</id><title>Docker安装配置Nacos</title><updated>2020-11-27T01:54:13.390590+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://nacos.io/zh-cn/"&gt;Nacos官网&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;查询nacos镜像&lt;/h2&gt;
+</content><link href="/archives/ubuntu-docker-setup/" rel="alternate"/><published>2020-07-07T12:00:00+08:06</published></entry><entry><id>/archives/nacos-docker-setup/</id><title>Docker安装配置Nacos</title><updated>2020-11-27T02:14:23.900393+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt; &lt;a href="https://nacos.io/zh-cn/"&gt;Nacos官网&lt;/a&gt; &lt;/div&gt;&lt;h2&gt;查询nacos镜像&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;docker search nacos&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 125.23191094619666" data-width="1350" data-height="539"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/73c24f8cfd2b207cf36f5f249a4d3c40.png" alt="nacos-docker-setup-001.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-001.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -1804,4 +1676,20 @@ vi config/application.properties&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;figure class="pswp-item" style="flex: 423.1404958677686" data-width="1024" data-height="121"&gt;&lt;img src="https://cdn.jsdelivr.net/gh/yuolvv/blog.177.im@gh-pages/archives/assets/f63ecc2d4cb3f9afdf94f4b759ce99f0.png" alt="nacos-docker-setup-010.png" /&gt;&lt;figcaption&gt;nacos-docker-setup-010.png&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;可以看到，mysql中新增了一条命名空间的记录，说明mysql的配置成功了。&lt;/p&gt;
 &lt;h3&gt;到这里，docker安装配置nacos基本完成！&lt;/h3&gt;
-</content><link href="/archives/nacos-docker-setup/" rel="alternate"/><published>2020-07-08T12:00:00+08:06</published></entry></feed>
+</content><link href="/archives/nacos-docker-setup/" rel="alternate"/><published>2020-07-08T12:00:00+08:06</published></entry><entry><id>/archives/tracker-collection/</id><title>常用Tracker收集</title><updated>2020-11-27T02:14:23.900373+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;常用Tracker收集&lt;/div&gt;&lt;p&gt;XIU2/TrackersListCollection 全网热门BitTorrent Tracker 每天自动更新&lt;/p&gt;
+&lt;p&gt;整合了全网热门Tracker，经层层过滤最终得到了这个优质的Tracker 列表&lt;/p&gt;
+&lt;p&gt;精选列表(123个) &lt;a href="https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/best.txt"&gt;https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/best.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;完整列表(305个) &lt;a href="https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/all.txt"&gt;https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/all.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;HTTP列表(99个)&lt;a href="https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/http.txt"&gt;https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/http.txt&lt;/a&gt;&lt;/p&gt;
+</content><link href="/archives/tracker-collection/" rel="alternate"/><published>2020-11-26T12:00:00+08:06</published></entry><entry><id>/archives/emeditor-code/</id><title>EmEditor终身激活码</title><updated>2020-11-27T02:14:23.900332+00:00</updated><author><name>177</name><email>0@177.im</email><uri>https://177.im</uri></author><content>&lt;div class="notice"&gt;收集的EmEditor终身激活码&lt;/div&gt;&lt;p&gt;用一个快速，轻巧，扩展性强的文本编辑器来突出您的工作效能。让 EmEditor 帮您实现工作目标吧！&lt;/p&gt;
+&lt;p&gt;轻松处理 CSV 数据&lt;/p&gt;
+&lt;p&gt;EmEditor 强大的 CSV 和筛选器功能为您提供搜索以及分析大数据文件的捷径！&lt;/p&gt;
+&lt;p&gt;最受欢迎的文本编辑器&lt;/p&gt;
+&lt;p&gt;EmEditor支持Unicode还有许多国际编码。EmEditor 是全世界最受欢迎的文本编辑器之一！&lt;/p&gt;
+&lt;p&gt;支持大文件&lt;/p&gt;
+&lt;p&gt;EmEditor 能打开非常大的文件 — 大到 248GB 或 2.1 亿行 — 而且只占用一点内存，让您能随心所欲地处理任何大小的文件。&lt;/p&gt;
+&lt;h2&gt;终身激活码&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;DMAZM-WHY52-AX222-ZQJXN-79JXH&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;官网下载：&lt;a href="https://www.emeditor.com/download/"&gt;https://www.emeditor.com/download/&lt;/a&gt;&lt;/p&gt;
+</content><link href="/archives/emeditor-code/" rel="alternate"/><published>2020-11-27T12:00:00+08:06</published></entry></feed>
