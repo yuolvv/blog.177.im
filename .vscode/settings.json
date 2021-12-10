@@ -23,5 +23,8 @@
     "python.linting.pylintArgs": [
         "--init-hook",
         "import sys; sys.path.append('C:/Users/yuolv/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.6/microExamples/code-completion')"
+    ],
+    "python.analysis.extraPaths": [
+        "C:/Users/yuolv/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.6/microExamples/code-completion"
     ]
 }
